@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Halo Ventures — Flight</title>
+<meta name="description" content="Halo Ventures is an outside growth team for founders, owners and managing partners.">
+<meta name="theme-color" content="#000000">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#000;--fg:#fff;--g1:#1C1C1E;--g2:#2C2C2E;--g3:#636366;--g4:#8E8E93;--g5:#C7C7CC;--ember:#E83214;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:"Inter Tight","Inter",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --gut:20px;--ease:cubic-bezier(.16,1,.3,1);
+  --st:max(16px,env(safe-area-inset-top));--sb:max(14px,env(safe-area-inset-bottom));
+  color-scheme:dark;
+}
+@media (min-width:900px){:root{--gut:56px}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);overflow-x:clip;-webkit-text-size-adjust:100%;scroll-snap-type:y mandatory}
+html.lock{overflow:hidden}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.5;overflow-x:clip;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:var(--ember);color:#fff}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent;text-align:left}
+a{color:inherit;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:1px solid #fff;outline-offset:4px}
+.panel :focus-visible{outline-color:#000}
+.mono{font-family:var(--mono);font-size:10.5px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--g4);font-variant-numeric:tabular-nums}
+
+#sky{position:fixed;left:0;top:0;width:100vw;height:100vh;display:block;z-index:0;pointer-events:none}
+.vig{position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(140% 100% at 50% 50%,transparent 60%,rgba(0,0,0,.6) 100%)}
+
+.hud-top{position:fixed;left:0;right:0;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:var(--st) var(--gut) 18px;pointer-events:none;background:linear-gradient(#000 0,rgba(0,0,0,.7) 55%,transparent)}
+.hud-top>*{pointer-events:auto}
+.wm{font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.22em;text-decoration:none;white-space:nowrap;line-height:20px}
+.wm i{font-style:normal;color:var(--ember);letter-spacing:.04em;margin:0 .16em}
+.hud-book{display:inline-flex;align-items:center;min-height:44px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:0 12px;border:1px solid var(--g3);text-decoration:none;white-space:nowrap;transition:border-color .35s var(--ease)}
+.hud-book:hover{border-color:#fff}
+@media (min-width:900px){.hud-top{padding-top:28px}.hud-book{font-size:10.5px;padding:0 16px;letter-spacing:.16em}}
+
+.rail{position:fixed;z-index:21;right:2px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column}
+.rail button{display:flex;align-items:center;justify-content:flex-end;width:32px;height:26px;padding-right:8px}
+.rail button i{display:block;width:7px;height:1px;background:var(--g3);transition:width .4s var(--ease),background .3s}
+.rail button.on i{width:16px;background:#fff}
+@media (min-width:900px){.rail{right:20px}.rail button:hover i{background:#fff}}
+
+main{position:relative;z-index:5}
+.sl{position:relative;height:100vh;height:100svh;scroll-snap-align:start;scroll-snap-stop:always;overflow:hidden}
+.blk{position:absolute;left:var(--gut);right:46px}
+.sl[data-m=t] .blk{top:calc(var(--st) + 74px)}
+.sl[data-m=b] .blk{bottom:calc(var(--sb) + 30px)}
+.blk::before{content:"";position:absolute;inset:-60px -80px;z-index:-1;background:radial-gradient(closest-side,rgba(0,0,0,.72),rgba(0,0,0,.4) 60%,transparent);pointer-events:none}
+@media (min-width:900px){
+  .blk,.sl[data-m] .blk{top:50%;bottom:auto;right:auto;transform:translateY(-50%);width:min(40vw,600px)}
+  .sl[data-d=l] .blk{left:var(--gut)}
+  .sl[data-d=r] .blk{left:55vw}
+}
+.num{display:block;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--g2)}
+.num b{font-weight:400;color:#fff}
+.lb{margin-left:14px;color:var(--g5)}
+
+h1,h2,h3{font-family:var(--serif);font-weight:400;text-wrap:balance}
+h1{font-size:clamp(44px,11.6vw,108px);line-height:.95;letter-spacing:-.022em}
+h1 em,h2 em{font-style:italic;color:var(--ember)}
+h2{font-size:clamp(38px,10.2vw,82px);line-height:1.02;letter-spacing:-.014em}
+h2.sm{font-size:clamp(31px,8vw,60px);line-height:1.05}
+.roles{margin-bottom:18px;font-size:10px;line-height:1.8;color:var(--g5)}
+.sup{font-size:16.5px;line-height:1.45;color:var(--g5);max-width:25em;text-wrap:pretty}
+h1+.sup{margin-top:18px}
+.big{display:block;font-family:var(--serif);font-weight:400;letter-spacing:-.04em;line-height:.82;font-variant-numeric:lining-nums;white-space:nowrap;font-size:clamp(120px,36vw,240px);margin:14px 0 16px -.04em}
+.big.md{font-size:clamp(84px,24vw,170px);margin-top:18px}
+.src{margin-top:16px;font-size:9.5px;line-height:1.7;max-width:34em;letter-spacing:.12em}
+.hint{margin-top:18px;color:#fff;font-size:10px}
+.hint i{font-style:normal;color:var(--ember);margin-right:.6em}
+@media (min-width:900px){.sup{font-size:19px}.src{font-size:10px}.roles{font-size:11px}}
+
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:space-between;gap:18px;min-height:54px;min-width:110px;padding:0 20px 0 22px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border:1px solid var(--g3);text-align:center;transition:border-color .35s var(--ease),background .35s var(--ease)}
+.btn:hover{border-color:#fff}
+.btn.pri{background:#fff;color:#000;border-color:#fff;font-weight:500}
+.btn.pri:hover{background:var(--g5);border-color:var(--g5)}
+.btn.ok{border-color:#fff}
+.btn i{font-style:normal}
+.btn .arr{font-family:var(--sans);font-size:15px;letter-spacing:0;transition:transform .45s var(--ease)}
+.btn:hover .arr{transform:translateX(5px)}
+.btn .tick{width:8px;height:8px;background:var(--ember);transform:rotate(45deg) scale(0);transition:transform .45s var(--ease)}
+.btn.ok .tick{transform:rotate(45deg) scale(1)}
+.btn .car{width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .45s var(--ease)}
+.btn[aria-expanded=true]{border-color:#fff}
+.btn[aria-expanded=true] .car{transform:translateY(2px) rotate(225deg)}
+.sup+.btn{margin-top:24px}
+
+/* results */
+.res{list-style:none;border-top:1px solid var(--g2)}
+.res li{display:flex;flex-direction:column;gap:4px;padding:14px 0 16px;border-bottom:1px solid var(--g2)}
+.res b{font-family:var(--serif);font-weight:400;font-size:clamp(46px,12.4vw,84px);line-height:.95;letter-spacing:-.02em;white-space:nowrap}
+.res span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--g5);line-height:1.6}
+
+/* stall list */
+.stl{list-style:none;margin-top:22px;border-top:1px solid var(--g2)}
+.stl li{display:grid;grid-template-columns:34px 1fr;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--g2)}
+.stl li .mono{font-size:10px}
+.stl li span+span{font-family:var(--serif);font-size:22px;line-height:1.12}
+.stl small{display:block;margin-top:4px;font-family:var(--sans);font-size:13.5px;line-height:1.4;color:var(--g5)}
+@media (min-width:900px){.stl li{grid-template-columns:48px 1fr;padding:15px 0}.stl li span+span{font-size:28px}}
+
+/* pillars */
+.pil{margin-top:22px;border-top:1px solid var(--g2)}
+.pi{display:grid;grid-template-columns:40px 1fr 14px;align-items:center;width:100%;min-height:46px;padding:8px 0;border-bottom:1px solid var(--g2)}
+.pi .mono{font-size:10px}
+.pi .pt{font-family:var(--serif);font-size:24px;line-height:1.1;color:var(--g4);transition:color .3s}
+.pi i{width:7px;height:7px;border:1px solid var(--g3);transform:rotate(45deg);justify-self:end;margin-right:3px;transition:background .3s,border-color .3s}
+.pi.on .pt{color:#fff}.pi.on .mono{color:#fff}
+.pi.on i{background:var(--ember);border-color:var(--ember)}
+.pd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s var(--ease)}
+.pd>div{overflow:hidden;padding-left:40px}
+.pi.on+.pd{grid-template-rows:1fr}
+.po{font-size:16px;color:#fff;padding-top:10px}
+.tg{display:flex;flex-wrap:wrap;gap:6px;padding:10px 0 14px}
+.tg span,.chips li{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--g5);border:1px solid var(--g3);padding:5px 8px}
+@media (min-width:900px){.pi{min-height:62px;grid-template-columns:56px 1fr 14px}.pi .pt{font-size:32px}.pd>div{padding-left:56px}.po{font-size:18px}}
+
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:7px;margin-top:22px;max-width:34em}
+.secs{margin-top:22px;line-height:2;color:var(--g5);font-size:10px}
+.secs i{font-style:normal;color:var(--ember);margin:0 .5em}
+.secs b{display:block;font-weight:400;color:var(--g4)}
+.skyh i{font-style:normal;color:var(--ember);margin:0 .4em}
+
+/* cta */
+.cta h2{font-size:clamp(52px,14vw,120px);line-height:.92;letter-spacing:-.022em}
+.mail{display:flex;flex-direction:column;gap:6px;margin-top:24px;padding:14px 0;border-top:1px solid var(--g2);border-bottom:1px solid var(--g2)}
+.email{font-family:var(--serif);font-size:clamp(25px,7vw,40px);line-height:1.05;letter-spacing:-.01em;user-select:all;-webkit-user-select:all;word-break:break-all}
+.prov{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:12px;border-top:1px solid var(--g3);border-left:1px solid var(--g3);animation:pin .45s var(--ease)}
+.prov[hidden]{display:none}
+.prov a{display:flex;align-items:center;justify-content:space-between;min-height:50px;padding:0 14px;border-right:1px solid var(--g3);border-bottom:1px solid var(--g3);font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:background .3s,color .3s}
+.prov a i{font-style:normal;font-family:var(--sans);font-size:15px;letter-spacing:0;transition:transform .45s var(--ease)}
+.prov a:hover{background:#fff;color:#000}.prov a:hover i{transform:translateX(4px)}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;max-width:520px}
+.btns .btn{padding:0 14px 0 16px;letter-spacing:.12em;font-size:10.5px}
+.prov{max-width:520px}
+.motto{margin-top:24px}
+.motto i{font-style:normal;color:var(--ember);margin:0 .4em}
+
+/* star field */
+.skyS .skyh{position:absolute;left:var(--gut);top:calc(var(--st) + 74px);color:#fff}
+.skyS .srcb{position:absolute;left:var(--gut);bottom:var(--sb);min-height:44px;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--g4);text-decoration:underline;text-underline-offset:4px}
+.star{position:absolute;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:44px;min-height:44px;padding:6px;color:#fff}
+.star svg{display:block;width:22px;height:22px;transition:transform .5s var(--ease)}
+.star.bigstar svg{width:68px;height:68px}
+.star span{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid transparent;padding-bottom:3px;white-space:nowrap}
+.star:hover svg,.star:focus-visible svg{transform:scale(1.25) rotate(45deg)}
+.star:hover span{border-bottom-color:var(--ember)}
+html.js .star svg{animation:tw 4s ease-in-out infinite}
+.star:nth-of-type(2) svg{animation-delay:1.1s}.star:nth-of-type(3) svg{animation-delay:.4s}.star:nth-of-type(4) svg{animation-delay:2.2s}.star:nth-of-type(5) svg{animation-delay:1.6s}
+@keyframes tw{0%,100%{opacity:1}50%{opacity:.45}}
+
+/* hidden sections */
+.panel{position:fixed;inset:0;z-index:60;background:#fff;color:#000;overflow-y:auto;-webkit-overflow-scrolling:touch;color-scheme:light;animation:pin .5s var(--ease)}
+.panel[hidden]{display:none}
+@keyframes pin{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.pbar{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:var(--st) var(--gut) 12px;background:#fff;border-bottom:1px solid var(--g5)}
+.pbar .wm{color:#000}
+.pclose{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #000;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase}
+.panel article{padding:36px var(--gut) calc(48px + env(safe-area-inset-bottom));max-width:1100px}
+.panel .mono{color:var(--g3)}
+.panel h3{font-size:clamp(42px,10vw,84px);line-height:1;letter-spacing:-.016em;margin:14px 0 26px;max-width:12em}
+.panel .rows{list-style:none;border-top:1px solid var(--g5);max-width:44em}
+.panel .rows li{padding:13px 0;border-bottom:1px solid var(--g5);font-size:18px;line-height:1.35}
+.panel .rows li b{display:block;margin-bottom:3px;font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.1}
+.panel .q{margin-top:10px;font-family:var(--serif);font-style:italic;font-size:clamp(28px,6.4vw,44px);line-height:1.1;max-width:16em}
+.panel .sub{margin-top:30px;display:block}
+.panel .lead{font-size:19px;line-height:1.4;max-width:30em;margin-bottom:22px}
+.panel .ph{display:flex;align-items:center;justify-content:center;width:180px;height:220px;border:1px dashed var(--g3);margin-bottom:26px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--g3)}
+.panel .statp{font-family:var(--serif);font-size:96px;line-height:.85;letter-spacing:-.03em;display:block}
+.panel .btn{margin-top:34px;background:#000;color:#fff;border-color:#000;font-weight:500;min-width:250px}
+.panel .srcl{list-style:none;display:grid;gap:14px;max-width:46em}
+.panel .srcl li{font-family:var(--mono);font-size:11px;line-height:1.65;color:var(--g3)}
+.panel .srcl b{display:block;color:#000;font-weight:400}
+@media (min-width:900px){.panel article{padding-top:64px}.pbar{padding-top:22px}}
+
+/* reveal */
+html.js .blk>*{opacity:0;transform:translate3d(0,20px,0);transition:opacity .9s var(--ease),transform 1.2s var(--ease);transition-delay:calc(var(--d,0)*85ms + 80ms)}
+html.js .sl.on .blk>*{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html.js .blk>*{transition:none;opacity:1;transform:none}
+  .pd,.rail button i{transition:none}
+  html.js .star svg,.panel{animation:none}
+}
+
+</style>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="vig" aria-hidden="true"></div>
+
+<header class="hud-top">
+  <a class="wm" href="#s01" data-go="0" aria-label="Halo Ventures, back to top">HALO<i>//</i>VENTURES</a>
+  <a class="hud-book" href="#s07" data-go="6">Book an intro call</a>
+</header>
+<nav class="rail" id="rail" aria-label="Sections"></nav>
+
+<main id="deck">
+  <section class="sl" id="s01" data-m="b" data-d="l">
+    <div class="blk">
+      <p class="mono roles">Halo Ventures · Growth partnership</p>
+      <h1>Your outside <em>growth team.</em></h1>
+      <p class="sup">We help businesses win more customers and grow revenue, without the cost of building a full growth team in-house. For founders, owners and managing partners.</p>
+      <a class="btn pri" href="#s07" data-go="6">Book an intro call<i class="arr" aria-hidden="true">→</i></a>
+    </div>
+  </section>
+
+  <section class="sl" id="s02" data-m="t" data-d="r">
+    <div class="blk">
+      <p class="mono num"><b>02</b> / 08<span class="lb">Track record</span></p>
+      <ul class="res">
+        <li><b>$50K → $7M+</b><span>B2B revenue growth at bttn., in nine months</span></li>
+        <li><b>#195 → #8</b><span>National office ranking, in 12 months</span></li>
+        <li><b>$140M+</b><span>Raised alongside founders, Seed through Series B</span></li>
+      </ul>
+      <button class="btn" type="button" data-open="record" style="margin-top:18px">Full track record<i class="arr" aria-hidden="true">→</i></button>
+    </div>
+  </section>
+
+  <section class="sl" id="s03" data-m="b" data-d="l">
+    <div class="blk">
+      <p class="mono num"><b>03</b> / 08<span class="lb">The problem</span></p>
+      <h2 class="sm">Good ideas are not the problem. Winning customers is.</h2>
+      <span class="big md">42%</span>
+      <p class="sup">of failed startups cited no market need. No other reason was cited more often.</p>
+      <p class="mono src">Source: CB Insights, 101 startup post-mortems, 2014</p>
+    </div>
+  </section>
+
+  <section class="sl" id="s04" data-m="t" data-d="r">
+    <div class="blk">
+      <p class="mono num"><b>04</b> / 08<span class="lb">The constraint</span></p>
+      <h2 class="sm">The problems are connected.</h2>
+      <p class="sup" style="margin-top:14px">Fix one alone and the gain does not last. We work on all of them together.</p>
+      <ol class="stl">
+        <li><span class="mono">01</span><span>Great product. Weak positioning.</span></li>
+        <li><span class="mono">02</span><span>Strong demand. Weak conversion.</span></li>
+        <li><span class="mono">03</span><span>Strong sales team. No management.</span></li>
+        <li><span class="mono">04</span><span>Real market. No way to reach it.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sl" id="s05" data-m="t" data-d="l">
+    <div class="blk">
+      <p class="mono num"><b>05</b> / 08<span class="lb">What we provide</span></p>
+      <h2 class="sm">Five areas. One team.</h2>
+      <div class="pil" id="pil">
+        <button class="pi on" type="button" aria-expanded="true"><span class="mono">01</span><span class="pt">Market &amp; strategy</span><i></i></button>
+        <div class="pd"><div><p class="po">Compete.</p><p class="tg"><span>Customer research</span><span>Positioning</span><span>Pricing</span></p></div></div>
+        <button class="pi" type="button" aria-expanded="false"><span class="mono">02</span><span class="pt">Growth &amp; acquisition</span><i></i></button>
+        <div class="pd"><div><p class="po">Acquire.</p><p class="tg"><span>Inbound and outbound</span><span>Channels</span><span>Partnerships</span></p></div></div>
+        <button class="pi" type="button" aria-expanded="false"><span class="mono">03</span><span class="pt">Sales &amp; revenue</span><i></i></button>
+        <div class="pd"><div><p class="po">Convert.</p><p class="tg"><span>Sales process</span><span>Pipeline</span><span>Forecasting</span></p></div></div>
+        <button class="pi" type="button" aria-expanded="false"><span class="mono">04</span><span class="pt">Talent &amp; leadership</span><i></i></button>
+        <div class="pd"><div><p class="po">Develop.</p><p class="tg"><span>Recruiting</span><span>Training</span><span>Leadership</span></p></div></div>
+        <button class="pi" type="button" aria-expanded="false"><span class="mono">05</span><span class="pt">Revenue operations</span><i></i></button>
+        <div class="pd"><div><p class="po">Optimize.</p><p class="tg"><span>CRM</span><span>KPIs and reporting</span><span>Operating cadence</span></p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sl" id="s06" data-m="b" data-d="r">
+    <div class="blk">
+      <p class="mono num"><b>06</b> / 08<span class="lb">How we work</span></p>
+      <h2 class="sm">We do not hand you a plan and leave.</h2>
+      <ol class="stl">
+        <li><span class="mono">01</span><span>Understand<small>First 30 days. Find the constraint.</small></span></li>
+        <li><span class="mono">02</span><span>Build<small>Days 31–90. Install systems and channels.</small></span></li>
+        <li><span class="mono">03</span><span>Operate<small>Months 4–6. Run the work. Coach the team.</small></span></li>
+        <li><span class="mono">04</span><span>Expand<small>Month 7 onward. New markets and teams.</small></span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sl cta" id="s07" data-m="b" data-d="l">
+    <div class="blk">
+      <p class="mono num"><b>07</b> / 08<span class="lb">Next step</span></p>
+      <h2>Book an intro call.</h2>
+      <div class="mail">
+        <span class="mono">Write to</span>
+        <span class="email" id="email">chris@halovpartners.com</span>
+      </div>
+      <div class="btns">
+        <button class="btn pri" id="copy" type="button"><span id="copyT">Copy email</span><i class="tick" aria-hidden="true"></i></button>
+        <button class="btn" id="mailBtn" type="button" aria-expanded="false" aria-controls="prov">Choose email app<i class="car" aria-hidden="true"></i></button>
+      </div>
+      <div class="prov" id="prov" hidden>
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=chris@halovpartners.com&amp;su=Intro%20call" target="_blank" rel="noopener"><span>Gmail</span><i aria-hidden="true">→</i></a>
+        <a href="https://outlook.live.com/mail/0/deeplink/compose?to=chris@halovpartners.com&amp;subject=Intro%20call" target="_blank" rel="noopener"><span>Outlook</span><i aria-hidden="true">→</i></a>
+        <a href="https://compose.mail.yahoo.com/?to=chris@halovpartners.com&amp;subject=Intro%20call" target="_blank" rel="noopener"><span>Yahoo Mail</span><i aria-hidden="true">→</i></a>
+        <a href="mailto:chris@halovpartners.com?subject=Intro%20call"><span>Mail app</span><i aria-hidden="true">→</i></a>
+      </div>
+      <p class="mono motto">Build outside the box<i>//</i>Brick by brick<i>//</i>Rain or shine</p>
+    </div>
+  </section>
+
+  <section class="sl skyS" id="s08" data-m="t" data-d="l" aria-label="The firm. Select a star.">
+    <p class="mono skyh">08 / 08 &nbsp; The firm <i>//</i> Select a star</p>
+    <button class="star" type="button" data-open="what" style="left:7%;top:22%"><svg aria-hidden="true" viewBox="0 0 24 24"><path fill="#fff" d="M12 0C12.7 8.2 15.8 11.3 24 12 15.8 12.7 12.7 15.8 12 24 11.3 15.8 8.2 12.7 0 12 8.2 11.3 11.3 8.2 12 0Z"/></svg><span>What we do</span></button>
+    <button class="star" type="button" data-open="why" style="left:56%;top:17%"><svg aria-hidden="true" viewBox="0 0 24 24"><path fill="#fff" d="M12 0C12.7 8.2 15.8 11.3 24 12 15.8 12.7 12.7 15.8 12 24 11.3 15.8 8.2 12.7 0 12 8.2 11.3 11.3 8.2 12 0Z"/></svg><span>Why we do it</span></button>
+    <button class="star bigstar" type="button" data-open="who" style="left:30%;top:31%"><svg aria-hidden="true" viewBox="0 0 24 24"><path fill="#fff" d="M12 0C12.7 8.2 15.8 11.3 24 12 15.8 12.7 12.7 15.8 12 24 11.3 15.8 8.2 12.7 0 12 8.2 11.3 11.3 8.2 12 0Z"/></svg><span>Who we are</span></button>
+    <button class="star" type="button" data-open="with" style="left:50%;top:50%"><svg aria-hidden="true" viewBox="0 0 24 24"><path fill="#fff" d="M12 0C12.7 8.2 15.8 11.3 24 12 15.8 12.7 12.7 15.8 12 24 11.3 15.8 8.2 12.7 0 12 8.2 11.3 11.3 8.2 12 0Z"/></svg><span>Who we build with</span></button>
+    <button class="star" type="button" data-open="vision" style="left:9%;top:54%"><svg aria-hidden="true" viewBox="0 0 24 24"><path fill="#fff" d="M12 0C12.7 8.2 15.8 11.3 24 12 15.8 12.7 12.7 15.8 12 24 11.3 15.8 8.2 12.7 0 12 8.2 11.3 11.3 8.2 12 0Z"/></svg><span>Our vision</span></button>
+    <button class="srcb" type="button" data-open="sources">Sources</button>
+  </section>
+</main>
+
+<div class="panel" id="panel" role="dialog" aria-modal="true" aria-label="Halo Ventures" hidden>
+  <div class="pbar"><span class="wm">HALO<i>//</i>VENTURES</span><button class="pclose" id="pclose" type="button">Close</button></div>
+
+  <article data-p="who" hidden>
+    <p class="mono">Who we are</p>
+    <h3>Chris Hedum</h3>
+    <div class="ph">[ Photo ]</div>
+    <p class="lead">Halo Ventures is built by people who have done the job, not career consultants. We know these problems because we have been the ones responsible for solving them.</p>
+    <ul class="rows">
+      <li>Former Division 1 rugby player, Oregon State.</li>
+      <li>Nearly a decade in technology and venture capital, working with early-stage founders.</li>
+      <li>Experience across B2B SaaS, healthcare, commerce, payments, home services and financial services.</li>
+      <li>Father of two. Based in Portland with his wife and business partner, Ashley.</li>
+    </ul>
+    <p class="mono sub">What I love about the work</p>
+    <p class="q">“I help people see what they can build, then help them build it.”</p>
+    <a class="btn" href="#s07" data-go="6">Book an intro call<i class="arr" aria-hidden="true">→</i></a>
+  </article>
+
+  <article data-p="what" hidden>
+    <p class="mono">What we do</p>
+    <h3>Your outside growth team.</h3>
+    <p class="lead">You get a dedicated growth lead and access to specialists, through one relationship. You do not need all five areas at once. We start with your biggest constraint and adjust as it changes.</p>
+    <ul class="rows">
+      <li><b>01 Market &amp; strategy</b>Customer research. Ideal customer profiles. Competitive analysis. Positioning. Pricing. Market entry.</li>
+      <li><b>02 Growth &amp; acquisition</b>Acquisition strategy. Inbound and outbound. Channels. Partnerships. Referral programs. Retention.</li>
+      <li><b>03 Sales &amp; revenue</b>Sales team design. Sales process. Pipeline. Deal execution. Coaching. Forecasting.</li>
+      <li><b>04 Talent &amp; leadership</b>Recruiting. Role design. Onboarding. Sales training. Leadership development. Accountability.</li>
+      <li><b>05 Revenue operations</b>CRM. KPIs and reporting. Conversion analytics. Sales productivity. Operating cadence. Revenue planning.</li>
+    </ul>
+    <a class="btn" href="#s07" data-go="6">Book an intro call<i class="arr" aria-hidden="true">→</i></a>
+  </article>
+
+  <article data-p="why" hidden>
+    <p class="mono">Why we do it</p>
+    <h3>Most companies need more growth help than they can hire.</h3>
+    <p class="lead">Hiring several senior leaders full-time costs more than most growing businesses can carry. We give them that skill through one team.</p>
+    <span class="statp">42%</span>
+    <p class="lead" style="margin-top:12px">of failed startups cited no market need. No other reason was cited more often.</p>
+    <p class="mono">Source: CB Insights, 101 startup post-mortems, 2014</p>
+    <p class="mono sub">What we believe</p>
+    <p class="q">Price is what you pay today. Cost is what you pay tomorrow.</p>
+    <p class="mono sub">The name Halo</p>
+    <p class="q">Building past your breaking point to redefine what’s possible.</p>
+    <a class="btn" href="#s07" data-go="6">Book an intro call<i class="arr" aria-hidden="true">→</i></a>
+  </article>
+
+  <article data-p="with" hidden>
+    <p class="mono">Who we build with</p>
+    <h3>Building with those who are built for more.</h3>
+    <p class="lead">Founders, owners and managing partners with a real business or a real market, who need stronger commercial leadership to reach the next stage. A fit when you need more than advice but are not ready to hire several full-time executives.</p>
+    <ul class="rows">
+      <li><b>Seed and Series A companies</b>The challenge: finding repeatable demand and scaling go-to-market. Our role: positioning, acquisition channels, sales systems and the first commercial team.</li>
+      <li><b>Home service businesses</b>The challenge: more profitable customers and more capacity. Our role: differentiation, lead conversion, partnerships, sales performance and team development.</li>
+      <li><b>Financial services firms</b>The challenge: growing advisor capacity, clients and production. Our role: recruiting systems, advisor development, referral channels and performance management.</li>
+    </ul>
+    <a class="btn" href="#s07" data-go="6">Book an intro call<i class="arr" aria-hidden="true">→</i></a>
+  </article>
+
+  <article data-p="vision" hidden>
+    <p class="mono">Our vision</p>
+    <h3>Redefine what’s possible for generations to come.</h3>
+    <p class="lead">Halo Ventures exists to help businesses compete and grow.</p>
+    <ul class="rows">
+      <li><b>Better positioning.</b></li>
+      <li><b>More customers.</b></li>
+      <li><b>Stronger revenue.</b></li>
+      <li><b>Better people.</b></li>
+      <li><b>Greater enterprise value.</b></li>
+    </ul>
+    <a class="btn" href="#s07" data-go="6">Book an intro call<i class="arr" aria-hidden="true">→</i></a>
+  </article>
+
+  <article data-p="record" hidden>
+    <p class="mono">Track record</p>
+    <h3>Seven results. Each one measured.</h3>
+    <ul class="rows">
+      <li><b>$50K → $7M+</b>B2B revenue growth at bttn., in nine months.</li>
+      <li><b>2 → 10</b>Sales team growth ahead of a $20M Series A.</li>
+      <li><b>$500K+</b>New B2B revenue from partnerships at PatientPartner.</li>
+      <li><b>150%</b>Sales development quota attainment at GoSite.</li>
+      <li><b>40+</b>Financial advisors recruited, licensed and developed.</li>
+      <li><b>#195 → #8</b>National office ranking, in 12 months.</li>
+      <li><b>$140M+</b>Raised alongside founders across Seed, Series A and Series B.</li>
+    </ul>
+    <a class="btn" href="#s07" data-go="6">Book an intro call<i class="arr" aria-hidden="true">→</i></a>
+  </article>
+
+  <article data-p="sources" hidden>
+    <p class="mono">Sources</p>
+    <h3>Sources.</h3>
+    <ol class="srcl">
+      <li><b>42% of failed startups cited no market need, the reason cited most often.</b>CB Insights, 101 startup post-mortems, 2014</li>
+    </ol>
+  </article>
+</div>
+
+<script>
+window.SCENE=(function(){
+'use strict';
+var SEG=40,U,GX=[-5.4,-2.7,0,2.7,5.4],GY=[1.1,-0.7,1.1,-0.7,1.1];
+function turb(u){return U.sm((u-1.75)/0.5)*(1-U.sm((u-3.7)/0.5));}
+return {
+init:function(S){U=S.U;},
+draw:function(g,S){
+  var Wd=S.W,Hd=S.H,cx=Wd*S.ax,cy=Hd*S.ay,f=S.desk?Hd*0.95:Wd*1.5,camZ=S.sp*SEG,fade=1-S.sky,T=turb(S.sp),t=S.t,RM=S.RM;
+  g.lineCap='round';
+  if(fade>0.01){
+    var step=3.4,segs=S.desk?72:56,z0=Math.ceil((camZ+1.2)/step)*step;
+    for(var z=z0;z<camZ+140;z+=step){
+      var d=z-camZ,k=Math.round(z/step),u=z/SEG,tt=turb(u),h=U.hash(k*1.7),h2=U.hash(k*2.9);
+      var fogA=U.clamp((d-1.2)/4,0,1)*U.clamp(1-(d-60)/80,0,1),major=k%4===0,al=(major?0.78:0.36)*fogA*fade;
+      if(al<0.02)continue;
+      var R=10.5*(1+(h-0.5)*0.3*tt);
+      var ox=(Math.sin(k*1.31+t*0.6)*1.8+(h2-0.5)*2.6)*tt-S.px*1.3,oy=Math.cos(k*0.87+t*0.5)*1.3*tt+S.py*0.7;
+      var tw=(h2-0.5)*0.6*tt,sq=1-0.3*tt*h;
+      g.strokeStyle='rgba(255,255,255,'+al.toFixed(3)+')';g.lineWidth=major?1.3:0.8;g.beginPath();
+      for(var j=0;j<segs;j++){
+        var grp=Math.floor(j/7),gh=U.hash(k*31+grp*7);
+        if(gh<0.36*tt)continue;
+        var disp=gh>1-0.3*tt?(1.2+2.6*U.hash(k+grp))*tt*(1+(RM?0:0.25*Math.sin(t*1.4+grp))):0,rr=R+disp,zz=d+disp*0.8;
+        if(zz<0.6)continue;
+        var a0=j/segs*6.2832+tw,a1=(j+1)/segs*6.2832+tw;
+        g.moveTo(cx+f*(ox+rr*Math.cos(a0))/zz,cy-f*(oy+rr*Math.sin(a0)*sq)/zz);
+        g.lineTo(cx+f*(ox+rr*Math.cos(a1))/zz,cy-f*(oy+rr*Math.sin(a1)*sq)/zz);
+      }
+      g.stroke();
+    }
+    /* the four gates */
+    var w5=U.clamp(1-Math.abs(S.sp-4)*1.3,0,1);
+    if(w5>0.02){
+      var gs=S.desk?1:0.42;
+      for(var q=4;q>=0;q--){
+        var gz=(4.24+q*0.12)*SEG,dd=gz-camZ;if(dd<1.5)continue;
+        var on=q===S.focus,ga=(on?1:0.45)*w5*U.clamp((dd-1.5)/4,0,1),H=1.7*gs;
+        var X=cx+f*(GX[q]*gs-S.px*1.3)/dd,Y=cy-f*(GY[q]*gs+S.py*0.7)/dd,hh=f*H/dd,br=hh*0.3,h2b=hh*1.22;
+        g.strokeStyle='rgba(255,255,255,'+(ga*0.6).toFixed(3)+')';g.lineWidth=on?1.6:1;g.strokeRect(X-hh,Y-hh,hh*2,hh*2);
+        g.strokeStyle='rgba(255,255,255,'+ga.toFixed(3)+')';g.beginPath();
+        [[-1,-1],[1,-1],[1,1],[-1,1]].forEach(function(c){var x=X+c[0]*h2b,y=Y+c[1]*h2b;g.moveTo(x-c[0]*br,y);g.lineTo(x,y);g.lineTo(x,y-c[1]*br);});
+        g.stroke();
+        if(on){g.fillStyle='rgba(232,50,20,'+ga.toFixed(3)+')';g.save();g.translate(X,Y);g.rotate(Math.PI/4);var ds=Math.max(4,hh*0.12);g.fillRect(-ds/2,-ds/2,ds,ds);g.restore();}
+        g.fillStyle='rgba(255,255,255,'+ga.toFixed(3)+')';g.font='400 10px "IBM Plex Mono",ui-monospace,Menlo,monospace';g.fillText('0'+(q+1),X-hh,Y-hh-8);
+      }
+    }
+  }
+  /* the wing */
+  var ww=Math.min(Wd*(S.desk?0.36:0.64),540),sc=ww/720;
+  var shx=RM?0:T*(Math.sin(t*7.3)*5+Math.sin(t*2.1)*9),shy=RM?0:T*(Math.cos(t*6.1)*4+Math.sin(t*1.7)*7);
+  var w5b=U.clamp(1-Math.abs(S.sp-4)*1.3,0,1);
+  var wx=cx+S.px*ww*0.14+shx+(S.focus-2)*ww*0.13*w5b,wy=cy+S.py*ww*0.06+shy+(RM?0:Math.sin(t*0.9)*3);
+  var roll=S.px*0.32+(RM?0:T*Math.sin(t*3.1)*0.11+Math.sin(t*0.55)*0.02)+(S.focus-2)*0.045*w5b;
+  var L=U.sm(S.sky),wa=1;
+  if(L>0){wx=U.lerp(wx,S.ecl.x,L);wy=U.lerp(wy,S.ecl.y-S.ecl.R*1.55,L);sc*=1-0.62*L;}
+  /* streamlines */
+  var la=(0.34+Math.min(0.3,Math.abs(S.vel)*0.25))*(1-L);
+  if(la>0.02){
+    g.save();g.translate(wx,wy);g.rotate(roll);
+    g.strokeStyle='rgba(255,255,255,'+la.toFixed(3)+')';g.lineWidth=0.9;
+    g.setLineDash([14,22]);g.lineDashOffset=RM?0:-t*(150+Math.abs(S.vel)*260);
+    for(var i=0;i<12;i++){
+      var x0=(i-5.5)/5.5*400*sc,sg=x0<0?-1:1,first=true;
+      g.beginPath();
+      for(var y=-300;y<=380;y+=20){
+        var bump=Math.exp(-Math.pow((y+10)/130,2)),aft=U.clamp((y+20)/300,0,1.3);
+        var x=x0+sg*bump*20*sc*(1-Math.abs(x0)/(520*sc))+(T>0.01&&!RM?Math.sin(y*0.045+t*5.2+i*1.7)*T*16*aft:0);
+        if(first){g.moveTo(x,y*sc);first=false;}else g.lineTo(x,y*sc);
+      }
+      g.stroke();
+    }
+    g.setLineDash([]);g.restore();
+  }
+  U.wing(g,wx,wy,sc,roll,wa,1);
+}
+};
+})();
+
+</script>
+<script>
+(function(){
+'use strict';
+var D=document,W=window,root=D.documentElement,SC=W.SCENE||{};
+var RM=!!(W.matchMedia&&W.matchMedia('(prefers-reduced-motion: reduce)').matches);
+function clamp(v,a,b){return v<a?a:v>b?b:v}
+function lerp(a,b,t){return a+(b-a)*t}
+function sm(t){t=clamp(t,0,1);return t*t*(3-2*t)}
+function hash(n){n=Math.sin(n*127.1+311.7)*43758.5453;return n-Math.floor(n)}
+function pad(n){return n<10?'0'+n:''+n}
+
+/* ---------- sections, rail ---------- */
+var secs=[].slice.call(D.querySelectorAll('.sl')),N=secs.length,rail=D.getElementById('rail');
+secs.forEach(function(s,i){
+  var b=D.createElement('button');b.type='button';b.setAttribute('data-go',i);
+  b.setAttribute('aria-label','Section '+pad(i+1)+' of '+pad(N));b.innerHTML='<i></i>';rail.appendChild(b);
+  [].forEach.call(s.querySelectorAll('.blk>*'),function(c,j){c.style.setProperty('--d',j)});
+});
+var railBs=[].slice.call(rail.children),tops=[];
+function measure(){tops=secs.map(function(s){return s.offsetTop});tops.push(tops[N-1]+secs[N-1].offsetHeight);}
+function spNow(){
+  var y=W.scrollY||W.pageYOffset||0;
+  for(var i=0;i<N;i++){if(y<tops[i+1]-0.5)return clamp(i+(y-tops[i])/Math.max(1,tops[i+1]-tops[i]),0,N-1);}
+  return N-1;
+}
+function go(i,instant){i=clamp(i,0,N-1);W.scrollTo({top:tops[i],behavior:(instant||RM)?'auto':'smooth'});}
+var active=-1;
+function setActive(i){
+  if(i===active)return;active=i;
+  railBs.forEach(function(b,j){b.classList.toggle('on',j===i);if(j===i)b.setAttribute('aria-current','true');else b.removeAttribute('aria-current');});
+  secs.forEach(function(s,j){if(j===i)s.classList.add('on');else if(Math.abs(j-i)>1)s.classList.remove('on');});
+}
+if(RM)secs.forEach(function(s){s.classList.add('on')});
+
+/* ---------- hidden sections ---------- */
+var panel=D.getElementById('panel'),arts=[].slice.call(panel.querySelectorAll('article')),pclose=D.getElementById('pclose'),lastFrom=null;
+function openP(id,from){
+  arts.forEach(function(a){a.hidden=a.getAttribute('data-p')!==id;});
+  panel.hidden=false;panel.scrollTop=0;root.classList.add('lock');lastFrom=from||null;
+  try{pclose.focus({preventScroll:true});}catch(e){}
+}
+function closeP(){
+  if(panel.hidden)return;panel.hidden=true;root.classList.remove('lock');
+  if(lastFrom){try{lastFrom.focus({preventScroll:true});}catch(e){}}
+}
+pclose.addEventListener('click',closeP);
+
+D.addEventListener('click',function(e){
+  var t=e.target;if(!t.closest)return;
+  var o=t.closest('[data-open]');
+  if(o){e.preventDefault();openP(o.getAttribute('data-open'),o);return;}
+  var g=t.closest('[data-go]');
+  if(g){e.preventDefault();closeP();go(+g.getAttribute('data-go'));return;}
+  if(t.closest('a,button,.panel'))return;
+  if(SC.tap)SC.tap(e.clientX,e.clientY,S);
+});
+D.addEventListener('keydown',function(e){
+  if(e.altKey||e.metaKey||e.ctrlKey)return;
+  if(!panel.hidden){if(e.key==='Escape'){e.preventDefault();closeP();}return;}
+  var tag=e.target&&e.target.tagName;
+  if(e.key==='ArrowDown'||e.key==='PageDown'||(e.key===' '&&tag!=='BUTTON'&&tag!=='A')){e.preventDefault();go(active+1);}
+  else if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();go(active-1);}
+  else if(e.key==='Home'){e.preventDefault();go(0);}
+  else if(e.key==='End'){e.preventDefault();go(N-1);}
+});
+
+/* ---------- copy ---------- */
+var copyBtn=D.getElementById('copy'),emailEl=D.getElementById('email'),cpT=0;
+var copyT=D.getElementById('copyT');
+function copied(){copyT.textContent='Copied';copyBtn.classList.add('ok');clearTimeout(cpT);cpT=setTimeout(function(){copyT.textContent='Copy email';copyBtn.classList.remove('ok');},2200);}
+var mailBtn=D.getElementById('mailBtn'),prov=D.getElementById('prov');
+mailBtn.addEventListener('click',function(){var o=prov.hidden;prov.hidden=!o;mailBtn.setAttribute('aria-expanded',o?'true':'false');});
+copyBtn.addEventListener('click',function(){
+  var txt=emailEl.textContent;
+  function fb(){try{var r=D.createRange();r.selectNodeContents(emailEl);var s=W.getSelection();s.removeAllRanges();s.addRange(r);D.execCommand('copy');}catch(e){}copied();}
+  try{if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(copied,fb);else fb();}catch(e){fb();}
+});
+
+/* ---------- pillars ---------- */
+var pis=[].slice.call(D.querySelectorAll('.pi'));
+var FINE=!!(W.matchMedia&&W.matchMedia('(hover:hover) and (pointer:fine)').matches);
+function setFocus(k){S.focus=k;pis.forEach(function(p,j){var on=j===k;p.classList.toggle('on',on);p.setAttribute('aria-expanded',on?'true':'false');});rmDraw();}
+pis.forEach(function(p,j){p.addEventListener('click',function(){setFocus(j)});p.addEventListener('mouseenter',function(){if(FINE)setFocus(j)});});
+
+/* ---------- canvas ---------- */
+var cv=D.getElementById('sky'),g=null;
+try{g=cv.getContext('2d',{alpha:false});}catch(e){g=null;}
+var LAY=secs.map(function(s){return {m:s.getAttribute('data-m'),d:s.getAttribute('data-d')}});
+var S={W:0,H:0,t:0,dt:16,sp:0,vel:0,px:0,py:0,mx:-9999,my:-9999,ax:.5,ay:.5,focus:0,sky:0,desk:false,N:N,RM:RM,dpr:1,ecl:{x:0,y:0,R:1},
+  U:{clamp:clamp,lerp:lerp,sm:sm,hash:hash,pad:pad,wing:drawWing},setFocus:setFocus};
+var tgt={x:0,y:0};
+
+function drawWing(c,x,y,sc,roll,al,halo){
+  if(al<0.01||sc<=0)return;
+  c.save();c.translate(x,y);c.rotate(roll);c.scale(sc,sc);c.globalAlpha=al;c.lineJoin='round';
+  if(halo>0.01){c.globalAlpha=al*halo;c.strokeStyle='#E83214';c.lineWidth=Math.max(2.2/sc,3);c.beginPath();c.ellipse(0,10,330,105,0,0,Math.PI*2);c.stroke();c.globalAlpha=al;}
+  var F=[[0,-150,300,110,130,40,'#1C1C1E'],[0,-150,130,40,0,-60,'#3A3A3D'],[0,-60,130,40,0,40,'#232326'],[130,40,300,110,0,40,'#121213'],
+         [0,-150,-300,110,-130,40,'#2C2C2E'],[0,-150,-130,40,0,-60,'#4A4A4E'],[0,-60,-130,40,0,40,'#2F2F32'],[-130,40,-300,110,0,40,'#19191A']];
+  for(var i=0;i<F.length;i++){var f=F[i];c.fillStyle=f[6];c.beginPath();c.moveTo(f[0],f[1]);c.lineTo(f[2],f[3]);c.lineTo(f[4],f[5]);c.closePath();c.fill();}
+  c.strokeStyle='rgba(255,255,255,.32)';c.lineWidth=0.7/sc;c.beginPath();c.moveTo(0,-150);c.lineTo(0,40);c.moveTo(0,-60);c.lineTo(130,40);c.moveTo(0,-60);c.lineTo(-130,40);c.stroke();
+  c.strokeStyle='#fff';c.lineWidth=1.4/sc;c.beginPath();c.moveTo(0,-150);c.lineTo(300,110);c.lineTo(0,40);c.lineTo(-300,110);c.closePath();c.stroke();
+  if(halo>0.01){c.globalAlpha=al*halo;c.strokeStyle='#E83214';c.lineWidth=Math.max(2.2/sc,3);c.beginPath();c.ellipse(0,10,330,105,0,0,Math.PI);c.stroke();}
+  c.restore();
+}
+
+var STARS=[];for(var si=0;si<260;si++)STARS.push([hash(si*1.7),hash(si*5.1)*0.88,hash(si*3.3),hash(si*9.7)]);
+function drawSky(c){
+  var a=S.sky,Wd=S.W,Hd=S.H;
+  var R=Math.min(Wd,Hd)*(S.desk?0.2:0.3),cx=Wd/2,cy=Hd-R*0.42+(1-sm(a))*R*2.2;
+  S.ecl.x=cx;S.ecl.y=cy;S.ecl.R=R;
+  if(a<0.01)return;
+  for(var i=0;i<STARS.length;i++){
+    var s=STARS[i],tw=RM?1:0.55+0.45*Math.sin(S.t*(0.8+s[2]*2)+s[3]*20),z=s[2]>0.92?2.6:s[2]>0.5?1.7:1.1;
+    c.fillStyle='rgba(255,255,255,'+(a*tw*(0.35+s[3]*0.6)).toFixed(3)+')';c.fillRect(s[0]*Wd,s[1]*Hd,z,z);
+  }
+  var gr=c.createRadialGradient(cx,cy,R*0.96,cx,cy,R*1.7);
+  gr.addColorStop(0,'rgba(232,50,20,'+(0.6*a).toFixed(3)+')');gr.addColorStop(0.22,'rgba(232,50,20,'+(0.18*a).toFixed(3)+')');gr.addColorStop(1,'rgba(232,50,20,0)');
+  c.fillStyle=gr;c.beginPath();c.arc(cx,cy,R*1.7,0,Math.PI*2);c.fill();
+  c.fillStyle='#000';c.beginPath();c.arc(cx,cy,R,0,Math.PI*2);c.fill();
+  c.strokeStyle='rgba(232,50,20,'+a.toFixed(3)+')';c.lineWidth=3;c.beginPath();c.arc(cx,cy,R,0,Math.PI*2);c.stroke();
+  var ba=-Math.PI*0.27;c.fillStyle='rgba(255,255,255,'+a.toFixed(3)+')';c.beginPath();c.arc(cx+R*Math.cos(ba),cy+R*Math.sin(ba),4.2,0,Math.PI*2);c.fill();
+}
+
+function resize(){
+  S.W=W.innerWidth;S.H=W.innerHeight;S.desk=S.W>=900;
+  S.dpr=Math.min(W.devicePixelRatio||1,S.desk?1.6:2);
+  if(g){cv.width=Math.round(S.W*S.dpr);cv.height=Math.round(S.H*S.dpr);cv.style.height=S.H+'px';}
+  measure();if(SC.resize)SC.resize(S);
+}
+function anchor(i){var L=LAY[i];if(S.desk)return [L.d==='l'?0.72:0.28,0.54];return [0.5,L.m==='t'?0.72:0.29];}
+
+var running=false,t0=performance.now(),last=0,lastSp=0,snap=true;
+function frame(now){
+  var dt=Math.min(64,now-(last||now))||16;last=now;S.dt=dt;
+  S.t=RM?2:(now-t0)/1000;
+  var sp=spNow();
+  if(snap){S.sp=sp;lastSp=sp;snap=false;}
+  var k=1-Math.pow(1-0.11,dt/16.7);
+  S.sp=RM?sp:lerp(S.sp,sp,k);if(Math.abs(S.sp-sp)<0.0004)S.sp=sp;
+  var v=(S.sp-lastSp)/(dt/1000);lastSp=S.sp;S.vel=RM?0:lerp(S.vel,v,0.2);
+  setActive(clamp(Math.round(sp),0,N-1));
+  S.px=RM?0:lerp(S.px,tgt.x,0.06);S.py=RM?0:lerp(S.py,tgt.y,0.06);
+  var i0=Math.floor(S.sp),i1=Math.min(N-1,i0+1),fr=sm(S.sp-i0),A0=anchor(i0),A1=anchor(i1);
+  S.ax=lerp(A0[0],A1[0],fr);S.ay=lerp(A0[1],A1[1],fr);
+  S.sky=sm(S.sp-(N-2));
+  if(!g)return;
+  g.setTransform(S.dpr,0,0,S.dpr,0,0);g.globalAlpha=1;g.fillStyle='#000';g.fillRect(0,0,S.W,S.H);
+  drawSky(g);
+  if(SC.draw)SC.draw(g,S);
+  scrim(g);
+}
+function scrim(c){
+  var i0=Math.floor(S.sp),i1=Math.min(N-1,i0+1),fr=sm(S.sp-i0);
+  function side(i){var L=LAY[i];if(i===N-1)return 0;return S.desk?(L.d==='l'?-1:1):(L.m==='t'?-1:1);}
+  var pos=lerp(side(i0),side(i1),fr),a=0.8*Math.abs(pos),gr;if(a<0.02)return;
+  if(S.desk)gr=pos<0?c.createLinearGradient(0,0,S.W*0.6,0):c.createLinearGradient(S.W,0,S.W*0.4,0);
+  else gr=pos<0?c.createLinearGradient(0,0,0,S.H*0.64):c.createLinearGradient(0,S.H,0,S.H*0.32);
+  gr.addColorStop(0,'rgba(0,0,0,'+a.toFixed(3)+')');gr.addColorStop(0.62,'rgba(0,0,0,'+(a*0.85).toFixed(3)+')');gr.addColorStop(1,'rgba(0,0,0,0)');
+  c.fillStyle=gr;c.fillRect(0,0,S.W,S.H);
+}
+function loop(now){if(!running)return;frame(now);W.requestAnimationFrame(loop);}
+function start(){if(running||RM)return;running=true;last=0;W.requestAnimationFrame(loop);}
+function stop(){running=false;}
+var rmP=false;
+function rmDraw(){if(!RM||rmP)return;rmP=true;W.requestAnimationFrame(function(t){rmP=false;frame(t);});}
+D.addEventListener('visibilitychange',function(){if(D.hidden)stop();else start();});
+
+/* ---------- pointer ---------- */
+D.addEventListener('pointermove',function(e){
+  if(e.pointerType==='touch')return;
+  S.mx=e.clientX;S.my=e.clientY;
+  tgt.x=clamp((e.clientX/S.W-0.5)*2,-1,1);tgt.y=clamp((e.clientY/S.H-0.5)*2,-1,1);
+},{passive:true});
+var tX=null,tBase=0;
+D.addEventListener('touchstart',function(e){var t=e.touches[0];tX=t.clientX;tBase=tgt.x;S.mx=t.clientX;S.my=t.clientY;},{passive:true});
+D.addEventListener('touchmove',function(e){if(tX==null)return;var t=e.touches[0];S.mx=t.clientX;S.my=t.clientY;tgt.x=clamp(tBase+(t.clientX-tX)/S.W*2.2,-1,1);},{passive:true});
+D.addEventListener('touchend',function(){tX=null;setTimeout(function(){tgt.x*=0.35;S.mx=-9999;S.my=-9999;},500);},{passive:true});
+
+var rT=0;
+W.addEventListener('resize',function(){clearTimeout(rT);rT=setTimeout(function(){var a=active;resize();if(a>=0)W.scrollTo(0,tops[a]);snap=true;rmDraw();},140);});
+W.addEventListener('scroll',function(){rmDraw();},{passive:true});
+if(D.fonts&&D.fonts.ready)D.fonts.ready.then(function(){measure();rmDraw();});
+
+/* ---------- boot ---------- */
+resize();
+if(SC.init)SC.init(S);
+var m=/^#s(\d\d)$/.exec(W.location.hash||'');
+if(m){var hi=+m[1]-1;if(hi>=0&&hi<N)W.scrollTo(0,tops[hi]);}
+if(RM)rmDraw();else start();
+setTimeout(function(){measure();var i=clamp(Math.round(spNow()),0,N-1);secs[i].classList.add('on');},600);
+W.__halo={S:S,go:go,open:openP,close:closeP};
+})();
+
+</script>
+</body>
+</html>
