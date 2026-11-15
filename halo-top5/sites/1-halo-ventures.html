@@ -1,0 +1,1084 @@
+<!doctype html>
+<html lang="en" class="nojs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Halo Ventures · Fractional chief growth officer</title>
+<meta name="description" content="Halo Ventures leads client acquisition for growing companies, then hands your team the system to keep it going.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bk:#000;--wh:#fff;--g1:#8A8A8F;--g2:#2A2A2E;--g3:#121212;--em:#E83214;
+  --e:cubic-bezier(.22,.61,.36,1);
+  --serif:"Instrument Serif","Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --hd:94px;--gx:16px;--vzh:clamp(176px,28svh,248px);
+}
+@media (min-width:900px){:root{--hd:80px;--gx:120px}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#000;color:#fff;-webkit-text-size-adjust:100%;color-scheme:dark}
+body{background:#000;color:#fff;font:400 16px/1.5 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
+ol,ul{list-style:none}
+:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:4px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.skip{position:fixed;left:16px;top:-80px;z-index:50;background:#fff;color:#000;padding:15px 16px;border-radius:8px;font:500 14px/1 var(--sans)}
+.skip:focus{top:16px}
+
+/* ---------- type scale 12/14/16/20/28/44/72 ---------- */
+.m12{font:500 12px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.t14{font-size:14px;line-height:1.5}
+.t20{font-size:20px;line-height:1.4}
+.t28{font:400 28px/1.15 var(--serif)}
+.t44{font:400 44px/1.04 var(--serif);letter-spacing:-.005em}
+.t72{font:400 44px/1.04 var(--serif);letter-spacing:-.005em}
+@media (min-width:900px){.t72{font-size:clamp(56px,5vw,72px);line-height:1;letter-spacing:-.012em}}
+h1,h2,h3{font-weight:400;text-wrap:balance}
+em{font-style:italic;font-family:var(--serif)}
+.g{color:var(--g1)}
+
+/* ---------- header ---------- */
+#hd{position:fixed;left:0;right:0;top:0;z-index:20;background:#000}
+.hrow{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 16px}
+.wm{display:inline-flex;align-items:center;gap:10px;font:600 14px/1 var(--sans);letter-spacing:.2em;min-height:44px}
+.wm .sl{display:inline-flex;gap:4px;height:16px;align-items:center}
+.wm .sl b{display:block;width:4px;height:16px;background:var(--em);transform:skewX(-22deg)}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--em);color:#000;border-radius:999px;font:500 16px/1 var(--sans);white-space:nowrap}
+.pill:active{transform:scale(.98)}
+.pill:focus-visible{outline:2px solid #fff;outline-offset:4px;border-radius:999px}
+.pill.sm{height:44px;padding:0 20px;font-size:14px}
+.pill.lg{height:56px;padding:0 24px 0 28px;font-size:16px}
+.pill svg{flex:none}
+.pill.ok svg{display:none}
+#where{display:flex;align-items:center;justify-content:space-between;height:36px;padding:0 16px;position:relative;border-top:1px solid #000}
+#bar{position:absolute;left:0;right:0;top:0;height:2px;background:var(--g2)}
+#bar i{display:block;height:2px;width:100%;background:#fff;transform-origin:0 0;transform:scaleX(0)}
+#cur{color:#fff}
+#nxt{color:var(--g1);height:36px;position:relative;padding-left:16px}
+#nxt::before{content:"";position:absolute;inset:-4px -8px}
+#nxt[hidden]{display:none}
+#rail{display:none}
+@media (min-width:900px){
+  #hd{background:transparent}
+  .rm #hd,.nogl #hd{background:#000}
+  .hrow{height:80px;padding:0 32px}
+  .wm{font-size:16px}
+  #where{display:none}
+  #rail{display:block;position:fixed;right:32px;top:50%;transform:translateY(-50%);z-index:20}
+  #rail a{display:flex;align-items:center;gap:12px;height:44px;color:var(--g1)}
+  #rail a i{width:8px;height:8px;background:var(--g2);flex:none}
+  #rail a.past i{background:var(--g1)}
+  #rail a[aria-current]{color:#fff}
+  #rail a[aria-current] i{background:var(--em)}
+  #rail a:hover{color:#fff}
+}
+
+/* ---------- canvases ---------- */
+#gl,#glf{position:fixed;left:0;top:0;width:100vw;height:100vh;display:block}
+#gl{z-index:0;background:#000}
+#glf{z-index:3;pointer-events:none}
+.nogl #gl,.nogl #glf,html:not(.js) #gl,html:not(.js) #glf{display:none}
+
+/* ---------- scenes (fixed stage) ---------- */
+main{position:relative;z-index:2}
+.sc .vz{pointer-events:none}
+.js:not(.rm) #track{height:var(--trk,2000vh)}
+.js:not(.rm) .sc{position:fixed;inset:0;pointer-events:none}
+.js:not(.rm) .sc .vz{position:absolute;left:16px;right:16px;top:calc(var(--hd) + 8px);height:var(--vzh)}
+.js:not(.rm) .sc .tz{position:absolute;left:16px;right:16px;top:calc(var(--hd) + var(--vzh) + 24px);display:grid;align-items:start}
+.js:not(.rm) .sc .tz>.st{grid-area:1/1}
+@media (max-width:899px){.js:not(.rm) .L-bot .tz{top:auto;bottom:calc(20px + env(safe-area-inset-bottom));align-items:end}.js:not(.rm) .L-bot .vz{height:var(--vzf,240px)}.js:not(.rm) .L-top .vz{top:var(--vzt,400px);bottom:20px;height:auto}}
+/* phones: the visual fills the top, the text block is centred in the space under it */
+@media (max-width:899px){.js:not(.rm) .L-mid .vz{height:var(--vzm,40svh)}.js:not(.rm) .L-mid .tz{top:calc(var(--hd) + 8px + var(--vzm,40svh) + 16px);bottom:calc(20px + env(safe-area-inset-bottom));align-content:center;align-items:center}}
+.js:not(.rm) .L-top .vz{top:auto;bottom:24px;height:40svh}
+.js:not(.rm) .L-top .tz{top:calc(var(--hd) + 24px)}
+.js:not(.rm) [data-k]{opacity:0;transform:translateY(12px);transition:opacity .35s var(--e),transform 0s linear .35s;pointer-events:none}
+.js:not(.rm) [data-k].on{opacity:1;transform:none;transition:opacity .6s var(--e) .28s,transform .6s var(--e) .28s;pointer-events:auto}
+/* ember never fades: hidden while its step fades, then shown solid once the step is fully in */
+.js:not(.rm) [data-k] .pill,.js:not(.rm) [data-k] .tag,.js:not(.rm) [data-k] .opt i,.js:not(.rm) [data-k] .keep .sq{clip-path:inset(0 100% 0 0);transition:none}
+.js:not(.rm) [data-k].on.solid .tag,.js:not(.rm) [data-k].on.solid .opt i,.js:not(.rm) [data-k].on.solid .keep .sq{clip-path:none}
+.js:not(.rm) [data-k].on.solid .pill{clip-path:none}
+.js:not(.rm) [data-k] .pill:focus-visible{clip-path:none}
+/* the close appears at full opacity at once (a 12px rise only), so its pill is solid the moment the step shows */
+.js:not(.rm) #contact [data-k]{transition:none}
+.js:not(.rm) #contact [data-k].on{transition:transform .3s var(--e)}
+.js:not(.rm) #contact [data-k].on .pill{clip-path:none}
+@media (min-width:900px){
+  :root{--gx:clamp(48px,6vw,112px);--tw:min(640px,calc(48vw - var(--gx) + 24px));--vx:calc(var(--gx) + var(--tw) + 40px);--vw:min(780px,calc(100vw - var(--vx) - 184px))}
+  .js:not(.rm) .sc .vz,.js:not(.rm) .L-top .vz{left:var(--vx);right:auto;width:var(--vw);height:min(var(--vw),calc(100vh - 176px));top:50%;bottom:auto;transform:translateY(-50%)}
+  .js:not(.rm) .sc .tz,.js:not(.rm) .L-top .tz{left:var(--gx);right:auto;width:var(--tw);top:50%;transform:translateY(-50%);align-items:center}
+}
+
+/* static flow: no JS or reduced motion */
+html:not(.js) .sc,.rm .sc{position:relative;min-height:100vh;padding:calc(var(--hd) + 16px) 16px 64px}
+html:not(.js) .sc .vz,.rm .sc .vz{height:var(--vzh);position:relative;margin-bottom:24px}
+.rm .sc:not(#top):not(#contact):not(#problem) .vz,html:not(.js) .sc:not(#top):not(#contact) .vz,.rm.nogl #problem .vz{display:none}
+.rm #problem .vz{height:clamp(260px,40svh,340px)}
+.rm .sc,html:not(.js) .sc{min-height:0}
+.rm #top,html:not(.js) #top{min-height:100vh}
+html:not(.js) .st,.rm .st{margin-bottom:56px}
+html:not(.js) .L-top .vz,.rm .L-top .vz{order:2}
+html:not(.js) .L-top,.rm .L-top{display:flex;flex-direction:column}
+html:not(.js) .L-top .tz,.rm .L-top .tz{order:1}
+@media (min-width:900px){
+  html:not(.js) .sc,.rm .sc,html:not(.js) .L-top,.rm .L-top{display:grid;grid-template-columns:minmax(0,600px) 1fr;column-gap:6vw;padding:120px 200px 120px var(--gx);align-items:center}
+  html:not(.js) .sc .vz,.rm .sc .vz{grid-column:2;grid-row:1;height:auto;aspect-ratio:1;margin:0;order:0}
+  .rm .sc:not(#top):not(#contact),html:not(.js) .sc:not(#top):not(#contact){grid-template-columns:minmax(0,760px);padding-top:96px;padding-bottom:96px}
+  .rm:not(.nogl) #problem{grid-template-columns:minmax(0,600px) minmax(0,560px)!important}
+  .rm #problem .vz{height:auto}
+  html:not(.js) .sc .tz,.rm .sc .tz{grid-column:1;grid-row:1}
+}
+
+/* ---------- hero ---------- */
+.eb{color:var(--g1);margin-bottom:16px}
+#h1{font:400 44px/1.02 var(--serif);letter-spacing:-.01em;margin-bottom:16px}
+#h1 span,#h1 em{display:block}
+.sub{color:#fff;font-size:16px;line-height:1.5;max-width:34em;margin-bottom:12px}
+.sub2{color:var(--g1)}
+.for{color:var(--g1);margin-bottom:20px}
+.nw{white-space:nowrap}
+.cta{display:grid;grid-template-columns:max-content;grid-template-areas:"p" "x" "l";row-gap:4px;align-items:center}
+.cta .pill{grid-area:p}
+.cta .tcp{grid-area:x;justify-self:center;margin:0}
+.cta .lnk{grid-area:l;justify-self:start;margin-top:4px}
+.tcp{color:var(--g1);font:400 13px/1.4 var(--sans);margin-top:8px;text-align:center}
+.pill.ok+.tcp{visibility:hidden}
+.tcp .tc{display:none}
+@media (hover:hover) and (pointer:fine){.tcp .tt{display:none}.tcp .tc{display:inline}}
+@media (min-width:900px){.cta{grid-template-columns:max-content max-content;grid-template-areas:"p l" "x .";column-gap:24px;row-gap:8px}.cta .lnk{grid-area:l;justify-self:start;margin-top:0}.tcp{font-size:14px}}
+.lnk{display:inline-flex;align-items:center;gap:8px;min-height:44px;font:500 14px/1 var(--sans);color:#fff;border-bottom:1px solid transparent}
+.lnk:hover{border-bottom-color:#fff}
+@media (min-width:900px){#h1{font-size:clamp(56px,5vw,72px);line-height:.98;margin-bottom:24px}.sub{font-size:20px;line-height:1.4;max-width:30em;margin-bottom:16px}.sub2{margin-bottom:24px}.for{margin-bottom:32px}}
+
+/* ---------- recognition ---------- */
+.hint{color:var(--g1);margin:16px 0}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;min-height:72px;padding:16px;border:1px solid var(--g2);background:var(--g3);border-radius:12px;font:500 16px/1.3 var(--sans);color:#fff;transition:border-color .25s var(--e)}
+.opt i{flex:none;width:8px;height:8px;margin-top:6px;background:var(--g2)}
+.opt:hover{border-color:var(--g1)}
+.opt[aria-pressed="true"]{background:#fff;color:#000;border-color:#fff}
+.opt[aria-pressed="true"] i{background:var(--em)}
+.ans{min-height:2.3em;margin-top:24px;font:400 28px/1.15 var(--serif)}
+.ans:empty{min-height:2.3em}
+.nl{visibility:hidden;margin-top:4px;color:#fff;border-bottom:1px solid var(--g1);min-height:0;padding:4px 0;position:relative}
+.nl::before{content:"";position:absolute;inset:-11px -8px}
+.nl.on{visibility:visible}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .5s var(--e),transform .5s var(--e)}
+.reveal.on,.rm .reveal,.nogl .reveal,html:not(.js) .reveal{opacity:1;transform:none}
+.leak{margin-top:16px}
+.closed{margin-top:16px}
+@media (min-width:900px){.opt{min-height:88px;padding:20px;font-size:18px}.ans{min-height:1.3em}}
+
+/* ---------- problem / cost ---------- */
+.ins{margin-top:24px;color:var(--g1)}
+.rows .d2{margin-top:2px}
+.tlab{color:var(--g1);font-size:14px;line-height:1.45;max-width:30em}
+.tlab{color:#fff;font-size:16px}
+.fig{font:400 72px/1 var(--serif);letter-spacing:-.01em;margin:12px 0 12px;font-variant-numeric:tabular-nums;color:#fff;white-space:nowrap}
+.src{color:var(--g1);letter-spacing:.04em;text-transform:none}
+.csq{color:#fff;font:400 18px/1.4 var(--sans);max-width:24em;margin-bottom:20px;text-wrap:balance}
+.csq:empty{display:none}
+@media (min-width:900px){.tlab{font-size:20px}.fig{font-size:96px}.csq{font-size:20px;margin-bottom:24px}}
+/* per-step keyboard stop: hidden until it has keyboard focus */
+.kn{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.kn:focus-visible{position:static;width:fit-content;height:44px;clip-path:none;overflow:visible;display:flex;align-items:center;gap:8px;margin-top:16px;padding:0 20px;border-radius:999px;border:1px solid #fff;color:#fff;font:500 14px/1 var(--sans)}
+
+/* ---------- solution ---------- */
+.how{display:grid;gap:24px}
+.how li{display:grid;grid-template-columns:40px 1fr;column-gap:8px;row-gap:4px;align-items:baseline;align-content:start}
+.how .n{color:var(--g1)}
+.how h3{grid-column:2}
+.how p{grid-column:2;color:var(--g1);font-size:16px}
+@media (min-width:900px){.how{grid-template-columns:repeat(3,1fr);gap:32px}.how p{font-size:18px}.keep .det{font-size:18px}.lead .bio{font-size:20px;line-height:1.45}.capy{font-size:16px}.nsteps{font-size:16px}.hint{font-size:13px}.how li{grid-template-columns:1fr}.how h3,.how p,.how .n{grid-column:1}.how .n{margin-bottom:12px}}
+.klab{color:var(--g1);margin-bottom:16px}
+.kcap{color:var(--g1);font-size:13px;line-height:1.4;margin:-10px 0 10px}
+.keep li{display:grid;grid-template-columns:24px 1fr;column-gap:8px;padding:8px 0;border-top:1px solid var(--g2)}
+.keep li:last-child{border-bottom:1px solid var(--g2)}
+.keep .sq{width:8px;height:8px;background:var(--g2);margin-top:12px}
+.keep .nm{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;font:400 28px/1.15 var(--serif);color:var(--g1);transition:color .3s var(--e)}
+.keep .det{grid-column:2;color:var(--g1);font-size:14px;line-height:1.45;margin-top:2px}
+.keep li.in .sq{background:var(--em)}
+.keep li.in .nm{color:#fff}
+.tag{display:none;align-items:center;height:24px;padding:0 10px;white-space:nowrap;border-radius:999px;background:var(--em);color:#000;font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.keep li.mine .tag{display:inline-flex}
+.role{color:#fff;margin-top:24px}
+.obj{color:var(--g1);margin-top:8px;font-size:16px}
+@media (min-width:900px){.obj{font-size:20px}}
+html:not(.js) .keep li .sq,.rm .keep li .sq{background:var(--em)}
+html:not(.js) .keep li .nm,.rm .keep li .nm{color:#fff}
+
+/* ---------- proof ---------- */
+.ph{margin-bottom:8px}
+.led{display:inline-block;position:relative;color:#fff;border-bottom:1px solid var(--g1);margin-bottom:24px;text-transform:none;letter-spacing:.02em}
+.led::before{content:"";position:absolute;inset:-13px -8px}
+.led:hover{border-bottom-color:#fff}
+.rows{display:grid;grid-template-columns:1fr;gap:8px}
+.rows li{display:grid;grid-template-columns:120px 1fr;column-gap:12px;align-items:baseline;padding:12px 16px;border:1px solid var(--g2);border-radius:12px;background:var(--g3)}
+.rows li.hc{display:block;padding:16px 16px 14px}
+.rows .big{font:400 28px/1.1 var(--serif);white-space:nowrap;font-variant-numeric:tabular-nums}
+.rows .hc .big{font-size:48px;line-height:1;letter-spacing:-.01em}
+.rows .d{color:var(--g1);font-size:14px;line-height:1.4}
+.rows .hc .d{color:#fff;font-size:16px;margin-top:6px}
+.yr{white-space:nowrap}
+@media (min-width:900px){.rows{gap:12px}.rows li{grid-template-columns:176px 1fr;column-gap:20px;padding:16px 24px}.rows li.hc{padding:24px 24px 20px}.rows .big{font-size:40px;line-height:1.05}.rows .hc .big{font-size:88px;line-height:.95}.rows .d{font-size:18px}.rows .hc .d{font-size:20px;margin-top:10px}}
+@media (min-width:900px) and (max-height:800px){.rows{gap:8px}.rows li{padding:12px 20px;grid-template-columns:156px 1fr}.rows .big{font-size:36px}.rows li.hc{padding:18px 20px 16px}.rows .hc .big{font-size:64px}.rows .hc .d{margin-top:8px}.led{margin-bottom:20px}}
+.lead .nm{margin-bottom:8px}
+.lead .loc{color:var(--g1);margin-bottom:16px}
+.lead .bio{margin-bottom:16px}
+.lead .co{color:var(--g1);margin-bottom:24px;text-transform:none;letter-spacing:.02em}
+.lead blockquote{font:italic 400 28px/1.15 var(--serif)}
+.fit{display:grid;gap:24px;max-width:560px}
+.fit .mk{color:#fff;margin-bottom:8px}
+.fit .own{color:var(--g1)}
+.fit h3{color:var(--g1);margin-bottom:8px}
+.fit .t20{font-size:20px}
+.fit .sect{color:var(--g1);margin-top:12px;text-transform:none;letter-spacing:.02em}
+.fit .no{border-top:1px solid var(--g2);padding-top:24px}
+@media (min-width:900px){.fit{gap:32px}.fit .no{padding-top:32px}}
+
+/* ---------- contact / eclipse ---------- */
+#contact{--es:min(320px,calc(100vw - 48px),calc(100vh - 360px));--es:min(320px,calc(100vw - 48px),calc(100svh - 360px))}
+@media (min-width:900px){#contact{--es:min(56vh,500px,calc(100vh - 340px))}}
+.js:not(.rm) #contact .vz{left:50%;right:auto;width:var(--es);height:var(--es);transform:translateX(-50%);top:calc(var(--hd) + 12px)}
+.js:not(.rm) #contact .cin{position:absolute;left:16px;right:16px;top:calc(var(--hd) + 12px);text-align:center}
+.cin h2{font-family:var(--serif);font-weight:400;display:flex;flex-direction:column;justify-content:center;align-items:center;height:var(--es);font-size:calc(var(--es) * .08);line-height:1.08}
+.cin h2>*{white-space:nowrap}
+.cact{display:flex;flex-direction:column;align-items:center;margin-top:16px}
+.rdy{margin-bottom:12px}
+.nsteps{display:flex;flex-direction:column;gap:0;margin-top:12px;color:var(--g1);font-size:14px;line-height:1.5;text-align:left}
+.nsteps li{display:flex;gap:10px}
+.nsteps b{font:500 12px/21px var(--mono);color:#fff}
+@media (min-width:900px){.nsteps{flex-direction:row;gap:24px}}
+.capy{margin-top:8px;color:var(--g1);font-size:14px;line-height:1.5;max-width:34em;text-wrap:balance}
+.cmore{display:flex;flex-direction:column;align-items:center;width:100%}
+/* when the close cannot fit under the header, the ring and the first view stay put and only the steps and note scroll */
+.cmore.scr{overflow-y:auto;overscroll-behavior:contain;margin-top:6px;padding:0 4px 8px;scrollbar-width:none}
+.cmore.scr::-webkit-scrollbar{display:none}
+.cmore.scr{--mt:#000;--mb:#000;-webkit-mask-image:linear-gradient(var(--mt),#000 20px,#000 calc(100% - 40px),var(--mb));mask-image:linear-gradient(var(--mt),#000 20px,#000 calc(100% - 40px),var(--mb))}
+.cmore.scr.more{--mb:transparent}
+.cmore.scr.past{--mt:transparent}
+.note{display:flex;flex-direction:column;align-items:center;margin-top:12px;max-width:420px}
+@media (min-width:900px){.capy{max-width:none}.note{flex-direction:row;align-items:center;gap:16px;max-width:640px;margin-top:16px}.note .pill2{flex:none}.pvb{margin-top:0;max-width:380px}}
+.note[hidden]{display:none}
+.pill2{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 20px;border-radius:999px;border:1px solid var(--g1);color:#fff;font:500 14px/1 var(--sans)}
+.pill2:hover{border-color:#fff}
+.pvb{margin-top:8px;text-align:left;padding:4px 12px;border-left:2px solid var(--g2)}
+.to{color:#fff;font:500 14px/1.5 var(--sans)}
+.addr{white-space:nowrap}
+.pv{margin-top:2px;color:var(--g1);font:400 12px/1.5 var(--mono);text-wrap:balance}
+.foot{margin-top:24px;color:var(--g1);letter-spacing:.04em}
+@media (min-width:900px){.foot{letter-spacing:.12em}}
+html:not(.js) #contact,.rm #contact{display:grid;justify-items:center;text-align:center;grid-template-columns:1fr;align-content:start}
+html:not(.js) #contact .vz,.rm #contact .vz{grid-area:1/1;width:var(--es);height:var(--es);aspect-ratio:auto;margin:0;align-self:start;justify-self:center}
+html:not(.js) #contact .cin,.rm #contact .cin{align-self:start}
+.rm #contact{min-height:100vh;padding-top:calc(var(--hd) + 16px);padding-bottom:0}
+@media (min-width:900px){html:not(.js) #contact,.rm #contact{padding-left:200px;padding-right:200px}}
+html:not(.js) #contact .cin,.rm #contact .cin{grid-area:1/1;width:100%;margin:0}
+
+/* ---------- captions on the visual ---------- */
+#cap{position:fixed;left:0;top:0;z-index:4;color:#fff;font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .4s var(--e);padding:6px 10px;background:#000;border:1px solid var(--g2);border-radius:999px}
+#cap.on{opacity:1}
+.rm #cap,.nogl #cap{display:none}
+/* ---------- copy confirmation ---------- */
+#toast{position:fixed;left:16px;right:16px;top:calc(var(--hd) + 8px);z-index:30;display:flex;align-items:center;gap:12px;background:#fff;color:#000;border-radius:12px;padding:8px 8px 8px 16px;font:500 14px/1.4 var(--sans);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .3s var(--e),transform .3s var(--e),visibility 0s linear .3s;pointer-events:none}
+#toast.on{opacity:1;visibility:visible;transform:none;transition:opacity .3s var(--e),transform .3s var(--e);pointer-events:auto}
+#toast p{flex:1;text-wrap:balance}
+#toast[data-mode="note"]{padding:12px 16px}
+#toast[data-mode="note"] .tbtn{display:none}
+#toast .addr{font-weight:600}
+#toast .tx3{display:none}
+.tbtn{flex:none;height:44px;padding:0 16px;border-radius:999px;border:1px solid #000;color:#000;font:500 14px/1 var(--sans);white-space:nowrap}
+.tbtn:hover{background:#000;color:#fff}
+.tbtn:focus-visible{outline:2px solid #000;outline-offset:2px;border-radius:999px}
+@media (max-width:899px){#toast{top:auto;bottom:calc(12px + env(safe-area-inset-bottom));transform:translateY(8px);box-shadow:0 0 0 1px #000;padding:6px 6px 6px 16px}#toast .tx2{display:none}#toast .tx3{display:inline}#toast.up{top:calc(var(--hd) + 8px);bottom:auto}#toast[data-mode="note"]{padding:12px 16px}}
+@media (min-width:900px){#toast{left:auto;right:32px;width:420px;top:76px}#toast.dn{top:auto;bottom:32px}}
+
+/* ---------- CSS fallbacks when WebGL is off ---------- */
+.cring,.cecl{display:none}
+.js:not(.rm) .sc:not(.act) .vz>*{visibility:hidden}
+.nogl .cring,html:not(.js) .cring{display:block;position:absolute;left:50%;top:50%;width:min(86%,340px);aspect-ratio:1;border:22px solid var(--em);border-radius:50%;transform:translate(-50%,-50%) rotateX(66deg) rotateZ(-9deg)}
+.nogl .cecl,html:not(.js) .cecl{display:block;position:absolute;inset:0;border-radius:50%;border:calc(var(--es) * .07) solid var(--em);padding:calc(var(--es) * .025)}
+.nogl .cecl::before,html:not(.js) .cecl::before{content:"";display:block;width:100%;height:100%;border-radius:50%;background:#000;border:6px solid #fff}
+
+@media (min-width:1440px){:root{--g1:#B5B5BA}}
+@media (min-width:1280px){.m12,.tag,#cap,.nsteps b,.pv{font-size:13px}#rail .m12{font-size:14px}.nsteps b{line-height:21px}}
+/* short phones */
+@media (max-width:899px) and (max-height:720px){#h1{font-size:40px}.sub{font-size:15px;margin-bottom:12px}.for{margin-bottom:16px}.eb{margin-bottom:12px}.t44{font-size:36px}.t72{font-size:36px}.opt{min-height:56px;padding:12px 14px}.ans{font-size:20px;line-height:1.3;margin-top:16px;min-height:2.6em}.ans:empty{min-height:2.6em}.hint{margin:12px 0}.rows{gap:16px 16px}.rows .big{font-size:24px}.keep .nm{font-size:24px}.keep li{padding:6px 0}.how{gap:16px}.js:not(.rm) #contact .foot{display:none}.rdy{margin-bottom:8px}.js:not(.rm) #contact .cact{margin-top:12px}.js:not(.rm) #contact .rdy{font-size:18px}.js:not(.rm) #contact .nsteps{font-size:13px;line-height:1.4;margin-top:10px}.js:not(.rm) #contact .nsteps b{line-height:18px}.js:not(.rm) #contact .capy{font-size:13px;line-height:1.4;margin-top:6px}.js:not(.rm) #contact .note{margin-top:10px}.js:not(.rm) #contact .pvb{margin-top:6px}.js:not(.rm) #contact .to{font-size:13px}.csq{font-size:16px;margin-bottom:12px}}
+@media (max-width:899px) and (max-height:720px){.sub{margin-bottom:8px}.sub2{margin-bottom:12px}.for{margin-bottom:12px}#h1{margin-bottom:12px}.rows{gap:6px}.rows li{grid-template-columns:108px 1fr;padding:8px 12px}.rows .big{font-size:24px}.rows li.hc{padding:10px 12px 8px}.rows .hc .big{font-size:38px}.rows .hc .d{margin-top:4px}.ph{margin-bottom:4px}.led{margin-bottom:16px}.js:not(.rm) #contact .tcp{margin-top:6px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#contact" data-go="6">Skip to contact</a>
+<header id="hd">
+  <div class="hrow">
+    <a class="wm" href="#top" data-go="0" aria-label="Halo Ventures, back to top"><span aria-hidden="true">HALO</span><span class="sl" aria-hidden="true"><b></b><b></b></span><span aria-hidden="true">VENTURES</span></a>
+    <button class="pill sm" type="button" data-copy="header" aria-label="Copy email address chris@halovpartners.com"><span class="lb">Copy email</span></button>
+  </div>
+  <div id="where">
+    <div id="bar" aria-hidden="true"><i></i></div>
+    <p class="m12" id="cur" aria-live="off">Overview</p>
+    <button type="button" class="m12" id="nxt">Next: Problem ↓</button>
+  </div>
+</header>
+
+<nav id="rail" aria-label="Sections">
+  <ol>
+    <li><a href="#stuck" data-go="1" data-nav="0"><i></i><span class="m12">Problem</span></a></li>
+    <li><a href="#cost" data-go="3" data-nav="1"><i></i><span class="m12">Cost</span></a></li>
+    <li><a href="#solution" data-go="4" data-nav="2"><i></i><span class="m12">Solution</span></a></li>
+    <li><a href="#proof" data-go="5" data-nav="3"><i></i><span class="m12">Proof</span></a></li>
+    <li><a href="#contact" data-go="6" data-nav="4"><i></i><span class="m12">Contact</span></a></li>
+  </ol>
+</nav>
+
+<canvas id="gl" aria-hidden="true"></canvas>
+<canvas id="glf" aria-hidden="true"></canvas>
+<p id="live" class="sr" aria-live="polite"></p>
+<p id="cap" aria-hidden="true"></p>
+<div id="toast" data-mode="email"><p aria-hidden="true" id="toastTx"><strong>Copied.</strong><span class="tx2"> Send two lines on your growth goal. Chris replies to set up a short intro call.</span><span class="tx3"> Send two lines on your goal.</span></p><button class="tbtn" type="button" id="toastNote"><span class="lb">Copy note</span></button></div>
+
+<main id="main">
+  <div id="track" aria-hidden="true"></div>
+
+  <!-- 1 · Answer and capture -->
+  <section id="top" class="sc L-bot" aria-labelledby="h1">
+    <div class="vz" aria-hidden="true"><div class="cring"></div></div>
+    <div class="tz">
+      <div class="st" data-k="0">
+        <p class="m12 eb">Fractional chief growth officer</p>
+        <h1 id="h1"><span>We win you&nbsp;clients.</span> <em>You keep the&nbsp;playbook.</em></h1>
+        <p class="sub">We lead client acquisition as your embedded sales leader, then hand your team the process, hiring plan and KPIs to keep it&nbsp;going.</p>
+        <p class="m12 for">For founder-led companies ready to grow</p>
+        <div class="cta">
+          <button class="pill lg" type="button" data-copy="hero" aria-label="Copy email address chris@halovpartners.com"><span class="lb">chris@halovpartners.com</span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 1h8a2 2 0 0 1 2 2v8h-2V3H5z" fill="#000"/><rect x="1" y="5" width="10" height="10" rx="2" fill="#000"/></svg></button><p class="tcp" aria-hidden="true"><span class="tt">Tap to copy</span><span class="tc">Click to copy</span></p>
+          <a class="lnk" href="#stuck" data-go="1">See how it works <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · Recognition -->
+  <section id="stuck" class="sc L-bot" aria-labelledby="h-stuck">
+    <div class="vz" aria-hidden="true"></div>
+    <div class="tz">
+      <div class="st" data-k="0">
+        <h2 id="h-stuck" class="t44">Where is growth&nbsp;stuck?</h2>
+        <p class="m12 hint">Pick one, or keep scrolling.</p>
+        <div class="opts" role="group" aria-labelledby="h-stuck">
+          <button type="button" class="opt" data-pick="founder" aria-pressed="false"><i></i><span>Revenue depends on me</span></button>
+          <button type="button" class="opt" data-pick="pipeline" aria-pressed="false"><i></i><span>Pipeline is thin</span></button>
+          <button type="button" class="opt" data-pick="process" aria-pressed="false"><i></i><span>No repeatable process</span></button>
+          <button type="button" class="opt" data-pick="hires" aria-pressed="false"><i></i><span>Hires don’t ramp</span></button>
+        </div>
+        <p class="ans" id="ans" aria-live="polite"></p>
+        <button type="button" class="lnk nl" id="pickNote"><span class="lb">Copy this as your note</span></button>
+        <button type="button" class="kn" data-next>Next <span aria-hidden="true">↓</span></button>
+      </div>
+      <div class="st" data-k="1" id="fit">
+        <div class="fit" aria-label="Who this is for" role="group">
+          <div class="yes">
+            <h3 class="m12">Built for</h3>
+            <p class="t20 mk">The founder still closes most&nbsp;deals.</p>
+            <p class="t20 g own">Technical founders, high&#8209;mission teams with low traction, and growth&#8209;phase builders in tech, home services and&nbsp;finance.</p>
+          </div>
+          <div class="no">
+            <h3 class="m12">Not built for</h3>
+            <p class="t20">Companies that want a lead list or an ad&nbsp;campaign.</p>
+          </div>
+        </div>
+        <button type="button" class="kn" data-next>Next <span aria-hidden="true">↓</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · The problem -->
+  <section id="problem" class="sc L-bot" aria-labelledby="h-prob">
+    <div class="vz" aria-hidden="true"></div>
+    <div class="tz">
+      <div class="st" data-k="0-1">
+        <h2 id="h-prob" class="t72">Growth stalls when no one owns the&nbsp;number.</h2>
+        <p class="t20 leak reveal" id="leakLine">Pipeline thins. Hires stall. The founder becomes the sales&nbsp;team.</p>
+        <div class="ins" data-k="1">
+          <p class="t20">Early sales run on the founder. Growth needs a&nbsp;system.</p>
+          <button type="button" class="kn" data-next>Next <span aria-hidden="true">↓</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · Consequences -->
+  <section id="cost" class="sc L-mid" aria-labelledby="h-cost">
+    <div class="vz" aria-hidden="true"></div>
+    <div class="tz">
+      <div class="st" data-k="0">
+        <h2 id="h-cost" class="t72">Price is what you pay&nbsp;today. <em>Cost is what you pay&nbsp;tomorrow.</em></h2>
+        <button type="button" class="kn" data-next>Next <span aria-hidden="true">↓</span></button>
+      </div>
+      <div class="st" data-k="1">
+        <p class="csq" id="csq"></p>
+        <h3 class="tlab">The cost of one wrong sales hire</h3>
+        <p class="fig"><span id="fig" aria-hidden="true">$177,171</span><span class="sr">$177,171</span></p>
+        <p class="m12 src">SalesFuel, 2026</p>
+        <button type="button" class="kn" data-next>Next <span aria-hidden="true">↓</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · The solution -->
+  <section id="solution" class="sc L-mid" aria-labelledby="h-sol">
+    <div class="vz" aria-hidden="true"></div>
+    <div class="tz">
+      <div class="st" data-k="0">
+        <h2 id="h-sol" class="t72">We take the&nbsp;seat. <em>Then we hand you the&nbsp;keys.</em></h2>
+        <p class="m12 role"><span class="nw">Fractional chief growth officer&nbsp;·</span> <span class="nw">Head of sales</span></p>
+        <p class="obj">Why fractional: senior sales leadership now, without a full-time executive&nbsp;hire.</p>
+        <button type="button" class="kn" data-next>Next <span aria-hidden="true">↓</span></button>
+      </div>
+      <div class="st" data-k="1">
+        <ol class="how" aria-label="How it works">
+          <li><span class="m12 n">01</span><h3 class="t28">Find the gap</h3><p>Where growth stalls and why.</p></li>
+          <li><span class="m12 n">02</span><h3 class="t28">Drive revenue</h3><p>We lead client acquisition with your team.</p></li>
+          <li><span class="m12 n">03</span><h3 class="t28">Hand off</h3><p>Your team runs the playbook.</p></li>
+        </ol>
+        <button type="button" class="kn" data-next>Next <span aria-hidden="true">↓</span></button>
+      </div>
+      <div class="st" data-k="2">
+        <h3 class="m12 klab">What you keep</h3>
+        <p class="kcap">Each piece fills as we build it.</p>
+        <ol class="keep">
+          <li data-p="founder hires"><span class="sq"></span><span class="nm">People <span class="tag">Your gap</span></span><span class="det">Recruiting, onboarding, coaching</span></li>
+          <li data-p="process"><span class="sq"></span><span class="nm">Process <span class="tag">Your gap</span></span><span class="det">Sales process, KPIs, operating rhythm</span></li>
+          <li data-p="pipeline"><span class="sq"></span><span class="nm">Pipeline <span class="tag">Your gap</span></span><span class="det">Positioning, inbound and outbound, partnerships</span></li>
+          <li data-p=""><span class="sq"></span><span class="nm">Results <span class="tag">Your gap</span></span><span class="det">Quota, forecast, revenue infrastructure</span></li>
+        </ol>
+        <p class="t20 closed reveal" id="closedLine">Every piece owned. Revenue&nbsp;stays.</p>
+        <button type="button" class="kn" data-next>Next <span aria-hidden="true">↓</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · Conviction -->
+  <section id="proof" class="sc L-bot" aria-labelledby="h-proof">
+    <div class="vz" aria-hidden="true"></div>
+    <div class="tz">
+      <div class="st" data-k="0">
+        <h2 id="h-proof" class="t44 ph">Results our team has&nbsp;delivered</h2>
+        <a class="m12 led" href="#lead" id="ledBy">Led by Chris Hedum</a>
+        <ul class="rows">
+          <li class="hc"><p class="big"><span aria-hidden="true">$50K → <span data-cu="7" data-fm="m">$7M+</span></span><span class="sr">$50K to $7M+</span></p><p class="d">revenue in 9 months</p></li>
+          <li><p class="big"><span aria-hidden="true">20 → <span data-cu="100" data-from="20" data-fm="p">100+</span></span><span class="sr">20 to 100+</span></p><div class="dd"><p class="d">sales reps, at 150% of quota</p></div></li>
+          <li><p class="big"><span aria-hidden="true">#195 → <span data-cu="8" data-from="195" data-fm="h">#8</span></span><span class="sr">#195 to #8</span></p><div class="dd"><p class="d">sales office, national ranking, in 12&nbsp;months</p><p class="d d2">40+ hires recruited and trained in 18&nbsp;months</p></div></li>
+          <li><p class="big"><span aria-hidden="true"><span data-cu="140" data-fm="mm">$140M+</span></span><span class="sr">$140M+</span></p><div class="dd"><p class="d">raised by founders Chris advised</p></div></li>
+        </ul>
+        <button type="button" class="kn" data-next>Next <span aria-hidden="true">↓</span></button>
+      </div>
+      <div class="st lead" data-k="1" id="lead">
+        <h3 class="m12 g" style="margin-bottom:16px" tabindex="-1" id="h-lead">Who leads it</h3>
+        <p class="t44 nm">Chris Hedum</p>
+        <p class="m12 loc">Founder · Portland, Oregon</p>
+        <p class="bio">Sales and growth leader across SaaS, healthcare, home services and&nbsp;finance.</p>
+        <blockquote>“I help people see what they can build, then help them build&nbsp;it.”</blockquote>
+        <button type="button" class="kn" data-next>Next <span aria-hidden="true">↓</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · Action -->
+  <section id="contact" class="sc L-ecl" aria-labelledby="h-close">
+    <div class="vz" id="ecl" aria-hidden="true"><div class="cecl"></div></div>
+    <div class="st cin" data-k="0">
+      <h2 id="h-close"><span>Change is&nbsp;inevitable.</span> <em>Growth is&nbsp;optional.</em></h2>
+      <div class="cact">
+        <p class="t20 rdy">Ready to grow?</p>
+        <button class="pill lg" type="button" data-copy="close" aria-label="Copy email address chris@halovpartners.com"><span class="lb">chris@halovpartners.com</span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 1h8a2 2 0 0 1 2 2v8h-2V3H5z" fill="#000"/><rect x="1" y="5" width="10" height="10" rx="2" fill="#000"/></svg></button>
+        <p class="tcp" id="tcpClose" aria-hidden="true"><span class="tt">Tap to copy</span><span class="tc">Click to copy</span></p>
+        <div class="cmore" id="cmore">
+        <ol class="nsteps">
+          <li><b>1</b><span>Copy the email.</span></li>
+          <li><b>2</b><span>Send two lines on your goal.</span></li>
+          <li><b>3</b><span>Intro call: we see if we’re a good fit for each other.</span></li>
+        </ol>
+        <p class="capy">We take on about 10 clients at a time. If it’s a fit, we set a timeline and get to work.</p>
+        <div class="note" id="note">
+          <button class="pill2" type="button" id="noteBtn"><span class="lb">Copy a ready-to-send note</span></button>
+          <div class="pvb" id="pvb"><p class="to">Send to: <span class="addr">chris@halovpartners.com</span></p><p class="pv" id="pv"></p></div>
+        </div>
+        <p class="m12 foot">HALO // VENTURES · PORTLAND, OREGON · © 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+(function(){
+'use strict';
+var D=document,W=window,H=D.documentElement;
+H.classList.remove('nojs');H.classList.add('js');
+var RM=false;try{RM=W.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+if(RM)H.classList.add('rm');
+var EMAIL='chris@halovpartners.com';
+var PI=Math.PI,TAU=PI*2,DEG=PI/180;
+function $(s,r){return (r||D).querySelector(s)}
+function $$(s,r){return Array.prototype.slice.call((r||D).querySelectorAll(s))}
+function cl(v,a,b){return v<a?a:v>b?b:v}
+function lerp(a,b,t){return a+(b-a)*t}
+function sm(t){t=cl(t,0,1);return t*t*(3-2*t)}
+function eo(t){t=cl(t,0,1);return 1-Math.pow(1-t,3)}
+function eio(t){t=cl(t,0,1);return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+function rnd(seed){var s=seed;return function(){s=(s*16807)%2147483647;return (s-1)/2147483646}}
+var store={get:function(k){try{return W.localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{if(v==null)W.localStorage.removeItem(k);else W.localStorage.setItem(k,v)}catch(e){}}};
+W.dataLayer=W.dataLayer||[];
+function track(ev,o){var d={event:ev,t:Math.round(performance.now())};if(o)for(var k in o)d[k]=o[k];try{W.dataLayer.push(d)}catch(e){}}
+var HV=W.__hv={};
+
+/* ================= scenes ================= */
+var SC=[
+  {id:'top',     len:1.0, cuts:[0],          nav:-1,np:0},
+  {id:'stuck',   len:2.2, cuts:[0,.5],       nav:0, np:.08},
+  {id:'problem', len:1.4, cuts:[0,.42],      nav:0, np:.15},
+  {id:'cost',    len:2.0, cuts:[0,.42],      nav:1, np:.12},
+  {id:'solution',len:3.5, cuts:[0,.22,.44],  nav:2, np:.08},
+  {id:'proof',   len:1.8, cuts:[0,.5],       nav:3, np:.12},
+  {id:'contact', len:1.2, cuts:[.4],         nav:4, np:1}
+];
+var NAVN=['Problem','Cost','Solution','Proof','Contact'];
+SC.forEach(function(s,i){s.el=D.getElementById(s.id);s.vz=$('.vz',s.el);s.i=i;
+  s.ks=$$('[data-k]',s.el).map(function(el){var v=el.getAttribute('data-k').split('-');return {el:el,a:+v[0],b:v.length>1?+v[1]:+v[0]}})});
+var VW=0,VH=0,MOB=true,UNIT=1,TOTAL=1,STATIC=RM,OV=0,CSH=0;
+function layout(){
+  VW=H.clientWidth;VH=W.innerHeight;MOB=VW<900;
+  UNIT=VH*.62;var y=0;
+  SC.forEach(function(s){s.y0=y;s.L=s.len*UNIT;y+=s.L});TOTAL=y;
+  sizeEcl();fitClose();fitMore();
+  // when the close is taller than the screen, extra scroll lifts it so every line can be reached
+  var cin=$('#contact .cin');OV=STATIC?0:Math.max(0,Math.ceil(cin.offsetTop+cin.offsetHeight+24-VH));
+  H.style.setProperty('--trk',(TOTAL+VH+OV)+'px');
+  readAnchors();
+}
+// the eclipse shrinks until the whole close (ring, line, button, steps, note) fits under the header without lifting
+// the closing line never drops under 20px: when everything cannot fit, the line, the question, the button and its label stay in the first view and the rest scrolls
+function closeMW(){var h=$('#h-close'),pv=h.style.fontSize;h.style.fontSize='100px';var mw=0;$$('#h-close>*').forEach(function(e){mw=Math.max(mw,e.getBoundingClientRect().width)});h.style.fontSize=pv;return mw/100}
+// the ring never lifts under the header: it is capped at the free space under the header; when the line would drop under 20px,
+// the ring keeps the line at 20px and the steps and note scroll in their own region under the button
+var CMO=$('#cmore');
+function sizeEcl(){var c=SC[6].el;c.style.removeProperty('--es');CMO.classList.remove('scr','more','past');CMO.scrollTop=0;CMO.style.maxHeight='';var cap=$('#ecl').offsetWidth,cin=$('#contact .cin'),h=$('#h-close'),rest=cin.offsetHeight-h.offsetHeight,top=STATIC?parseFloat(getComputedStyle(c).paddingTop):(MOB?94:80)+12;
+  var es=Math.floor(Math.min(cap,VH-top-rest-24));
+  var mw=closeMW(),esMin=Math.ceil(20.5*Math.sqrt(mw*mw/4+1.08*1.08)/.31),ess=$('#tcpClose').getBoundingClientRect().bottom-h.getBoundingClientRect().bottom;
+  if(es<esMin)es=Math.floor(Math.min(esMin,VH-top-ess-16));
+  es=Math.max(es,96);c.style.setProperty('--es',es+'px');HV.es=es}
+// reduced motion: the close is the last screen of the page and fills it exactly, so the end of the page never slides the ring under the header
+function relTop(e){return STATIC?e.getBoundingClientRect().top-SC[6].el.getBoundingClientRect().top:e===CMO?$('#contact .cin').offsetTop+CMO.offsetTop:e.offsetTop}
+function fitMore(){var cin=$('#contact .cin'),b=relTop(cin)+cin.offsetHeight+24;HV.scr=false;
+  if(b<=VH)return;CMO.classList.add('scr');var mt=relTop(CMO);CMO.style.maxHeight=Math.max(48,Math.floor(VH-24-mt))+'px';HV.scr=true;moreFade()}
+function moreFade(){var on=CMO.classList.contains('scr');CMO.classList.toggle('more',on&&CMO.scrollTop+CMO.clientHeight<CMO.scrollHeight-2);CMO.classList.toggle('past',on&&CMO.scrollTop>2)}
+CMO.addEventListener('scroll',moreFade,{passive:true});
+// the closing line always sits inside the eclipse's inner disc
+function fitClose(){var h=$('#h-close'),es=$('#ecl').offsetWidth||parseFloat(getComputedStyle(SC[6].el).getPropertyValue('--es'))||320;
+  var mw=closeMW();
+  var f=.31*es/Math.sqrt(mw*mw/4+1.08*1.08);h.style.fontSize=Math.floor(Math.min(f,44))+'px';}
+function zones(){if(STATIC||!MOB)return;var hd=94;SC.forEach(function(s){if(s.id==='contact')return;var tz=$('.tz',s.el);var th=tz.offsetHeight;
+    if(s.el.classList.contains('L-mid')){var hs=0;$$('.st',tz).forEach(function(e){hs=Math.max(hs,e.offsetHeight)});var A=VH-hd-8-20;s.el.style.setProperty('--vzm',Math.round(Math.max(160,Math.min(A-hs-16-48,VH*.46)))+'px')}
+    else if(s.el.classList.contains('L-top'))s.vz.style.setProperty('--vzt',(hd+24+th+16)+'px');else s.vz.style.setProperty('--vzf',Math.max(88,VH-hd-8-th-20-24)+'px')})}
+function readAnchors(){zones();SC.forEach(function(s){var r=s.vz.getBoundingClientRect();s.ax=r.left+r.width/2;s.ay=r.top+r.height/2+(s.i===6?CSH:0);s.aw=r.width;s.ah=r.height})}
+function sceneAt(y){var i=0;for(var k=0;k<SC.length;k++)if(y>=SC[k].y0-.5)i=k;return i}
+function pOf(i,y){return cl((y-SC[i].y0)/SC[i].L,0,1)}
+function stepOf(i,p){var c=SC[i].cuts,k=-1;for(var j=0;j<c.length;j++)if(p>=c[j]-1e-6)k=j;return k}
+function stepY(i,k){var c=SC[i].cuts,a=c[k],b=k+1<c.length?c[k+1]:1;return SC[i].y0+SC[i].L*((a+b)/2)}
+
+/* ================= context: the visitor's pick ================= */
+// one copy carries everything: the address line, a blank line, then the note
+function noteBody(){return 'Hi Chris, we want to grow. '+(pick?'Where we\u2019re stuck: '+PICKS[pick].t+'. ':'')+'Our goal: [add one line]'}
+function noteText(){return 'Send to: '+EMAIL+'\n\n'+noteBody()}
+// each pick tags the piece of the playbook that fixes it: founder-led sales -> People, hires -> People, pipeline -> Pipeline, no repeatable process -> Process
+var PICKS={founder:{t:'Revenue depends on me',a:'We build a team that sells without you.',c:'Every deal still waits on you.'},pipeline:{t:'Pipeline is thin',a:'We build inbound, outbound and partner pipeline.',c:'A thin pipeline makes every month start from zero.'},process:{t:'No repeatable process',a:'We build the sales process, KPIs and rhythm.',c:'Without a process, results depend on who had a good week.'},hires:{t:'Hires don’t ramp',a:'We recruit, onboard and ramp reps to quota.',c:'Every hire who doesn’t ramp is a cost you keep paying.'}};
+var pick=store.get('hv_gap');if(!PICKS[pick])pick=null;
+function applyPick(k,user){
+  pick=k;store.set('hv_gap',k);
+  $$('.opt').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-pick')===k?'true':'false')});
+  $('#ans').textContent=k?PICKS[k].a:'';
+  $$('.keep li').forEach(function(li){var m=!!k&&li.getAttribute('data-p').split(' ').indexOf(k)>=0;li.classList.toggle('mine',m);$('.tag',li).textContent=m?'Your gap: '+PICKS[k].t:'Your gap'});
+  $('#pv').textContent=noteBody();
+  $('#csq').textContent=k?PICKS[k].c:'';
+  $('#pickNote').classList.toggle('on',!!k);
+  if(VH)layout();
+  if(user)track('hv_gap_pick',{gap:k});
+}
+$$('.opt').forEach(function(b){b.addEventListener('click',function(){applyPick(b.getAttribute('data-pick'),true)})});
+applyPick(pick,false);
+
+/* ================= copy the address ================= */
+var live=$('#live');
+function say(t){live.textContent='';setTimeout(function(){live.textContent=t},30)}
+function legacyCopy(txt){var ta=D.createElement('textarea');ta.value=txt||EMAIL;ta.setAttribute('readonly','');ta.style.cssText='position:fixed;top:0;left:0;opacity:0;pointer-events:none';D.body.appendChild(ta);ta.select();var ok=false;try{ok=D.execCommand('copy')}catch(e){}D.body.removeChild(ta);return ok}
+function copy(btn,txt){
+  txt=txt||EMAIL;var isNote=txt!==EMAIL;
+  var lb=$('.lb',btn),orig=btn.getAttribute('data-orig')||lb.textContent;btn.setAttribute('data-orig',orig);
+  function done(){if(isNote){toastMode('note');toastFor(4000);if(btn.id!=='toastNote'){lb.textContent='Copied ✓';clearTimeout(btn._t);btn._t=setTimeout(function(){lb.textContent=orig},2500)}say(NOTE_MSG);track('hv_copy_note',{source:btn.id,gap:pick||''});return}
+    if(btn.id==='toastNote'){toastFor(MOB?4000:6000);lb.textContent='Copied ✓';say('Email address copied: '+EMAIL);clearTimeout(btn._t);btn._t=setTimeout(function(){lb.textContent=orig},2500);HV.copied=(HV.copied||0)+1;track('hv_copy',{source:'toast',gap:pick||''});return}
+    if(btn.getAttribute('data-copy')!=='close'){toastMode('email');toastFor(MOB?4000:6000)}lb.textContent='Copied ✓';btn.classList.add('ok');say('Email address copied: '+EMAIL);clearTimeout(btn._t);btn._t=setTimeout(function(){lb.textContent=orig;btn.classList.remove('ok')},2500);HV.copied=(HV.copied||0)+1;track('hv_copy',{source:btn.getAttribute('data-copy'),gap:pick||''})}
+  function fail(){if(isNote){var pv=$('#pv');var r0=D.createRange();r0.selectNodeContents(pv);var s0=W.getSelection();s0.removeAllRanges();s0.addRange(r0);say('The note is selected');return}lb.textContent=EMAIL;try{var r=D.createRange();r.selectNodeContents(lb);var s=W.getSelection();s.removeAllRanges();s.addRange(r)}catch(e){}say('The address is selected: '+EMAIL);HV.selected=(HV.selected||0)+1;track('hv_copy_fail',{source:btn.getAttribute('data-copy')})}
+  try{
+    if(navigator.clipboard&&W.isSecureContext)navigator.clipboard.writeText(txt).then(done,function(){legacyCopy(txt)?done():fail()});
+    else legacyCopy(txt)?done():fail();
+  }catch(e){fail()}
+}
+$$('[data-copy]').forEach(function(b){b.addEventListener('click',function(){copy(b)})});
+['noteBtn','pickNote'].forEach(function(id){var b=D.getElementById(id);b.addEventListener('click',function(){copy(b,noteText())})});
+var toastEl=D.getElementById('toast'),toastHold=false,NOTE_MSG='Note copied, with the address. Paste into a new email.';
+// after the email, the toast offers the note; after the note (which already carries the address) it only confirms
+function toastMode(m){toastEl.setAttribute('data-mode',m);var b=D.getElementById('toastNote'),lb=$('.lb',b);clearTimeout(b._t);
+  $('#toastTx').innerHTML=m==='note'?'<strong>Note copied, with the address.</strong> Paste into a new email.':'<strong>Copied.</strong><span class="tx2"> Send two lines on your growth goal. Chris replies to set up a short intro call.</span><span class="tx3"> Send two lines on your goal.</span>';
+  lb.textContent='Copy note';b.setAttribute('data-orig',lb.textContent)}
+D.getElementById('toastNote').addEventListener('click',function(){copy(this,noteText())});
+var toastY=0;
+// the toast never covers content: phones try the bottom dock, then under the header; desktop tries top right, then bottom right.
+// it takes the first spot that covers no visible text or control (answer line, note preview, close), else the one that covers least
+var TSEL='h1,h2,h3,p,li,button,a,blockquote,.pvb';
+function toastHits(){var t=toastEl.getBoundingClientRect(),n=0;$$(TSEL,D.getElementById('main')).forEach(function(e){if(!STATIC){var st=e.closest('[data-k]');if(!st||!st.classList.contains('on'))return}
+    if(e.classList.contains('kn')&&!e.matches(':focus-visible'))return;var cs=getComputedStyle(e);if(cs.visibility==='hidden'||cs.display==='none')return;
+    var r;if(/^(BUTTON|A)$/.test(e.tagName)||e.classList.contains('pvb'))r=e.getBoundingClientRect();else{MRG.selectNodeContents(e);r=MRG.getBoundingClientRect()}if(r.height>0&&r.width>0&&r.bottom>t.top-4&&r.top<t.bottom+4&&r.right>t.left-4&&r.left<t.right+4)n++});return n}
+function toastSpot(){var spots=MOB?['','up']:['','dn'],best=null;toastEl.style.transition='none';
+  for(var i=0;i<spots.length;i++){toastEl.classList.remove('up','dn');if(spots[i])toastEl.classList.add(spots[i]);var h=toastHits();if(!best||h<best[1])best=[spots[i],h];if(!h)break}
+  toastEl.classList.remove('up','dn');if(best[0])toastEl.classList.add(best[0]);toastEl.offsetWidth;toastEl.style.transition='';HV.toastHits=best[1]}
+function toastFor(ms){toastSpot();toastEl.classList.add('on');toastY=W.scrollY;clearTimeout(toastEl._t);toastEl._t=setTimeout(function hide(){if(toastHold){toastEl._t=setTimeout(hide,800);return}toastEl.classList.remove('on')},ms)}
+// the toast stays while a mouse rests on it or a keyboard user is on its button; a tap does not pin it
+toastEl.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')toastHold=true});
+toastEl.addEventListener('pointerleave',function(){toastHold=false});
+toastEl.addEventListener('focusin',function(){var b=D.getElementById('toastNote');toastHold=!!(b.matches&&b.matches(':focus-visible'))});
+toastEl.addEventListener('focusout',function(){toastHold=false});
+HV.copyFail=function(){var b=$('[data-copy="close"]');var lb=$('.lb',b);lb.textContent=EMAIL;var r=D.createRange();r.selectNodeContents(lb);var s=W.getSelection();s.removeAllRanges();s.addRange(r);return String(s)};
+function lockWidths(){$$('.pill').forEach(function(b){b.style.minWidth='';b.style.minWidth=b.offsetWidth+'px'})}
+
+/* ================= navigation ================= */
+var curNav=-2;
+function go(i,instant){
+  if(STATIC){var t=SC[i].el;W.scrollTo({top:i===0?0:t.getBoundingClientRect().top+W.scrollY-(MOB&&i<SC.length-1?94:0),behavior:instant?'auto':'smooth'});return}
+  var y=i===SC.length-1?TOTAL:SC[i].y0+SC[i].L*SC[i].np;
+  W.scrollTo({top:Math.round(y),behavior:instant?'auto':'smooth'});
+}
+$$('[data-go]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var i=+a.getAttribute('data-go');go(i);track('hv_nav',{to:SC[i].id});
+  if(i===6){setTimeout(function(){var b=$('[data-copy="close"]');try{b.focus({preventScroll:true})}catch(x){}},STATIC?400:900)}})});
+var nxt=$('#nxt'),cur=$('#cur'),barI=$('#bar i'),railA=$$('#rail a');
+nxt.addEventListener('click',function(){var i=STATIC?staticScene():sceneAt(W.scrollY);if(i<SC.length-1){go(i+1);track('hv_next',{to:SC[i+1].id})}});
+function setNav(n){
+  if(n===curNav)return;curNav=n;
+  railA.forEach(function(a,j){if(j===n)a.setAttribute('aria-current','step');else a.removeAttribute('aria-current');a.classList.toggle('past',j<n)});
+  cur.textContent=n<0?'Overview':('0'+(n+1)+' / 05 · '+NAVN[n]);
+}
+var curScene=-1;
+function setNext(i){if(i===curScene)return;curScene=i;if(i>=SC.length-1){nxt.hidden=true;return}nxt.hidden=false;var nn=SC[i+1].nav;nxt.textContent=nn===SC[i].nav?'Next ↓':'Next: '+NAVN[nn]+' ↓'}
+// keyboard focus inside a hidden step brings that step on screen
+D.getElementById('main').addEventListener('focusin',function(e){
+  if(STATIC)return;var st=e.target.closest('[data-k]');if(!st)return;
+  var sc=e.target.closest('.sc');var i=SC.findIndex(function(s){return s.el===sc});if(i<0)return;
+  if(i===SC.length-1){ // the close: lift it until the focused control is on screen
+    var r=e.target.getBoundingClientRect(),need=r.bottom+24-VH;
+    var y=need>0?TOTAL+cl(CSH+need,0,OV):(r.top<(MOB?94:80)?TOTAL+cl(CSH-((MOB?94:80)-r.top+16),0,OV):Math.max(W.scrollY,TOTAL));
+    if(Math.abs(y-W.scrollY)>1||!st.classList.contains('on'))W.scrollTo(0,Math.round(y));return}
+  if(st.classList.contains('on'))return;
+  W.scrollTo(0,Math.round(stepY(i,+st.getAttribute('data-k').split('-')[0])));
+});
+// Tab past the last control starts a second cycle from the top instead of dropping focus to the page
+function focusables(){return $$('a[href],button,[tabindex="0"]').filter(function(e){if(e.closest('[hidden]'))return false;var cs=getComputedStyle(e);if(cs.display==='none'||cs.visibility==='hidden')return false;var r=e.getBoundingClientRect();return r.width>0&&r.height>0})}
+D.addEventListener('keydown',function(e){if(e.key!=='Tab'||e.shiftKey||e.altKey||e.ctrlKey||e.metaKey)return;var f=focusables();if(!f.length||D.activeElement!==f[f.length-1])return;
+  e.preventDefault();go(0,true);Y=W.scrollY;ui(Y);try{f[0].focus({preventScroll:true})}catch(x){f[0].focus()}});
+// per-step keyboard stop: moves to the next step (or the next section) and keeps focus there
+function stepList(){var L=[];SC.forEach(function(s,i){s.cuts.forEach(function(c,k){L.push([i,k])})});return L}
+$$('[data-next]').forEach(function(btn){btn.addEventListener('click',function(){
+  var sc=btn.closest('.sc'),i=SC.findIndex(function(s){return s.el===sc}),stEl=btn.closest('[data-k]'),kk=+stEl.getAttribute('data-k').split('-').pop();
+  var L=stepList(),pos=L.findIndex(function(v){return v[0]===i&&v[1]===kk}),nx=L[Math.min(pos+1,L.length-1)];
+  var tgtSt=null;SC[nx[0]].ks.forEach(function(o){if(!tgtSt&&o.a<=nx[1]&&o.b>=nx[1]&&o.a===nx[1])tgtSt=o.el});if(!tgtSt)SC[nx[0]].ks.forEach(function(o){if(o.a<=nx[1]&&o.b>=nx[1])tgtSt=o.el});
+  if(STATIC){(tgtSt||SC[nx[0]].el).scrollIntoView({behavior:'auto',block:'start'});if(MOB)W.scrollBy(0,-94)}
+  else W.scrollTo(0,Math.round(nx[0]===SC.length-1?TOTAL:stepY(nx[0],nx[1])));
+  var f=tgtSt&&($('button[data-next],button,a[href]',tgtSt));if(nx[0]===SC.length-1)f=$('[data-copy="close"]');
+  if(f)setTimeout(function(){try{f.focus({preventScroll:true})}catch(x){f.focus()}},60);
+  track('hv_next_step',{to:SC[nx[0]].id+':'+nx[1]})})});
+$('#ledBy').addEventListener('click',function(e){e.preventDefault();if(STATIC){$('#lead').scrollIntoView({behavior:'smooth'})}else W.scrollTo({top:Math.round(stepY(5,1)),behavior:'smooth'});setTimeout(function(){try{$('#h-lead').focus({preventScroll:true})}catch(x){}},STATIC?400:700);track('hv_nav',{to:'lead'})});
+
+/* ================= cost figure: counts up once, on first view ================= */
+var figEl=$('#fig'),FIG=177171,figDone=RM;
+function figUp(){if(figDone)return;figDone=true;var t0=performance.now();
+  (function step(){var k=eo((performance.now()-t0)/900);figEl.textContent='$'+Math.round(FIG*k).toLocaleString('en-US');if(k<1)requestAnimationFrame(step);else figEl.textContent='$177,171'})()}
+if(!RM&&!STATIC)figEl.textContent='$0';
+
+/* ================= count-up proof ================= */
+var counted=false;
+function countUp(){if(counted||RM)return;counted=true;var els=$$('[data-cu]'),t0=performance.now();
+  function f(v,el){var m=el.getAttribute('data-fm');v=Math.round(v);return m==='m'?'$'+v+'M':m==='mm'?'$'+v+'M':m==='p'?String(v):'#'+v}
+  function fin(el){var m=el.getAttribute('data-fm'),to=el.getAttribute('data-cu');el.textContent=m==='m'?'$'+to+'M+':m==='mm'?'$'+to+'M+':m==='p'?to+'+':'#'+to}
+  (function step(){var k=eo((performance.now()-t0)/650);els.forEach(function(el){var a=+(el.getAttribute('data-from')||0),b=+el.getAttribute('data-cu');el.textContent=k>=1?'':f(lerp(a,b,k),el);if(k>=1)fin(el)});if(k<1)requestAnimationFrame(step)})();
+}
+
+/* ================= story state from scroll ================= */
+var Y=0;
+function story(y){
+  var o={};
+  var s1=pOf(1,y),s2=pOf(2,y),s3=pOf(3,y),s4=pOf(4,y),s6=pOf(6,y);
+  o.d=y<SC[1].y0?0:sm((s1-.1)/.36);
+  o.turn=y<SC[1].y0?0:sm(s1/.24);
+  o.arr=[0,1,2,3].map(function(j){return y<SC[4].y0?0:cl((s4-(.48+.09*j))/.12,0,1)});
+  o.pile=y<SC[2].y0?0:(y>=SC[3].y0?sm(.25+s3/.4*.75):sm((s2-.35)/.65)*.25);if(y>=SC[4].y0)o.pile=0;
+  o.e=y<SC[6].y0?0:cl(s6/.36,0,1);
+  return o;
+}
+// camera frames
+var PC=[-.05,-4.5,1.45],FLOOR=-4.5;
+function frame(i,p,o){
+  var s=SC[i],f={ax:s.ax,ay:s.ay,aw:s.aw,ah:s.ah,fit:(i===3||i===6)?0:1,ext:1.14,T:[0,0,0],el:22,az:-6,roll:-9,tau:0,rr:1,idle:0,hide:0};
+  if(i===0){f.idle=1}
+  else if(i===1){var t=sm(p/.28);f.roll=lerp(-9,6,t);f.el=lerp(22,25,t);f.az=lerp(-6,14,t);f.ext=lerp(1.14,1.12,t)}
+  // problem: close, low and tilted, the gap turned toward the reader
+  else if(i===2){f.roll=lerp(6,8,p);f.el=MOB?lerp(22,19,p):lerp(32,28,p);f.az=lerp(26,18,p);f.T=[.05,MOB?-.42:-.62,.2];f.ext=lerp(MOB?1.16:1.1,MOB?1.1:1.04,p)}
+  // cost: down on the pile
+  else if(i===3){f.roll=4;f.el=lerp(MOB?26:34,MOB?21:27,p);f.az=lerp(4,12,p);f.T=[PC[0],PC[1]+.3,PC[2]];f.ext=lerp(MOB?.98:.9,MOB?.86:.78,p)}
+  // solution: the ring turns to face the reader and the pieces assemble into the gap; then it eases toward the proof framing
+  else if(i===4){var c=sm((p-.88)/.1),w=sm((p-.3)/.16),fr={roll:lerp(6,0,w),el:lerp(24,MOB?18:12,w),az:lerp(14,MOB?6:0,w),tau:lerp(0,MOB?26:64,w),ext:lerp(MOB?1.3:1.12,MOB?1.26:1.1,w)};
+    var pf=frame(5,0);f.roll=lerp(fr.roll,pf.roll,c);f.el=lerp(fr.el,pf.el,c);f.az=lerp(fr.az,pf.az,c);f.tau=lerp(fr.tau,pf.tau,c);f.ext=lerp(fr.ext,pf.ext,c)}
+  // proof: wide and low
+  else if(i===5){f.roll=-3;f.el=MOB?16:15;f.az=0;f.ext=MOB?1.22:1.26;f.idle=1}
+  else if(i===6){f.roll=0;f.el=8;f.tau=82;f.az=0;f.ext=1.07;f.hide=1}
+  return f;
+}
+function mixF(a,b,t){var o={};for(var k in a){if(k==='T')o.T=[lerp(a.T[0],b.T[0],t),lerp(a.T[1],b.T[1],t),lerp(a.T[2],b.T[2],t)];else o[k]=lerp(a[k],b[k],t)}return o}
+var REP=[0,1,.6,1,1,.5,1];
+function camTarget(y){
+  if(STATIC){var i=staticGL();return i<0?frame(0,0):frame(i,REP[i])}
+  var i=sceneAt(y),p=pOf(i,y),f=frame(i,p),b=UNIT*.18;
+  if(i>0&&y<SC[i].y0+b){return mixF(frame(i-1,1),f,sm((y-(SC[i].y0-b))/(2*b)))}
+  if(i<SC.length-1&&y>SC[i+1].y0-b){return mixF(f,frame(i+1,0),sm((y-(SC[i+1].y0-b))/(2*b)))}
+  return f;
+}
+function staticScene(){var best=0,bd=1e9;SC.forEach(function(s,i){var r=s.el.getBoundingClientRect();var d=Math.abs((r.top+r.bottom)/2-VH/2);if(r.bottom>0&&r.top<VH&&d<bd){bd=d;best=i}});return best}
+// reduced motion: the still 3D frame belongs to whichever of hero, leak or eclipse has the most of its visual on screen
+function staticGL(){var best=-1,ba=0;[0,2,6].forEach(function(i){var r=SC[i].vz.getBoundingClientRect();if(!r.height)return;var a=Math.max(0,Math.min(r.bottom,VH)-Math.max(r.top,0))/r.height;if(a>ba+1e-3){ba=a;best=i}});return ba>.15?best:-1}
+function staticStory(i){return {d:i>=1&&i<4?1:0,turn:i>=1?1:0,arr:i>=4?[1,1,1,1]:[0,0,0,0],pile:i===3?1:0,e:i===6?1:0}}
+
+/* ================= UI per scroll ================= */
+// ember details appear only once their step (and every parent step) is fully opaque: ember never shows through partial opacity
+function opaque(el){while(el&&el!==D.body){if(+getComputedStyle(el).opacity<1)return false;el=el.parentElement}return true}
+function solidify(el){clearTimeout(el._sv);(function chk(){if(!el.classList.contains('on'))return;if(opaque(el)){el.classList.add('solid');$$('[data-k].on',el).forEach(function(c){if(opaque(c))c.classList.add('solid')})}else el._sv=setTimeout(chk,80)})()}
+var lastUI={i:-1,k:-1},reached={};
+function ui(y){
+  if(STATIC){
+    var si=staticScene();setNav(SC[si].nav);setNext(si);barI.style.transform='scaleX('+cl(y/Math.max(1,H.scrollHeight-VH),0,1)+')';
+    if(SC[si].id==='proof')countUp();return}
+  var i=sceneAt(y),p=pOf(i,y),k=stepOf(i,p);
+  SC.forEach(function(s,j){s.el.classList.toggle('act',j===i);s.ks.forEach(function(o){var on=j===i&&k>=o.a&&k<=o.b;if(on!==o.el.classList.contains('on')){o.el.classList.toggle('on',on);if(!on)o.el.classList.remove('solid');else solidify(o.el)}})});
+  setNav(SC[i].nav);setNext(i);
+  var sh=i===SC.length-1?Math.round(cl(y-TOTAL,0,OV)):0;if(sh!==CSH){CSH=sh;SC[6].el.style.transform=sh?'translateY('+(-sh)+'px)':''}
+  barI.style.transform='scaleX('+cl(y/TOTAL,0,1)+')';
+  if(i===4){var sa=story(y).arr;$$('.keep li').forEach(function(li,j){li.classList.toggle('in',sa[j]>=.98)})}
+  if(i===5&&k===0)countUp();
+  if(i===3&&k>=1)figUp();
+  if(!reached[SC[i].id]){reached[SC[i].id]=1;track('hv_reach',{section:SC[i].id})}
+  HV.i=i;HV.k=k;HV.p=p;
+}
+
+/* ================= WebGL ================= */
+var cv=D.getElementById('gl'),cvf=D.getElementById('glf'),G0=null,G1=null,glOK=false,DPR=1;
+var M={
+ I:function(){var m=new Float32Array(16);m[0]=m[5]=m[10]=m[15]=1;return m},
+ mul:function(a,b){var o=new Float32Array(16);for(var c=0;c<4;c++)for(var r=0;r<4;r++)o[c*4+r]=a[r]*b[c*4]+a[4+r]*b[c*4+1]+a[8+r]*b[c*4+2]+a[12+r]*b[c*4+3];return o},
+ T:function(x,y,z){var m=M.I();m[12]=x;m[13]=y;m[14]=z;return m},
+ S:function(x,y,z){var m=M.I();m[0]=x;m[5]=y;m[10]=z;return m},
+ Rx:function(a){var c=Math.cos(a),s=Math.sin(a),m=M.I();m[5]=c;m[6]=s;m[9]=-s;m[10]=c;return m},
+ Ry:function(a){var c=Math.cos(a),s=Math.sin(a),m=M.I();m[0]=c;m[2]=-s;m[8]=s;m[10]=c;return m},
+ Rz:function(a){var c=Math.cos(a),s=Math.sin(a),m=M.I();m[0]=c;m[1]=s;m[4]=-s;m[5]=c;return m},
+ Ax:function(x,y,z,a){var l=Math.hypot(x,y,z)||1;x/=l;y/=l;z/=l;var c=Math.cos(a),s=Math.sin(a),t=1-c,m=M.I();
+   m[0]=t*x*x+c;m[1]=t*x*y+s*z;m[2]=t*x*z-s*y;m[4]=t*x*y-s*z;m[5]=t*y*y+c;m[6]=t*y*z+s*x;m[8]=t*x*z+s*y;m[9]=t*y*z-s*x;m[10]=t*z*z+c;return m},
+ persp:function(fy,as,n,f,ox,oy){var t=1/Math.tan(fy/2),m=new Float32Array(16);m[0]=t/as;m[5]=t;m[8]=-ox;m[9]=-oy;m[10]=(f+n)/(n-f);m[11]=-1;m[14]=2*f*n/(n-f);return m},
+ look:function(e,t){var fx=t[0]-e[0],fy=t[1]-e[1],fz=t[2]-e[2],fl=Math.hypot(fx,fy,fz);fx/=fl;fy/=fl;fz/=fl;
+   var sx=-fz,sy=0,sz=fx,sl=Math.hypot(sx,sy,sz)||1;sx/=sl;sz/=sl;
+   var ux=sy*fz-sz*fy,uy=sz*fx-sx*fz,uz=sx*fy-sy*fx,m=M.I();
+   m[0]=sx;m[4]=sy;m[8]=sz;m[1]=ux;m[5]=uy;m[9]=uz;m[2]=-fx;m[6]=-fy;m[10]=-fz;
+   m[12]=-(sx*e[0]+sy*e[1]+sz*e[2]);m[13]=-(ux*e[0]+uy*e[1]+uz*e[2]);m[14]=fx*e[0]+fy*e[1]+fz*e[2];return m}
+};
+function xf(m,x,y,z){return [m[0]*x+m[4]*y+m[8]*z+m[12],m[1]*x+m[5]*y+m[9]*z+m[13],m[2]*x+m[6]*y+m[10]*z+m[14]]}
+function rotOnly(m){var o=new Float32Array(m);o[12]=o[13]=o[14]=0;return o}
+
+var VS_BOX='#version 300 es\nlayout(location=0) in vec3 aP;layout(location=1) in vec3 aN;layout(location=2) in mat4 aM;layout(location=6) in vec4 aX;uniform mat4 uVP;out vec3 vN;out vec3 vL;out vec4 vX;void main(){vec4 w=aM*vec4(aP,1.);gl_Position=uVP*w;vN=mat3(aM)*aN;vL=aP;vX=aX;}';
+var MASK='uniform vec4 uR[48];uniform int uN;bool masked(vec2 f){for(int i=0;i<48;i++){if(i>=uN)break;vec4 r=uR[i];if(f.x>r.x&&f.x<r.z&&f.y>r.y&&f.y<r.w)return true;}return false;}';
+var FS_BOX='#version 300 es\nprecision highp float;in vec3 vN;in vec3 vL;in vec4 vX;uniform vec3 uLd;out vec4 o;'+MASK+
+ 'float art(vec2 q){float c=.94;if(abs(q.x)<.41&&abs(q.y)<.31)c=.5;if(abs(q.x)<.37&&abs(q.y)<.25&&abs(q.x)>.33)c=.62;float r=length(vec2(q.x*2.3,q.y));if(r<.21)c=.9;if(r<.12)c=.66;if(r<.07)c=.9;return c;}'+
+ 'void main(){if(masked(gl_FragCoord.xy))discard;vec3 N=normalize(vN);float k=vX.x;float b;bool top=abs(vL.y)>.49;'+
+ 'if(k<.5)b=top?art(vL.xz):.7;else if(k<1.5)b=top?art(vL.xz):(.38+.12*step(.5,fract(vL.y*8.+.25)));else b=.86;'+
+ 'float d=max(dot(N,uLd),0.);float c=b*(.30+.22*(.5+.5*N.y)+.62*d)*vX.y;o=vec4(vec3(c),1.);}';
+var VS_FLAT='#version 300 es\nlayout(location=0) in vec3 aP;uniform mat4 uVP;uniform mat4 uM;void main(){gl_Position=uVP*uM*vec4(aP,1.);}';
+var FS_FLAT='#version 300 es\nprecision highp float;uniform vec3 uC;out vec4 o;'+MASK+'void main(){if(masked(gl_FragCoord.xy))discard;o=vec4(uC,1.);}';
+var VS_DUST='#version 300 es\nlayout(location=0) in vec4 aP;uniform mat4 uVP;uniform float uD;out float vG;void main(){vec4 p=uVP*vec4(aP.xyz,1.);gl_Position=p;float w=max(p.w,.3);gl_PointSize=floor(clamp(aP.w*7./w,1.,2.))*uD;vG=clamp(.5-.022*w,.16,.46)*(.65+.35*fract(aP.w*13.));}';
+var FS_DUST='#version 300 es\nprecision highp float;in float vG;out vec4 o;'+MASK+'void main(){if(masked(gl_FragCoord.xy))discard;o=vec4(vec3(vG),1.);}';
+
+function boxMesh(){var d=[];function q(a,b,c,e,n){[a,b,c,a,c,e].forEach(function(p){d.push(p[0],p[1],p[2],n[0],n[1],n[2])})}
+  var x0=-.5,x1=.5,y0=-.5,y1=.5,z0=-.5,z1=.5;
+  q([x0,y1,z1],[x1,y1,z1],[x1,y1,z0],[x0,y1,z0],[0,1,0]);q([x0,y0,z0],[x1,y0,z0],[x1,y0,z1],[x0,y0,z1],[0,-1,0]);
+  q([x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1],[0,0,1]);q([x1,y0,z0],[x0,y0,z0],[x0,y1,z0],[x1,y1,z0],[0,0,-1]);
+  q([x1,y0,z1],[x1,y0,z0],[x1,y1,z0],[x1,y1,z1],[1,0,0]);q([x0,y0,z0],[x0,y0,z1],[x0,y1,z1],[x0,y1,z0],[-1,0,0]);
+  return new Float32Array(d)}
+// ring band: radial .93..1.07 (14% of radius), height .05
+var RI=.93,RO=1.07,RH=.025,GAP0=40*DEG,PW=15*DEG;
+function arcInto(d,a0,a1,n){for(var i=0;i<n;i++){var u0=a0+(a1-a0)*i/n,u1=a0+(a1-a0)*(i+1)/n,c0=Math.cos(u0),s0=Math.sin(u0),c1=Math.cos(u1),s1=Math.sin(u1);
+    function P(r,y,c,s){return [r*c,y,r*s]}
+    var A=[P(RI,RH,c0,s0),P(RO,RH,c0,s0),P(RO,RH,c1,s1),P(RI,RH,c1,s1)],B=[P(RI,-RH,c0,s0),P(RO,-RH,c0,s0),P(RO,-RH,c1,s1),P(RI,-RH,c1,s1)];
+    function q(a,b,c,e){[a,b,c,a,c,e].forEach(function(p){d.push(p[0],p[1],p[2])})}
+    q(A[0],A[1],A[2],A[3]);q(B[0],B[3],B[2],B[1]);q(A[1],B[1],B[2],A[2]);q(A[0],A[3],B[3],B[0])}
+  function cap(u){var c=Math.cos(u),s=Math.sin(u);[[RI,RH],[RO,RH],[RO,-RH],[RI,RH],[RO,-RH],[RI,-RH]].forEach(function(p){d.push(p[0]*c,p[1],p[0]*s)})}
+  cap(a0);cap(a1)}
+function discInto(d,n){for(var i=0;i<n;i++){var a0=i/n*TAU,a1=(i+1)/n*TAU;d.push(0,0,0,Math.cos(a0),0,Math.sin(a0),Math.cos(a1),0,Math.sin(a1))}}
+var RANG={};
+function ringMesh(){var d=[];RANG.main=[0];arcInto(d,GAP0+4*PW,GAP0+TAU,150);RANG.main.push(d.length/3);
+  RANG.pc=[];for(var j=0;j<4;j++){var s=d.length/3;arcInto(d,GAP0+j*PW,GAP0+(j+1)*PW,8);RANG.pc.push([s,d.length/3-s])}
+  var s2=d.length/3;discInto(d,160);RANG.disc=[s2,d.length/3-s2];return new Float32Array(d)}
+function dustData(){var r=rnd(4242),n=MOB?900:1500,d=new Float32Array(n*4);for(var i=0;i<n;i++){d[i*4]=(r()*2-1)*11;d[i*4+1]=-7+r()*13;d[i*4+2]=-14+r()*20;d[i*4+3]=1+r()*1.6}return d}
+
+var MAXI=420,INST=new Float32Array(MAXI*20),INSTF=new Float32Array(80*20);
+function mkCtx(c,front){
+  var g=null;try{g=c.getContext('webgl2',{antialias:true,alpha:!!front,premultipliedAlpha:true,depth:true,powerPreference:'high-performance'})}catch(e){}
+  if(!g)return null;
+  function sh(t,s){var o=g.createShader(t);g.shaderSource(o,s);g.compileShader(o);if(!g.getShaderParameter(o,g.COMPILE_STATUS))throw new Error(g.getShaderInfoLog(o));return o}
+  function pr(v,f){var p=g.createProgram();g.attachShader(p,sh(g.VERTEX_SHADER,v));g.attachShader(p,sh(g.FRAGMENT_SHADER,f));g.linkProgram(p);if(!g.getProgramParameter(p,g.LINK_STATUS))throw new Error('link');var u={},n=g.getProgramParameter(p,g.ACTIVE_UNIFORMS);for(var i=0;i<n;i++){var nm=g.getActiveUniform(p,i).name;u[nm]=g.getUniformLocation(p,nm)}return {p:p,u:u}}
+  var C={g:g,front:!!front};
+  C.box=pr(VS_BOX,FS_BOX);
+  C.vBox=g.createVertexArray();g.bindVertexArray(C.vBox);
+  var mb=g.createBuffer();g.bindBuffer(g.ARRAY_BUFFER,mb);g.bufferData(g.ARRAY_BUFFER,boxMesh(),g.STATIC_DRAW);
+  g.enableVertexAttribArray(0);g.vertexAttribPointer(0,3,g.FLOAT,false,24,0);g.enableVertexAttribArray(1);g.vertexAttribPointer(1,3,g.FLOAT,false,24,12);
+  C.ib=g.createBuffer();g.bindBuffer(g.ARRAY_BUFFER,C.ib);g.bufferData(g.ARRAY_BUFFER,(front?INSTF:INST).byteLength,g.DYNAMIC_DRAW);
+  for(var i=0;i<5;i++){g.enableVertexAttribArray(2+i);g.vertexAttribPointer(2+i,4,g.FLOAT,false,80,i*16);g.vertexAttribDivisor(2+i,1)}
+  g.bindVertexArray(null);
+  if(!front){
+    C.flat=pr(VS_FLAT,FS_FLAT);C.dust=pr(VS_DUST,FS_DUST);
+    C.vRing=g.createVertexArray();g.bindVertexArray(C.vRing);var rb=g.createBuffer();g.bindBuffer(g.ARRAY_BUFFER,rb);g.bufferData(g.ARRAY_BUFFER,ringMesh(),g.STATIC_DRAW);g.enableVertexAttribArray(0);g.vertexAttribPointer(0,3,g.FLOAT,false,12,0);
+    C.vDust=g.createVertexArray();g.bindVertexArray(C.vDust);var dd=dustData();C.nDust=dd.length/4;var db=g.createBuffer();g.bindBuffer(g.ARRAY_BUFFER,db);g.bufferData(g.ARRAY_BUFFER,dd,g.STATIC_DRAW);g.enableVertexAttribArray(0);g.vertexAttribPointer(0,4,g.FLOAT,false,16,0);
+    g.bindVertexArray(null);
+  }
+  return C;
+}
+
+/* ---- the cash ---- */
+var BL=.17,BT=.008,BW=.074,SH=.046,RBL=.25,RBW=.109;
+var NR=9,riders=[],falls=[],landed=[],stacks=[],emT=0;
+function initCash(){
+  riders=[];for(var i=0;i<NR;i++)riders.push({a:i/NR*TAU+.2,s:1,bob:i*1.7,k:.86+.24*((i*7)%5)/4});
+  stacks=pileSlots();HV.nStacks=stacks.length;
+}
+function pileSlots(){
+  var r=rnd(77),R0=MOB?.6:.72,LY=MOB?6:7,out=[];
+  for(var k=0;k<LY;k++){var rk=R0*Math.pow(1-k/LY,.8)*(.95+.05*r()),rot=k%2,sx=rot?BW+.014:BL+.014,sz=rot?BL+.014:BW+.014,ox=(r()-.5)*sx,oz=(r()-.5)*sz,lay=[];
+    for(var gx=-8;gx<=8;gx++)for(var gz=-14;gz<=14;gz++){var x=gx*sx+ox,z=gz*sz+oz,dd=Math.hypot(x,z);
+      if(dd<rk*(.82+.3*r()))lay.push({x:PC[0]+x+(r()-.5)*.03,y:FLOOR+SH/2+k*SH*1.02,z:PC[2]+z+(r()-.5)*.03,ry:(rot?PI/2:0)+(r()-.5)*.45,rx:(r()-.5)*.08,rz:(r()-.5)*.08,d:dd,st:0,yy:0,vy:0,dl:0})}
+    lay.sort(function(a,b){return a.d-b.d});out=out.concat(lay)}
+  return out.slice(0,MOB?170:250);
+}
+function pileTop(x,z,full){var dd=Math.hypot(x-PC[0],z-PC[2]),R0=MOB?.6:.72,LY=MOB?6:7;if(dd>R0)return FLOOR;return FLOOR+SH*LY*Math.pow(1-dd/R0,1.25)*full}
+
+/* ---- render state ---- */
+var cam=null,st=null,tNow=0,intro=RM?1:0,eyeW=[0,0,10],camD=10,Mring=M.I();
+var PRES=[1,1,1,1];
+function damp(cur,tgt,k,dt){var a=1-Math.exp(-k*dt);for(var key in tgt){if(key==='T'){for(var j=0;j<3;j++)cur.T[j]+=(tgt.T[j]-cur.T[j])*a}else if(key==='arr'){for(var j2=0;j2<4;j2++)cur.arr[j2]+=(tgt.arr[j2]-cur.arr[j2])*a}else cur[key]+=(tgt[key]-cur[key])*a}}
+function cloneF(f){var o={};for(var k in f)o[k]=k==='T'||k==='arr'?f[k].slice():f[k];return o}
+
+function ringModel(f,t){var idle=RM?0:f.idle;var roll=(f.roll+idle*1.6*Math.sin(t*.35))*DEG,tau=(f.tau+idle*1.2*Math.sin(t*.27+1))*DEG;return M.mul(M.Rz(roll),M.Rx(tau))}
+var PSC=[1,1,1,1];
+function pieceModel(j,o){
+  // detach: each piece loosens, then tumbles outward and away, fanning apart and shrinking before it can leave the ring's zone.
+  // assemble: each piece returns along that path, grows in just outside its slot, travels into the gap and seats with a small settle.
+  var u=cl(o.arr[j],0,1),L=sm(o.d/.3),out=sm((o.d-.22-.07*j)/.6),fan=(j-1.5);
+  var a=GAP0+(j+.5)*PW,cx=Math.cos(a),cz=Math.sin(a),rad,up,tilt,sc,spin,tg;
+  if(u>.001){var ga=sm(u/.25),de=eio((u-.12)/.68),se=sm((u-.8)/.2);
+    rad=lerp(.42,.0,de);up=lerp(.24,.07,de)*(1-se);tilt=lerp(1.1,0,de);spin=lerp(.4*fan,0,de);tg=lerp(.06*fan,0,de);sc=ga}
+  else{rad=.06*L+.45*out;up=.04*L+.3*out;tilt=.15*L+1.3*out;spin=.45*fan*out;tg=.06*fan*out;sc=1-sm((out-.12)/.55)}
+  PRES[j]=(u>=.97||(L<.12&&out<.01))?1:0;PSC[j]=sc;
+  var px=cx*(1+rad)-cz*tg,pz=cz*(1+rad)+cx*tg;
+  var loc=M.mul(M.T(px,up,pz),M.mul(M.Ry(-spin),M.mul(M.Ax(-cz,0,cx,tilt),M.mul(M.S(sc,sc,sc),M.T(-cx,0,-cz)))));
+  return M.mul(Mring,loc);
+}
+function putInst(A,n,m,kind,shade){var o=n*20;for(var i=0;i<16;i++)A[o+i]=m[i];A[o+16]=kind;A[o+17]=shade;A[o+18]=0;A[o+19]=0}
+function inGap(a){a=((a%TAU)+TAU)%TAU;var r=a-GAP0;if(r<0||r>=4*PW)return -1;return Math.floor(r/PW)}
+
+function simCash(dt,o,f){
+  var leakOK=!STATIC;
+  var rs=1-sm(o.e*1.6);
+  // riders
+  for(var i=0;i<riders.length;i++){var R=riders[i];
+    if(!RM&&!STATIC)R.a+=dt*(sceneAt(Y)===5?.32:.5)*spin;
+    if(R.s<1)R.s=Math.min(1,R.s+dt*2.2);
+    var j=inGap(R.a);
+    if(leakOK&&j>=0&&!PRES[j]&&rs>.5){
+      // slips through the gap
+      var lp=[Math.cos(R.a)*1.02,RH+.075,Math.sin(R.a)*1.02],P=xf(Mring,lp[0],lp[1],lp[2]);
+      var tg=xf(rotOnly(Mring),-Math.sin(R.a),0,Math.cos(R.a)),toward=Math.random()<.35?1.6+Math.random()*.6:.2+Math.random()*.5;
+      var dir=[eyeW[0]-P[0],0,eyeW[2]-P[2]],dl=Math.hypot(dir[0],dir[2])||1;
+      falls.push({P:P,V:[tg[0]*.42+dir[0]/dl*toward,.05,tg[2]*.42+dir[2]/dl*toward],R:M.mul(rotOnly(Mring),M.Ry(-(R.a+PI/2))),w:[Math.random()-.5,Math.random()-.5,Math.random()-.5],ws:2+Math.random()*3});
+      R.a+=PI*(.9+Math.random()*.2);R.s=0;
+    }
+  }
+  // the problem step: a steady stream of bills drops through the open gap
+  if(!RM&&!STATIC&&sceneAt(Y)===2&&o.d>.6&&!PRES[1]&&!PRES[2]){emT-=dt;if(emT<=0){emT=.26+Math.random()*.1;
+      var ea=GAP0+(.5+Math.random()*3)*PW,er=.97+Math.random()*.08,EP=xf(Mring,Math.cos(ea)*er,-RH,Math.sin(ea)*er),etg=xf(rotOnly(Mring),-Math.sin(ea),0,Math.cos(ea)),esd=(Math.random()-.5)*.3;
+      falls.push({P:EP,V:[etg[0]*esd,-.15,etg[2]*esd+.08],R:M.mul(rotOnly(Mring),M.mul(M.Ry(-(ea+PI/2)),M.Rx((Math.random()-.5)*.6))),w:[Math.random()-.5,.2,Math.random()-.5],ws:1.4+Math.random()*1.6,g:1.25})}}
+  // falling bills
+  for(var k=falls.length-1;k>=0;k--){var F=falls[k];
+    F.V[1]-=(F.g||2.3)*dt;var dmp=Math.exp(-.7*dt);F.V[0]*=dmp;F.V[2]*=dmp;
+    F.P[0]+=F.V[0]*dt;F.P[1]+=F.V[1]*dt;F.P[2]+=F.V[2]*dt;
+    F.R=M.mul(M.Ax(F.w[0],F.w[1],F.w[2],F.ws*dt),F.R);
+    var top=pileTop(F.P[0],F.P[2],o.pile);
+    if(F.P[1]<=top+.004){falls.splice(k,1);landed.push({P:[F.P[0],top+.004,F.P[2]],ry:Math.random()*TAU,s:1});if(landed.length>36)landed[0].dying=1}
+    else if(falls.length>60)falls.splice(k,1);
+  }
+  if(o.pile<.01)for(var q0=0;q0<landed.length;q0++)landed[q0].dying=1;
+  for(var q=landed.length-1;q>=0;q--){var Lb=landed[q];if(Lb.dying){Lb.s-=dt*3;if(Lb.s<=0)landed.splice(q,1)}}
+  // pile stacks
+  var N=Math.round(stacks.length*o.pile),started=0;
+  for(var s=0;s<stacks.length;s++){var S=stacks[s];
+    if(s<N){if(S.st===0){if(RM||STATIC){S.st=2;S.yy=S.y}else{S.st=1;S.yy=S.y+.5+Math.random()*.35;S.vy=0;S.dl=started*.016;started++}}
+      if(S.st===1){if(S.dl>0)S.dl-=dt;else{S.vy-=9*dt;S.yy+=S.vy*dt;if(S.yy<=S.y){S.yy=S.y;S.st=2}}}}
+    else S.st=0}
+}
+// a falling bill stays inside the visual zone: it dims and shrinks to nothing over the last 48px before any edge of the zone,
+// so it never reaches the text beside or under the visual
+var VPc=null;
+function zoneFade(P,f){if(!VPc)return 1;var m=VPc,cx=m[0]*P[0]+m[4]*P[1]+m[8]*P[2]+m[12],cy=m[1]*P[0]+m[5]*P[1]+m[9]*P[2]+m[13],cw=m[3]*P[0]+m[7]*P[1]+m[11]*P[2]+m[15];
+  if(cw<=.05)return 0;var sx=(cx/cw*.5+.5)*VW,sy=(1-(cy/cw*.5+.5))*VH,r=.16*(VH/2)/Math.tan(15*DEG)/cw,ay=f.ay-(sceneAt(Y)===SC.length-1?CSH:0);
+  var ov=Math.max(sy+r-(ay+f.ah/2),(ay-f.ah/2)-(sy-r),sx+r-(f.ax+f.aw/2),(f.ax-f.aw/2)-(sx-r));FB=[sx-r,sy-r,sx+r,sy+r];return 1-sm((ov+48)/48)}
+var FB=null;
+function buildInst(o,f,t){
+  var nb=0,nf=0,rs=1-sm(o.e*1.6),thr=camD*.8,fbx=HV.fbx=[];
+  function put(m,kind,shade,P){if(P&&kind===0&&Math.hypot(P[0]-eyeW[0],P[1]-eyeW[1],P[2]-eyeW[2])<thr){if(nf<80)putInst(INSTF,nf++,m,kind,shade)}else if(nb<MAXI)putInst(INST,nb++,m,kind,shade)}
+  if(rs>.01)for(var i=0;i<riders.length;i++){var R=riders[i],sc=eo(R.s)*rs;if(sc<.01)continue;if(STATIC&&o.d>.5){var gj=inGap(R.a);if(gj>=0&&!PRES[gj])continue}var bob=RM?0:.014*Math.sin(t*1.1+R.bob);
+    var tw=RM?0:Math.sin(t*.6+R.bob),m=M.mul(Mring,M.mul(M.T(Math.cos(R.a)*1.02,RH+.075+bob,Math.sin(R.a)*1.02),M.mul(M.Ry(-(R.a+PI/2)),M.mul(M.Rx(.18*tw),M.mul(M.Rz(.1+.08*tw),M.S(RBL*sc*R.k,BT,RBW*sc*R.k))))));put(m,0,1)}
+  for(var k=0;k<falls.length;k++){var F=falls[k],fk=zoneFade(F.P,f);if(fk<.02)continue;if(FB)fbx.push(FB.map(Math.round));var fs=.55+.45*fk;var m2=M.mul(M.T(F.P[0],F.P[1],F.P[2]),M.mul(F.R,M.S(RBL*fs,BT,RBW*fs)));put(m2,0,fk,F.P)}
+  for(var q=0;q<landed.length;q++){var Lb=landed[q];put(M.mul(M.T(Lb.P[0],Lb.P[1],Lb.P[2]),M.mul(M.Ry(Lb.ry),M.S(RBL*Lb.s,BT,RBW*Lb.s))),0,.92)}
+  for(var s=0;s<stacks.length;s++){var S=stacks[s];if(!S.st)continue;var R3=M.mul(M.Ry(S.ry),M.mul(M.Rx(S.rx),M.Rz(S.rz))),base=M.mul(M.T(S.x,S.yy,S.z),R3);
+    put(M.mul(base,M.S(BL,SH,BW)),1,1);put(M.mul(base,M.S(.042,SH*1.05,BW*1.05)),2,1)}
+  if(STATIC&&o.d>.5&&o.arr[0]<.5){ // reduced motion: a still frame of the leak, four bills dropping out of the gap
+    var aa=[GAP0+PW*2.2,GAP0+PW*1.3,GAP0+PW*2.8,GAP0+PW*1.8],dy=[.2,.48,.78,1.08],rx=[.5,1.1,.25,.85];for(var z=0;z<4;z++){var a=aa[z],P0=xf(Mring,Math.cos(a),0,Math.sin(a));var P=[P0[0]+.04*(z%2?1:-1),P0[1]-dy[z],P0[2]+.06*z];
+      put(M.mul(M.T(P[0],P[1],P[2]),M.mul(M.Ry(a+z*.7),M.mul(M.Rx(rx[z]),M.S(RBL,BT,RBW)))),0,1)}}
+  return [nb,nf];
+}
+
+function sizeCanvas(){DPR=Math.min(W.devicePixelRatio||1,2);[cv,cvf].forEach(function(c){c.width=Math.round(VW*DPR);c.height=Math.round(VH*DPR);c.style.width=VW+'px';c.style.height=VH+'px'})}
+var LD=(function(){var x=-.35,y=.85,z=.45,l=Math.hypot(x,y,z);return [x/l,y/l,z/l]})();
+var EMB=[232/255,50/255,20/255];
+// text mask: every visible line of text (tight per element) plus the desktop header and rail; the ring, cash and dust never draw there
+var MKA=new Float32Array(48*4),MKN=0,MSEL='h1,h2,h3,p,button,a,blockquote,.nsteps,li',MRG=D.createRange();
+function maskRects(){MKN=0;if(STATIC||HV.nomask)return;var pad=8,i0=sceneAt(Y);
+  function add(r){if(MKN>=48||r.width<1||r.height<1||r.bottom<0||r.top>VH)return;var o=MKN*4;MKA[o]=(r.left-pad)*DPR;MKA[o+1]=(VH-r.bottom-pad)*DPR;MKA[o+2]=(r.right+pad)*DPR;MKA[o+3]=(VH-r.top+pad)*DPR;MKN++}
+  function addEl(el){if(el.closest('[hidden]')||el.closest('.sr')||el.classList.contains('kn')&&!el.matches(':focus-visible'))return;if(el.tagName!=='LI'&&el.parentElement&&el.parentElement.closest('.rows li,.keep li,.how li'))return;if(getComputedStyle(el).visibility==='hidden')return;
+    if(el.tagName==='BUTTON'||el.tagName==='A'||el.classList.contains('nsteps')){add(el.getBoundingClientRect());return}
+    if(!el.querySelector('.sr')){MRG.selectNodeContents(el);add(MRG.getBoundingClientRect());return}
+    // skip screen-reader-only text: its clipped glyphs would widen the box
+    var tw=D.createTreeWalker(el,NodeFilter.SHOW_TEXT),n,u=null;while(n=tw.nextNode()){if(!n.textContent.trim()||n.parentElement.closest('.sr'))continue;MRG.selectNodeContents(n);var b=MRG.getBoundingClientRect();
+      u=u?{left:Math.min(u.left,b.left),top:Math.min(u.top,b.top),right:Math.max(u.right,b.right),bottom:Math.max(u.bottom,b.bottom)}:{left:b.left,top:b.top,right:b.right,bottom:b.bottom}}
+    if(u){u.width=u.right-u.left;u.height=u.bottom-u.top;add(u)}}
+  // desktop: nothing 3D ever draws in the header band or the rail column
+  if(!MOB){var rl=$('#rail').getBoundingClientRect();add({left:-pad,top:-pad,right:VW+pad,bottom:80,width:VW,height:80});add({left:rl.left-24,top:-pad,right:VW+pad,bottom:VH+pad,width:VW,height:VH})}
+  SC.forEach(function(s){if(Math.abs(s.i-i0)>1)return;s.ks.forEach(function(o){if(+getComputedStyle(o.el).opacity<.01)return;$$(MSEL,o.el).forEach(addEl)})});
+  HV.mkn=MKN}
+function setMask(g,P){if(P.u['uR[0]'])g.uniform4fv(P.u['uR[0]'],MKA);if(P.u.uN)g.uniform1i(P.u.uN,MKN)}
+function drawCtx(C,VP,n,arr){var g=C.g;g.useProgram(C.box.p);g.uniformMatrix4fv(C.box.u.uVP,false,VP);g.uniform3fv(C.box.u.uLd,LD);setMask(g,C.box);
+  g.bindVertexArray(C.vBox);g.bindBuffer(g.ARRAY_BUFFER,C.ib);g.bufferSubData(g.ARRAY_BUFFER,0,arr.subarray(0,n*20));g.drawArraysInstanced(g.TRIANGLES,0,36,n);g.bindVertexArray(null)}
+function render(dt){
+  var y=STATIC?W.scrollY:Y;
+  if(STATIC)readAnchors();
+  var tf=camTarget(y),to=STATIC?staticStory(Math.max(0,staticGL())):story(y);
+  if(!cam||RM||STATIC){cam=cloneF(tf);st=cloneF(to)}else{damp(cam,tf,4.2,dt);damp(st,to,4.6,dt);if(to.e===0&&st.e<.04)st.e=0;if(to.pile===0&&st.pile<.04)st.pile=0}
+  var f=cam,o=st;
+  var ef=1+1.4*(1-eo(intro)),ext=f.ext*ef;
+  // anchor scale: px per world unit at the look-at point. Fit the ring's drawn size (tilt, roll, riding bills) to the zone's height as well as its width.
+  var zoomed=f.aw/2/ext,scale=zoomed;
+  if(f.fit>0){var rr=f.roll*DEG,ee=Math.min(90,f.el+f.tau)*DEG,se=Math.sin(ee),ce=Math.cos(ee);
+    var hy=1.09*Math.sqrt(Math.sin(rr)*Math.sin(rr)+se*se*Math.cos(rr)*Math.cos(rr))+.16*ce+Math.abs(f.T[1])*ce;
+    scale=lerp(zoomed,Math.min(zoomed,f.ah/2/(hy*1.12)/ef),f.fit)}
+  var fpx=(VH/2)/Math.tan(15*DEG);camD=fpx/Math.max(scale,1);
+  var el=f.el*DEG,az=f.az*DEG;
+  eyeW=[f.T[0]+camD*Math.cos(el)*Math.sin(az),f.T[1]+camD*Math.sin(el),f.T[2]+camD*Math.cos(el)*Math.cos(az)];
+  var ayE=f.ay-(sceneAt(y)===SC.length-1?CSH:0);
+  var Pm=M.persp(30*DEG,VW/VH,.1,200,2*f.ax/VW-1,1-2*ayE/VH),V=M.look(eyeW,f.T),VP=M.mul(Pm,V);
+  Mring=ringModel(f,tAnim);
+  var pms=[0,1,2,3].map(function(j){return pieceModel(j,o)});
+  simCash(dt,o,f);VPc=VP;
+  var cnt=buildInst(o,f,tAnim);maskRects();caption(o,VP);
+  // back layer
+  var g=G0.g;g.viewport(0,0,cv.width,cv.height);g.clearColor(0,0,0,1);g.clear(g.COLOR_BUFFER_BIT|g.DEPTH_BUFFER_BIT);
+  if(STATIC){var ssi=staticGL();HV.sgl=ssi;if(ssi<0){HV.n=[0,0];return}}
+  g.enable(g.DEPTH_TEST);g.depthFunc(g.LESS);g.depthMask(true);
+  g.useProgram(G0.dust.p);setMask(g,G0.dust);g.uniformMatrix4fv(G0.dust.u.uVP,false,VP);g.uniform1f(G0.dust.u.uD,DPR);g.bindVertexArray(G0.vDust);g.drawArrays(g.POINTS,0,G0.nDust);
+  g.useProgram(G0.flat.p);setMask(g,G0.flat);g.uniformMatrix4fv(G0.flat.u.uVP,false,VP);g.bindVertexArray(G0.vRing);g.depthFunc(g.ALWAYS);
+  if(o.e>.02&&(STATIC?staticGL()===6:Y>=SC[5].y0)){var sunR=.9*eo(sm(o.e/.45)),mo=-2.2*(1-eio(sm((o.e-.3)/.7)));
+    if(sunR>.01){g.uniformMatrix4fv(G0.flat.u.uM,false,M.mul(Mring,M.mul(M.T(0,-.03,0),M.S(sunR,1,sunR))));g.uniform3fv(G0.flat.u.uC,[1,1,1]);g.drawArrays(g.TRIANGLES,RANG.disc[0],RANG.disc[1])}
+    g.uniformMatrix4fv(G0.flat.u.uM,false,M.mul(Mring,M.mul(M.T(mo,-.02,0),M.S(.86,1,.86))));g.uniform3fv(G0.flat.u.uC,[0,0,0]);g.drawArrays(g.TRIANGLES,RANG.disc[0],RANG.disc[1])}
+  g.uniform3fv(G0.flat.u.uC,EMB);
+  g.uniformMatrix4fv(G0.flat.u.uM,false,Mring);g.drawArrays(g.TRIANGLES,RANG.main[0],RANG.main[1]);
+  for(var j=0;j<4;j++){if(PSC[j]<.02)continue;g.uniformMatrix4fv(G0.flat.u.uM,false,pms[j]);g.drawArrays(g.TRIANGLES,RANG.pc[j][0],RANG.pc[j][1])}
+  g.depthFunc(g.LESS);
+  if(cnt[0])drawCtx(G0,VP,cnt[0],INST);
+  // front layer: bills nearer than the text plane
+  if(G1){var g1=G1.g;if(cnt[1]||G1.dirty){g1.viewport(0,0,cvf.width,cvf.height);g1.clearColor(0,0,0,0);g1.clear(g1.COLOR_BUFFER_BIT|g1.DEPTH_BUFFER_BIT);g1.enable(g1.DEPTH_TEST);if(cnt[1])drawCtx(G1,VP,cnt[1],INSTF);G1.dirty=cnt[1]>0}}
+  HV.cam=f;HV.st=o;HV.n=cnt;HV.falls=falls.length;HV.pres=PRES.slice();
+}
+var capEl=$('#cap'),capTxt='',leakLine=$('#leakLine'),closedLine=$('#closedLine');
+function caption(o,VP){
+  var t='',P=null,i=sceneAt(Y),leaking=o.d>.6&&!(o.arr[0]>.98&&o.arr[1]>.98&&o.arr[2]>.98&&o.arr[3]>.98);
+  var closed=i===4&&o.arr[3]>.98&&pOf(4,Y)>.86;
+  var a=GAP0+2*PW;
+  if(leaking&&i===2){t='Leaking revenue';P=xf(Mring,Math.cos(a)*1.02,-.2,Math.sin(a)*1.02)}
+  else if(closed){t='Gap closed';P=xf(Mring,Math.cos(a)*1.02,-.2,Math.sin(a)*1.02)}
+  if(t==='Leaking revenue')leakLine.classList.add('on');
+  closedLine.classList.toggle('on',closed||(closedLine.classList.contains('on')&&i===4&&o.arr[3]>.98));
+  if(t&&P){var c=[VP[0]*P[0]+VP[4]*P[1]+VP[8]*P[2]+VP[12],VP[1]*P[0]+VP[5]*P[1]+VP[9]*P[2]+VP[13],VP[3]*P[0]+VP[7]*P[1]+VP[11]*P[2]+VP[15]];
+    if(c[2]>0){var sx=(c[0]/c[2]*.5+.5)*VW,sy=(1-(c[1]/c[2]*.5+.5))*VH;if(capTxt!==t){capEl.textContent=t;capTxt=t}
+      var w=capEl.offsetWidth||140,S=SC[i],zt=S.ay-S.ah/2,zb=S.ay+S.ah/2;sx=cl(sx-w/2,Math.max(16,S.ax-S.aw/2),Math.min(VW-w-(MOB?16:200),S.ax+S.aw/2-w));sy=cl(sy+16,Math.max(MOB?100:88,zt),Math.min(VH-40,zb-28));
+      capEl.style.transform='translate('+Math.round(sx)+'px,'+Math.round(sy)+'px)';capEl.classList.add('on');return}}
+  capEl.classList.remove('on');
+}
+function initGL(){
+  try{G0=mkCtx(cv,false);if(!G0)throw new Error('no webgl2');try{G1=mkCtx(cvf,true)}catch(e){G1=null}glOK=true}catch(e){glOK=false;G0=null}
+  HV.glOK=glOK;
+  if(!glOK){H.classList.add('nogl');return}
+  sizeCanvas();initCash();kick();
+}
+
+/* ================= loop ================= */
+var raf=0,last=0,moving=true,lastAct=0,spin=1,tAnim=0;
+function tick(now){raf=0;var dt=Math.min(.05,last?(now-last)/1000:.016);last=now;tNow=now/1000;
+  if(!RM&&intro<1)intro=Math.min(1,intro+dt/1.6);
+  Y=W.scrollY;ui(Y);
+  var idle=(now-lastAct)/1000;spin=RM?0:(sceneAt(Y)===5||sceneAt(Y)===2?1:cl(1-(idle-8)/2,0,1));HV.spin=spin;tAnim+=dt*spin;
+  if(glOK)render(dt);
+  if(!D.hidden&&!RM&&busy())raf=requestAnimationFrame(tick);
+}
+function busy(){if(!glOK)return false;if(intro<1||spin>0||falls.length)return true;for(var s=0;s<stacks.length;s++)if(stacks[s].st===1)return true;for(var q=0;q<landed.length;q++)if(landed[q].dying)return true;
+  if(!cam)return true;var tf=camTarget(Y),d=Math.abs(tf.ax-cam.ax)+Math.abs(tf.ay-cam.ay)+Math.abs(tf.ext-cam.ext)*100+Math.abs(tf.el-cam.el)+Math.abs(tf.az-cam.az)+Math.abs(tf.roll-cam.roll)+Math.abs(tf.tau-cam.tau);if(d>.05)return true;
+  var to=story(Y);if(Math.abs(to.d-st.d)+Math.abs(to.e-st.e)+Math.abs(to.pile-st.pile)>.002)return true;for(var j=0;j<4;j++)if(Math.abs(to.arr[j]-st.arr[j])>.002)return true;HV.stopped=(HV.stopped||0)+1;return false}
+function kick(){lastAct=performance.now();if(!raf&&!D.hidden)raf=requestAnimationFrame(tick)}
+['pointermove','pointerdown','keydown','touchstart'].forEach(function(ev){W.addEventListener(ev,kick,{passive:true})});
+// the story UI (steps, labels, rail) follows scroll at once; the 3D catches up on the next frame
+W.addEventListener('scroll',function(){Y=W.scrollY;ui(Y);kick();
+  // the toast leaves as soon as the reader scrolls on
+  if(toastEl.classList.contains('on')&&Math.abs(Y-toastY)>40){toastHold=false;toastEl.classList.remove('on')}},{passive:true});
+D.addEventListener('visibilitychange',function(){last=0;kick()});
+var lastW=0,lastH=0;
+function onResize(force){var w=H.clientWidth,h=W.innerHeight;if(!force&&w===lastW&&Math.abs(h-lastH)<120)return;lastW=w;lastH=h;layout();if(glOK){var wasM=MOB;sizeCanvas()}lockWidths();Y=W.scrollY;ui(Y);kick()}
+W.addEventListener('resize',function(){onResize(false)});
+try{W.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',function(){location.reload()})}catch(e){}
+
+/* ================= boot ================= */
+lastW=H.clientWidth;lastH=W.innerHeight;layout();Y=W.scrollY;ui(Y);
+if(D.fonts&&D.fonts.ready)D.fonts.ready.then(function(){lockWidths();layout();Y=W.scrollY;ui(Y);kick()});else lockWidths();
+var hashI=SC.findIndex(function(s){return '#'+s.id===location.hash});
+if(hashI>0)go(hashI,true);
+// hero text paints first; the 3D starts on the next frames
+requestAnimationFrame(function(){setTimeout(initGL,0)});
+
+HV.SC=SC;HV.toastFor=toastFor;HV.go=go;HV.story=story;HV.applyPick=applyPick;HV.stepY=stepY;HV.snap=function(){cam=null;intro=1};HV.static=function(){return STATIC};
+HV.TOTAL=function(){return TOTAL};
+})();
+</script>
+</body>
+</html>

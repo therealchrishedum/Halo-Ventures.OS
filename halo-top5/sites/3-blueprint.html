@@ -1,0 +1,1188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Halo Blueprint</title>
+<meta name="description" content="The blueprint comes before the bridge. We help founders and teams go to market.">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap">
+<style>
+@font-face{font-family:'IS Fallback';src:local('Georgia'),local('Times New Roman');size-adjust:88%;ascent-override:96%;descent-override:26%}
+@font-face{font-family:'Mono Fallback';src:local('Menlo'),local('Courier New'),local('DejaVu Sans Mono');size-adjust:100%}
+@font-face{font-family:'IT Fallback';src:local('Helvetica Neue'),local('Arial');size-adjust:96%}
+:root{
+  --black:#000;--white:#fff;--g1:#1C1C1E;--g2:#2C2C2E;--g3:#636366;--g4:#8E8E93;--ember:#E83214;
+  --serif:'Instrument Serif','IS Fallback',Georgia,serif;
+  --mono:'IBM Plex Mono','Mono Fallback',ui-monospace,monospace;
+  --sans:'Inter Tight','IT Fallback',system-ui,sans-serif;
+  --hdr:52px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#000;color:#fff;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{background:#000;color:#fff;font-family:var(--sans);font-size:16px;line-height:1.45;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--ember);outline-offset:3px}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* header */
+.hdr{position:fixed;inset:0 0 auto 0;height:var(--hdr);z-index:20;display:flex;align-items:center;gap:12px;padding:0 16px;background:#000;border-bottom:1px solid var(--g2)}
+.brand{font:600 12px/1 var(--sans);letter-spacing:.1em;white-space:nowrap}
+.brand i{font-style:normal;color:var(--ember)}
+.tally{margin-left:auto;font:500 12px/1 var(--mono);color:#fff;white-space:nowrap;font-variant-numeric:tabular-nums;display:flex;gap:6px;align-items:baseline}
+.tally .tl{color:var(--g4);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.tally .tl .long{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:0 14px;font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;border:1px solid #fff;color:#fff;white-space:nowrap}
+.btn.ember{background:var(--ember);border-color:var(--ember);color:#fff}
+.btn:active{transform:translateY(1px)}
+.hdr .btn{min-height:34px;padding:0 9px;font-size:10px;letter-spacing:.02em}
+.hdr{gap:10px}
+
+/* stage */
+#scrolly{position:relative}
+.stage{position:sticky;top:0;height:100vh;height:100lvh;overflow:hidden;z-index:0}
+#cv{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y}
+.ctrl{position:absolute;z-index:3;display:flex;gap:8px;align-items:center}
+.ctrl.top{top:calc(var(--hdr) + 10px);left:16px;right:16px;justify-content:space-between}
+.lyr{position:relative}
+.lyr>.btn{min-height:32px;padding:0 10px;font-size:11px;border-color:var(--g3);background:#000}
+.lyr-pop{position:absolute;top:38px;left:0;background:#000;border:1px solid var(--g2);padding:6px;display:none;flex-direction:column;gap:4px;min-width:178px}
+.lyr.open .lyr-pop{display:flex}
+.lt{display:flex;align-items:center;gap:10px;min-height:36px;padding:0 8px;font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--g4);text-align:left}
+.lt .bx{width:12px;height:12px;border:1px solid var(--g3);flex:none}
+.lt[aria-pressed=true]{color:#fff}
+.lt[aria-pressed=true] .bx{background:#fff;border-color:#fff}
+.mini{display:flex;align-items:center;gap:8px;background:#000;border:1px solid var(--g2);padding:4px}
+.mini .ml{font:500 9px/1 var(--mono);color:var(--g4);letter-spacing:.12em;text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg)}
+#mm{display:block;width:150px;height:34px;cursor:pointer;touch-action:manipulation}
+.reset{position:absolute;z-index:3;left:50%;top:calc(var(--hdr) + 54px);transform:translateX(-50%);display:none}
+.reset.on{display:inline-flex}
+.reset .btn{min-height:32px;background:#000;font-size:11px}
+
+/* cash edge */
+.cash{position:fixed;top:var(--hdr);bottom:0;right:0;width:30px;z-index:1;overflow:hidden;pointer-events:none;opacity:.6}
+.cash svg{position:absolute;left:3px;top:0;width:24px;height:auto;animation:fall linear infinite;will-change:transform}
+@keyframes fall{from{transform:translate3d(0,-60px,0) rotate(var(--r0))}to{transform:translate3d(0,110vh,0) rotate(var(--r1))}}
+
+/* steps */
+.steps{position:relative;z-index:2;margin-top:-100vh;margin-top:-100lvh;pointer-events:none}
+.step{min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;padding:0 16px 16px}
+.step.tall{min-height:150vh;min-height:150svh;align-items:flex-end}
+.step.tall .card{position:sticky;bottom:16px}
+.card{pointer-events:auto;position:relative;width:100%;background:#000;border:1px solid var(--g2);padding:18px 18px 18px}
+.card::before,.card::after{content:"";position:absolute;width:9px;height:9px;border:1px solid #fff;pointer-events:none}
+.card::before{top:-1px;left:-1px;border-width:1px 0 0 1px}
+.card::after{bottom:-1px;right:-1px;border-width:0 1px 1px 0}
+.tag{display:flex;align-items:center;gap:10px;font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--g4);margin-bottom:14px}
+.bn{display:inline-grid;place-items:center;width:22px;height:22px;border:1px solid #fff;border-radius:50%;font:500 10px/1 var(--mono);color:#fff;letter-spacing:0;flex:none}
+.bn.e{border-color:var(--ember);color:var(--ember)}
+.card h2,.card h1{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.04;letter-spacing:-.005em}
+.card h1{font-size:40px}
+.card p{font-size:16px;color:#fff}
+.card .sub{color:var(--g4);margin-top:10px}
+.card .src,.src{font:400 11px/1.45 var(--mono);color:var(--g4);margin-top:12px;letter-spacing:.02em}
+.co{display:block;width:100%;text-align:left;padding:12px 0;border-top:1px solid var(--g2)}
+.co:first-of-type{border-top:0}
+.co .fig{font-family:var(--serif);font-size:58px;line-height:.95;display:block;color:#fff}
+.co .fig.e{color:var(--ember)}
+.co .z{font:500 10px/1 var(--mono);color:var(--g4);letter-spacing:.14em;text-transform:uppercase;display:inline-flex;gap:6px;align-items:center;margin-top:10px}
+.co .z::before{content:"";width:12px;height:12px;border:1px solid var(--g3);border-radius:50%;background:radial-gradient(circle,#fff 0 1.5px,transparent 2px)}
+.list{list-style:none;margin-top:6px}
+.list li{border-top:1px solid var(--g2)}
+.list li:first-child{border-top:0}
+.li{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;padding:11px 0;font-size:15px;line-height:1.35}
+.li .n{font:500 11px/1.6 var(--mono);color:var(--g4);min-width:26px;letter-spacing:.06em}
+.li .t{flex:1}
+.li .t b{font-weight:600;display:block}
+.li .t span{color:var(--g4);font-size:14px}
+.li .go{font:500 10px/1.6 var(--mono);color:var(--g4);letter-spacing:.12em}
+button.li:hover .t b,button.li:hover .t{color:#fff}
+button.li:hover .n{color:var(--ember)}
+.rt{width:100%;border-collapse:collapse;margin-top:14px;font:400 12px/1 var(--mono)}
+.rt th{font-weight:500;color:var(--g4);text-align:left;letter-spacing:.12em;font-size:10px;padding:0 8px 8px 0;border-bottom:1px solid var(--g3)}
+.rt td{padding:10px 8px 10px 0;border-bottom:1px solid var(--g2);color:#fff}
+.rt td.m{width:46px}
+.tri{display:inline-grid;place-items:center;width:20px;height:18px;color:var(--ember);font-size:9px;position:relative}
+.tri svg{position:absolute;inset:0}
+.ro{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--g2);border:1px solid var(--g2);margin-top:16px}
+.ro>div{background:#000;padding:12px 12px 10px}
+.ro .k{font:500 10px/1 var(--mono);color:var(--g4);letter-spacing:.14em;text-transform:uppercase}
+.ro .v{font:500 30px/1.1 var(--mono);margin-top:8px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.ro .v.e{color:var(--ember)}
+.ro .w{grid-column:1/-1}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chips span{font:500 11px/1 var(--mono);letter-spacing:.06em;padding:7px 8px;border:1px solid var(--g2);color:var(--g4)}
+.h3{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--g4);margin-top:18px}
+.card .quote{font-family:var(--serif);font-size:30px;line-height:1.08}
+.card .quote+.quote{margin-top:14px;color:var(--g4)}
+
+/* title block */
+.tb{padding:0}
+.tb .cell{padding:14px 16px;border-top:1px solid var(--g2)}
+.tb .cell:first-child{border-top:0}
+.lbl{display:block;font:500 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--g4);margin-bottom:8px}
+.tb .grid2{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--g2)}
+.tb .grid2>div{padding:12px 16px}
+.tb .grid2>div+div{border-left:1px solid var(--g2)}
+.tb .grid2 p{font-size:14px;line-height:1.35}
+.tb .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-top:1px solid var(--g2)}
+.tb .foot .lbl{margin:0;line-height:1.5}
+.hint{font:500 10px/1 var(--mono);letter-spacing:.16em;color:var(--g4);text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.hint::after{content:"";width:1px;height:14px;background:var(--g3)}
+
+/* urgency */
+.big{font:500 46px/1 var(--mono);font-variant-numeric:tabular-nums;letter-spacing:-.03em;color:#fff;margin-top:14px;white-space:nowrap}
+.ms{width:100%;border-collapse:collapse;margin-top:14px;font:400 12px/1.2 var(--mono)}
+.ms th{font-weight:500;color:var(--g4);text-align:left;letter-spacing:.12em;font-size:10px;padding:0 0 8px;border-bottom:1px solid var(--g3)}
+.ms th:last-child,.ms td:last-child{text-align:right}
+.ms td{padding:9px 0;border-bottom:1px solid var(--g2);font-variant-numeric:tabular-nums}
+#pileC{display:block;width:100%;height:96px;margin-top:14px}
+
+/* contact */
+.mail{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px}
+.addr{font:500 15px/1.3 var(--mono);user-select:all;-webkit-user-select:all;padding:10px 0;width:100%;word-break:break-all}
+.copy.ok{border-color:var(--ember);color:var(--ember)}
+
+footer{position:relative;z-index:3;background:#000;border-top:1px solid var(--g2);padding:22px 16px 28px;display:flex;gap:10px;align-items:center;font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--g4)}
+footer .brand{font-size:12px;color:#fff}
+footer button{text-transform:uppercase;letter-spacing:.14em;color:var(--g4);text-decoration:underline;text-underline-offset:4px;min-height:40px}
+
+/* dialogs */
+dialog{background:#000;color:#fff;border:1px solid var(--g3);padding:0;width:min(560px,calc(100vw - 32px));max-height:calc(100vh - 48px);margin:auto}
+dialog::backdrop{background:rgba(0,0,0,.82)}
+.dl{padding:20px 18px 18px;position:relative}
+.dl .x{position:absolute;top:8px;right:8px;width:40px;height:40px;display:grid;place-items:center;font:400 22px/1 var(--mono);color:var(--g4)}
+.dl h2{font-family:var(--serif);font-weight:400;font-size:36px;line-height:1.05;margin-top:2px;padding-right:30px}
+.dl ul{list-style:none;margin-top:14px}
+.dl li{padding:11px 0;border-top:1px solid var(--g2);font-size:15px;display:flex;gap:12px}
+.dl li .n{font:500 11px/1.6 var(--mono);color:var(--g4)}
+.dl .nav{display:flex;justify-content:space-between;margin-top:16px;gap:8px}
+#pierSvg{display:block;width:100%;height:110px;margin-top:14px;border:1px solid var(--g2)}
+.srcs li{display:block;font:400 13px/1.45 var(--mono);color:#fff}
+.srcs li span{color:var(--g4);display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+
+@media (min-width:600px){
+  .tally .tl .long{display:inline}
+  .tally .tl .short{display:none}
+}
+@media (min-width:900px){
+  :root{--hdr:60px}
+  .hdr{padding:0 28px;gap:22px}
+  .brand{font-size:14px}
+  .hdr .btn{min-height:38px;padding:0 16px;font-size:12px;letter-spacing:.08em}
+  .brand{letter-spacing:.14em}
+  .tally{font-size:13px}
+  .ctrl.top{left:auto;right:28px;top:auto;bottom:22px;gap:10px}
+  .lyr-pop{top:auto;bottom:38px;left:auto;right:0}
+  #mm{width:260px;height:56px}
+  .reset{top:calc(var(--hdr) + 18px);left:calc(50% + 230px)}
+  .cash{width:46px}
+  .cash svg{width:36px;left:5px}
+  .step{padding:0 0 0 40px;align-items:center}
+  .step.tall{align-items:flex-end;padding-bottom:40px}
+  .step.tall .card{bottom:40px}
+  .card{width:400px}
+  .step.tbk{align-items:flex-end;justify-content:flex-end;padding:0 76px 96px 40px}
+  .step.tbk .card{width:640px}
+  .card h1{font-size:60px}
+  .card h2{font-size:42px}
+  .big{font-size:64px}
+  .tb .grid2 p{font-size:15px}
+  footer{padding:24px 40px}
+}
+@media (max-width:370px){
+  .tally{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .cash svg{animation:none!important}
+}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <span class="brand">HALO <i>//</i> VENTURES</span>
+  <span class="tally" aria-live="off"><span class="tl"><span class="short">Lost</span><span class="long">Lost since you opened</span></span><span id="hTally">$0</span></span>
+  <button class="btn ember" data-book aria-label="Book an intro call"><span class="bk-l">Book an intro call</span><span class="bk-s">Book a call</span></button>
+<style>.bk-s{display:none}@media (max-width:520px){.bk-l{display:none}.bk-s{display:inline}}</style>
+</header>
+
+<div class="cash" id="cash" aria-hidden="true"></div>
+
+<main id="scrolly">
+  <div class="stage" id="stage">
+    <canvas id="cv" aria-label="Engineering drawing of a suspension and truss bridge, plan view above, elevation below" role="img"></canvas>
+    <div class="ctrl top">
+      <div class="lyr" id="lyr">
+        <button class="btn" id="lyrBtn" aria-expanded="false" aria-controls="lyrPop">Layers</button>
+        <div class="lyr-pop" id="lyrPop">
+          <button class="lt" data-layer="structure" aria-pressed="true"><span class="bx"></span>Structure</button>
+          <button class="lt" data-layer="survey" aria-pressed="true"><span class="bx"></span>Survey</button>
+          <button class="lt" data-layer="annot" aria-pressed="true"><span class="bx"></span>Annotations</button>
+        </div>
+      </div>
+      <div class="mini"><span class="ml">Sheet</span><canvas id="mm" aria-label="Mini-map of the full drawing. Tap to jump." role="button" tabindex="0"></canvas></div>
+    </div>
+    <div class="reset" id="reset"><button class="btn" id="resetBtn">Reset view</button></div>
+  </div>
+
+  <div class="steps" id="steps">
+    <!-- 0 hero -->
+    <section class="step tbk" data-k="0">
+      <div class="card tb">
+        <div class="cell"><span class="lbl">Title</span><h1>The blueprint comes before the bridge.</h1></div>
+        <div class="grid2">
+          <div><span class="lbl">Scope</span><p>We help founders and teams go to market.</p></div>
+          <div><span class="lbl">Roles</span><p>Fractional chief growth officer. Fractional head of sales.</p></div>
+        </div>
+        <div class="foot"><button class="btn ember" data-book>Book an intro call</button><span class="hint">Scroll to survey</span></div>
+      </div>
+    </section>
+
+    <!-- 1 -->
+    <section class="step" data-k="1"><div class="card">
+      <div class="tag"><span class="bn e">1</span>Survey note</div>
+      <h2>The ground shifted.</h2>
+      <button class="co" data-zoom="fault"><span class="z">Zoom to fault line</span></button>
+    </div></section>
+
+    <!-- 2 -->
+    <section class="step" data-k="2"><div class="card">
+      <div class="tag"><span class="bn e">2</span>Inspection</div>
+      <h2>Cracks start at the foundation.</h2>
+      <button class="co" data-zoom="cloud"><span class="z">Zoom to revision cloud</span></button>
+    </div></section>
+
+    <!-- 3 -->
+    <section class="step" data-k="3"><div class="card">
+      <div class="tag"><span class="bn e">3</span>Survey note</div>
+      <button class="co" data-zoom="contour"><span class="fig e">42%</span>
+        <p style="margin-top:10px">42% of failed startups said there was no market need.</p>
+        <span class="z">Zoom to survey</span></button>
+      <p class="src">CB Insights · 101 startup post-mortems · 2014</p>
+    </div></section>
+
+    <!-- 4 -->
+    <section class="step" data-k="4"><div class="card">
+      <div class="tag"><span class="bn e">4</span>Inspection</div>
+      <h2>Founder-led sales stalls.</h2>
+      <button class="co" data-zoom="stall"><span class="z">Zoom to open span</span></button>
+    </div></section>
+
+    <!-- 5 -->
+    <section class="step" data-k="5"><div class="card">
+      <div class="tag"><span class="bn e">5</span>Inspection</div>
+      <h2>Hiring before the playbook is guessing.</h2>
+      <button class="co" data-zoom="p3"><span class="z">Zoom to unplanned pier</span></button>
+    </div></section>
+
+    <!-- 6 -->
+    <section class="step" data-k="6"><div class="card">
+      <div class="tag"><span class="bn e">6</span>Revisions</div>
+      <h2>Not once. Every year.</h2>
+      <table class="rt">
+        <thead><tr><th>Rev</th><th>Funding year</th><th>Mark</th></tr></thead>
+        <tbody id="revBody"></tbody>
+      </table>
+      <p class="src">VCBacked · The Startup Graveyard · July 2026 (2021–2025 funding years)</p>
+    </div></section>
+
+    <!-- 7 -->
+    <section class="step" data-k="7"><div class="card">
+      <div class="tag"><span class="bn e">7</span>Load readout</div>
+      <button class="co" data-zoom="loadA" style="padding-top:0"><p>$63.3B lost to poor product-market fit across 2,293 startups.</p><span class="z">Zoom to load</span></button>
+      <div class="ro">
+        <div><span class="k">Lost</span><div class="v e">$63.3B</div></div>
+        <div><span class="k">Startups</span><div class="v">2,293</div></div>
+        <div class="w"><span class="k">Funding years</span><div class="v" style="font-size:22px">2021–2025</div></div>
+      </div>
+      <p class="src">VCBacked · The Startup Graveyard · July 2026</p>
+    </div></section>
+
+    <!-- 8 -->
+    <section class="step" data-k="8"><div class="card">
+      <div class="tag"><span class="bn">8</span>Load readout</div>
+      <button class="co" data-zoom="loadB" style="padding-top:0"><p>Money was never the problem. $425B went into 24,000+ startups in 2025.</p><span class="z">Zoom to load</span></button>
+      <div class="ro">
+        <div><span class="k">Funding</span><div class="v">$425B</div></div>
+        <div><span class="k">Startups</span><div class="v">24,000+</div></div>
+      </div>
+      <p class="src">Crunchbase News · Global venture funding, 2025</p>
+    </div></section>
+
+    <!-- 9 -->
+    <section class="step" data-k="9"><div class="card">
+      <div class="tag"><span class="bn">9</span>Detail A · Foundation</div>
+      <h2>Clear the ground. Pour the foundation. Raise four pillars.</h2>
+      <button class="co" data-zoom="depth"><span class="z">Zoom to depth</span></button>
+    </div></section>
+
+    <!-- 10 -->
+    <section class="step" data-k="10"><div class="card">
+      <div class="tag"><span class="bn">10</span>Four pillars</div>
+      <ul class="list">
+        <li><button class="li" data-pillar="0"><span class="n">01</span><span class="t"><b>Client acquisition</b><span>The right buyers, found and won.</span></span><span class="go">Open</span></button></li>
+        <li><button class="li" data-pillar="1"><span class="n">02</span><span class="t"><b>Operational excellence</b><span>A process that repeats.</span></span><span class="go">Open</span></button></li>
+        <li><button class="li" data-pillar="2"><span class="n">03</span><span class="t"><b>People</b><span>The right people in the right seats.</span></span><span class="go">Open</span></button></li>
+        <li><button class="li" data-pillar="3"><span class="n">04</span><span class="t"><b>Revenue</b><span>Revenue you can forecast.</span></span><span class="go">Open</span></button></li>
+      </ul>
+    </div></section>
+
+    <!-- 11 -->
+    <section class="step" data-k="11"><div class="card">
+      <div class="tag"><span class="bn">11</span>Spans</div>
+      <h2 style="font-size:30px">With a clear blueprint and a deep foundation, every new span goes up faster than the last.</h2>
+    </div></section>
+
+    <!-- 12 -->
+    <section class="step" data-k="12"><div class="card">
+      <div class="tag"><span class="bn">12</span>How we work</div>
+      <ul class="list">
+        <li><button class="li" data-zoom="seq0"><span class="n">01</span><span class="t">Define the path</span></button></li>
+        <li><button class="li" data-zoom="seq1"><span class="n">02</span><span class="t">Build the process</span></button></li>
+        <li><button class="li" data-zoom="seq2"><span class="n">03</span><span class="t">Build the people</span></button></li>
+        <li><button class="li" data-zoom="seq3"><span class="n">04</span><span class="t">Go to market</span></button></li>
+        <li><button class="li" data-zoom="seq4"><span class="n">05</span><span class="t">Deliver results</span></button></li>
+      </ul>
+    </div></section>
+
+    <!-- 13 -->
+    <section class="step" data-k="13"><div class="card">
+      <div class="tag"><span class="bn">13</span>Specifications</div>
+      <h2 style="font-size:30px">You walk away with:</h2>
+      <ul class="list">
+        <li><div class="li"><span class="n">S-01</span><span class="t">Validated customer segments and buying behavior.</span></div></li>
+        <li><div class="li"><span class="n">S-02</span><span class="t">A documented, repeatable GTM motion.</span></div></li>
+        <li><div class="li"><span class="n">S-03</span><span class="t">Qualified pipeline and measurable conversion.</span></div></li>
+        <li><div class="li"><span class="n">S-04</span><span class="t">The right people in the right roles.</span></div></li>
+        <li><div class="li"><span class="n">S-05</span><span class="t">Revenue infrastructure that supports scale.</span></div></li>
+        <li><div class="li"><span class="n">S-06</span><span class="t">A clear commercial roadmap for the next stage of growth.</span></div></li>
+      </ul>
+    </div></section>
+
+    <!-- 14 -->
+    <section class="step" data-k="14"><div class="card">
+      <div class="tag"><span class="bn">14</span>Masonry</div>
+      <p class="quote">Strong foundation today. Lasting impact tomorrow.</p>
+      <p class="quote">Brick by brick. Rain or shine.</p>
+    </div></section>
+
+    <!-- 15 -->
+    <section class="step" data-k="15"><div class="card">
+      <div class="tag"><span class="bn">15</span>Why founders choose us</div>
+      <ul class="list">
+        <li><button class="li" data-zoom="why0"><span class="n">a</span><span class="t">In the work with you, not on the sidelines.</span></button></li>
+        <li><button class="li" data-zoom="why1"><span class="n">b</span><span class="t">We build people and process together.</span></button></li>
+        <li><button class="li" data-zoom="why2"><span class="n">c</span><span class="t">Data, not opinions.</span></button></li>
+        <li><button class="li" data-zoom="why3"><span class="n">d</span><span class="t">Results. Actually delivered.</span></button></li>
+      </ul>
+      <p class="h3">Data we track</p>
+      <div class="chips"><span>Pipeline coverage</span><span>Win rate</span><span>Sales velocity</span><span>CAC payback</span><span>Net revenue retention</span><span>Forecast accuracy</span></div>
+    </div></section>
+
+    <!-- 16 -->
+    <section class="step" data-k="16"><div class="card">
+      <div class="tag"><span class="bn">16</span>Who we work with</div>
+      <p style="font-size:18px">Founders, startups and teams ready to grow fast and break things.</p>
+      <ul class="list" style="margin-top:10px">
+        <li><button class="li" data-zoom="dest0"><span class="n">→</span><span class="t">Financial Services</span></button></li>
+        <li><button class="li" data-zoom="dest1"><span class="n">→</span><span class="t">Home Services</span></button></li>
+        <li><button class="li" data-zoom="dest2"><span class="n">→</span><span class="t">Tech &amp; AI</span></button></li>
+        <li><button class="li" data-zoom="dest3"><span class="n">→</span><span class="t">Healthcare &amp; Med Device</span></button></li>
+      </ul>
+      <p class="sub" style="color:#fff;margin-top:12px">Built for Seed and Series A companies.</p>
+    </div></section>
+
+    <!-- 17 urgency -->
+    <section class="step tall" data-k="17" id="urg"><div class="card">
+      <div class="tag"><span class="bn e">17</span>Materials schedule</div>
+      <h2 style="font-size:30px">What waiting has cost since you opened this page.</h2>
+      <div class="big" id="uTotal">$0</div>
+      <canvas id="pileC" aria-hidden="true"></canvas>
+      <table class="ms">
+        <thead><tr><th>Item</th><th>Reading</th></tr></thead>
+        <tbody>
+          <tr><td>Lost so far</td><td id="uLost">$0</td></tr>
+          <tr><td>Time on page</td><td id="uTime">00:00</td></tr>
+          <tr><td>Rate</td><td>≈ $401 a second</td></tr>
+        </tbody>
+      </table>
+      <p class="src">≈ $401 a second · VCBacked, July 2026</p>
+    </div></section>
+
+    <!-- 18 close -->
+    <section class="step tbk" data-k="18" id="close">
+      <div class="card tb">
+        <div class="cell"><span class="lbl">Title</span><h1>Let's build your bridge.</h1></div>
+        <div class="cell">
+          <span class="lbl">Book an intro call.</span>
+          <div class="mail">
+            <span class="addr" id="addr2">chris@halovpartners.com</span>
+            <button class="btn copy" data-copy="addr2">Copy</button>
+            <a class="btn ember" href="mailto:chris@halovpartners.com?subject=Intro%20call">Email to book</a>
+          </div>
+        </div>
+        <div class="foot"><span class="lbl">HALO // VENTURES · Sheet B-01</span></div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <span class="brand">HALO <i style="font-style:normal;color:var(--ember)">//</i> VENTURES</span><span>·</span><button id="srcBtn">Sources</button>
+</footer>
+
+<dialog id="dlgBook" aria-labelledby="bkT">
+  <div class="dl">
+    <button class="x" data-close aria-label="Close">×</button>
+    <span class="lbl">Contact</span>
+    <h2 id="bkT">Book an intro call.</h2>
+    <div class="mail">
+      <span class="addr" id="addr1">chris@halovpartners.com</span>
+      <button class="btn copy" data-copy="addr1">Copy</button>
+      <a class="btn ember" href="mailto:chris@halovpartners.com?subject=Intro%20call">Email to book</a>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="dlgPier" aria-labelledby="pT">
+  <div class="dl">
+    <button class="x" data-close aria-label="Close">×</button>
+    <span class="lbl" id="pTag">Detail sheet · Pier 01</span>
+    <h2 id="pT"></h2>
+    <p id="pLine" style="color:var(--g4);margin-top:8px"></p>
+    <svg id="pierSvg" viewBox="0 0 520 110" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+    <ul id="pList"></ul>
+    <div class="nav"><button class="btn" id="pPrev">Prev</button><button class="btn ember" data-book>Book an intro call</button><button class="btn" id="pNext">Next</button></div>
+  </div>
+</dialog>
+
+<dialog id="dlgSrc" aria-labelledby="sT">
+  <div class="dl">
+    <button class="x" data-close aria-label="Close">×</button>
+    <span class="lbl">Sources</span>
+    <h2 id="sT">Sources</h2>
+    <ul class="srcs">
+      <li><span>42% · no market need</span>CB Insights · 101 startup post-mortems · 2014</li>
+      <li><span>$63.3B · 2,293 startups</span>VCBacked · The Startup Graveyard · July 2026 (2021–2025 funding years)</li>
+      <li><span>$425B · 24,000+ startups</span>Crunchbase News · Global venture funding, 2025</li>
+      <li><span>Live total</span>≈ $401 a second · VCBacked, July 2026</li>
+    </ul>
+  </div>
+</dialog>
+
+<script>
+(function(){
+'use strict';
+const T0 = performance.now();
+const RATE = 401;
+const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $ = s => document.querySelector(s), $$ = s => Array.from(document.querySelectorAll(s));
+const fmt = n => '$' + Math.floor(n).toLocaleString('en-US');
+const clamp = (v,a,b) => v<a?a:v>b?b:v;
+const lerp = (a,b,t) => a+(b-a)*t;
+const sm = t => t*t*(3-2*t);
+
+/* ================= DRAWING MODEL ================= */
+const WW=8800, WH=1900, BIN=220, NB=Math.ceil(WW/BIN);
+const STY = {
+  grid:{c:'#1C1C1E',w:1}, faint:{c:'#2C2C2E',w:1}, ter:{c:'#636366',w:1}, fdash:{c:'#636366',w:1,d:[4,4]},
+  sec:{c:'#8E8E93',w:1}, dash:{c:'#8E8E93',w:1,d:[7,5]}, cl:{c:'#636366',w:1,d:[18,5,3,5]},
+  pri:{c:'#FFFFFF',w:.9}, bold:{c:'#FFFFFF',w:1.7},
+  em:{c:'#E83214',w:1.4}, emd:{c:'#E83214',w:1.3,d:[6,5]}
+};
+const ORDER = ['grid','faint','ter','fdash','cl','sec','dash','pri','bold','emd','em'];
+const LAYERS = {sheet:true, structure:true, survey:true, annot:true};
+const buckets = new Map(); const texts = []; const fills = [];
+let cur = null, TF = null;
+function B(layer,sty,lod){ const k=layer+'|'+sty+'|'+lod; let b=buckets.get(k); if(!b){ b={layer,sty,lod,bins:Array.from({length:NB},()=>[])}; buckets.set(k,b);} return b; }
+function use(layer,sty,lod){ cur=B(layer,sty,lod||0); }
+function push(b,x1,y1,x2,y2){ let bi=Math.floor(Math.min(x1,x2)/BIN); bi=bi<0?0:bi>=NB?NB-1:bi; b.bins[bi].push(x1,y1,x2,y2); }
+function seg(x1,y1,x2,y2){
+  if(TF){ const a=TF(x1,y1), c=TF(x2,y2); x1=a[0];y1=a[1];x2=c[0];y2=c[1]; }
+  const dx=x2-x1, adx=Math.abs(dx);
+  if(adx>BIN){ const n=Math.ceil(adx/BIN); for(let k=0;k<n;k++){ const a=k/n, c=(k+1)/n; push(cur,x1+dx*a,y1+(y2-y1)*a,x1+dx*c,y1+(y2-y1)*c);} }
+  else push(cur,x1,y1,x2,y2);
+}
+function pl(p){ for(let i=0;i<p.length-2;i+=2) seg(p[i],p[i+1],p[i+2],p[i+3]); }
+function rect(x,y,w,h){ pl([x,y,x+w,y,x+w,y+h,x,y+h,x,y]); }
+function circ(cx,cy,r,n){ n=n||Math.max(12,Math.min(48,Math.round(r*1.2))); const p=[]; for(let i=0;i<=n;i++){const a=i/n*Math.PI*2; p.push(cx+Math.cos(a)*r, cy+Math.sin(a)*r);} pl(p); }
+function txt(x,y,s,size,o){ o=o||{}; texts.push({x,y,s:String(s),size,layer:o.layer||'annot',c:o.c||'#8E8E93',al:o.al||'left',ff:o.ff||'m',wt:o.wt||400,rot:o.rot||0,zone:o.zone}); }
+function fillp(p,c,layer){ let mn=1e9,mx=-1e9; for(let i=0;i<p.length;i+=2){mn=Math.min(mn,p[i]);mx=Math.max(mx,p[i]);} fills.push({p,c,layer:layer||'annot',x0:mn,x1:mx}); }
+function hatch(poly,ang,sp){
+  const ca=Math.cos(ang), sa=Math.sin(ang), nx=-sa, ny=ca; let mn=1e9,mx=-1e9; const n=poly.length/2;
+  for(let i=0;i<n;i++){ const p=nx*poly[2*i]+ny*poly[2*i+1]; mn=Math.min(mn,p); mx=Math.max(mx,p); }
+  for(let o=mn+sp/2;o<mx;o+=sp){ const hits=[];
+    for(let i=0;i<n;i++){ const ax=poly[2*i],ay=poly[2*i+1],bx=poly[(2*i+2)%(2*n)],by=poly[(2*i+3)%(2*n)];
+      const pa=nx*ax+ny*ay-o, pb=nx*bx+ny*by-o; if((pa<0)!==(pb<0)){ const t=pa/(pa-pb); hits.push([ax+(bx-ax)*t, ay+(by-ay)*t]); } }
+    if(hits.length>=2){ hits.sort((a,b)=>(a[0]*ca+a[1]*sa)-(b[0]*ca+b[1]*sa)); seg(hits[0][0],hits[0][1],hits[hits.length-1][0],hits[hits.length-1][1]); }
+  }
+}
+let seed=7; const rnd=()=>{ seed=(seed*16807)%2147483647; return (seed-1)/2147483646; };
+
+/* terrain */
+const GP=[[40,1176],[260,1180],[450,1214],[700,1262],[1000,1290],[1050,1292],[1050,1316],[1300,1306],[1500,1290],[1650,1264],[1800,1250],[1950,1272],[2050,1345],[2300,1405],[3100,1428],[3900,1405],[4150,1345],[4250,1268],[4400,1250],[4700,1255],[5300,1245],[5900,1226],[6300,1196],[6500,1180],[8760,1180]];
+function gy(x){ for(let i=0;i<GP.length-1;i++){ const a=GP[i],b=GP[i+1]; if(x>=a[0]&&x<=b[0]&&b[0]>a[0]) return a[1]+(b[1]-a[1])*(x-a[0])/(b[0]-a[0]); } return 1180; }
+function br(x){ return 1476+9*Math.sin(x/310)+6*Math.sin(x/97+1); }
+const DECK=1060;
+const PIERS={P1:600,P2:1000,P3:1400,R1:4900,R2:5300,R3:5700,R4:6100};
+const T1=2100,T2=4100,AN1=1700,AN2=4500,A1=190,A2=6510;
+const CAB_TOP=828, CAB_MID=1046, XM=(T1+T2)/2, HALF=(T2-T1)/2;
+function cabY(x){
+  if(x>=T1&&x<=T2){ const u=(x-XM)/HALF; return CAB_MID+(CAB_TOP-CAB_MID)*u*u; }
+  if(x>=AN1&&x<T1){ const t=(x-AN1)/(T1-AN1); return lerp(1040,CAB_TOP,t)+22*4*t*(1-t); }
+  if(x>T2&&x<=AN2){ const t=(x-T2)/(AN2-T2); return lerp(CAB_TOP,1040,t)+22*4*t*(1-t); }
+  return null;
+}
+const PLAN_C=570, PL0=388, PL1=756;
+
+function truss(x0,x1,yT,d,pan,x){
+  use('structure','pri'); seg(x0,yT,x1,yT); seg(x0,yT+d,x1,yT+d);
+  const n=Math.max(1,Math.round((x1-x0)/pan)), p=(x1-x0)/n;
+  use('structure','sec',1);
+  for(let i=0;i<=n;i++){ const xx=x0+i*p; seg(xx,yT,xx,yT+d); if(i<n){ if(x){ seg(xx,yT,xx+p,yT+d); seg(xx,yT+d,xx+p,yT); } else { if(i%2===0) seg(xx,yT,xx+p,yT+d); else seg(xx,yT+d,xx+p,yT); } } }
+}
+function rail(x0,x1){ use('structure','ter',1); seg(x0,DECK-13,x1,DECK-13); use('structure','ter',2); for(let x=x0;x<=x1;x+=20) seg(x,DECK-13,x,DECK); }
+function pier(x,o){
+  o=o||{}; const g=gy(x), top=1116, sty=o.sty||'pri';
+  use('structure',sty); rect(x-37,top,74,14);
+  seg(x-20,top+14,x-27,g); seg(x+20,top+14,x+27,g); seg(x-27,g,x+27,g);
+  use('structure',o.hid||'dash'); rect(x-62,g+6,124,32); seg(x-27,g,x-27,g+6); seg(x+27,g,x+27,g+6);
+  const bx=br(x);
+  for(const px of [-44,-15,15,44]){ seg(x+px-4,g+38,x+px-4,bx+6); seg(x+px+4,g+38,x+px+4,bx+6); seg(x+px-4,bx+6,x+px,bx+12); seg(x+px+4,bx+6,x+px,bx+12); }
+  if(!o.noHatch){ use('structure','ter',2); hatch([x-20,top+14,x+20,top+14,x+27,g,x-27,g],Math.PI/4,9); hatch([x-37,top,x+37,top,x+37,top+14,x-37,top+14],Math.PI/4,6); }
+}
+function crack(x,y,dx,dy,n,j){ const p=[x,y]; for(let i=1;i<=n;i++){ p.push(x+dx*i/n+(rnd()-.5)*j, y+dy*i/n+(rnd()-.5)*j); } pl(p); }
+function cloud(cx,cy,rx,ry,k){
+  const p=[]; for(let i=0;i<k;i++){ const a0=i/k*Math.PI*2, a1=(i+1)/k*Math.PI*2;
+    const x0=cx+Math.cos(a0)*rx, y0=cy+Math.sin(a0)*ry, x1=cx+Math.cos(a1)*rx, y1=cy+Math.sin(a1)*ry;
+    const mx=(x0+x1)/2, my=(y0+y1)/2, r=Math.hypot(x1-x0,y1-y0)/2, base=Math.atan2(y1-y0,x1-x0);
+    for(let s=0;s<=6;s++){ const a=base+Math.PI+s/6*Math.PI; p.push(mx+Math.cos(a)*r, my+Math.sin(a)*r); } }
+  pl(p);
+}
+function revTri(x,y,s,L){ use('annot','em'); pl([x,y-s*.62,x+s*.6,y+s*.42,x-s*.6,y+s*.42,x,y-s*.62]); txt(x,y+s*.3,L,s*.56,{c:'#E83214',al:'center',wt:500}); }
+function dimH(x0,x1,y,label,ext0,ext1){
+  use('annot','sec'); seg(x0,y,x1,y);
+  for(const x of [x0,x1]){ seg(x-5,y+5,x+5,y-5); }
+  use('annot','ter'); if(ext0!=null) seg(x0,ext0,x0,y+8); if(ext1!=null) seg(x1,ext1,x1,y+8);
+  txt((x0+x1)/2,y-6,label,11,{al:'center',c:'#FFFFFF'});
+}
+function arrowDown(x,y0,y1,sty){ use('annot',sty); seg(x,y0,x,y1); seg(x-4,y1-9,x,y1); seg(x+4,y1-9,x,y1); }
+function levelMark(x,y,label,c){ use('annot','sec'); pl([x,y,x-6,y-9,x+6,y-9,x,y]); seg(x-14,y,x+40,y); txt(x+10,y-4,label,10,{c:c||'#8E8E93'}); }
+function leader(x0,y0,x1,y1,sty){ use('annot',sty||'sec'); seg(x0,y0,x1,y1); use('annot',sty||'sec'); circ(x1,y1,2.2,8); }
+
+function build(){
+  /* sheet frame */
+  use('sheet','pri'); rect(20,20,WW-40,WH-40); use('sheet','sec'); rect(40,40,WW-80,WH-80);
+  const cw=(WW-80)/20;
+  for(let i=0;i<=20;i++){ const x=40+i*cw; use('sheet','sec'); seg(x,20,x,40); seg(x,WH-40,x,WH-20);
+    if(i<20){ txt(x+cw/2,34,i+1,10,{layer:'sheet',al:'center',c:'#636366'}); txt(x+cw/2,WH-25,i+1,10,{layer:'sheet',al:'center',c:'#636366'}); } }
+  const rh=(WH-80)/4;
+  for(let i=0;i<=4;i++){ const y=40+i*rh; use('sheet','sec'); seg(20,y,40,y); seg(WW-40,y,WW-20,y);
+    if(i<4){ txt(30,y+rh/2+4,'ABCD'[i],10,{layer:'sheet',al:'center',c:'#636366'}); txt(WW-30,y+rh/2+4,'ABCD'[i],10,{layer:'sheet',al:'center',c:'#636366'}); } }
+  /* grid */
+  use('survey','grid',1); for(let x=100;x<WW-40;x+=100) seg(x,40,x,WH-40); for(let y=100;y<WH-40;y+=100) seg(40,y,WW-40,y);
+
+  /* ---------- PLAN ---------- */
+  txt(70,404,'PLAN',22,{c:'#FFFFFF',wt:500}); use('annot','pri'); seg(70,410,136,410); txt(70,424,'SCALE: AS SHOWN',9);
+  const bx1=y=>1950+30*Math.sin(y/45)+18*Math.sin(y/17), bx2=y=>4230+26*Math.sin(y/52+1)+12*Math.sin(y/19);
+  const inDeck=y=>y>532&&y<608;
+  // banks
+  for(const [f,off] of [[bx1,0],[bx1,-16],[bx2,0],[bx2,16]]){ use('survey',off?'ter':'sec'); let p=[];
+    for(let y=PL0;y<=PL1;y+=6){ if(inDeck(y)){ if(p.length>2) pl(p); p=[]; continue;} p.push(f(y)+off,y);} if(p.length>2) pl(p); }
+  // water hatch
+  use('survey','faint',1); seed=11;
+  for(let y=PL0+8;y<PL1;y+=14){ if(inDeck(y)) continue; let x=bx1(y)+14; const xe=bx2(y)-14; while(x<xe){ const L=24+rnd()*60; seg(x,y,Math.min(x+L,xe),y); x+=L+18+rnd()*40; } }
+  // contours
+  const faultX=y=>860+(y-PL0)*(380/(PL1-PL0));
+  const contour=(base,k,amp,ph)=>{ const major=k%5===0; use('survey',major?'sec':'ter',major?0:1); let p=[];
+    for(let y=PL0;y<=PL1;y+=8){ if(inDeck(y)){ if(p.length>2) pl(p); p=[]; continue; }
+      let x=base+amp*Math.sin(y/57+k*.7+ph)+amp*.5*Math.sin(y/23+k);
+      if(base<1500 && x>faultX(y)) { x+=24; }
+      p.push(x,y+(base<1500&&x>faultX(y)?0:0)); }
+    if(p.length>2) pl(p); };
+  for(let k=1;k<=14;k++) contour(1880-k*118,k,22,0);
+  for(let k=1;k<=18;k++) contour(4300+k*124,k,20,2);
+  for(let k=0;k<6;k++){ const b=6620+k*170; if(b>6840) continue; }
+  // fault line (plan) ember
+  use('survey','emd'); pl([faultX(PL0),PL0,faultX(470),470,faultX(530),530]); pl([faultX(610),610,faultX(700),700,faultX(PL1),PL1]);
+  // deck in plan
+  use('structure','pri'); seg(A1-10,540,A2+70,540); seg(A1-10,600,A2+70,600);
+  use('structure','cl'); seg(A1,PLAN_C,A2+60,PLAN_C);
+  use('structure','ter',1); seg(A1,552,A2+60,552); seg(A1,588,A2+60,588);
+  // plan cables
+  use('structure','sec'); seg(AN1,546,AN2,546); seg(AN1,594,AN2,594);
+  // piers in plan
+  for(const k in PIERS){ const x=PIERS[k]; const dashed=(k==='P3'); use('structure',dashed?'dash':'pri'); rect(x-13,526,26,88); }
+  // P2 plan displacement ghost
+  use('annot','emd'); rect(PIERS.P2-13+9,526+6,26,88);
+  // towers & anchorages in plan
+  for(const x of [T1,T2]){ use('structure','pri'); rect(x-24,506,48,128); use('structure','sec'); rect(x-16,514,32,112); use('structure','ter',2); hatch([x-24,506,x+24,506,x+24,634,x-24,634],Math.PI/4,8); }
+  for(const x of [AN1,AN2]){ use('structure','pri'); rect(x-80,490,160,160); use('structure','ter',1); hatch([x-80,490,x+80,490,x+80,650,x-80,650],Math.PI/4,14); }
+  for(const x of [A1,A2]){ use('structure','pri'); rect(x-30,522,70,96); }
+  // A2 wingwalls in plan
+  use('structure','sec'); pl([A2+40,522,A2+120,490]); pl([A2+40,618,A2+120,650]);
+  // survey points
+  const sps=[[480,450],[820,700],[1240,440],[1560,690],[4700,450],[5480,700],[6260,440]];
+  sps.forEach((p,i)=>{ use('survey','sec'); seg(p[0]-6,p[1],p[0]+6,p[1]); seg(p[0],p[1]-6,p[0],p[1]+6); circ(p[0],p[1],3,8); txt(p[0]+8,p[1]-6,'SP-'+String(i+1).padStart(2,'0'),9,{layer:'survey'}); });
+  // road beyond A2 and branches
+  use('structure','pri'); seg(A2+70,540,6900,540); seg(A2+70,600,6900,600);
+  use('structure','cl'); seg(A2+60,PLAN_C,6900,PLAN_C);
+  const DEST=[430,520,620,710], DN=['FINANCIAL SERVICES','HOME SERVICES','TECH & AI','HEALTHCARE & MED DEVICE'];
+  DEST.forEach((dy,i)=>{ const p0=[],p1=[]; const sy=548+i*14;
+    for(let t=0;t<=1.0001;t+=1/24){ const x=6900+t*400; const e=sm(t); const yc=lerp(sy,dy,e); p0.push(x,yc-9); p1.push(x,yc+9); }
+    use('structure','sec'); pl(p0); pl(p1);
+    use('structure','pri'); rect(7310,dy-24,300,48); use('structure','ter',1); rect(7316,dy-18,288,36);
+    txt(7460,dy+4,DN[i],DN[i].length>18?11:13,{c:'#FFFFFF',al:'center',wt:500,zone:16});
+  });
+  use('annot','ter'); txt(6612,561,'SEED',9,{c:'#FFFFFF'}); txt(6612,594,'SERIES A',9,{c:'#FFFFFF'});
+  use('structure','fdash'); seg(6600,PLAN_C,6900,PLAN_C);
+  // north arrow + scale bar (top band)
+  use('annot','sec'); circ(300,210,46,40); use('annot','ter'); circ(300,210,38,40);
+  use('annot','pri'); pl([300,150,312,215,300,205,288,215,300,150]); fillp([300,150,312,215,300,205],'#FFFFFF','annot');
+  use('annot','sec'); seg(240,210,360,210); txt(300,142,'N',16,{c:'#FFFFFF',al:'center',wt:500});
+  // scale bar
+  const sx=430,sy=250; use('annot','pri'); rect(sx,sy,600,12);
+  for(let i=0;i<6;i++){ if(i%2===0) fillp([sx+i*100,sy,sx+i*100+100,sy,sx+i*100+100,sy+12,sx+i*100,sy+12],'#FFFFFF','annot'); use('annot','pri'); seg(sx+i*100,sy,sx+i*100,sy+18); txt(sx+i*100,sy+32,(i*100)+"'",9,{al:'center'}); }
+  txt(sx+600,sy+32,"600'",9,{al:'center'}); txt(sx,sy-10,'SCALE IN FEET',9);
+
+  /* ---------- ELEVATION ---------- */
+  txt(70,880,'ELEVATION',22,{c:'#FFFFFF',wt:500}); use('annot','pri'); seg(70,886,214,886); txt(70,900,'SCALE: AS SHOWN',9);
+  // ground line with gaps
+  const gaps=[]; for(const k in PIERS) gaps.push([PIERS[k]-30,PIERS[k]+30]); gaps.push([AN1-88,AN1+88],[AN2-88,AN2+88],[A1-50,A1+50],[A2-70,A2+70]);
+  const inGap=x=>gaps.some(g=>x>g[0]&&x<g[1]);
+  use('survey','pri'); { let p=[]; for(let x=40;x<=WW-40;x+=10){ if(inGap(x)||(x>1045&&x<1056)){ if(p.length>2) pl(p); p=[]; continue; } p.push(x,gy(x)); } if(p.length>2) pl(p); }
+  // earth symbol
+  use('survey','ter',1); for(let x=60;x<WW-60;x+=34){ if(inGap(x)) continue; if(x>1830&&x<4380) continue; const g=gy(x)+10; seg(x,g,x+6,g+6); seg(x+6,g,x+12,g+6); seg(x+12,g,x+18,g+6); }
+  use('survey','faint',2); for(let x=60;x<WW-60;x+=22){ const g=gy(x); const b=br(x); for(let y=g+30+(x%3)*6;y<b-6;y+=26){ seg(x,y,x+5,y+3); } }
+  // bedrock
+  use('survey','dash'); { const p=[]; for(let x=40;x<=WW-40;x+=20) p.push(x,br(x)); pl(p); }
+  use('survey','ter',2); seed=5; for(let x=50;x<WW-60;x+=28){ const b=br(x); seg(x,b+10,x+10,b+16); seg(x+14,b+20,x+20,b+12); }
+  txt(240,br(240)+22,'BEDROCK',9,{layer:'survey'});
+  // water
+  use('survey','sec'); seg(1830,1250,4380,1250);
+  use('survey','ter',1); for(let x=1860;x<4360;x+=46){ seg(x,1258,x+14,1258); seg(x+20,1266,x+30,1266); }
+  levelMark(1880,1250,'MHW EL. 0.0',null);
+  // abutment A1
+  use('structure','pri'); rect(A1-40,DECK,80,gy(A1)-DECK); use('structure','dash'); rect(A1-56,gy(A1)+4,112,28);
+  use('structure','ter',2); hatch([A1-40,DECK,A1+40,DECK,A1+40,gy(A1),A1-40,gy(A1)],Math.PI/4,9);
+  // approach truss left: A1-P1, P1-P2 (deflected), P2 cantilever stub, planned P2-P3-AN1
+  rail(A1,PIERS.P2+180);
+  truss(A1+40,PIERS.P1,DECK,56,40,true);
+  truss(PIERS.P1,PIERS.P2,DECK,56,40,true);
+  truss(PIERS.P2,PIERS.P2+180,DECK,56,40,true);
+  // dangling member at the stall
+  use('structure','pri'); seg(PIERS.P2+180,DECK+56,PIERS.P2+198,DECK+98);
+  use('structure','fdash'); seg(PIERS.P2+180,DECK,AN1-80,DECK); seg(PIERS.P2+180,DECK+56,AN1-80,DECK+56);
+  for(let x=PIERS.P2+220;x<AN1-80;x+=40) seg(x,DECK,x,DECK+56);
+  // deflection curve ember
+  use('annot','emd'); { const p=[]; for(let x=PIERS.P1;x<=PIERS.P2+180;x+=10){ const t=(x-PIERS.P1)/(PIERS.P2+180-PIERS.P1); p.push(x,DECK+56+6+t*t*26); } pl(p); }
+  // piers
+  pier(PIERS.P1);
+  // P2 ghost (design) + displaced actual
+  pier(PIERS.P2,{sty:'fdash',hid:'fdash',noHatch:true});
+  { const px=PIERS.P2, py=gy(px)+38, ang=0.035, dy=16, ddx=9;
+    TF=(x,y)=>{ const dx=x-px, d2=y-py; return [px+dx*Math.cos(ang)-d2*Math.sin(ang)+ddx, py+dx*Math.sin(ang)+d2*Math.cos(ang)+dy]; };
+    pier(px); TF=null; }
+  pier(PIERS.P3,{sty:'dash',hid:'fdash',noHatch:true});
+  // cracks + clouds at P2
+  use('structure','em'); seed=21;
+  crack(PIERS.P2-12,1170,30,46,7,6); crack(PIERS.P2+6,1214,-22,40,6,5); crack(PIERS.P2-40,1312,34,20,5,4); crack(PIERS.P2+20,1318,30,14,5,4);
+  use('annot','em'); cloud(PIERS.P2+6,1196,46,54,14); cloud(PIERS.P2+12,1322,82,28,16);
+  revTri(PIERS.P2-56,1150,18,'A'); revTri(PIERS.P2+104,1300,18,'B');
+  // fault in elevation
+  use('survey','em'); seed=31; crack(1050,1292,0,24,2,0); crack(1050,1316,20,170,9,10);
+  arrowDown(PIERS.P2+70,1110,1150,'em'); txt(PIERS.P2+78,1108,'SETTLEMENT',9,{c:'#E83214'});
+  txt(1060,1288,'FAULT',9,{c:'#E83214',layer:'survey'});
+  // P3 question
+  txt(PIERS.P3,1196,'?',30,{c:'#E83214',al:'center',ff:'s'});
+  txt(PIERS.P3,1366,'NOT TO PLAN',9,{c:'#E83214',al:'center'});
+  // anchorages
+  for(const x of [AN1,AN2]){ const g=gy(x); const poly=[x-62,1030,x+62,1030,x+88,g,x-88,g]; use('structure','pri'); pl([...poly,poly[0],poly[1]]);
+    use('structure','dash'); rect(x-100,g+4,200,46); use('structure','ter',1); hatch(poly,Math.PI/4,12); use('structure','sec'); seg(x-62,1046,x+62,1046); }
+  // towers
+  for(const x of [T1,T2]){ const base=1236;
+    use('structure','pri'); pl([x-28,base,x-19,CAB_TOP+6,x+19,CAB_TOP+6,x+28,base]);
+    use('structure','sec'); for(let y=CAB_TOP+40;y<base;y+=52){ const w=lerp(19,28,(y-CAB_TOP)/(base-CAB_TOP)); seg(x-w,y,x+w,y); }
+    use('structure','ter',1); for(let y=CAB_TOP+40;y<base-52;y+=52){ const w1=lerp(19,28,(y-CAB_TOP)/(base-CAB_TOP)), w2=lerp(19,28,(y+52-CAB_TOP)/(base-CAB_TOP)); seg(x-w1,y,x+w2,y+52); seg(x+w1,y,x-w2,y+52); }
+    use('structure','pri'); pl([x-22,CAB_TOP+6,x-16,CAB_TOP-4,x+16,CAB_TOP-4,x+22,CAB_TOP+6]);
+    const b=br(x); use('structure','pri'); rect(x-62,base,124,b-base); use('structure','ter',2); hatch([x-62,base,x+62,base,x+62,b,x-62,b],Math.PI/4,10);
+    use('structure','sec'); rect(x-74,base-8,148,8);
+    levelMark(x+40,CAB_TOP-4,'EL. +'+(1250-(CAB_TOP-4))+"'",'#FFFFFF');
+  }
+  // stiffening truss and deck AN1..AN2
+  truss(AN1-62,AN2+62,DECK,30,40,false); rail(AN1-62,AN2+62);
+  // cables
+  use('structure','bold'); { const p=[]; for(let x=AN1;x<=AN2;x+=10){ p.push(x,cabY(x)); } pl(p); }
+  use('structure','ter'); for(let x=AN1+40;x<AN2;x+=40){ if(Math.abs(x-T1)<30||Math.abs(x-T2)<30) continue; const cy=cabY(x); if(cy<DECK-16) seg(x,cy,x,DECK-13); }
+  // right approach truss
+  truss(AN2+62,PIERS.R1,DECK,56,40,true); truss(PIERS.R1,PIERS.R2,DECK,56,40,true); truss(PIERS.R2,PIERS.R3,DECK,56,40,true); truss(PIERS.R3,PIERS.R4,DECK,56,40,true); truss(PIERS.R4,A2-70,DECK,56,40,true);
+  rail(AN2+62,A2+70);
+  for(const k of ['R1','R2','R3','R4']) pier(PIERS[k]);
+  // deck line full
+  use('structure','pri'); seg(A1-40,DECK-4,A2+70,DECK-4);
+  // A2 masonry abutment
+  { const x0=A2-70,x1=A2+70,y0=DECK,y1=gy(A2); use('structure','pri'); rect(x0,y0,140,y1-y0);
+    use('structure','sec',1); let row=0; for(let y=y0+9;y<y1;y+=9,row++){ seg(x0,y,x1,y); }
+    use('structure','ter',1); row=0; for(let y=y0;y<y1;y+=9,row++){ for(let x=x0+(row%2?10:20);x<x1;x+=20) seg(x,y,x,Math.min(y+9,y1)); }
+    use('structure','dash'); rect(x0-18,y1+4,176,34);
+    use('structure','pri'); pl([x1,y0,x1+170,y1]); use('structure','sec'); pl([x1,y0+12,x1+150,y1]);
+    use('structure','pri'); rect(x0+8,y0-8,24,8); rect(x1-32,y0-8,24,8);
+    // embankment and road
+    use('survey','ter',1); for(let x=x1+20;x<x1+170;x+=14){ const yy=y0+(x-x1)*(y1-y0)/170; seg(x,yy+4,x+8,yy+12); }
+  }
+  // levels
+  levelMark(A1+60,DECK-4,'EL. +'+(1250-DECK+4)+"'",'#FFFFFF');
+  // load arrows on main span
+  for(let x=2200;x<=3060;x+=54) arrowDown(x,980,DECK-16,'em');
+  use('annot','em'); seg(2200,980,3060,980);
+  txt(2630,966,'w₁ = $63.3B',16,{c:'#E83214',al:'center',wt:500});
+  txt(2630,950,'2,293 STARTUPS · 2021–2025',10,{c:'#E83214',al:'center'});
+  for(let x=3140;x<=4000;x+=54) arrowDown(x,980,DECK-16,'sec');
+  use('annot','sec'); seg(3140,980,4000,980);
+  txt(3570,966,'w₂ = $425B',16,{c:'#FFFFFF',al:'center',wt:500});
+  txt(3570,950,'24,000+ STARTUPS · 2025',10,{c:'#FFFFFF',al:'center'});
+  // dims
+  const stations=[A1,PIERS.P1,PIERS.P2,PIERS.P3,AN1,T1,T2,AN2,PIERS.R1,PIERS.R2,PIERS.R3,PIERS.R4,A2];
+  for(let i=0;i<stations.length-1;i++){ const a=stations[i],b=stations[i+1]; dimH(a,b,1548,(b-a)+"'-0\"",1500,1500); }
+  dimH(A1,A2,1590,(A2-A1).toLocaleString('en-US')+"'-0\" OVERALL",null,null);
+  // section marker A at R1
+  use('annot','pri'); circ(PIERS.R1-90,1440,14,24); seg(PIERS.R1-90,1426,PIERS.R1-90,1454); txt(PIERS.R1-90,1444,'A',11,{c:'#FFFFFF',al:'center',wt:500});
+  use('annot','cl'); seg(PIERS.R1-76,1440,PIERS.R1+76,1440);
+  // pillar labels
+  const PN=['CLIENT ACQUISITION','OPERATIONAL EXCELLENCE','PEOPLE','REVENUE'];
+  ['R1','R2','R3','R4'].forEach((k,i)=>{ const x=PIERS[k]; txt(x,gy(x)+86,PN[i],10,{c:'#FFFFFF',al:'center',wt:500}); leader(x,1000,x,1040,'sec'); });
+  // spans faster: decreasing erection marks
+  ['SPAN 1','SPAN 2','SPAN 3','SPAN 4'].forEach((s,i)=>{ const a=[AN2+62,PIERS.R1,PIERS.R2,PIERS.R3][i], b=[PIERS.R1,PIERS.R2,PIERS.R3,PIERS.R4][i]; txt((a+b)/2,DECK+80,s,9,{al:'center'}); });
+
+  /* ---------- TOP BAND BLOCKS ---------- */
+  // revision table
+  { const x=1520,y=96,w=820; use('annot','pri'); rect(x,y,w,240); seg(x,y+40,x+w,y+40); seg(x,y+72,x+w,y+72);
+    txt(x+16,y+27,'REVISIONS',16,{c:'#FFFFFF',wt:500}); txt(x+w-16,y+27,'NOT ONCE. EVERY YEAR.',11,{c:'#E83214',al:'right'});
+    txt(x+16,y+61,'REV',10); txt(x+120,y+61,'FUNDING YEAR',10); txt(x+w-120,y+61,'MARK',10);
+    use('annot','sec'); seg(x+100,y+40,x+100,y+240); seg(x+w-140,y+40,x+w-140,y+240);
+    ['A','B','C','D','E'].forEach((L,i)=>{ const yy=y+72+i*33.6; use('annot','ter'); if(i) seg(x,yy,x+w,yy); txt(x+16,yy+22,L,12,{c:'#FFFFFF'}); txt(x+120,yy+22,String(2021+i),12,{c:'#FFFFFF'}); revTri(x+w-80,yy+17,18,L); use('annot','em'); cloud(x+w-80,yy+17,22,9,10); });
+  }
+  // detail notes (general) block
+  { const x=2420,y=96,w=760; use('annot','sec'); rect(x,y,w,240); txt(x+16,y+27,'LOAD CASES',16,{c:'#FFFFFF',wt:500}); use('annot','ter'); seg(x,y+40,x+w,y+40);
+    txt(x+16,y+72,'w₁  $63.3B · 2,293 STARTUPS · 2021–2025 FUNDING YEARS',11,{c:'#E83214'});
+    txt(x+16,y+100,'w₂  $425B · 24,000+ STARTUPS · 2025',11,{c:'#FFFFFF'});
+    txt(x+16,y+140,'SRC  VCBACKED · THE STARTUP GRAVEYARD · JULY 2026',9); txt(x+16,y+160,'SRC  CRUNCHBASE NEWS · GLOBAL VENTURE FUNDING, 2025',9); txt(x+16,y+180,'SRC  CB INSIGHTS · 101 STARTUP POST-MORTEMS · 2014',9);
+  }
+  // construction sequence
+  const SEQ=['01 DEFINE THE PATH','02 BUILD THE PROCESS','03 BUILD THE PEOPLE','04 GO TO MARKET','05 DELIVER RESULTS'];
+  { const x0=4600,y=96; use('annot','pri'); rect(x0,y,1330,250); seg(x0,y+40,x0+1330,y+40);
+    txt(x0+16,y+27,'HOW WE WORK',16,{c:'#FFFFFF',wt:500}); txt(x0+1314,y+27,'CONSTRUCTION SEQUENCE',10,{al:'right'});
+    for(let k=0;k<5;k++){ const cx=x0+k*266; use('annot','sec'); if(k) seg(cx,y+40,cx,y+250);
+      const gx0=cx+20,gx1=cx+246,gyb=y+186; use('structure','sec'); seg(gx0,gyb,gx1,gyb); use('survey','ter'); for(let xx=gx0+4;xx<gx1;xx+=14) seg(xx,gyb+4,xx+5,gyb+9);
+      const tA=gx0+60,tB=gx1-60;
+      use('structure','cl'); if(k===0){ seg(gx0,gyb-40,gx1,gyb-40); use('structure','sec'); for(const sx2 of [gx0+20,tA,tB,gx1-20]){ seg(sx2,gyb,sx2,gyb-14); circ(sx2,gyb-16,2,6);} }
+      if(k>=1){ use('structure','pri'); rect(tA-6,gyb-6,12,12); rect(tB-6,gyb-6,12,12); rect(gx0+6,gyb-40,16,40); rect(gx1-22,gyb-40,16,40); }
+      if(k>=2){ use('structure','pri'); pl([tA-4,gyb-6,tA-3,gyb-120,tA+3,gyb-120,tA+4,gyb-6]); pl([tB-4,gyb-6,tB-3,gyb-120,tB+3,gyb-120,tB+4,gyb-6]); }
+      if(k>=3){ use('structure','sec'); const p=[]; for(let xx=gx0+14;xx<=gx1-14;xx+=4){ let yy; if(xx<tA) yy=lerp(gyb-40,gyb-120,(xx-gx0-14)/(tA-gx0-14)); else if(xx>tB) yy=lerp(gyb-120,gyb-40,(xx-tB)/(gx1-14-tB)); else { const u=(xx-(tA+tB)/2)/((tB-tA)/2); yy=gyb-48-72*u*u; } p.push(xx,yy);} pl(p);
+        use('structure','ter'); for(let xx=tA+8;xx<tB;xx+=8){ const u=(xx-(tA+tB)/2)/((tB-tA)/2); seg(xx,gyb-48-72*u*u,xx,gyb-(k>=4?44:40)); } }
+      if(k>=4){ use('structure','pri'); seg(gx0+6,gyb-44,gx1-6,gyb-44); seg(gx0+6,gyb-38,gx1-6,gyb-38); }
+      txt(cx+20,y+226,SEQ[k],11,{c:'#FFFFFF',wt:500});
+      txt(cx+20,y+64,'STAGE '+(k+1),9);
+    } }
+  // specifications
+  const SPEC=['Validated customer segments and buying behavior.','A documented, repeatable GTM motion.','Qualified pipeline and measurable conversion.','The right people in the right roles.','Revenue infrastructure that supports scale.','A clear commercial roadmap for the next stage of growth.'];
+  { const x=6000,y=96,w=900; use('annot','pri'); rect(x,y,w,250); seg(x,y+40,x+w,y+40);
+    txt(x+16,y+27,'YOU WALK AWAY WITH',16,{c:'#FFFFFF',wt:500}); txt(x+w-16,y+27,'SPECIFICATIONS',10,{al:'right'});
+    SPEC.forEach((s,i)=>{ const yy=y+70+i*30; txt(x+16,yy,'S-0'+(i+1),10); txt(x+76,yy,s,12,{c:'#FFFFFF'}); use('annot','faint'); seg(x+16,yy+10,x+w-16,yy+10); });
+  }
+  // data we track
+  const DATA=['Pipeline coverage','Win rate','Sales velocity','CAC payback','Net revenue retention','Forecast accuracy'];
+  { const x=6960,y=96,w=760; use('annot','sec'); rect(x,y,w,250); seg(x,y+40,x+w,y+40);
+    txt(x+16,y+27,'DATA WE TRACK',16,{c:'#FFFFFF',wt:500}); txt(x+w-16,y+27,'MONITORING POINTS',10,{al:'right'});
+    DATA.forEach((s,i)=>{ const col=i%2, row=(i/2|0); const xx=x+30+col*370, yy=y+90+row*62; use('annot','pri'); circ(xx,yy,12,20); seg(xx-16,yy,xx+16,yy); seg(xx,yy-16,xx,yy+16); txt(xx+26,yy+4,s.toUpperCase(),11,{c:'#FFFFFF'}); txt(xx+26,yy+20,'M-0'+(i+1),9); });
+  }
+
+  /* ---------- DETAILS ROW ---------- */
+  // Detail A foundation section
+  { const x0=4660,x1=5440,gr=1700,ft0=1724,ft1=1772,bed=1846,cx=5050;
+    txt(x0,1650,'DETAIL A',18,{c:'#FFFFFF',wt:500}); use('annot','pri'); seg(x0,1656,x0+92,1656); txt(x0,1670,'FOUNDATION SECTION · SCALE 1:200',9);
+    use('survey','pri'); seg(x0,gr,cx-190,gr); seg(cx+190,gr,x1-120,gr);
+    use('survey','ter',1); for(let x=x0+6;x<x1-120;x+=18){ if(x>cx-190&&x<cx+190) continue; seg(x,gr+6,x+6,gr+12); seg(x+6,gr+6,x+12,gr+12); }
+    // excavation (clear)
+    use('survey','emd'); pl([cx-190,gr,cx-170,ft1+4,cx+170,ft1+4,cx+190,gr]);
+    // footing (pour)
+    use('structure','pri'); rect(cx-160,ft0,320,ft1-ft0); use('structure','ter',1); hatch([cx-160,ft0,cx+160,ft0,cx+160,ft1,cx-160,ft1],Math.PI/4,7);
+    use('structure','sec'); seg(cx-150,ft1-8,cx+150,ft1-8); seg(cx-150,ft0+8,cx+150,ft0+8);
+    for(let x=cx-144;x<=cx+144;x+=16){ fillp([x-2,ft1-10,x+2,ft1-10,x+2,ft1-6,x-2,ft1-6],'#FFFFFF','structure'); }
+    // piles
+    use('structure','dash'); for(const px of [-120,-40,40,120]){ seg(cx+px-7,ft1,cx+px-7,bed+6); seg(cx+px+7,ft1,cx+px+7,bed+6); }
+    // pier shaft (raise) with break
+    use('structure','pri'); seg(cx-50,ft0,cx-42,1636); seg(cx+50,ft0,cx+42,1636); pl([cx-56,1636,cx-14,1636,cx-6,1628,cx+6,1644,cx+14,1636,cx+56,1636]);
+    use('structure','ter',2); hatch([cx-42,1640,cx+42,1640,cx+50,ft0,cx-50,ft0],Math.PI/4,8);
+    // bedrock
+    use('survey','dash'); seg(x0,bed,x1-120,bed); use('survey','ter',1); for(let x=x0+10;x<x1-130;x+=24){ seg(x,bed+6,x+10,bed+12); }
+    // depth dims
+    use('annot','em'); seg(x1-90,gr,x1-90,bed); seg(x1-96,gr+6,x1-84,gr-6); seg(x1-96,bed+6,x1-84,bed-6); use('annot','ter'); seg(cx+200,gr,x1-80,gr); seg(cx+130,bed,x1-80,bed);
+    txt(x1-74,(gr+bed)/2-4,'DEPTH',10,{c:'#E83214',wt:500}); txt(x1-74,(gr+bed)/2+12,"146'-0\"",12,{c:'#E83214',wt:500});
+    use('annot','sec'); seg(cx-210,ft0,cx-210,ft1); seg(cx-216,ft0+6,cx-204,ft0-6); seg(cx-216,ft1+6,cx-204,ft1-6); txt(cx-222,ft1-18,"48'",10,{al:'right',c:'#FFFFFF'});
+    // stage callouts
+    [['1','CLEAR THE GROUND',cx-178,gr+30,x0+40,gr+64],['2','POUR THE FOUNDATION',cx-110,ft0+20,x0+40,ft0+82],['3','RAISE FOUR PILLARS',cx-46,1660,x0+150,1630]].forEach(a=>{ use('annot','sec'); seg(a[2],a[3],a[4]+14,a[5]); circ(a[4],a[5],12,20); txt(a[4],a[5]+4,a[0],10,{c:'#FFFFFF',al:'center',wt:500}); txt(a[4]+20,a[5]+4,a[1],10,{c:'#FFFFFF'}); });
+  }
+  // Detail B saddle
+  { const cx=2420,cy=1740; txt(2260,1650,'DETAIL B',18,{c:'#FFFFFF',wt:500}); use('annot','pri'); seg(2260,1656,2352,1656); txt(2260,1670,'CABLE SADDLE · SCALE 1:20',9);
+    use('structure','pri'); pl([cx-150,cy+60,cx-130,cy-10,cx-60,cy-50,cx+60,cy-50,cx+130,cy-10,cx+150,cy+60,cx-150,cy+60]); rect(cx-170,cy+60,340,24);
+    use('structure','ter',1); hatch([cx-170,cy+60,cx+170,cy+60,cx+170,cy+84,cx-170,cy+84],Math.PI/4,7);
+    use('structure','pri'); circ(cx,cy,44,48); use('structure','sec',1); for(let r=0;r<3;r++){ const n=r===0?1:r*6; for(let i=0;i<n;i++){ const a=i/n*Math.PI*2; circ(cx+Math.cos(a)*r*15,cy+Math.sin(a)*r*15,7,12);} }
+    for(const bx of [-140,-100,100,140]){ use('structure','sec'); circ(cx+bx,cy+72,5,10); seg(cx+bx,cy+84,cx+bx,cy+110); }
+    leader(cx+44,cy-20,cx+200,cy-60,'sec'); txt(cx+206,cy-56,'MAIN CABLE',9);
+  }
+  // Section C deck
+  { const x0=2900,y0=1700,w=900; txt(x0,1650,'SECTION C',18,{c:'#FFFFFF',wt:500}); use('annot','pri'); seg(x0,1656,x0+104,1656); txt(x0,1670,'DECK · SCALE 1:100',9);
+    use('structure','pri'); seg(x0+40,y0,x0+w-40,y0); seg(x0+40,y0+8,x0+w-40,y0+8); rect(x0+80,y0+8,w-160,90);
+    use('structure','sec',1); const n=8, pw=(w-160)/n; for(let i=0;i<n;i++){ const xx=x0+80+i*pw; seg(xx,y0+8,xx+pw,y0+98); seg(xx+pw,y0+8,xx,y0+98); seg(xx,y0+8,xx,y0+98); }
+    use('structure','sec'); for(const rx of [x0+60,x0+w-60]){ seg(rx,y0,rx,y0-24); } seg(x0+40,y0-24,x0+80,y0-24); seg(x0+w-80,y0-24,x0+w-40,y0-24);
+    use('structure','cl'); seg(x0+w/2,y0-40,x0+w/2,y0+120);
+    use('structure','ter'); for(let i=1;i<4;i++){ const xx=x0+40+i*(w-80)/4; seg(xx,y0-4,xx+30,y0-4); }
+    use('structure','pri'); circ(x0+40,y0-80,9,14); circ(x0+w-40,y0-80,9,14); use('structure','ter'); seg(x0+40,y0-71,x0+40,y0); seg(x0+w-40,y0-71,x0+w-40,y0);
+  }
+
+  /* ---------- YARD ---------- */
+  txt(6820,1236,'MATERIALS YARD',10,{c:'#FFFFFF',wt:500}); txt(6820,1252,'STOCKPILE · LIVE',9,{c:'#E83214'});
+  use('annot','ter'); seg(6800,1186,7560,1186);
+
+  /* ---------- TITLE BLOCK ---------- */
+  { const x=7700,y=1470,w=1040,h=370; use('annot','bold'); rect(x,y,w,h);
+    use('annot','pri'); seg(x,y+70,x+w,y+70); seg(x,y+200,x+w,y+200); seg(x,y+270,x+w,y+270); seg(x+520,y+200,x+520,y+h); seg(x+780,y+270,x+780,y+h);
+    txt(x+22,y+46,'HALO',28,{c:'#FFFFFF',ff:'t',wt:600}); txt(x+112,y+46,'//',28,{c:'#E83214',ff:'t',wt:600}); txt(x+160,y+46,'VENTURES',28,{c:'#FFFFFF',ff:'t',wt:600});
+    txt(x+22,y+96,'TITLE',9); txt(x+22,y+150,'The blueprint comes',40,{c:'#FFFFFF',ff:'s'}); txt(x+22,y+188,'before the bridge.',40,{c:'#FFFFFF',ff:'s'});
+    txt(x+22,y+222,'SCOPE',9); txt(x+22,y+248,'We help founders and teams go to market.',12,{c:'#FFFFFF'});
+    txt(x+540,y+222,'ROLES',9); txt(x+540,y+242,'Fractional chief growth officer.',11,{c:'#FFFFFF'}); txt(x+540,y+258,'Fractional head of sales.',11,{c:'#FFFFFF'});
+    txt(x+22,y+294,'DRAWING',9); txt(x+22,y+324,'PLAN AND ELEVATION',16,{c:'#FFFFFF',wt:500});
+    txt(x+540,y+294,'SCALE',9); txt(x+540,y+324,'AS SHOWN',14,{c:'#FFFFFF'});
+    txt(x+800,y+294,'SHEET',9); txt(x+800,y+330,'B-01',26,{c:'#FFFFFF',wt:500});
+    txt(x+w-22,y+46,'REV E',12,{c:'#E83214',al:'right'});
+  }
+}
+build();
+// order buckets
+const BK = Array.from(buckets.values()).sort((a,b)=>ORDER.indexOf(a.sty)-ORDER.indexOf(b.sty));
+texts.forEach(t=>{ const w=t.size*0.62*t.s.length; t.x0=t.al==='center'?t.x-w/2:t.al==='right'?t.x-w:t.x; t.x1=t.x0+w; });
+
+/* hotspots (balloons) */
+const HS=[
+  {n:'1',x:1150,y:1384,tx:1056,ty:1330,step:1,e:1},
+  {n:'2',x:900,y:1150,tx:984,ty:1182,step:2,e:1},
+  {n:'3',x:1220,y:430,tx:faultXP(470),ty:470,step:3,e:1},
+  {n:'4',x:1240,y:990,tx:1184,ty:1082,step:4,e:1},
+  {n:'5',x:1480,y:1160,tx:1420,ty:1200,step:5,e:1},
+  {n:'6',x:1500,y:96,tx:1520,ty:120,step:6,e:1},
+  {n:'7',x:2160,y:940,tx:2200,ty:980,step:7,e:1},
+  {n:'8',x:4040,y:940,tx:4000,ty:980,step:8},
+  {n:'9',x:4640,y:1620,tx:4660,ty:1650,step:9},
+  {n:'01',x:PIERS.R1,y:984,tx:PIERS.R1,ty:1000,step:10,pillar:0},
+  {n:'02',x:PIERS.R2,y:984,tx:PIERS.R2,ty:1000,step:10,pillar:1},
+  {n:'03',x:PIERS.R3,y:984,tx:PIERS.R3,ty:1000,step:10,pillar:2},
+  {n:'04',x:PIERS.R4,y:984,tx:PIERS.R4,ty:1000,step:10,pillar:3},
+  {n:'11',x:5500,y:1196,tx:5500,ty:1150,step:11},
+  {n:'12',x:4580,y:80,tx:4600,ty:96,step:12},
+  {n:'13',x:5980,y:80,tx:6000,ty:96,step:13},
+  {n:'14',x:6330,y:960,tx:6450,ty:1090,step:14},
+  {n:'a',x:6480,y:985,tx:6466,ty:1052,step:15,zoom:'why0'},
+  {n:'b',x:6760,y:1060,tx:6640,ty:1110,step:15,zoom:'why1'},
+  {n:'c',x:6990,y:150,tx:6990,ty:186,step:15,zoom:'why2'},
+  {n:'d',x:6740,y:1260,tx:6560,ty:1210,step:15,zoom:'why3'},
+  {n:'16',x:6700,y:470,tx:6800,ty:540,step:16},
+  {n:'17',x:6780,y:880,tx:6900,ty:1000,step:17,e:1},
+];
+function faultXP(y){ return 860+(y-PL0)*(380/(PL1-PL0)); }
+HS.forEach(h=>{ use('annot','ter'); seg(h.x,h.y,h.tx,h.ty); });
+
+/* ================= ZOOM TARGETS & STEPS ================= */
+const ZR={
+  fault:[960,1240,1260,1520], cloud:[930,1130,1100,1370], contour:[900,440,1130,640], stall:[1080,1000,1300,1180], p3:[1330,1100,1490,1480],
+  loadA:[2150,920,3100,1100], loadB:[3100,920,4060,1100], depth:[4980,1630,5450,1870],
+  seq0:[4600,96,4866,346], seq1:[4866,96,5132,346], seq2:[5132,96,5398,346], seq3:[5398,96,5664,346], seq4:[5664,96,5930,346],
+  why0:[6380,1000,6560,1110], why1:[6560,1040,6800,1200], why2:[6960,96,7720,346], why3:[6420,1150,6780,1290],
+  dest0:[7000,380,7640,480], dest1:[7000,470,7640,570], dest2:[7000,570,7640,670], dest3:[7000,660,7640,760]
+};
+const KEYS=[
+  {d:[0,0,WW,WH], m:[1650,380,2560,1510]},
+  {d:[700,390,1420,1500], m:[780,420,1260,1500]},
+  {d:[880,1100,1140,1400], m:[900,1110,1120,1400]},
+  {d:[780,400,1360,760], m:[860,400,1300,760]},
+  {d:[940,990,1480,1220], m:[990,980,1420,1260]},
+  {d:[1240,1000,1600,1500], m:[1290,1020,1530,1500]},
+  {d:[1480,80,2380,350], m:[1490,80,2380,350]},
+  {d:[1620,780,3140,1320], m:[1640,780,2600,1320]},
+  {d:[3060,780,4600,1320], m:[3640,780,4600,1320]},
+  {d:[4640,1610,5460,1880], m:[4660,1610,5460,1880]},
+  {d:[4640,940,6260,1520], m:[4700,960,6200,1500]},
+  {d:[4380,940,6620,1320], m:[4440,940,6620,1320]},
+  {d:[4580,70,5950,360], m:[4580,70,5950,360]},
+  {d:[5980,70,6920,360], m:[5980,70,6920,360]},
+  {d:[6300,980,6800,1260], m:[6380,980,6720,1260]},
+  {d:[6200,880,7000,1340], m:[6280,900,6960,1320]},
+  {d:[6300,380,7680,780], m:[6540,380,7660,780]},
+  {d:[6740,960,7640,1240], m:[6780,960,7600,1240]},
+  {d:[0,0,WW,WH], m:[7680,1450,8760,1860]}
+];
+
+/* ================= CANVAS / CAMERA ================= */
+const cv=$('#cv'), ctx=cv.getContext('2d',{alpha:false});
+const stage=$('#stage');
+let VW=0,VH=0,DPR=1,isD=false;
+const stepEls=$$('.step'); let anchors=[], cams=[];
+let cam=null, tgt=null, raf=0, lastT=0, override=null, ovB=0, ovScroll=0, activeStep=0, needs=true;
+const frameTimes=[]; window.__ft=frameTimes;
+
+function freeRegion(i){
+  const card=stepEls[i].querySelector('.card'); const ch=card?card.offsetHeight:300;
+  const hdr=isD?60:52;
+  if(isD){
+    if(stepEls[i].classList.contains('tbk')){ const x0=76,x1=VW-76, y1=VH-ch-96-28; return {x0,x1,y0:Math.max(hdr+24,y1-(x1-x0)*WH/WW),y1,tight:1}; }
+    return {x0:470,x1:VW-60,y0:hdr+24,y1:VH-100};
+  }
+  return {x0:16,x1:VW-34,y0:hdr+56,y1:Math.max(hdr+160,VH-ch-16-16)};
+}
+function fit(r,f){ const fw=f.x1-f.x0, fh=f.y1-f.y0; const z=Math.min(fw/(r[2]-r[0]), fh/(r[3]-r[1]))*(f.tight?1:0.94); return {cx:(r[0]+r[2])/2, cy:(r[1]+r[3])/2, lz:Math.log(z), fx:(f.x0+f.x1)/2, fy:(f.y0+f.y1)/2}; }
+function layout(){
+  VW=stage.clientWidth; VH=window.innerHeight; isD=VW>=900;
+  const coarse=matchMedia('(pointer:coarse)').matches || !isD;
+  DPR=Math.min(window.devicePixelRatio||1, coarse?1.5:2);
+  cv.width=Math.round(VW*DPR); cv.height=Math.round(stage.clientHeight*DPR);
+  const top0=$('#steps').getBoundingClientRect().top+scrollY;
+  anchors=stepEls.map(el=>{ const r=el.getBoundingClientRect(); return r.top+scrollY; });
+  cams=KEYS.map((k,i)=>fit(isD?k.d:k.m, freeRegion(i)));
+  sizeMini(); drawMiniBase();
+  const t=scrollTarget(); if(!cam) cam={...t}; tgt=t; if(RM) cam={...t};
+  needs=true; kick();
+}
+function scrollTarget(){
+  const s=scrollY; let i=0; while(i<anchors.length-1 && s>=anchors[i+1]) i++;
+  if(i>=anchors.length-1) { activeStep=anchors.length-1; return {...cams[cams.length-1]}; }
+  const span=anchors[i+1]-anchors[i]; const u=clamp((s-anchors[i])/span,0,1);
+  const hold=stepEls[i].classList.contains('tall')?0.45:0.22;
+  let t=clamp((u-hold)/(0.92-hold),0,1); t=sm(t);
+  activeStep = t<0.5?i:i+1;
+  if(RM) return {...cams[t<0.5?i:i+1]};
+  if(s<anchors[0]) return {...cams[0]};
+  const a=cams[i], b=cams[i+1];
+  const zMin=Math.min(a.lz,b.lz); const d=Math.hypot(b.cx-a.cx,b.cy-a.cy)*Math.exp(zMin)/Math.max(VW,VH);
+  const bump=clamp(Math.log(1+d)*0.75,0,1.6);
+  return {cx:lerp(a.cx,b.cx,t), cy:lerp(a.cy,b.cy,t), lz:lerp(a.lz,b.lz,t)-bump*Math.sin(Math.PI*t), fx:lerp(a.fx,b.fx,t), fy:lerp(a.fy,b.fy,t)};
+}
+function kick(){ if(!raf) raf=requestAnimationFrame(frame); }
+function frame(now){
+  raf=0; const dt=lastT?Math.min(64,now-lastT):16; lastT=now;
+  let t=scrollTarget();
+  if(override){ ovB = RM?1:Math.min(1,ovB+dt/420); }
+  else if(ovB>0){ ovB = RM?0:Math.max(0,ovB-dt/420); }
+  if(ovB>0 && (override||lastOv)){ const o=override||lastOv; const e=sm(ovB); t={cx:lerp(t.cx,o.cx,e),cy:lerp(t.cy,o.cy,e),lz:lerp(t.lz,o.lz,e),fx:lerp(t.fx,o.fx,e),fy:lerp(t.fy,o.fy,e)}; }
+  tgt=t;
+  let moving=false;
+  if(RM){ cam={...t}; }
+  else { const k=1-Math.exp(-dt/90);
+    for(const p of ['cx','cy','lz','fx','fy']){ const d=t[p]-cam[p]; const thr=p==='lz'?0.0006:(p==='cx'||p==='cy')?0.04/Math.exp(cam.lz):0.05; if(Math.abs(d)>thr){ cam[p]+=d*k; moving=true; } else cam[p]=t[p]; } }
+  if(moving||needs||(ovB>0&&ovB<1)){ const t0=performance.now(); render(); frameTimes.push(performance.now()-t0); if(frameTimes.length>4000) frameTimes.shift(); needs=false; drawMini(); }
+  if(moving||(ovB>0&&ovB<1)||(override===null&&ovB>0)) kick();
+  updateActive();
+}
+let lastOv=null;
+
+function render(){
+  const z=Math.exp(cam.lz), W=VW, H=cv.height/DPR;
+  ctx.setTransform(1,0,0,1,0,0); ctx.fillStyle='#000'; ctx.fillRect(0,0,cv.width,cv.height);
+  const s=z*DPR, tx=(cam.fx-cam.cx*z)*DPR, ty=(cam.fy-cam.cy*z)*DPR;
+  ctx.setTransform(s,0,0,s,tx,ty);
+  const wx0=(0-cam.fx)/z+cam.cx, wx1=(W-cam.fx)/z+cam.cx, wy0=(0-cam.fy)/z+cam.cy, wy1=(H-cam.fy)/z+cam.cy;
+  const b0=Math.max(0,Math.floor(wx0/BIN)-1), b1=Math.min(NB-1,Math.floor(wx1/BIN));
+  ctx.lineCap='butt'; ctx.lineJoin='miter';
+  const lodZ=[0,0.12,0.45];
+  // fills
+  for(const f of fills){ if(!LAYERS[f.layer]||f.x1<wx0||f.x0>wx1) continue; ctx.fillStyle=f.c; ctx.beginPath(); ctx.moveTo(f.p[0],f.p[1]); for(let i=2;i<f.p.length;i+=2) ctx.lineTo(f.p[i],f.p[i+1]); ctx.closePath(); ctx.fill(); }
+  for(const b of BK){
+    if(!LAYERS[b.layer] || z<lodZ[b.lod]) continue;
+    const st=STY[b.sty]; ctx.strokeStyle=st.c; ctx.lineWidth=st.w/z;
+    if(b.sty==='grid'&&z<0.5){ ctx.globalAlpha=clamp((z-0.2)/0.3,0,1); } else ctx.globalAlpha=1;
+    ctx.setLineDash(st.d? st.d.map(v=>v/z):[]);
+    ctx.beginPath(); let n=0;
+    for(let bi=b0;bi<=b1;bi++){ const a=b.bins[bi]; for(let i=0;i<a.length;i+=4){ const y1=a[i+1],y2=a[i+3]; if((y1<wy0&&y2<wy0)||(y1>wy1&&y2>wy1)) continue; ctx.moveTo(a[i],y1); ctx.lineTo(a[i+2],y2); n++; } }
+    if(n) ctx.stroke();
+  }
+  ctx.globalAlpha=1; ctx.setLineDash([]);
+  // yard pile
+  if(LAYERS.structure && wx1>6780 && wx0<7600) drawPile(ctx,z);
+  // texts
+  ctx.textBaseline='alphabetic';
+  let lastFont='';
+  for(const t of texts){
+    if(!LAYERS[t.layer] || t.x1<wx0 || t.x0>wx1 || t.y<wy0-40 || t.y>wy1+40) continue;
+    const px=t.size*z; if(px<5.2) continue;
+    const fam=t.ff==='s'?"'Instrument Serif',Georgia,serif":t.ff==='t'?"'Inter Tight',Arial,sans-serif":"'IBM Plex Mono',ui-monospace,monospace";
+    const f=t.wt+' '+t.size+'px '+fam; if(f!==lastFont){ ctx.font=f; lastFont=f; }
+    ctx.fillStyle=t.c; ctx.textAlign=t.al; ctx.fillText(t.s,t.x,t.y);
+  }
+  // balloons (screen space)
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+  if(LAYERS.annot && z>0.2){
+    ctx.font="500 10px 'IBM Plex Mono',ui-monospace,monospace"; ctx.textAlign='center'; ctx.textBaseline='middle';
+    for(const h of HS){ const sx=(h.x-cam.cx)*z+cam.fx, sy=(h.y-cam.cy)*z+cam.fy; if(sx<-20||sx>W+20||sy<-20||sy>H+20) continue;
+      const act=h.step===activeStep; const r=h.n.length>1?13:11;
+      ctx.beginPath(); ctx.arc(sx,sy,r,0,Math.PI*2); ctx.fillStyle=act?(h.e?'#E83214':'#FFFFFF'):'#000'; ctx.fill();
+      ctx.lineWidth=1; ctx.strokeStyle=h.e?'#E83214':'#FFFFFF'; ctx.stroke();
+      ctx.fillStyle=act?(h.e?'#FFFFFF':'#000'):(h.e?'#E83214':'#FFFFFF'); ctx.fillText(h.n,sx,sy+.5);
+    }
+    ctx.textBaseline='alphabetic';
+  }
+}
+
+/* ---- pile ---- */
+let pileN=0;
+function stacksFor(total){ return Math.min(210, Math.floor(total/1000)); }
+function pileLayout(n,cb){ let row=0,inRow=0,per=20; for(let i=0;i<n;i++){ if(inRow>=per-row){ row++; inRow=0; if(per-row<=0) break; } cb(row,inRow,per); inRow++; } }
+function drawPile(c,z){
+  const bx=6820, by=1186, sw=34, sh=11;
+  c.lineWidth=1/z; c.strokeStyle='#FFFFFF'; c.beginPath();
+  const bands=[];
+  pileLayout(pileN,(row,k,per)=>{ const x=bx+row*sw/2+k*sw, y=by-(row+1)*sh; c.rect(x+1,y+1,sw-2,sh-2); bands.push(x,y); });
+  c.stroke();
+  c.strokeStyle='#8E8E93'; c.beginPath(); for(let i=0;i<bands.length;i+=2){ const x=bands[i],y=bands[i+1]; c.moveTo(x+14,y+1); c.lineTo(x+14,y+sh-1); c.moveTo(x+20,y+1); c.lineTo(x+20,y+sh-1); c.moveTo(x+3,y+4); c.lineTo(x+sw-3,y+4); } c.stroke();
+}
+function drawCardPile(){
+  const pc=$('#pileC'); if(!pc) return; const w=pc.clientWidth, h=pc.clientHeight; if(!w) return;
+  const d=Math.min(window.devicePixelRatio||1,2); if(pc.width!==Math.round(w*d)){ pc.width=Math.round(w*d); pc.height=Math.round(h*d); }
+  const c=pc.getContext('2d'); c.setTransform(d,0,0,d,0,0); c.clearRect(0,0,w,h);
+  const per=20, sw=Math.floor((w-8)/per), sh=Math.max(5,Math.round(sw*0.32));
+  c.strokeStyle='#636366'; c.lineWidth=1; c.beginPath(); c.moveTo(0,h-.5); c.lineTo(w,h-.5); c.stroke();
+  c.strokeStyle='#FFFFFF'; c.beginPath(); const bands=[];
+  pileLayout(pileN,(row,k)=>{ const x=4+row*sw/2+k*sw, y=h-1-(row+1)*sh; if(y<0) return; c.rect(x+.5,y+.5,sw-1,sh-1); bands.push(x,y); });
+  c.stroke(); c.strokeStyle='#E83214'; c.beginPath(); for(let i=0;i<bands.length;i+=2){ c.moveTo(bands[i]+sw*0.45+.5,bands[i+1]+1); c.lineTo(bands[i]+sw*0.45+.5,bands[i+1]+sh-1); } c.stroke();
+}
+
+/* ---- minimap ---- */
+const mm=$('#mm'), mctx=mm.getContext('2d'); let mmBase=null, mmW=0, mmH=0, mmS=1, mmOx=0, mmOy=0;
+function sizeMini(){ mmW=mm.clientWidth; mmH=mm.clientHeight; const d=Math.min(window.devicePixelRatio||1,2); mm.width=Math.round(mmW*d); mm.height=Math.round(mmH*d); mctx.setTransform(d,0,0,d,0,0); mmS=Math.min(mmW/WW,mmH/WH); mmOx=(mmW-WW*mmS)/2; mmOy=(mmH-WH*mmS)/2; }
+function drawMiniBase(){
+  const d=Math.min(window.devicePixelRatio||1,2); mmBase=document.createElement('canvas'); mmBase.width=Math.round(mmW*d); mmBase.height=Math.round(mmH*d);
+  const c=mmBase.getContext('2d'); c.fillStyle='#000'; c.fillRect(0,0,mmBase.width,mmBase.height); c.setTransform(mmS*d,0,0,mmS*d,mmOx*d,mmOy*d);
+  for(const b of BK){ if(b.lod>0||b.sty==='grid'||b.layer==='survey'&&b.sty!=='pri') continue; const st=STY[b.sty]; c.strokeStyle=b.sty==='em'||b.sty==='emd'?'#E83214':(b.sty==='pri'||b.sty==='bold'?'#AEAEB2':'#636366'); c.lineWidth=1/(mmS*d); c.beginPath(); for(const a of b.bins){ for(let i=0;i<a.length;i+=4){ c.moveTo(a[i],a[i+1]); c.lineTo(a[i+2],a[i+3]); } } c.stroke(); }
+}
+function drawMini(){
+  if(!mmBase) return; mctx.drawImage(mmBase,0,0,mmW,mmH);
+  const z=Math.exp(cam.lz), H=VH; const wx0=(0-cam.fx)/z+cam.cx, wx1=(VW-cam.fx)/z+cam.cx, wy0=(0-cam.fy)/z+cam.cy, wy1=(H-cam.fy)/z+cam.cy;
+  const x0=clamp(mmOx+wx0*mmS,0,mmW), x1=clamp(mmOx+wx1*mmS,0,mmW), y0=clamp(mmOy+wy0*mmS,0,mmH), y1=clamp(mmOy+wy1*mmS,0,mmH);
+  mctx.strokeStyle='#E83214'; mctx.lineWidth=1; mctx.strokeRect(x0+.5,y0+.5,Math.max(2,x1-x0-1),Math.max(2,y1-y0-1));
+}
+function jumpTo(i){ i=clamp(i,0,anchors.length-1); override=null; window.scrollTo({top:anchors[i]+2,behavior:RM?'auto':'smooth'}); }
+mm.addEventListener('click',e=>{ const r=mm.getBoundingClientRect(); const wx=(e.clientX-r.left-mmOx)/mmS, wy=(e.clientY-r.top-mmOy)/mmS;
+  let best=0,bd=1e18; KEYS.forEach((k,i)=>{ const rr=isD?k.d:k.m; if(i===0) return; const cx=(rr[0]+rr[2])/2, cy=(rr[1]+rr[3])/2; const dd=(cx-wx)**2+((cy-wy)*0.6)**2; if(dd<bd){bd=dd;best=i;} }); jumpTo(best); });
+mm.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); jumpTo(Math.min(anchors.length-1,activeStep+1)); } });
+
+/* ---- override zoom ---- */
+function zoomTo(rect){
+  const o=fit(rect,freeRegion(activeStep)); override=o; lastOv=o; ovScroll=scrollY; $('#reset').classList.add('on'); kick();
+}
+function release(){ if(!override) return; override=null; $('#reset').classList.remove('on'); kick(); }
+$('#resetBtn').addEventListener('click',release);
+$$('[data-zoom]').forEach(b=>b.addEventListener('click',()=>{ const r=ZR[b.dataset.zoom]; if(r) zoomTo(r); }));
+
+/* ---- canvas taps ---- */
+let pd=null;
+cv.addEventListener('pointerdown',e=>{ pd={x:e.clientX,y:e.clientY,t:performance.now()}; });
+cv.addEventListener('pointerup',e=>{ if(!pd) return; const dx=e.clientX-pd.x, dy=e.clientY-pd.y; const dt=performance.now()-pd.t; pd=null; if(Math.hypot(dx,dy)>10||dt>600) return; tapAt(e.clientX,e.clientY); });
+function hitAt(x,y){ const z=Math.exp(cam.lz); if(z<=0.2) return null; let best=null,bd=26*26; for(const h of HS){ const sx=(h.x-cam.cx)*z+cam.fx, sy=(h.y-cam.cy)*z+cam.fy; const d=(sx-x)**2+(sy-y)**2; if(d<bd){bd=d;best=h;} } return best; }
+function tapAt(x,y){ const r=cv.getBoundingClientRect(); const h=hitAt(x-r.left,y-r.top); if(!h) return;
+  if(h.pillar!=null){ openPillar(h.pillar); return; }
+  if(h.zoom&&ZR[h.zoom]){ zoomTo(ZR[h.zoom]); return; }
+  const k=KEYS[h.step]; const rr=isD?k.d:k.m; const cx=h.x, cy=h.y; const w=(rr[2]-rr[0])*0.55, hh=(rr[3]-rr[1])*0.55; zoomTo([cx-w/2,cy-hh/2,cx+w/2,cy+hh/2]); }
+cv.addEventListener('pointermove',e=>{ if(e.pointerType!=='mouse') return; const r=cv.getBoundingClientRect(); cv.style.cursor=hitAt(e.clientX-r.left,e.clientY-r.top)?'pointer':'default'; });
+
+/* ---- active step & scroll ---- */
+let lastActive=-1;
+function updateActive(){ if(activeStep!==lastActive){ lastActive=activeStep; needs=true; kick(); } }
+addEventListener('scroll',()=>{ if(override && Math.abs(scrollY-ovScroll)>90) release(); kick(); },{passive:true});
+let rzT=0, lastW=innerWidth, lastH=innerHeight;
+addEventListener('resize',()=>{ clearTimeout(rzT); rzT=setTimeout(()=>{ if(innerWidth!==lastW || Math.abs(innerHeight-lastH)>140){ lastW=innerWidth; lastH=innerHeight; layout(); } else { needs=true; kick(); } },120); });
+
+/* ---- layers ---- */
+const lyr=$('#lyr'), lyrBtn=$('#lyrBtn');
+lyrBtn.addEventListener('click',()=>{ const o=!lyr.classList.contains('open'); lyr.classList.toggle('open',o); lyrBtn.setAttribute('aria-expanded',String(o)); });
+document.addEventListener('click',e=>{ if(!lyr.contains(e.target)){ lyr.classList.remove('open'); lyrBtn.setAttribute('aria-expanded','false'); } });
+$$('.lt').forEach(b=>b.addEventListener('click',()=>{ const L=b.dataset.layer; LAYERS[L]=!LAYERS[L]; b.setAttribute('aria-pressed',String(LAYERS[L])); needs=true; kick(); }));
+
+/* ---- revision rows ---- */
+$('#revBody').innerHTML=['A','B','C','D','E'].map((L,i)=>`<tr><td>${L}</td><td>${2021+i}</td><td class="m"><span class="tri"><svg viewBox="0 0 20 18" aria-hidden="true"><path d="M10 1 19 17H1Z" fill="none" stroke="#E83214"/></svg><span style="position:relative;top:2px">${L}</span></span></td></tr>`).join('');
+
+/* ---- dialogs ---- */
+const dB=$('#dlgBook'), dP=$('#dlgPier'), dS=$('#dlgSrc');
+function openD(d){ try{ if(!d.open) d.showModal(); }catch(e){ d.setAttribute('open',''); } }
+$$('[data-book]').forEach(b=>b.addEventListener('click',()=>{ if(dP.open) dP.close(); openD(dB); }));
+$('#srcBtn').addEventListener('click',()=>openD(dS));
+$$('dialog').forEach(d=>{ d.addEventListener('click',e=>{ if(e.target===d) d.close(); }); d.querySelectorAll('[data-close]').forEach(x=>x.addEventListener('click',()=>d.close())); });
+const PILL=[
+  ['Client acquisition','The right buyers, found and won.',['ICP definition','GTM strategy','Demand validation','Revenue intelligence']],
+  ['Operational excellence','A process that repeats.',['Sales playbook','Sales process','RevOps & CRM','Forecasting']],
+  ['People','The right people in the right seats.',['Org design','Hiring','Comp & quotas','Coaching']],
+  ['Revenue','Revenue you can forecast.',['Founder-led transition','Pipeline generation','Deal execution','Scale readiness']]
+];
+let pIdx=0;
+function openPillar(i){ pIdx=(i+4)%4; const p=PILL[pIdx];
+  $('#pTag').textContent='Detail sheet · Pier 0'+(pIdx+1); $('#pT').textContent=p[0]; $('#pLine').textContent=p[1];
+  $('#pList').innerHTML=p[2].map((s,k)=>`<li><span class="n">${pIdx+1}.${k+1}</span><span>${s.replace(/&/g,'&amp;')}</span></li>`).join('');
+  // pier svg
+  let s=`<g fill="none" stroke-width="1" vector-effect="non-scaling-stroke">`;
+  s+=`<line x1="10" y1="22" x2="510" y2="22" stroke="#fff"/><line x1="10" y1="40" x2="510" y2="40" stroke="#fff"/>`;
+  for(let x=10;x<510;x+=20){ s+=`<line x1="${x}" y1="22" x2="${x+20}" y2="40" stroke="#636366"/><line x1="${x+20}" y1="22" x2="${x}" y2="40" stroke="#636366"/>`; }
+  for(let k=0;k<4;k++){ const x=70+k*126; const on=k===pIdx; const c=on?'#E83214':'#636366';
+    s+=`<rect x="${x-14}" y="40" width="28" height="5" stroke="${c}"/><path d="M${x-8} 45 L${x-11} 86 L${x+11} 86 L${x+8} 45" stroke="${c}"/><rect x="${x-22}" y="88" width="44" height="8" stroke="${c}" stroke-dasharray="3 3"/>`;
+    s+=`<text x="${x}" y="16" fill="${on?'#E83214':'#8E8E93'}" stroke="none" font-family="IBM Plex Mono, monospace" font-size="10" text-anchor="middle">0${k+1}</text>`; }
+  s+=`<line x1="10" y1="86" x2="510" y2="86" stroke="#8E8E93"/></g>`;
+  $('#pierSvg').innerHTML=s;
+  openD(dP);
+}
+$('#pPrev').addEventListener('click',()=>openPillar(pIdx-1)); $('#pNext').addEventListener('click',()=>openPillar(pIdx+1));
+$$('[data-pillar]').forEach(b=>b.addEventListener('click',()=>{ const i=+b.dataset.pillar; zoomTo([PIERS['R'+(i+1)]-180,960,PIERS['R'+(i+1)]+180,1440]); openPillar(i); }));
+
+/* ---- copy ---- */
+$$('[data-copy]').forEach(btn=>btn.addEventListener('click',()=>{
+  const el=document.getElementById(btn.dataset.copy); const t='chris@halovpartners.com';
+  const sel=()=>{ try{ const r=document.createRange(); r.selectNodeContents(el); const s=getSelection(); s.removeAllRanges(); s.addRange(r); }catch(e){} };
+  const done=()=>{ btn.textContent='Copied'; btn.classList.add('ok'); setTimeout(()=>{ btn.textContent='Copy'; btn.classList.remove('ok'); },1800); };
+  try{ if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done,()=>{ sel(); btn.textContent='Selected'; setTimeout(()=>btn.textContent='Copy',1800); }); } else { sel(); btn.textContent='Selected'; setTimeout(()=>btn.textContent='Copy',1800); } }
+  catch(e){ sel(); }
+}));
+
+/* ---- tally ---- */
+const hT=$('#hTally'), uT=$('#uTotal'), uL=$('#uLost'), uTm=$('#uTime'); let urgVis=false, yardVisible=false;
+try{ new IntersectionObserver(es=>{ es.forEach(e=>{ urgVis=e.isIntersecting; if(urgVis) drawCardPile(); }); }).observe($('#urg')); }catch(e){ urgVis=true; }
+function tick(){
+  const sec=(performance.now()-T0)/1000, total=sec*RATE; const s=fmt(total);
+  hT.textContent=s;
+  if(urgVis){ uT.textContent=s; uL.textContent=s; const m=Math.floor(sec/60), ss=Math.floor(sec%60); uTm.textContent=String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0'); }
+  const n=stacksFor(total); if(n!==pileN){ pileN=n; if(urgVis) drawCardPile(); const z=cam?Math.exp(cam.lz):0; if(cam){ const wx0=(0-cam.fx)/z+cam.cx, wx1=(VW-cam.fx)/z+cam.cx; if(wx1>6780&&wx0<7600){ needs=true; kick(); } } }
+}
+setInterval(tick,100);
+
+/* ---- falling cash (edge) ---- */
+(function(){
+  const host=$('#cash'); const N=innerWidth<900?6:8; let h='';
+  for(let i=0;i<N;i++){
+    const dur=(11+((i*37)%9)).toFixed(1), del=(-(i*(dur/N))).toFixed(1), r0=((i%3)-1)*4, r1=r0+((i%2)?6:-6);
+    const band=i%3===0?'#E83214':'#8E8E93';
+    const st=`animation-duration:${dur}s;animation-delay:${del}s;--r0:${r0}deg;--r1:${r1}deg;${RM?`transform:translateY(${8+i*12}vh) rotate(${r0}deg)`:''}`;
+    h+= (i%2===0)
+      ? `<svg viewBox="0 0 40 18" style="${st}"><rect x=".5" y=".5" width="39" height="17" fill="#000" stroke="#8E8E93"/><path d="M1 4.5H39M1 8.5H39M1 12.5H39" stroke="#2C2C2E"/><rect x="15.5" y=".5" width="9" height="17" fill="#000" stroke="${band}"/></svg>`
+      : `<svg viewBox="0 0 40 20" style="${st}"><rect x=".5" y=".5" width="39" height="19" fill="#000" stroke="#8E8E93"/><rect x="3.5" y="3.5" width="33" height="13" fill="none" stroke="#2C2C2E"/><ellipse cx="20" cy="10" rx="5" ry="4" fill="none" stroke="#636366"/><rect x="15.5" y=".5" width="9" height="19" fill="#000" stroke="${band}"/></svg>`;
+  }
+  host.innerHTML=h;
+})();
+
+/* ---- init ---- */
+layout();
+tick();
+if(document.fonts&&document.fonts.ready){ document.fonts.ready.then(()=>{ needs=true; kick(); }); }
+addEventListener('load',()=>{ layout(); });
+window.__cam=()=>({...cam, z:Math.exp(cam.lz), activeStep});
+window.__anchors=()=>anchors.slice();
+})();
+</script>
+</body>
+</html>
