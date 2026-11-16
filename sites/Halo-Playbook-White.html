@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Halo Ventures</title>
+<meta name="description" content="HALO // VENTURES. Senior revenue leadership on demand, embedded with founder-led companies.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+document.documentElement.className+=' js';
+window.addEventListener('error',function(){var r=document.documentElement;r.className=r.className.replace(/\banim\b/g,' ');});
+</script>
+<style>
+/* ============ tokens ============ */
+:root{
+  --k:#000; --w:#fff;
+  --g1:#141414; --g2:#2B2B2B; --g3:#5E5E5E; --g4:#8A8A8A; --g5:#BDBDBD;
+  --h1:#E3E3E3; --h2:#F3F3F3; --dot:#E0E0E0;
+  --e:#E83214;
+  --serif:"Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans:"Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --gut:16px; --hh:88px; --max:1440px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --io:cubic-bezier(.65,0,.35,1);
+  color-scheme:light;
+}
+@media (min-width:768px){ :root{ --gut:32px; --hh:64px; } }
+@media (min-width:1200px){ :root{ --gut:48px; } }
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;background:var(--w)}
+body{background:var(--w);color:var(--k);font-family:var(--sans);font-size:16px;line-height:1.5;font-weight:400;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;text-rendering:optimizeLegibility;-webkit-tap-highlight-color:transparent;font-synthesis:none}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;text-align:inherit}
+::selection{background:var(--k);color:var(--w)}
+:focus-visible{outline:2px solid var(--k);outline-offset:3px}
+h1,h2,h3,h4{font-weight:400;text-wrap:balance}
+p,li{text-wrap:pretty}
+em{font-style:italic}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+
+/* type: labels 11/12 mono · body 16/18/20 · display 24+ */
+.lbl{font-family:var(--mono);font-size:11px;line-height:1.4;letter-spacing:.12em;text-transform:uppercase;font-weight:400;color:var(--g3)}
+.lbl.k{color:var(--k)}
+@media (min-width:768px){ .lbl{font-size:12px} }
+.sq{display:inline-block;width:8px;height:8px;background:var(--e);flex:none}
+.disc{display:inline-block;border-radius:50%;background:var(--e);flex:none}
+
+/* ============ header ============ */
+.top{position:-webkit-sticky;position:sticky;top:0;z-index:50;background:var(--w);border-bottom:1px solid var(--h1);padding-top:env(safe-area-inset-top)}
+.top .bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.mark{display:inline-flex;align-items:center;gap:8px;min-height:56px;text-decoration:none;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.14em;white-space:nowrap}
+.mark .disc{width:16px;height:16px}
+.mark i{font-style:normal;color:var(--g4)}
+.loc{order:3;flex:1 0 100%;display:flex;align-items:center;gap:16px;height:32px;border-top:1px solid var(--h2);white-space:nowrap;overflow:hidden}
+.loc .lbl{color:var(--k)}
+.loc .lbl .n{color:var(--g3)}
+.prog{flex:1;height:1px;background:var(--h1);position:relative;overflow:hidden}
+.prog i{position:absolute;left:0;top:0;bottom:0;width:100%;background:var(--k);transform-origin:left;transform:scaleX(0)}
+.mini{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border:1px solid var(--k);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.pt{display:grid}
+.pt>span{grid-area:1/1;white-space:nowrap}
+.pt .b{visibility:hidden}
+.ok .pt .a{visibility:hidden}
+.ok .pt .b{visibility:visible}
+@media (hover:hover) and (pointer:fine){ .mini:hover{background:var(--k);color:var(--w)} }
+@media (min-width:768px){
+  .top .bar{flex-wrap:nowrap;height:64px;gap:32px}
+  .mark{min-height:64px}
+  .loc{order:0;flex:0 1 380px;height:auto;border:0;margin-left:auto}
+}
+
+/* ============ grid + sections ============ */
+main section{position:relative;scroll-margin-top:var(--hh)}
+.sec{padding:80px 0 88px}
+@media (min-width:768px){ .sec{padding:112px 0 120px} }
+@media (min-width:1200px){ .sec{padding:136px 0 144px} }
+.sec::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--k);transform-origin:left}
+.g12{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.side{margin-bottom:40px}
+.idx{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px}
+.idx .lbl{display:inline-flex;align-items:center;gap:12px;color:var(--k)}
+.idx .lbl .n{color:var(--g3)}
+.nx{display:inline-flex;align-items:center;gap:8px;min-height:44px;text-decoration:none;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--g3)}
+.nx:hover{color:var(--k)}
+@media (min-width:768px){ .nx{font-size:12px} }
+@media (min-width:1024px){
+  .g12{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:32px}
+  .side{grid-column:1 / span 3;margin:0}
+  .side .idx{position:-webkit-sticky;position:sticky;top:calc(var(--hh) + 32px);flex-direction:column;align-items:flex-start;gap:8px}
+  .main{grid-column:4 / span 9;min-width:0}
+}
+
+/* display type */
+.h2{font-family:var(--serif);font-weight:400;font-size:44px;line-height:1.02;letter-spacing:-.015em}
+.h2 .l{display:block;overflow:hidden;padding-bottom:.2em;margin-bottom:-.2em}
+.h2 .l>span{display:block}
+@media (min-width:768px){ .h2{font-size:64px} }
+@media (min-width:1200px){ .h2{font-size:88px} }
+.lead{margin-top:24px;max-width:34em;font-size:18px;line-height:1.5;color:var(--g2)}
+@media (min-width:768px){ .lead{font-size:20px;margin-top:32px} }
+.src{font-family:var(--mono);font-size:11px;letter-spacing:.04em;line-height:1.5;color:var(--g3)}
+@media (min-width:768px){ .src{font-size:12px} }
+
+/* figures: coach's binder plates */
+.fig{margin-top:56px}
+.plate{position:relative;border:1px solid var(--k);background:var(--w);background-image:radial-gradient(circle at 1px 1px,var(--dot) 1px,transparent 1.2px);background-size:16px 16px}
+.phd{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:48px;padding:12px 16px;border-bottom:1px solid var(--k);background:var(--w)}
+.phd .ttl{font-family:var(--serif);font-size:22px;line-height:1.1;letter-spacing:-.01em}
+.pbd{position:relative;padding:32px 16px 32px}
+.pft{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;min-height:48px;padding:12px 16px;border-top:1px solid var(--h1);background:var(--w)}
+.cap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;margin-top:12px;min-height:44px}
+.cap .nx{margin-left:auto}
+.phd .lbl{white-space:nowrap}
+.leg{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--g3)}
+.leg .k1{width:16px;height:12px;border:1.5px dashed var(--g4)}
+.leg .k2{width:16px;height:12px;border:1.5px solid var(--k)}
+.leg .k3{width:16px;height:12px;background:var(--k)}
+.leg .disc{width:12px;height:12px}
+.leg .sq{width:10px;height:10px}
+@media (min-width:768px){ .phd,.pft{padding:12px 24px} .pbd{padding:40px 24px} .phd .ttl{font-size:28px} }
+
+/* motion (only once JS has started; only when motion is allowed) */
+.anim [data-rv]{opacity:0;transform:translateY(24px)}
+.anim [data-rv].in{opacity:1;transform:none}
+.anim .h2 .l>span,.anim .big .l>span,.anim .cl1 .l>span{transform:translateY(105%)}
+.anim .in .l>span{transform:none}
+.anim .sec::before{transform:scaleX(0)}
+.anim .sec.in::before{transform:scaleX(1)}
+@media (prefers-reduced-motion:no-preference){
+  .anim [data-rv].in{transition:opacity .9s var(--ease),transform 1s var(--ease)}
+  .anim .in .l>span{transition:transform 1.1s var(--ease)}
+  .anim .in .l:nth-child(2)>span{transition-delay:.09s}
+  .anim .in .l:nth-child(3)>span{transition-delay:.18s}
+  .anim .sec.in::before{transition:transform 1.2s var(--io)}
+  .mini,.btn,.cbtn{transition:background .25s,color .25s}
+  .nx{transition:color .25s}
+}
+
+/* ============ PLAY 01 hero ============ */
+.hero{padding:32px 0 72px}
+.hero .idx{margin-bottom:24px}
+.eyebrow{display:block;color:var(--g3);margin-bottom:16px}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(52px,14vw,152px);line-height:.94;letter-spacing:-.03em}
+h1 .l{display:block;overflow:hidden;padding-bottom:.2em;margin-bottom:-.16em}
+h1 .l>span{display:block}
+.anim h1 .l>span{transform:translateY(105%)}
+.anim .ready h1 .l>span{transform:none}
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;margin-top:32px;padding-top:24px;border-top:1px solid var(--k)}
+.hero .sub{font-size:18px;line-height:1.5;color:var(--g1);max-width:30em}
+.support{list-style:none;display:grid;gap:8px;margin-top:24px}
+.support li{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--k)}
+.anim .hgrid{opacity:0;transform:translateY(16px)}
+.anim .ready .hgrid{opacity:1;transform:none}
+@media (prefers-reduced-motion:no-preference){
+  .anim .ready h1 .l>span{transition:transform 1.2s var(--ease)}
+  .anim .ready h1 .l:nth-child(2)>span{transition-delay:.1s}
+  .anim .ready .hgrid{transition:opacity .9s .45s var(--ease),transform 1s .45s var(--ease)}
+}
+@media (min-width:768px){ .hero{padding:48px 0 96px} .hero .sub{font-size:20px} }
+@media (min-width:1024px){
+  .hgrid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:32px;align-items:start;padding-top:32px}
+  .hcopy{grid-column:1 / span 4}
+  .hfig{grid-column:6 / span 7}
+}
+
+/* ============ org chart (hero + reframe) ============ */
+.org{--sg:8px}
+.o-node{display:flex;justify-content:center}
+.node{display:inline-flex;align-items:center;justify-content:center;min-height:48px;min-width:144px;padding:8px 16px;background:var(--k);color:var(--w);font-size:15px;font-weight:500;text-align:center}
+.o-stem{width:0;height:24px;margin:0 auto;border:0 dashed var(--g4);border-left-width:1.5px}
+.o-grid{position:relative;padding-top:24px}
+.o-grid::before{content:"";position:absolute;top:0;left:calc((100% - 2*var(--sg))/6);right:calc((100% - 2*var(--sg))/6);border:0 dashed var(--g4);border-top-width:1.5px}
+.o-seats{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--sg);position:relative}
+.seat{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:16px;min-height:120px;padding:12px 10px 12px;background:var(--w);min-width:0}
+.seat::before{content:"";position:absolute;inset:0;border:1.5px dashed var(--g4)}
+.seat .dr{position:absolute;left:50%;top:-24px;height:24px;width:0;border:0 dashed var(--g4);border-left-width:1.5px}
+.tag{position:relative;align-self:flex-start;display:inline-block;max-width:100%;padding:4px 8px 4px 18px;border:1px solid var(--k);border-radius:2px 8px 8px 2px;background:var(--w);font-family:var(--mono);font-size:11px;line-height:1.3;letter-spacing:.06em;text-transform:uppercase;color:var(--k)}
+.tag::before{content:"";position:absolute;left:6px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;border:1px solid var(--g3)}
+.seat .rl{position:relative;font-family:var(--serif);font-size:22px;line-height:1.02;letter-spacing:-.01em;color:var(--g3);overflow-wrap:break-word}
+.o-team{display:flex;align-items:center;gap:12px;height:0;overflow:hidden;padding:0 12px;margin-top:0;background:var(--k);color:var(--w);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.o-team .slot{width:16px;height:16px;border-radius:50%;background:var(--e);flex:none}
+@media (min-width:600px){ .org{--sg:16px} .seat{padding:16px} .seat .rl{font-size:28px} .seat{min-height:144px} .tag{font-size:11px} }
+@media (min-width:1200px){ .seat .rl{font-size:32px} }
+
+/* plugged (after) state */
+.org .o-frame{position:absolute;inset:24px 0 0 0;border:1.5px solid var(--k);pointer-events:none;-webkit-clip-path:inset(0 100% 100% 0);clip-path:inset(0 100% 100% 0)}
+.org .o-team{-webkit-clip-path:inset(0 100% 0 0);clip-path:inset(0 100% 0 0)}
+.org .o-team .slot{opacity:0}
+.org.plugged .o-team .slot{opacity:1}
+.org.plugged .o-team{height:48px}
+.org.plugged .o-frame,.org.plugged .o-team{-webkit-clip-path:inset(0 0 0 0);clip-path:inset(0 0 0 0)}
+.org.plugged .o-seats{gap:0}
+.org.plugged .seat::before{opacity:0}
+.org.plugged .seat+.seat{box-shadow:inset 1px 0 0 var(--h1)}
+.org.plugged .seat .rl{color:var(--k)}
+.org.plugged .tag{opacity:0;transform:translateY(-6px)}
+.org.plugged .o-stem,.org.plugged .o-grid::before{border-color:var(--k);border-style:solid}
+.org.plugged .seat .dr{opacity:0}
+.org.plugged .o-grid::before{opacity:0}
+.org.plugged .seat:nth-child(2) .dr{opacity:1;border-color:var(--k);border-style:solid}
+@media (prefers-reduced-motion:no-preference){
+  .org .o-seats{transition:gap .7s var(--io)}
+  .org .seat::before,.org .seat .dr{transition:opacity .5s}
+  .org .tag{transition:opacity .5s,transform .5s var(--ease)}
+  .org .seat .rl{transition:color .5s}
+  .org .o-frame{transition:clip-path .9s var(--io) .2s,-webkit-clip-path .9s var(--io) .2s}
+  .org .o-team{transition:height .5s var(--io),clip-path .7s var(--io) .5s,-webkit-clip-path .7s var(--io) .5s}
+  .org .o-grid::before{transition:opacity .5s}
+  .org .o-team .slot{transition:opacity .3s}
+}
+@media (max-width:599px){
+  .o-node{justify-content:flex-start}
+  .o-stem{margin:0 0 0 24px}
+  .o-grid{padding-top:0;padding-left:48px}
+  .o-grid::before{left:24px;right:auto;top:0;bottom:var(--rb,36px);border-top-width:0;border-left-width:1.5px}
+  .org .o-frame{inset:0 0 0 48px}
+  .o-seats{grid-template-columns:minmax(0,1fr)}
+  .seat{flex-direction:row-reverse;align-items:center;justify-content:space-between;gap:12px;min-height:72px;height:72px;padding:0 12px}
+  .seat .dr{left:-24px;top:50%;width:24px;height:0;border-left-width:0;border-top-width:1.5px}
+  .tag{align-self:center;flex:none}
+  .org.plugged .seat+.seat{box-shadow:inset 0 1px 0 var(--h1)}
+  .org.plugged .o-grid::before{opacity:1;bottom:auto;height:36px}
+  .org.plugged .seat:nth-child(2) .dr{opacity:0}
+  .org.plugged .seat:first-child .dr{opacity:1;border-color:var(--k);border-style:solid}
+}
+.org.static-before .o-team,.org.static-before .o-frame{display:none}
+
+/* ============ PLAY 02 problem rows ============ */
+.rows{list-style:none;margin-top:48px;border-top:1px solid var(--k)}
+.row{display:grid;grid-template-columns:40px minmax(0,1fr);gap:8px;align-items:baseline;padding:24px 0 28px;border-bottom:1px solid var(--h1)}
+.row .n{color:var(--g3)}
+.row .t{font-family:var(--serif);font-size:26px;line-height:1.12;letter-spacing:-.01em}
+.row .src{grid-column:2;margin-top:8px}
+@media (min-width:768px){ .row{grid-template-columns:72px minmax(0,1fr);gap:16px;padding:32px 0 36px} .row .t{font-size:38px} }
+@media (min-width:1200px){ .row .t{font-size:44px} }
+
+/* ============ PLAY 03 real problem ============ */
+.ledger{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);margin-top:48px;border-top:1px solid var(--k)}
+.led{padding:24px 0 28px;border-bottom:1px solid var(--h1)}
+.led .num{font-family:var(--serif);font-size:64px;line-height:.92;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.led .say{margin-top:12px;font-size:17px;line-height:1.45;color:var(--g1);max-width:26em}
+.led .src{margin-top:12px}
+@media (min-width:768px){
+  .ledger{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .led{padding:32px 32px 36px 0}
+  .led:nth-child(even){padding-left:32px;padding-right:0;border-left:1px solid var(--h1)}
+  .led .num{font-size:88px}
+  .led .say{font-size:18px}
+}
+.dock{display:flex;align-items:center;gap:16px;padding:12px 16px;border-top:1px solid var(--k);background:var(--w)}
+.halo-btn{display:inline-flex;align-items:center;gap:16px;min-height:48px;flex:1;min-width:0;font-size:16px;color:var(--k)}
+.halo-btn .d{display:block;flex:none;width:48px;height:48px;border-radius:50%;background:var(--e)}
+.halo-btn .hb-t{border-bottom:1px solid var(--k);padding-bottom:2px}
+.halo-btn[hidden],.dtext[hidden]{display:none}
+.dtext{flex:1;min-width:0;font-size:16px;line-height:1.35;color:var(--g2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid var(--k);background:var(--w);color:var(--k);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.btn:hover{background:var(--k);color:var(--w)}
+.btn.solid{background:var(--k);color:var(--w)}
+.btn.solid:hover{background:var(--g2)}
+.btn[hidden]{display:none}
+.flyer{position:fixed;z-index:200;left:0;top:0;width:48px;height:48px;border-radius:50%;background:var(--e);pointer-events:none}
+@media (min-width:768px){ .dock{padding:12px 24px} }
+html:not(.js) .dock{display:none}
+.after-fig{display:none}
+html:not(.js) .after-fig{display:block}
+.ba{display:none}
+html:not(.js) .ba{display:inline}
+.hl{display:grid;grid-template-columns:16px minmax(0,1fr);gap:16px;align-items:start;margin-top:56px;padding-top:24px;border-top:1px solid var(--k)}
+.hl .sq{width:16px;height:16px;margin-top:.35em}
+.hl p{font-family:var(--serif);font-size:32px;line-height:1.08;letter-spacing:-.015em;max-width:22ch}
+.lesson{margin-top:24px;margin-left:32px;max-width:36em;font-size:16px;line-height:1.5;color:var(--g3)}
+@media (min-width:768px){ .hl{grid-template-columns:24px minmax(0,1fr);gap:24px} .hl .sq{width:24px;height:24px} .hl p{font-size:52px} .lesson{margin-left:48px;font-size:18px} }
+@media (min-width:1200px){ .hl p{font-size:60px} }
+
+/* ============ PLAY 04 solution tiles ============ */
+.tiles{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);margin-top:48px;border-top:1px solid var(--k)}
+.tile{display:flex;flex-direction:column;gap:24px;padding:24px 0 32px;border-bottom:1px solid var(--h1)}
+.tile h3{font-family:var(--serif);font-size:32px;line-height:1.04;letter-spacing:-.01em}
+.tile p{margin-top:8px;font-size:16px;line-height:1.5;color:var(--g2);max-width:26em}
+.tile .top3{display:flex;align-items:center;justify-content:space-between}
+.blk{display:inline-block;width:24px;height:24px}
+.blk.s{background:var(--k)}
+.blk.o{border:1.5px solid var(--k)}
+.blk.d{border:1.5px dashed var(--g4)}
+.blk.h{border:1.5px solid var(--k);background:linear-gradient(var(--k),var(--k)) left/50% 100% no-repeat}
+@media (min-width:768px){
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tile{min-height:240px;justify-content:space-between;padding:24px 32px 32px 0}
+  .tile:nth-child(even){padding-left:32px;padding-right:0;border-left:1px solid var(--h1)}
+  .tile h3{font-size:44px}
+  .tile p{font-size:18px}
+}
+
+/* ============ PLAY 05 production line ============ */
+.line{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
+.stg{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:center}
+.stg .st{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:8px;min-height:80px;width:100%;padding:12px 14px;border:1.5px solid var(--k);background:var(--w);color:var(--k)}
+.stg .st .lbl{color:var(--g3)}
+.stg .st .nm{font-family:var(--serif);font-size:26px;line-height:1;letter-spacing:-.01em}
+.stg .st .mk{position:absolute;right:12px;top:12px;width:14px;height:14px;background:var(--e);opacity:0}
+.stg.lim .st{background:var(--k);color:var(--w)}
+.stg.lim .st .lbl{color:#C9C9C9}
+.stg.lim .st .mk{opacity:1}
+.js .stg .st:hover{background:var(--h2)}
+.js .stg.lim .st:hover{background:var(--g1)}
+.stg .ind{border-top:1px solid var(--h1);padding-top:8px}
+.stg .ind .lbl{display:block}
+.stg .ind .v{display:block;margin-top:4px;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--k)}
+.stg:not(:last-child)::after{content:"";position:absolute;left:25%;top:100%;width:0;height:32px;margin-left:-1px;border-left:1.5px solid var(--k)}
+.stg:not(:last-child)::before{content:"";position:absolute;left:25%;top:calc(100% + 32px);width:9px;height:9px;margin:-10px 0 0 -5.5px;border-right:1.5px solid var(--k);border-bottom:1.5px solid var(--k);transform:rotate(45deg)}
+@media (min-width:768px){
+  .line{grid-template-columns:repeat(4,minmax(0,1fr));gap:40px}
+  .stg{grid-template-columns:minmax(0,1fr);align-items:stretch;gap:16px}
+  .stg .st{min-height:128px;padding:16px}
+  .stg .st .nm{font-size:30px}
+  .stg:not(:last-child)::after{left:100%;top:64px;width:40px;height:0;margin:0;border-left:0;border-top:1.5px solid var(--k)}
+  .stg:not(:last-child)::before{left:calc(100% + 40px);top:64px;margin:-5.5px 0 0 -10px;transform:rotate(-45deg)}
+}
+@media (min-width:1200px){ .stg .st .nm{font-size:34px} }
+.lcap{display:grid;grid-template-columns:minmax(0,1fr);gap:4px}
+.lcap .v{font-family:var(--serif);font-size:26px;line-height:1.1;letter-spacing:-.01em}
+@media (min-width:768px){ .lcap{grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:baseline} .lcap .v{font-size:30px} }
+.tapnote{display:none}
+.js .tapnote{display:inline}
+.steps{list-style:none;margin-top:72px;border-top:1px solid var(--k)}
+.step{display:grid;grid-template-columns:40px minmax(0,1fr);gap:8px;padding:24px 0 28px;border-bottom:1px solid var(--h1)}
+.step .n{color:var(--g3);padding-top:8px}
+.step h4{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.05;letter-spacing:-.01em}
+.step p{grid-column:2;font-size:16px;line-height:1.5;color:var(--g2);max-width:30em}
+@media (min-width:768px){
+  .step{grid-template-columns:72px minmax(0,6fr) minmax(0,5fr);gap:8px 32px;padding:32px 0 36px;align-items:start}
+  .step h4{font-size:42px}
+  .step p{grid-column:3;font-size:18px;padding-top:10px}
+}
+.lev{margin-top:72px}
+.eq{display:flex;flex-wrap:wrap;align-items:stretch;gap:12px;margin-top:16px}
+.eq .term{display:flex;align-items:center;min-height:72px;padding:12px 20px;font-family:var(--serif);font-size:28px;line-height:1.05;letter-spacing:-.01em}
+.eq .term.a{background:var(--k);color:var(--w)}
+.eq .term.b{border:1.5px solid var(--k)}
+.eq .op{display:flex;align-items:center;font-family:var(--serif);font-size:40px;color:var(--g3);padding:0 4px}
+@media (min-width:768px){ .eq{gap:16px} .eq .term{min-height:96px;padding:16px 28px;font-size:44px} .eq .op{font-size:56px} }
+
+/* ============ PLAY 06 differentiators ============ */
+.six{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:48px;border-top:1px solid var(--k)}
+.six li{display:flex;flex-direction:column;gap:24px;justify-content:space-between;min-height:176px;padding:16px 16px 24px 0;border-bottom:1px solid var(--h1)}
+.six li:nth-child(even){padding-left:16px;padding-right:0;border-left:1px solid var(--h1)}
+.six h3{font-family:var(--serif);font-size:28px;line-height:1.02;letter-spacing:-.01em}
+.six p{margin-top:8px;font-size:15px;line-height:1.45;color:var(--g2)}
+@media (min-width:900px){
+  .six{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .six li,.six li:nth-child(even){min-height:240px;padding:20px 24px 32px;border-left:1px solid var(--h1)}
+  .six li:nth-child(3n+1){border-left:0;padding-left:0}
+  .six h3{font-size:40px}
+  .six p{font-size:17px}
+}
+
+/* ============ PLAY 07 use cases ============ */
+.cases{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:48px}
+.case{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:32px;min-height:168px;padding:16px 16px 20px}
+.case::before{content:"";position:absolute;inset:0;border:1.5px dashed var(--g4);pointer-events:none}
+.case .top3{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.case p{font-family:var(--serif);font-size:26px;line-height:1.1;letter-spacing:-.01em}
+@media (min-width:768px){ .cases{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px} .case{min-height:208px;padding:20px 24px 24px} .case p{font-size:32px} }
+@media (min-width:1200px){ .cases{grid-template-columns:repeat(3,minmax(0,1fr))} }
+
+/* ============ PLAY 08 market ============ */
+.stats{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);margin-top:48px;border-top:1px solid var(--k)}
+.stat{padding:28px 0 32px;border-bottom:1px solid var(--h1)}
+.stat .num{font-family:var(--serif);font-size:64px;line-height:.9;letter-spacing:-.035em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.stat .say{margin-top:16px;font-size:17px;line-height:1.45;color:var(--g1);max-width:28em}
+.stat .src{margin-top:12px}
+@media (min-width:768px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat{padding:36px 32px 40px 0}
+  .stat:nth-child(even){padding-left:32px;padding-right:0;border-left:1px solid var(--h1)}
+  .stat .num{font-size:64px}
+  .stat .say{font-size:18px}
+}
+@media (min-width:1024px){ .stat .num{font-size:72px} }
+@media (min-width:1200px){ .stat .num{font-size:88px} }
+.insight{margin-top:56px;font-family:var(--serif);font-size:30px;line-height:1.1;letter-spacing:-.015em;max-width:24ch}
+@media (min-width:768px){ .insight{font-size:44px} }
+.eng{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.box{display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:176px;padding:16px 16px 20px;background:var(--w)}
+.box.a{background:var(--k);color:var(--w)}
+.box.a .lbl{color:#C9C9C9}
+.box.b{border:1.5px solid var(--k)}
+.box h3{font-family:var(--serif);font-size:32px;line-height:1.02;letter-spacing:-.01em}
+.box p{margin-top:8px;font-size:16px;line-height:1.45}
+.box.a p{color:#E6E6E6}
+.box.b p{color:var(--g2)}
+.box .top3{display:flex;justify-content:space-between;align-items:center}
+.box .sq{width:12px;height:12px}
+.link{position:relative;height:72px;display:flex;justify-content:center;gap:40px}
+.link i{position:relative;display:block;width:0;height:100%;border-left:1.5px solid var(--k)}
+.link i::after{content:"";position:absolute;left:-5.5px;width:9px;height:9px;border-right:1.5px solid var(--k);border-bottom:1.5px solid var(--k)}
+.link i.dn::after{bottom:1px;transform:rotate(45deg)}
+.link i.up::after{top:1px;transform:rotate(-135deg)}
+@media (min-width:768px){
+  .eng{grid-template-columns:minmax(0,1fr) 112px minmax(0,1fr);align-items:stretch}
+  .box{min-height:256px;padding:20px 24px 28px}
+  .box h3{font-size:44px}
+  .box p{font-size:18px}
+  .link{height:auto;flex-direction:column;justify-content:center;gap:32px}
+  .link i{width:100%;height:0;border-left:0;border-top:1.5px solid var(--k)}
+  .link i::after{left:auto;top:-5.5px}
+  .link i.dn::after{right:1px;bottom:auto;transform:rotate(-45deg)}
+  .link i.up::after{left:1px;transform:rotate(135deg)}
+}
+.vision{margin-top:96px;padding-top:40px;border-top:1px solid var(--k)}
+.vision .pre{font-family:var(--serif);font-size:26px;line-height:1.15;letter-spacing:-.01em;color:var(--g3);max-width:30ch}
+.big{font-family:var(--serif);font-weight:400;font-size:clamp(46px,11.5vw,144px);line-height:.96;letter-spacing:-.03em;margin-top:32px}
+.big .l{display:block;overflow:hidden;padding-bottom:.2em;margin-bottom:-.16em}
+.big .l>span{display:block}
+@media (min-width:768px){ .vision{margin-top:136px} .vision .pre{font-size:36px} }
+
+/* ============ PLAY 09 team ============ */
+.tgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:48px;margin-top:40px}
+.proof{list-style:none;border-top:1px solid var(--k)}
+.proof li{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding:20px 0 22px;border-bottom:1px solid var(--h1)}
+.proof .v{font-family:var(--serif);font-size:40px;line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.proof .v i{font-style:normal;color:var(--g4)}
+.proof .s{font-size:16px;line-height:1.4;color:var(--g2)}
+@media (min-width:768px){
+  .proof li{grid-template-columns:minmax(0,5fr) minmax(0,4fr);gap:24px;align-items:baseline;padding:24px 0 26px}
+  .proof .v{font-size:52px}
+  .proof .s{font-size:18px}
+}
+.quote{font-family:var(--serif);font-style:italic;font-size:32px;line-height:1.1;letter-spacing:-.015em;max-width:22ch}
+.quote-w .lbl{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.grit{margin-top:24px;font-size:15px;line-height:1.5;color:var(--g3);max-width:30em}
+@media (min-width:768px){ .quote{font-size:48px} .grit{font-size:16px} }
+
+/* ============ PLAY 10 seats + doors + close ============ */
+.cap10{margin-top:48px}
+.cap10 .row10{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;margin-top:16px;max-width:640px}
+.cap10 .row10 i{display:block;aspect-ratio:1/1;border:1.5px solid var(--k)}
+@media (min-width:768px){ .cap10 .row10{gap:12px} }
+.doors{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:64px}
+.door{display:flex;flex-direction:column;gap:20px;padding:20px 16px 24px;border:1.5px solid var(--k);min-width:0}
+.door .lbl{display:flex;align-items:center;gap:12px;color:var(--k)}
+.door h3{font-family:var(--serif);font-size:36px;line-height:1.02;letter-spacing:-.015em}
+.note{font-family:var(--mono);font-size:13px;line-height:1.6;color:var(--g1);padding:12px 14px;border:1px solid var(--h1);background:var(--h2);white-space:pre-wrap;overflow-wrap:anywhere}
+.dact{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.cbtn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:0 16px;border:1px solid var(--k);border-radius:999px;background:var(--w);color:var(--k);font-family:var(--mono);font-size:13px;letter-spacing:.01em;max-width:100%}
+.cbtn.inv{background:var(--k);color:var(--w)}
+.cbtn svg{width:16px;height:16px;flex:none}
+@media (hover:hover) and (pointer:fine){ .cbtn:hover{background:var(--k);color:var(--w)} .cbtn.inv:hover{background:var(--g2)} }
+@media (min-width:900px){ .doors{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px} .door{padding:24px 28px 32px} .door h3{font-size:48px} }
+
+.close{margin-top:120px;padding-top:40px;border-top:1px solid var(--k);position:relative}
+.cl1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,11vw,136px);line-height:.96;letter-spacing:-.03em}
+.cl1 .l{display:block;overflow:hidden;padding-bottom:.2em;margin-bottom:-.16em}
+.cl1 .l>span{display:block}
+.cl1 .soft{color:var(--g3)}
+.ready-q{margin-top:64px;font-family:var(--serif);font-size:32px;line-height:1.1;letter-spacing:-.01em}
+.pill{display:inline-flex;align-items:center;gap:16px;margin-top:16px;min-height:56px;padding:0 24px;border-radius:999px;background:var(--e);color:var(--k);font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.01em;max-width:100%}
+.pill .pt .a{-webkit-user-select:text;user-select:text}
+.pill svg{width:18px;height:18px;flex:0 0 auto}
+.pill:focus-visible{outline:2px solid var(--k);outline-offset:4px}
+@media (max-width:360px){ .pill{padding:0 16px;font-size:14px;gap:8px} }
+@media (min-width:768px){ .ready-q{font-size:48px;margin-top:80px} .pill{font-size:18px;min-height:64px;padding:0 32px} .close{margin-top:176px} }
+
+/* ============ footer ============ */
+footer{border-top:1px solid var(--k);padding:40px 0 calc(40px + env(safe-area-inset-bottom))}
+.fgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;align-items:center}
+.fmark{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.14em}
+.fmark .disc{width:12px;height:12px}
+.fmark i{font-style:normal;color:var(--g4)}
+.sign{font-family:var(--serif);font-size:24px;line-height:1.2}
+.sources{margin-top:40px;padding-top:16px;border-top:1px solid var(--h1)}
+.sources ol{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:6px 32px;margin-top:12px;counter-reset:s}
+.sources li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr);font-family:var(--mono);font-size:11px;line-height:1.5;letter-spacing:.02em;color:var(--g3)}
+.sources li::before{content:counter(s,decimal-leading-zero)}
+@media (min-width:768px){ .fgrid{grid-template-columns:auto 1fr auto;gap:32px} .sign{text-align:center} .sources ol{grid-template-columns:repeat(2,minmax(0,1fr))} }
+
+@media (prefers-reduced-motion:reduce){
+  .org .o-seats,.org .seat::before,.org .tag,.org .o-frame,.org .o-team,.anim [data-rv].in,.anim .in .l>span{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top" id="nav">
+  <div class="wrap bar">
+    <a class="mark" href="#start" aria-label="HALO // VENTURES, back to top"><span class="disc" aria-hidden="true"></span>HALO <i>//</i> VENTURES</a>
+    <div class="loc" aria-hidden="true"><span class="lbl" id="loc"><span class="n">Play 01 · </span>Who we are</span><span class="prog"><i id="prog"></i></span></div>
+    <button class="mini" id="copyTop" type="button" data-copy="email" aria-label="Copy email address chris@halovpartners.com"><span class="pt"><span class="a">Copy email</span><span class="b" aria-hidden="true">Copied ✓</span></span></button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="start" data-loc="Play 01|Who we are">
+  <div class="wrap">
+    <div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 01 · </span>Who we are</span></span></div>
+    <span class="lbl eyebrow">The next-generation growth team</span>
+    <h1 aria-label="The Uber of revenue leadership."><span class="l" aria-hidden="true"><span>The Uber of</span></span><span class="l" aria-hidden="true"><span><em>revenue leadership.</em></span></span></h1>
+    <div class="hgrid">
+      <div class="hcopy">
+        <p class="sub">Senior revenue leadership on demand, embedded with founder-led companies. No full-time seat&nbsp;required.</p>
+        <ul class="support" aria-label="What we bring">
+          <li><span class="sq" aria-hidden="true"></span>Experienced leadership</li>
+          <li><span class="sq" aria-hidden="true"></span>Hands-on execution</li>
+          <li><span class="sq" aria-hidden="true"></span>Intelligent technology</li>
+          <li><span class="sq" aria-hidden="true"></span>Embedded with your team</li>
+        </ul>
+      </div>
+      <figure class="hfig">
+        <div class="plate org static-before" aria-label="Org chart: Founder / CEO above three empty seats, Revenue leader, Growth and Sales, each tagged Full-time seat.">
+          <div class="phd"><span class="lbl k">Org chart</span><span class="lbl">Fig. 01</span></div>
+          <div class="pbd" aria-hidden="true">
+            <div class="o-node"><span class="node">Founder / CEO</span></div>
+            <div class="o-stem"></div>
+            <div class="o-grid">
+              <ul class="o-seats">
+                <li class="seat"><span class="dr"></span><span class="tag">Full-time seat</span><span class="rl">Revenue leader</span></li>
+                <li class="seat"><span class="dr"></span><span class="tag">Full-time seat</span><span class="rl">Growth</span></li>
+                <li class="seat"><span class="dr"></span><span class="tag">Full-time seat</span><span class="rl">Sales</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <figcaption class="cap"><span class="leg"><span class="k2" aria-hidden="true"></span>Filled</span><span class="leg"><span class="k1" aria-hidden="true"></span>Open seat</span><a class="nx" href="#problem">Next <span aria-hidden="true">↓</span></a></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="problem" data-loc="Play 02|The problem">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 02 · </span>The problem</span></span><a class="nx" href="#seat">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>The <em>problem.</em></span></span></h2>
+      <ol class="rows">
+        <li class="row" data-rv><span class="n lbl" aria-hidden="true">01</span><span class="t">Most startups sell the way they did at launch: the founder closes every&nbsp;deal.</span></li>
+        <li class="row" data-rv><span class="n lbl" aria-hidden="true">02</span><span class="t">Sales hires join without a playbook, a pipeline or a&nbsp;coach.</span></li>
+        <li class="row" data-rv><span class="n lbl" aria-hidden="true">03</span><span class="t">Buyers changed. 67% of B2B buyers now prefer a rep-free&nbsp;experience.</span><span class="src">Source: Gartner, 2026</span></li>
+        <li class="row" data-rv><span class="n lbl" aria-hidden="true">04</span><span class="t">AI raised productivity. It hasn’t raised revenue. 23% of CEOs say AI gains are absorbed before they reach&nbsp;results.</span><span class="src">Source: EY CEO Outlook, 2026</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="seat" data-loc="Play 03|The real problem">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 03 · </span>The real problem</span></span><a class="nx" href="#solution">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>The real problem:</span></span><span class="l"><span><em>the full-time seat.</em></span></span></h2>
+      <p class="lead" data-rv>Senior revenue expertise only comes one way today: as a full-time executive hire. Startups have to buy the seat before they know the&nbsp;play.</p>
+      <ul class="ledger">
+        <li class="led" data-rv><div class="num">1.5–3×</div><p class="say">A wrong sales hire costs 1.5–3× the role’s annual&nbsp;pay.</p><p class="src">Source: U.S. Dept. of Labor, SHRM, HBR</p></li>
+        <li class="led" data-rv><div class="num">4.5–6 mo</div><p class="say">New account executives take 4.5–6 months to&nbsp;ramp.</p><p class="src">Source: Bridge Group</p></li>
+        <li class="led" data-rv><div class="num">19 mo</div><p class="say">The average VP of Sales lasted 19 months, down from&nbsp;26.</p><p class="src">Source: Gong</p></li>
+        <li class="led" data-rv><div class="num">70%</div><p class="say">70% of failed VC-backed startups ran out of&nbsp;capital.</p><p class="src">Source: VCBacked, The Startup Graveyard, 2026</p></li>
+      </ul>
+
+      <figure class="fig" data-rv>
+        <div class="plate org" id="org" aria-label="Org chart: Founder / CEO above three empty seats, Revenue leader, Growth and Sales, each tagged Full-time seat.">
+          <div class="phd"><span class="lbl k" id="orgState">Before</span><span class="lbl">Fig. 03</span></div>
+          <div class="pbd" aria-hidden="true">
+            <div class="o-node"><span class="node">Founder / CEO</span></div>
+            <div class="o-stem"></div>
+            <div class="o-grid">
+              <ul class="o-seats">
+                <li class="seat"><span class="dr"></span><span class="tag">Full-time seat</span><span class="rl">Revenue leader</span></li>
+                <li class="seat"><span class="dr"></span><span class="tag">Full-time seat</span><span class="rl">Growth</span></li>
+                <li class="seat"><span class="dr"></span><span class="tag">Full-time seat</span><span class="rl">Sales</span></li>
+              </ul>
+              <div class="o-team"><span class="slot" id="teamSlot"></span>Halo · Embedded team</div>
+              <span class="o-frame"></span>
+            </div>
+          </div>
+          <div class="dock">
+            <button class="halo-btn" id="haloBtn" type="button"><span class="d" aria-hidden="true"></span><span class="hb-t">Plug in Halo</span></button>
+            <p class="dtext" id="dockMsg" aria-live="polite" hidden>One embedded team</p>
+            <button class="btn" id="unplugBtn" type="button" hidden>Reset</button>
+          </div>
+        </div>
+        <figcaption class="cap"><span class="leg"><span class="k1" aria-hidden="true"></span>Open seat</span><span class="leg"><span class="disc" aria-hidden="true"></span>Halo</span><span class="leg"><span class="k3" aria-hidden="true"></span>Embedded team</span></figcaption>
+      </figure>
+
+      <figure class="fig after-fig">
+        <div class="plate org plugged" aria-label="After: the three seats resolve into one embedded team with Halo.">
+          <div class="phd"><span class="lbl k">After</span><span class="lbl">Fig. 03</span></div>
+          <div class="pbd" aria-hidden="true">
+            <div class="o-node"><span class="node">Founder / CEO</span></div>
+            <div class="o-stem"></div>
+            <div class="o-grid">
+              <ul class="o-seats">
+                <li class="seat"><span class="dr"></span><span class="tag">Full-time seat</span><span class="rl">Revenue leader</span></li>
+                <li class="seat"><span class="dr"></span><span class="tag">Full-time seat</span><span class="rl">Growth</span></li>
+                <li class="seat"><span class="dr"></span><span class="tag">Full-time seat</span><span class="rl">Sales</span></li>
+              </ul>
+              <div class="o-team"><span class="slot"></span>Halo · Embedded team</div>
+              <span class="o-frame"></span>
+            </div>
+          </div>
+        </div>
+      </figure>
+
+      <div class="hl" data-rv><span class="sq" aria-hidden="true"></span><p>On-demand leadership and AI now make the full-time seat unnecessary to&nbsp;start.</p></div>
+      <p class="lesson" data-rv>Taxis had the medallion. Startups have the full-time seat. Both protect the seat, not the&nbsp;customer.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="solution" data-loc="Play 04|The solution">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 04 · </span>The solution</span></span><a class="nx" href="#how">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>Halo:</span></span><span class="l"><span><em>the embedded revenue team.</em></span></span></h2>
+      <ul class="tiles">
+        <li class="tile" data-rv><div class="top3"><span class="lbl">01</span><span class="blk s" aria-hidden="true"></span></div><div><h3>Embedded leadership.</h3><p>A senior revenue leader inside your company, not on a&nbsp;call.</p></div></li>
+        <li class="tile" data-rv><div class="top3"><span class="lbl">02</span><span class="blk h" aria-hidden="true"></span></div><div><h3>Hands-on execution.</h3><p>People, process and discipline that turn strategy into&nbsp;revenue.</p></div></li>
+        <li class="tile" data-rv><div class="top3"><span class="lbl">03</span><span class="blk o" aria-hidden="true"></span></div><div><h3>Intelligent technology.</h3><p>AI workflows that cut manual work, so a small team sells like a big&nbsp;one.</p></div></li>
+        <li class="tile" data-rv><div class="top3"><span class="lbl">04</span><span class="blk d" aria-hidden="true"></span></div><div><h3>Built to hand off.</h3><p>Your team owns the engine when we step&nbsp;back.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="how" data-loc="Play 05|How it works">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 05 · </span>How it works</span></span><a class="nx" href="#diff">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>How it <em>works.</em></span></span></h2>
+      <figure class="fig" data-rv>
+        <div class="plate">
+          <div class="phd"><span class="ttl">Find the limiting step. Fix it&nbsp;first.</span><span class="lbl">Fig. 05</span></div>
+          <div class="pbd">
+            <ol class="line" id="line" aria-label="The revenue line, in four stages">
+              <li class="stg"><button class="st" type="button" aria-pressed="false"><span class="lbl">Stage 01</span><span class="nm">Opportunity</span><span class="mk" aria-hidden="true"></span></button><div class="ind"><span class="lbl">Indicator</span><span class="v">Right customers</span></div></li>
+              <li class="stg lim"><button class="st" type="button" aria-pressed="true"><span class="lbl">Stage 02</span><span class="nm">Pipeline</span><span class="mk" aria-hidden="true"></span></button><div class="ind"><span class="lbl">Indicator</span><span class="v">Qualified meetings</span></div></li>
+              <li class="stg"><button class="st" type="button" aria-pressed="false"><span class="lbl">Stage 03</span><span class="nm">Conversion</span><span class="mk" aria-hidden="true"></span></button><div class="ind"><span class="lbl">Indicator</span><span class="v">Win rate</span></div></li>
+              <li class="stg"><button class="st" type="button" aria-pressed="false"><span class="lbl">Stage 04</span><span class="nm">Revenue</span><span class="mk" aria-hidden="true"></span></button><div class="ind"><span class="lbl">Indicator</span><span class="v">Repeat revenue</span></div></li>
+            </ol>
+          </div>
+          <div class="pft"><div class="lcap"><span class="lbl k">Limiting step</span><span class="v" id="limCap" aria-live="polite">Pipeline. Fix this first.</span></div></div>
+        </div>
+        <figcaption class="cap"><span class="leg"><span class="k3" aria-hidden="true"></span>Limiting step</span><span class="leg"><span class="k2" aria-hidden="true"></span>Stage</span><span class="leg tapnote">Tap a stage to move it</span></figcaption>
+      </figure>
+
+      <ol class="steps">
+        <li class="step" data-rv><span class="n lbl" aria-hidden="true">01</span><h4>Find the opportunity.</h4><p>Right customers, sharper positioning, where the revenue&nbsp;is.</p></li>
+        <li class="step" data-rv><span class="n lbl" aria-hidden="true">02</span><h4>Build the revenue engine.</h4><p>Go-to-market, playbook, acquisition process, leadership.</p></li>
+        <li class="step" data-rv><span class="n lbl" aria-hidden="true">03</span><h4>Increase capacity to scale.</h4><p>Coach the team, tighten execution, add AI&nbsp;workflows.</p></li>
+      </ol>
+
+      <div class="lev" data-rv>
+        <span class="lbl k" style="display:flex;align-items:center;gap:12px"><span class="sq" aria-hidden="true"></span>Leverage</span>
+        <p class="eq" aria-label="Halo’s output equals your team’s output."><span class="term a" aria-hidden="true">Halo’s output</span><span class="op" aria-hidden="true">=</span><span class="term b" aria-hidden="true">your team’s output.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="diff" data-loc="Play 06|Differentiators">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 06 · </span>Differentiators</span></span><a class="nx" href="#cases">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>Key</span></span><span class="l"><span><em>differentiators.</em></span></span></h2>
+      <ul class="six" data-rv>
+        <li><span class="lbl">01</span><div><h3>Embedded.</h3><p>Inside the business, not outside&nbsp;it.</p></div></li>
+        <li><span class="lbl">02</span><div><h3>On demand.</h3><p>Senior leadership without the full-time&nbsp;seat.</p></div></li>
+        <li><span class="lbl">03</span><div><h3>Leadership + AI.</h3><p>Judgment and technology in one&nbsp;team.</p></div></li>
+        <li><span class="lbl">04</span><div><h3>Prove first.</h3><p>Prove the play, then scale&nbsp;it.</p></div></li>
+        <li><span class="lbl">05</span><div><h3>Team first.</h3><p>We strengthen the team you&nbsp;have.</p></div></li>
+        <li><span class="lbl">06</span><div><h3>Compounding.</h3><p>Proven workflows become&nbsp;products.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="cases" data-loc="Play 07|Use cases">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 07 · </span>Use cases</span></span><a class="nx" href="#market">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>Use <em>cases.</em></span></span></h2>
+      <ul class="cases">
+        <li class="case" data-rv><div class="top3"><span class="lbl k">Founder-led sales</span><span class="lbl">01</span></div><p>When the founder still closes every&nbsp;deal.</p></li>
+        <li class="case" data-rv><div class="top3"><span class="lbl k">First sales hires</span><span class="lbl">02</span></div><p>When new reps aren’t&nbsp;ramping.</p></li>
+        <li class="case" data-rv><div class="top3"><span class="lbl k">After the raise</span><span class="lbl">03</span></div><p>When the next round needs revenue&nbsp;proof.</p></li>
+        <li class="case" data-rv><div class="top3"><span class="lbl k">Unclear customer</span><span class="lbl">04</span></div><p>When the product is strong but the buyer isn’t&nbsp;defined.</p></li>
+        <li class="case" data-rv><div class="top3"><span class="lbl k">New market</span><span class="lbl">05</span></div><p>When you’re entering a new segment or&nbsp;channel.</p></li>
+        <li class="case" data-rv><div class="top3"><span class="lbl k">Manual drag</span><span class="lbl">06</span></div><p>When the team spends its week on work AI should&nbsp;do.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="market" data-loc="Play 08|Market">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 08 · </span>Market</span></span><a class="nx" href="#team">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>The market is moving</span></span><span class="l"><span><em>our way.</em></span></span></h2>
+      <ul class="stats">
+        <li class="stat" data-rv><div class="num">34,000+</div><p class="say">US professionals with “fractional” in their title, up 265% since&nbsp;2019.</p><p class="src">Source: Lightcast, 2026</p></li>
+        <li class="stat" data-rv><div class="num">$2.6–4.4T</div><p class="say">Annual value gen AI could add. About 75% of it sits in customer operations, marketing and sales, software and&nbsp;R&amp;D.</p><p class="src">Source: McKinsey Global Institute, 2023</p></li>
+        <li class="stat" data-rv><div class="num">90%</div><p class="say">Of business leaders say on-demand talent is a competitive&nbsp;edge.</p><p class="src">Source: Harvard Business School &amp; BCG</p></li>
+        <li class="stat" data-rv><div class="num">6.4M</div><p class="say">US small employer&nbsp;firms.</p><p class="src">Source: SBA Office of Advocacy, 2026</p></li>
+      </ul>
+      <p class="insight" data-rv>AI makes companies more productive. Revenue leadership turns that capacity into&nbsp;growth.</p>
+
+      <figure class="fig" data-rv>
+        <div class="plate">
+          <div class="phd"><span class="lbl k">Two engines</span><span class="lbl">Fig. 08</span></div>
+          <div class="pbd">
+            <div class="eng">
+              <div class="box a"><div class="top3"><span class="lbl">Engine 01</span><span class="sq" aria-hidden="true"></span></div><div><h3>Revenue Leadership</h3><p>We build and run the commercial&nbsp;engine.</p></div></div>
+              <div class="link" aria-hidden="true"><i class="dn"></i><i class="up"></i></div>
+              <div class="box b"><div class="top3"><span class="lbl">Engine 02</span></div><div><h3>Revenue Technology</h3><p>The workflows we prove become&nbsp;products.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </figure>
+
+      <div class="vision">
+        <span class="lbl k" style="display:flex;align-items:center;gap:12px;margin-bottom:24px"><span class="sq" aria-hidden="true"></span>Vision</span>
+        <p class="pre" data-rv>Uber made the ride available on demand. We’re doing the same for revenue&nbsp;leadership.</p>
+        <p class="big" data-lines aria-label="Every growing company should have world-class revenue leadership on demand."><span class="l" aria-hidden="true"><span>Every growing company</span></span><span class="l" aria-hidden="true"><span>should have world-class</span></span><span class="l" aria-hidden="true"><span>revenue leadership <em>on&nbsp;demand.</em></span></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="team" data-loc="Play 09|Team">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 09 · </span>Team</span></span><a class="nx" href="#seats">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>Why <em>us.</em></span></span></h2>
+      <p class="lead" data-rv>Halo is led by Chris Hedum. He has spent nearly a decade inside early-stage companies, building the revenue engines founders couldn’t build&nbsp;alone.</p>
+      <div class="tgrid">
+        <ul class="proof" aria-label="Results">
+          <li data-rv><span class="v">$50K <i>→</i> $7M+</span><span class="s">Revenue in 9 months</span></li>
+          <li data-rv><span class="v">20 <i>→</i> 100+</span><span class="s">Sales reps, at 150% of quota</span></li>
+          <li data-rv><span class="v">#195 <i>→</i> #8</span><span class="s">National office ranking in 12 months</span></li>
+          <li data-rv><span class="v">40+</span><span class="s">Hires recruited and trained in 18 months</span></li>
+          <li data-rv><span class="v">$140M+</span><span class="s">Raised by founders he advised</span></li>
+        </ul>
+        <div class="quote-w" data-rv>
+          <span class="lbl k"><span class="sq" aria-hidden="true"></span>Why we care</span>
+          <p class="quote">“I help people see what they can build, then help them build&nbsp;it.”</p>
+          <p class="grit">Former Division I rugby player. Builds teams the way he was coached: brick by&nbsp;brick.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="seats" data-loc="Play 10|Limited seats">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 10 · </span>Limited seats</span></span></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>Limited <em>seats.</em></span></span></h2>
+      <p class="lead" data-rv>We embed deeply, so we take on about 10 companies at a&nbsp;time.</p>
+      <div class="cap10" data-rv>
+        <span class="lbl k">Capacity: ~10 companies</span>
+        <div class="row10" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <ul class="doors">
+        <li class="door" data-rv>
+          <span class="lbl"><span class="sq" aria-hidden="true"></span>For founders</span>
+          <h3>Apply for a seat.</h3>
+          <p class="note" id="noteF">Send to: chris@halovpartners.com
+Hi Chris, we’re a [stage] company. Our gap: [one line].</p>
+          <div class="dact">
+            <button class="cbtn inv" type="button" data-copy="note" data-src="noteF" aria-label="Copy the founder note"><span class="pt"><span class="a">Copy note</span><span class="b" aria-hidden="true">Copied ✓</span></span></button>
+            <button class="cbtn" type="button" data-copy="email" aria-label="Copy email address chris@halovpartners.com"><span class="pt"><span class="a">chris@halovpartners.com</span><span class="b" aria-hidden="true">Copied ✓</span></span><svg viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="9" height="9" rx="1.5"/><path d="M12 3.5V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h.5"/></svg></button>
+          </div>
+        </li>
+        <li class="door" data-rv>
+          <span class="lbl"><span class="sq" aria-hidden="true"></span>For investors</span>
+          <h3>Request the investor brief.</h3>
+          <p class="note" id="noteI">Send to: chris@halovpartners.com
+Hi Chris, I’d like the Halo investor brief.</p>
+          <div class="dact">
+            <button class="cbtn inv" type="button" data-copy="note" data-src="noteI" aria-label="Copy the investor note"><span class="pt"><span class="a">Copy note</span><span class="b" aria-hidden="true">Copied ✓</span></span></button>
+            <button class="cbtn" type="button" data-copy="email" aria-label="Copy email address chris@halovpartners.com"><span class="pt"><span class="a">chris@halovpartners.com</span><span class="b" aria-hidden="true">Copied ✓</span></span><svg viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="9" height="9" rx="1.5"/><path d="M12 3.5V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h.5"/></svg></button>
+          </div>
+        </li>
+      </ul>
+
+      <div class="close" id="contact" aria-label="Contact">
+        <h2 class="cl1" data-lines aria-label="Change is inevitable. Growth is optional."><span class="l" aria-hidden="true"><span class="soft">Change is inevitable.</span></span><span class="l" aria-hidden="true"><span><em>Growth is optional.</em></span></span></h2>
+        <p class="ready-q">Ready to grow?</p>
+        <button class="pill" id="copy" type="button" data-copy="email" aria-label="Copy email address chris@halovpartners.com">
+          <span class="pt"><span class="a" id="addr">chris@halovpartners.com</span><span class="b" aria-hidden="true">Copied ✓</span></span>
+          <svg viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="9" height="9" rx="1.5"/><path d="M12 3.5V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h.5"/></svg>
+        </button>
+        <p class="sr" id="copyStatus" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <span class="fmark"><span class="disc" aria-hidden="true"></span>HALO <i>//</i> VENTURES</span>
+      <span class="sign">Build outside the box. Brick by brick. Rain or&nbsp;shine.</span>
+      <span class="lbl">Portland, Oregon</span>
+    </div>
+    <div class="sources">
+      <span class="lbl k">Sources</span>
+      <ol>
+        <li>Gartner, Sales Survey, March 2026 (n=646 B2B buyers)</li>
+        <li>EY-Parthenon CEO Outlook, October 2026 (n=1,200 CEOs)</li>
+        <li>U.S. Dept. of Labor, SHRM, Harvard Business Review (cost of a bad hire)</li>
+        <li>Bridge Group (account executive ramp)</li>
+        <li>Gong (VP of Sales tenure)</li>
+        <li>VCBacked, The Startup Graveyard, 2026</li>
+        <li>Lightcast, The Rise of Fractional Leadership, 2026</li>
+        <li>McKinsey Global Institute, The Economic Potential of Generative AI, 2023</li>
+        <li>Harvard Business School &amp; BCG, Building the On-Demand Talent Economy</li>
+        <li>SBA Office of Advocacy, Frequently Asked Questions About Small Business, 2026</li>
+      </ol>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+var D=document, root=D.documentElement;
+function $(s,c){return (c||D).querySelector(s);}
+function $$(s,c){return Array.prototype.slice.call((c||D).querySelectorAll(s));}
+var EMAIL='chris@halovpartners.com';
+var RM=false;
+try{ RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+function revealAll(){
+  root.classList.remove('anim');
+  try{ $$('[data-rv],[data-lines],.sec').forEach(function(el){ el.classList.add('in'); }); }catch(e){}
+}
+
+/* ========== copy (email + notes), independent ========== */
+(function(){
+  try{
+    var status=$('#copyStatus'), addr=$('#addr');
+    function fallbackCopy(txt){
+      var ok=false;
+      try{
+        var ta=D.createElement('textarea'); ta.value=txt; ta.setAttribute('readonly','');
+        ta.style.position='fixed'; ta.style.top='0'; ta.style.left='0'; ta.style.width='1px'; ta.style.height='1px'; ta.style.opacity='0';
+        D.body.appendChild(ta); ta.select(); try{ ta.setSelectionRange(0,txt.length); }catch(e){}
+        ok=D.execCommand('copy'); D.body.removeChild(ta);
+      }catch(e){ ok=false; }
+      return ok;
+    }
+    function selectEl(el){ try{ var r=D.createRange(); r.selectNodeContents(el); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); }catch(e){} }
+    function textFor(btn){
+      if(btn.getAttribute('data-copy')==='note'){ var n=D.getElementById(btn.getAttribute('data-src')); return n?n.textContent.replace(/’/g,"'"):EMAIL; }
+      return EMAIL;
+    }
+    function result(btn,ok,txt){
+      clearTimeout(btn._t);
+      var isNote=btn.getAttribute('data-copy')==='note';
+      if(ok){ btn.classList.add('ok'); status.textContent=isNote?'Copied. The note is on your clipboard. Send to: '+EMAIL+'.':'Copied. '+EMAIL+' is on your clipboard.'; }
+      else{
+        status.textContent=isNote?'Copy did not work. The note is selected.':'Copy did not work. The address is selected: '+EMAIL+'.';
+        var el=isNote?D.getElementById(btn.getAttribute('data-src')):addr;
+        if(!isNote&&btn.id==='copyTop'){ try{ addr.scrollIntoView({block:'center'}); }catch(e){} }
+        if(el) selectEl(el);
+      }
+      btn._t=setTimeout(function(){ btn.classList.remove('ok'); },2400);
+    }
+    function go(btn){
+      var txt=textFor(btn);
+      try{
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(txt).then(function(){ result(btn,true,txt); },function(){ result(btn,fallbackCopy(txt),txt); });
+        } else result(btn,fallbackCopy(txt),txt);
+      }catch(e){ result(btn,fallbackCopy(txt),txt); }
+    }
+    $$('[data-copy]').forEach(function(b){ b.addEventListener('click',function(){ go(b); }); });
+  }catch(e){}
+})();
+
+/* ========== limiting step selector (independent) ========== */
+(function(){
+  try{
+    var stgs=$$('#line .stg'), cap=$('#limCap');
+    function setLim(k){
+      stgs.forEach(function(s,i){ s.classList.toggle('lim',i===k); $('.st',s).setAttribute('aria-pressed',i===k?'true':'false'); });
+      cap.textContent=$('.nm',stgs[k]).textContent+'. Fix this first.';
+    }
+    stgs.forEach(function(s,i){ $('.st',s).addEventListener('click',function(){ setLim(i); }); });
+  }catch(e){}
+})();
+
+try{
+/* ========== reframe: plug Halo into the org chart ========== */
+var org=$('#org'), haloBtn=$('#haloBtn'), unplugBtn=$('#unplugBtn'), msg=$('#dockMsg'), orgState=$('#orgState'), slot=$('#teamSlot');
+var busy=false;
+function setPlugged(v){
+  org.classList.toggle('plugged',v);
+  orgState.textContent=v?'After':'Before';
+  msg.hidden=!v; haloBtn.hidden=v; unplugBtn.hidden=!v;
+  try{ $('.d',haloBtn).style.visibility=''; }catch(e){}
+  org.setAttribute('aria-label',v?'After: the three seats resolve into one embedded team with Halo.':'Before: Founder / CEO above three empty seats, Revenue leader, Growth and Sales, each tagged Full-time seat.');
+}
+function plug(){
+  if(busy||org.classList.contains('plugged')) return;
+  if(RM||!window.requestAnimationFrame){ setPlugged(true); return; }
+  busy=true;
+  var from=$('.d',haloBtn).getBoundingClientRect();
+  var f=D.createElement('div'); f.className='flyer'; D.body.appendChild(f);
+  $('.d',haloBtn).style.visibility='hidden';
+  // land where the team bar's slot will be (bar is clipped, its box is laid out)
+  var to=slot.getBoundingClientRect();
+  var x0=from.left+from.width/2-24, y0=from.top+from.height/2-24, x1=to.left+to.width/2-24, y1=to.top+to.height/2-24, s1=16/48;
+  var dur=700, st=null;
+  function finish(){ if(f.parentNode) f.parentNode.removeChild(f); if(busy){ busy=false; setPlugged(true); } }
+  function step(t){
+    if(st===null) st=t;
+    var k=Math.min(1,(t-st)/dur), e=1-Math.pow(1-k,3);
+    var x=x0+(x1-x0)*e, y=y0+(y1-y0)*e-Math.sin(k*Math.PI)*56, sc=1+(s1-1)*e;
+    f.style.transform='translate('+x+'px,'+y+'px) scale('+sc+')';
+    if(k<1) requestAnimationFrame(step); else finish();
+  }
+  requestAnimationFrame(step);
+  setTimeout(finish,dur+500);
+}
+haloBtn.addEventListener('click',plug);
+unplugBtn.addEventListener('click',function(){ setPlugged(false); try{ haloBtn.focus(); }catch(e){} });
+setPlugged(false);
+
+/* ========== reveals ========== */
+var revs=$$('[data-rv],[data-lines],.sec');
+function inView(el,f){ var r=el.getBoundingClientRect(); return r.top<window.innerHeight*(f||.92)&&r.bottom>0; }
+function check(){ for(var i=0;i<revs.length;i++){ var el=revs[i]; if(!el.classList.contains('in')&&inView(el)) el.classList.add('in'); } }
+
+/* ========== where-am-I ========== */
+var loc=$('#loc'), prog=$('#prog'), located=$$('[data-loc]'), lastLoc='';
+function navState(){
+  var mid=window.innerHeight*.4, c=located[0];
+  for(var i=0;i<located.length;i++){ if(located[i].getBoundingClientRect().top<=mid) c=located[i]; }
+  var txt=c.getAttribute('data-loc');
+  if(txt!==lastLoc){
+    lastLoc=txt; var p=txt.split('|');
+    loc.innerHTML='<span class="n"></span><span></span>'; loc.firstChild.textContent=p[0]+' · '; loc.lastChild.textContent=p[1];
+  }
+  var max=(D.documentElement.scrollHeight-window.innerHeight)||1;
+  prog.style.transform='scaleX('+Math.max(0,Math.min(1,window.pageYOffset/max)).toFixed(4)+')';
+}
+var ticking=false;
+function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(function(){ ticking=false; try{ navState(); check(); }catch(e){ revealAll(); } }); }
+
+/* ========== init ========== */
+var hero=$('#start');
+if(!RM){
+  revs.forEach(function(el){ if(inView(el,1)) el.classList.add('in'); });
+  root.classList.add('anim');
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ hero.classList.add('ready'); }); });
+  setTimeout(function(){ hero.classList.add('ready'); },700);
+}
+navState();
+window.addEventListener('scroll',onScroll,{passive:true});
+window.addEventListener('resize',function(){ try{ onScroll(); }catch(e){} });
+setTimeout(function(){ try{ check(); }catch(e){ revealAll(); } },1500);
+}catch(err){
+  revealAll();
+  if(window.console) console.error(err);
+}
+})();
+</script>
+</body>
+</html>
