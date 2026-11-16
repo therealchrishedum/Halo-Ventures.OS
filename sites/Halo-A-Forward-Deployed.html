@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Halo Ventures</title>
-<meta name="description" content="HALO // VENTURES embeds senior revenue leaders and AI inside startups. We build the sales engine with the founder, prove it works, then hand it to the team.">
+<title>Halo Ventures · The next generation of revenue leadership</title>
+<meta name="description" content="Halo Ventures · The next generation of revenue leadership">
 <meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -151,7 +151,12 @@ main section{position:relative;scroll-margin-top:var(--hh)}
 .hero{padding:24px 0 72px}
 .hero .idx{margin-bottom:16px}
 .eyebrow{display:flex;align-items:center;gap:12px;color:var(--k);margin-bottom:16px}
-h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,12.6vw,128px);line-height:.96;letter-spacing:-.028em}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,20.5vw,200px);line-height:.92;letter-spacing:-.035em;white-space:nowrap}
+.tagline{margin-top:8px;font-family:var(--serif);font-weight:400;font-size:clamp(32px,9vw,72px);line-height:1;letter-spacing:-.02em;color:var(--g2)}
+.tagline .l{display:block;overflow:hidden;padding-bottom:.18em;margin-bottom:-.14em}
+.tagline .l>span{display:block}
+.anim .tagline .l>span{transform:translateY(105%)}
+.anim .ready .tagline .l>span{transform:none}
 h1 .l{display:block;overflow:hidden;padding-bottom:.2em;margin-bottom:-.16em}
 h1 .l>span{display:block}
 .anim h1 .l>span{transform:translateY(105%)}
@@ -163,7 +168,8 @@ h1 .l>span{display:block}
 .anim .ready .hgrid{opacity:1;transform:none}
 @media (prefers-reduced-motion:no-preference){
   .anim .ready h1 .l>span{transition:transform 1.2s var(--ease)}
-  .anim .ready h1 .l:nth-child(2)>span{transition-delay:.1s}
+  .anim .ready .tagline .l>span{transition:transform 1.2s .12s var(--ease)}
+  .anim .ready .tagline .l:nth-child(2)>span{transition-delay:.2s}
   .anim .ready .hgrid{transition:opacity .9s .45s var(--ease),transform 1s .45s var(--ease)}
 }
 @media (min-width:768px){ .hero{padding:40px 0 96px} .hero .sub{font-size:21px} .analogy{font-size:16px} }
@@ -560,7 +566,8 @@ footer{border-top:1px solid var(--k);padding:40px 0 calc(40px + env(safe-area-in
 <section class="hero" id="start" data-loc="Play 01|Who we are">
   <div class="wrap">
     <span class="lbl eyebrow"><span class="sq" aria-hidden="true"></span>Forward-deployed revenue leadership</span>
-    <h1 aria-label="We put revenue leaders inside startups."><span class="l" aria-hidden="true"><span>We put revenue leaders</span></span><span class="l" aria-hidden="true"><span><em>inside</em> startups.</span></span></h1>
+    <h1 aria-label="Halo Ventures"><span class="l" aria-hidden="true"><span>Halo Ventures</span></span></h1>
+    <p class="tagline" aria-label="The next generation of revenue leadership."><span class="l" aria-hidden="true"><span>The next generation of</span></span><span class="l" aria-hidden="true"><span><em>revenue leadership.</em></span></span></p>
     <div class="hgrid">
       <div class="hcopy">
         <p class="sub">Halo Ventures embeds senior revenue leaders and AI inside startups. We build the sales engine with the founder, prove it works, then hand it to the&nbsp;team.</p>
