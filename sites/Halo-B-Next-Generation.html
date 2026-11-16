@@ -1,0 +1,1234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Halo Ventures</title>
+<meta name="description" content="Halo Ventures embeds senior revenue leaders and AI inside startups. We build the sales engine with the founder, prove it works, then hand it to the team.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script>
+document.documentElement.className+=' js';
+window.addEventListener('error',function(){var r=document.documentElement;r.className=r.className.replace(/\b(js|anim)\b/g,' ')+' nojs';});
+</script>
+<style>
+:root{
+  --k:#000;--w:#fff;
+  --g1:#1C1C1E;--g2:#2C2C2E;--g3:#636366;--g4:#8E8E93;--g5:#C7C7CC;
+  --hair:#E5E5E5;--hair2:#F2F2F2;--dot:#E3E3E3;
+  --e:#E83214;
+  --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --sans:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+  --gut:16px;--gap:16px;--navh:88px;--max:1440px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --io:cubic-bezier(.65,0,.35,1);
+  color-scheme:light;
+}
+@media (min-width:768px){:root{--gut:32px;--gap:24px;--navh:64px}}
+@media (min-width:1200px){:root{--gut:48px}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;background:var(--w);font-synthesis:none}
+body{background:var(--w);color:var(--k);font-family:var(--sans);font-size:16px;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-webkit-tap-highlight-color:transparent}
+::selection{background:var(--k);color:var(--w)}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid var(--k);outline-offset:3px}
+.dk :focus-visible{outline-color:var(--w)}
+h1,h2,h3,h4{font-weight:400;text-wrap:balance}
+p,li{text-wrap:pretty}
+ul,ol{list-style:none}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+/* ---------- type: display 24/32/40/56/72/96/128 · body 16/18 · labels 11/12 ---------- */
+.lbl{font-family:var(--mono);font-size:11px;line-height:1.4;letter-spacing:.12em;text-transform:uppercase;font-weight:400;color:var(--g3)}
+.dk .lbl{color:var(--g4)}
+.sq{display:inline-block;width:8px;height:8px;background:var(--e);flex:none;margin-right:8px;vertical-align:1px}
+.hl{font-family:var(--serif);font-weight:400;font-size:40px;line-height:1;letter-spacing:-.02em}
+.hl .ln{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+.hl .ln>span{display:block}
+.hl .it{font-style:italic}
+.lead{font-family:var(--serif);font-size:24px;line-height:1.2;letter-spacing:-.005em;color:var(--g2);margin-top:24px;max-width:24ch}
+.dk .lead{color:var(--g5)}
+.body{font-size:16px;line-height:1.55;color:var(--g2)}
+.dk .body{color:var(--g5)}
+.src{display:block;margin-top:12px;font-family:var(--mono);font-size:11px;line-height:1.45;letter-spacing:.04em;color:var(--g3)}
+.dk .src{color:var(--g4)}
+@media (min-width:768px){.hl{font-size:56px}.lead{font-size:32px}.body{font-size:18px}}
+@media (min-width:1200px){.hl{font-size:72px}}
+
+/* ---------- grid ---------- */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:var(--gap)}
+@media (min-width:768px){.g{grid-template-columns:repeat(8,minmax(0,1fr))}}
+@media (min-width:1024px){.g{grid-template-columns:repeat(12,minmax(0,1fr))}}
+.guides{position:fixed;left:0;right:0;top:0;bottom:0;pointer-events:none;z-index:0;display:none}
+.guides .wrap,.guides .g{height:100%}
+.guides i{display:block;height:100%;border-left:1px solid var(--hair2);border-right:1px solid var(--hair2)}
+@media (min-width:768px){.guides{display:block}.guides i:nth-child(n+9){display:none}}
+@media (min-width:1024px){.guides i:nth-child(n+9){display:block}}
+.ruler{position:relative;z-index:1}
+.ruler .g{height:40px;align-items:center}
+.ruler span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--g3);padding-left:8px;position:relative;height:100%;display:flex;align-items:center}
+.ruler span::before{content:'';position:absolute;left:0;top:12px;bottom:12px;width:1px;background:var(--k)}
+.ruler span:nth-child(n+5){display:none}
+@media (min-width:768px){.ruler span:nth-child(n+5){display:flex}.ruler span:nth-child(n+9){display:none}}
+@media (min-width:1024px){.ruler span:nth-child(n+9){display:flex}}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;left:0;right:0;top:0;z-index:50;background:var(--w);color:var(--k);border-bottom:1px solid var(--k);padding-top:env(safe-area-inset-top);transition:background .3s,color .3s}
+.nav.dark{background:var(--k);color:var(--w);border-color:var(--g2)}
+.navrow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.wm{display:inline-flex;align-items:center;gap:8px;min-height:56px;text-decoration:none;font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.14em;white-space:nowrap}
+.wm svg{width:16px;height:16px;flex:none}
+.wm i{font-style:normal;color:var(--g4)}
+.loc{order:3;flex:1 0 100%;display:flex;align-items:center;gap:16px;height:32px;border-top:1px solid var(--hair);white-space:nowrap;min-width:0}
+.nav.dark .loc{border-color:var(--g2)}
+.loc .lbl{color:var(--k);display:flex;gap:8px;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.loc .lbl b{font-weight:400;color:var(--g3)}
+.nav.dark .loc .lbl{color:var(--w)}
+.nav.dark .loc .lbl b{color:var(--g4)}
+.loc .bar{flex:1;min-width:24px;height:1px;background:var(--hair);position:relative;overflow:hidden}
+.nav.dark .loc .bar{background:var(--g2)}
+.loc .bar i{position:absolute;left:0;top:0;bottom:0;width:100%;background:var(--k);transform-origin:left;transform:scaleX(0)}
+.nav.dark .loc .bar i{background:var(--w)}
+.mini{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1px solid currentColor;border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.pt{display:grid}
+.pt>span{grid-area:1/1;white-space:nowrap}
+.pt .b{visibility:hidden}
+.ok .pt .a{visibility:hidden}
+.ok .pt .b{visibility:visible}
+@media (hover:hover) and (pointer:fine){.mini:hover{background:var(--k);color:var(--w);border-color:var(--k)}.nav.dark .mini:hover{background:var(--w);color:var(--k);border-color:var(--w)}}
+@media (min-width:768px){
+  .navrow{flex-wrap:nowrap;height:64px}
+  .loc{order:0;flex:0 1 440px;height:auto;border:0;margin:0 32px}
+}
+
+main,footer{position:relative;z-index:1}
+main{padding-top:var(--navh)}
+section{position:relative;scroll-margin-top:var(--navh)}
+
+/* ---------- play bar (section header row) ---------- */
+.sec{border-top:1px solid var(--k);background:var(--w)}
+.pbar .g{min-height:56px;align-items:center;border-bottom:1px solid var(--hair)}
+.dk .pbar .g{border-color:var(--g2)}
+.pbar .no{grid-column:1/3;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--k);display:flex;align-items:center;white-space:nowrap}
+.dk .pbar .no{color:var(--w)}
+.pbar .t{grid-column:3/4;white-space:nowrap}
+.pbar .nx{grid-column:4;justify-self:end}
+@media (max-width:767px){.pbar .t{display:none}.pbar .no{grid-column:1/4}}
+@media (min-width:768px){.pbar .no{grid-column:1/3}.pbar .t{grid-column:3/7}.pbar .nx{grid-column:7/9}}
+@media (min-width:1024px){.pbar .no{grid-column:1/3}.pbar .t{grid-column:3/7}.pbar .nx{grid-column:10/13}}
+.nx{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding-left:16px;text-decoration:none;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--k);white-space:nowrap}
+.dk .nx{color:var(--w)}
+.nx:hover{text-decoration:underline;text-underline-offset:4px}
+
+.pad{padding-top:56px;padding-bottom:88px}
+@media (min-width:768px){.pad{padding-top:80px;padding-bottom:120px}}
+@media (min-width:1200px){.pad{padding-top:96px;padding-bottom:144px}}
+.L,.R,.F{grid-column:1/-1}
+.R{margin-top:48px}
+@media (min-width:1024px){
+  .L{grid-column:1/6}
+  .R{grid-column:7/13;margin-top:0}
+  .stick{position:-webkit-sticky;position:sticky;top:calc(var(--navh) + 40px)}
+}
+
+/* figure caption + legend (the binder grammar) */
+.fig{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid var(--k);margin-bottom:24px}
+.dk .fig{border-color:var(--w)}
+.fig .lbl:first-child{color:var(--k)}
+.dk .fig .lbl:first-child{color:var(--w)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px}
+.legend li{display:flex;align-items:center;gap:8px}
+.legend i{display:block;width:16px;height:12px;flex:none}
+.legend .k1{background:var(--k)}
+.legend .k2{border:1.5px dashed var(--g4)}
+.legend .k3{width:12px;height:12px;border-radius:50%;background:var(--e)}
+.legend .k4{width:12px;height:12px;background:var(--e)}
+.legend .k5{height:1px;background:var(--g4)}
+.dk .legend .k1{background:var(--w)}
+
+/* ---------- motion (JS only) ---------- */
+.anim .rv{opacity:0;transform:translateY(24px)}
+.anim .rv.in{opacity:1;transform:none;transition:opacity .9s var(--ease),transform 1s var(--ease)}
+.anim .hl .ln>span{transform:translateY(108%)}
+.anim .hl.in .ln>span{transform:none;transition:transform 1.1s var(--ease)}
+.anim .hl.in .ln:nth-child(2)>span{transition-delay:.09s}
+.anim .hl.in .ln:nth-child(3)>span{transition-delay:.18s}
+.anim .hl.in .ln:nth-child(4)>span{transition-delay:.27s}
+.line{position:relative}
+.line::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--k);transform-origin:left}
+.dk .line::after{background:var(--w)}
+.anim .line::after{transform:scaleX(0)}
+.anim .line.in::after{transform:none;transition:transform 1.4s var(--io)}
+/* ---------- hero ---------- */
+.hero{border-top:0}
+.hero-split{display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--k)}
+.hero-copy{padding:32px var(--gut) 32px;display:flex;flex-direction:column;justify-content:space-between;gap:32px}
+.eyebrow{display:flex;align-items:center;margin-bottom:24px;color:var(--k)}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:48px;line-height:.98;letter-spacing:-.025em}
+.hero-sub{font-size:18px;line-height:1.5;color:var(--g2);max-width:30em;margin-top:24px}
+.support{margin-top:24px;padding-top:16px;border-top:1px solid var(--hair);font-size:14px;line-height:1.5;color:var(--g3);max-width:34em}
+.hero-meta{display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid var(--k);padding-top:16px}
+.cue{display:inline-flex;align-items:center;gap:8px;min-height:44px;text-decoration:none;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.cue i{display:block;width:1px;height:24px;background:var(--g5);position:relative;overflow:hidden}
+.cue i::after{content:'';position:absolute;left:0;top:-100%;width:1px;height:100%;background:var(--k);animation:cue 1.8s var(--io) infinite}
+@keyframes cue{to{top:100%}}
+.field{position:relative;background:var(--w);background-image:radial-gradient(circle at 1px 1px,var(--dot) 1px,transparent 1.2px);background-size:16px 16px;padding:24px var(--gut) 40px;border-top:1px solid var(--k)}
+.field .inner{background:var(--w);border:1px solid var(--k);padding:0 16px 20px}
+@media (min-width:768px){
+  .hero h1{font-size:88px}
+  .hero-sub{font-size:20px}
+  .hero-copy{padding:56px var(--gut) 48px}
+  .field{padding:48px var(--gut) 64px}
+  .field .inner{padding:0 24px 24px}
+}
+@media (min-width:1024px){
+  .hero-split{grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:calc(100vh - var(--navh) - 41px);min-height:calc(100svh - var(--navh) - 41px)}
+  .hero-copy{padding:56px 40px 40px var(--gut);max-width:calc(var(--max) / 2);justify-self:end;width:100%}
+  .hero h1{font-size:clamp(80px,7.4vw,112px)}
+  .field{border-top:0;border-left:1px solid var(--k);display:flex;flex-direction:column;justify-content:center;padding:48px var(--gut) 48px 48px}
+  .field>.inner{max-width:640px;width:100%}
+}
+
+/* ---------- 02 problem ---------- */
+.spec{border-top:1px solid var(--k)}
+.spec>li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:8px 16px;padding:24px 0 28px;border-bottom:1px solid var(--hair)}
+.spec .n{font-family:var(--mono);font-size:12px;letter-spacing:.12em;padding-top:8px}
+.spec .v{font-family:var(--serif);font-size:28px;line-height:1.1;letter-spacing:-.01em}
+.spec .v .big{display:block;font-size:72px;line-height:.95;letter-spacing:-.03em;margin:4px 0 8px}
+.spec .v .pre{display:block;color:var(--g3)}
+@media (min-width:768px){.spec>li{grid-template-columns:72px minmax(0,1fr);padding:32px 0 36px}.spec .v{font-size:36px}.spec .v .big{font-size:104px}}
+/* ---------- 02b the black band ---------- */
+.dk{background:var(--k);color:var(--w)}
+.sec.dk{border-color:var(--k)}
+.stats{display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid var(--w)}
+.stat{padding:24px 0 28px;border-bottom:1px solid var(--g2)}
+.stat .num{display:block;font-family:var(--serif);font-size:72px;line-height:.95;letter-spacing:-.03em}
+.stat .d{display:block;margin-top:12px;font-size:16px;line-height:1.45;color:var(--g5);max-width:30ch}
+@media (min-width:768px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gap)}
+  .stat{padding:28px 0 32px}
+  .stat .num{font-size:88px}
+}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:0 16px;border:1px solid var(--k);background:var(--w);color:var(--k);white-space:nowrap;min-height:44px;transition:background .25s,color .25s}
+.btn:hover{background:var(--k);color:var(--w)}
+.btn.solid{background:var(--k);color:var(--w)}
+.btn.solid:hover{background:var(--g2)}
+.dk .btn{border-color:var(--w);background:var(--k);color:var(--w)}
+.dk .btn.solid{background:var(--w);color:var(--k)}
+.dk .btn:hover{background:var(--w);color:var(--k)}
+.dk .btn.solid:hover{background:var(--g5)}
+/* ---------- 03 solution ---------- */
+.tiles{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr);margin-top:48px;border-top:1px solid var(--k)}
+.tile{display:flex;flex-direction:column;gap:24px;padding:24px 0 32px;border-bottom:1px solid var(--hair)}
+.tile h3{font-family:var(--serif);font-size:32px;line-height:1.05;letter-spacing:-.01em}
+.tile p{margin-top:12px;font-size:16px;line-height:1.5;color:var(--g2);max-width:30ch}
+.tile .top{display:flex;justify-content:space-between;align-items:center}
+.tile .blk{width:24px;height:24px;background:var(--k)}
+.tile .blk.o{background:transparent;border:1.5px dashed var(--g4)}
+@media (min-width:768px){
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gap);border-top:0;margin-top:64px}
+  .tile{border-top:1px solid var(--k);border-bottom:0;padding:24px 0 40px;justify-content:space-between;min-height:280px}
+  .tile h3{font-size:40px}
+}
+@media (min-width:1200px){.tiles{grid-template-columns:repeat(4,minmax(0,1fr))}.tile{min-height:320px}}
+.fixcap{display:flex;align-items:center;gap:12px;margin-top:32px;padding:16px;border:1px solid var(--k);min-height:56px}
+.fixcap .q{width:16px;height:16px;background:var(--e);flex:none}
+.fixcap p{font-family:var(--serif);font-size:24px;line-height:1.15}
+.fixcap p b{font-weight:400;font-style:italic}
+@media (min-width:768px){.fixcap p{font-size:28px}}
+.steps{grid-column:1/-1;border-top:1px solid var(--k);margin-top:72px}
+.step{display:grid;grid-template-columns:48px minmax(0,1fr);gap:8px 16px;padding:24px 0 32px;border-bottom:1px solid var(--hair)}
+.step .n{font-family:var(--serif);font-size:40px;line-height:.9;grid-row:span 2}
+.step h4{font-family:var(--serif);font-size:28px;line-height:1.05;letter-spacing:-.01em}
+.step p{font-size:16px;line-height:1.55;color:var(--g2);max-width:36em}
+@media (min-width:768px){.step{grid-template-columns:96px minmax(0,1fr);padding:32px 0 40px}.step .n{font-size:64px}.step h4{font-size:40px}.step p{font-size:18px}}
+@media (min-width:1024px){
+  .step{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:start}
+  .step .n{grid-column:1/3;grid-row:1}
+  .step h4{grid-column:3/8;grid-row:1}
+  .step p{grid-column:9/13;grid-row:1;padding-top:8px}
+}
+/* ---------- 06 use cases (spec table) ---------- */
+.cases{grid-column:1/-1;margin-top:48px;border-top:1px solid var(--k)}
+.cases .hd{display:none}
+.cases li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:4px 16px;padding:20px 0 24px;border-bottom:1px solid var(--hair)}
+.cases .n{font-family:var(--mono);font-size:12px;letter-spacing:.12em;padding-top:8px}
+.cases h3{font-family:var(--serif);font-size:28px;line-height:1.05;letter-spacing:-.01em}
+.cases p{grid-column:2;font-size:16px;line-height:1.5;color:var(--g2)}
+@media (min-width:1024px){
+  .cases li,.cases .hd{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:baseline;padding:24px 0}
+  .cases .hd{display:grid;padding:12px 0;border-bottom:1px solid var(--k)}
+  .cases .hd .lbl:nth-child(1){grid-column:1/2}.cases .hd .lbl:nth-child(2){grid-column:2/7}.cases .hd .lbl:nth-child(3){grid-column:7/13}
+  .cases .n{grid-column:1/2;padding:0}
+  .cases h3{grid-column:2/7;font-size:40px}
+  .cases p{grid-column:7/13;font-size:20px;color:var(--k);font-family:var(--serif);font-size:28px;line-height:1.15}
+}
+.insight{grid-column:1/-1;margin-top:56px;padding-top:24px;border-top:1px solid var(--hair);font-family:var(--serif);font-size:28px;line-height:1.15;letter-spacing:-.01em;max-width:30ch}
+@media (min-width:768px){.insight{font-size:40px}}
+.engines{grid-column:1/-1;margin-top:72px}
+.eng{display:grid;grid-template-columns:minmax(0,1fr);align-items:stretch}
+.ebox{display:flex;flex-direction:column;justify-content:space-between;gap:32px;min-height:200px;padding:20px;border:1px solid var(--k)}
+.ebox.s{background:var(--k);color:var(--w)}
+.ebox.s .lbl{color:var(--g4)}
+.ebox h3{font-family:var(--serif);font-size:36px;line-height:1;letter-spacing:-.02em}
+.ebox p{margin-top:12px;font-size:16px;line-height:1.5;color:var(--g2);max-width:30ch}
+.ebox.s p{color:var(--g5)}
+.link{position:relative;display:flex;justify-content:center;align-items:center;height:72px}
+.link .rail{position:absolute;top:8px;bottom:8px;width:1px;background:var(--g4)}
+.link .rail.a{left:calc(50% - 12px)}.link .rail.b{left:calc(50% + 12px)}
+.link .rail.a::after,.link .rail.b::after{content:'';position:absolute;left:-3px;width:7px;height:7px;border-right:1px solid var(--g4);border-bottom:1px solid var(--g4)}
+.link .rail.a::after{bottom:0;transform:rotate(45deg)}
+.link .rail.b::after{top:0;transform:rotate(-135deg)}
+.link .j{position:relative;width:16px;height:16px;background:var(--e)}
+@media (min-width:768px){
+  .eng{grid-template-columns:minmax(0,1fr) 120px minmax(0,1fr)}
+  .ebox{min-height:320px;padding:28px}
+  .ebox h3{font-size:56px}
+  .ebox p{font-size:18px}
+  .link{height:auto}
+  .link .rail,.link .rail.a,.link .rail.b{top:auto;bottom:auto;left:8px;right:8px;width:auto;height:1px}
+  .link .rail.a{top:calc(50% - 12px)}.link .rail.b{top:calc(50% + 12px)}
+  .link .rail.a::after{left:auto;right:0;top:-3px;bottom:auto;transform:rotate(-45deg)}
+  .link .rail.b::after{left:0;top:-3px;transform:rotate(135deg)}
+}
+@media (min-width:1200px){.ebox h3{font-size:64px}}
+.vision{grid-column:1/-1;margin-top:96px;padding-top:24px;border-top:1px solid var(--k)}
+.vision .pre{font-family:var(--serif);font-size:28px;line-height:1.15;letter-spacing:-.01em;color:var(--g3);max-width:28ch;margin-top:24px}
+.vision .hl{margin-top:24px;font-size:40px;line-height:.98;letter-spacing:-.03em}
+@media (min-width:768px){.vision{margin-top:144px}.vision .pre{font-size:40px}.vision .hl{font-size:88px}}
+@media (min-width:1200px){.vision .hl{font-size:120px}}
+/* ---------- 08 team ---------- */
+.proof{border-top:1px solid var(--k)}
+.proof li{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding:20px 0 24px;border-bottom:1px solid var(--hair)}
+.proof .f{font-family:var(--serif);font-size:44px;line-height:1;letter-spacing:-.025em;white-space:nowrap}
+.proof .f .ar{color:var(--g4);font-size:.7em;padding:0 .12em;vertical-align:.08em}
+.proof .d{font-size:16px;line-height:1.45;color:var(--g2)}
+@media (min-width:768px){.proof li{grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:baseline;gap:24px;padding:24px 0}.proof .f{font-size:56px}.proof .d{font-size:17px}}
+.quote{margin-top:48px;padding-top:24px;border-top:1px solid var(--k)}
+.quote blockquote{font-family:var(--serif);font-style:italic;font-size:32px;line-height:1.1;letter-spacing:-.015em;margin-top:16px;max-width:22ch}
+.grit{margin-top:24px;font-size:14px;line-height:1.5;color:var(--g3);max-width:40ch}
+@media (min-width:768px){.quote blockquote{font-size:44px}}
+/* ---------- 09 seats + doors + close ---------- */
+.cap{grid-column:1/-1;margin-top:48px}
+.cap .row{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;margin-top:16px}
+.cap .row i{display:block;aspect-ratio:1/1;border:1px solid var(--k);position:relative}
+.cap .row i::after{content:'';position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;background:var(--k)}
+@supports not (aspect-ratio:1/1){.cap .row i{height:32px}}
+.cap .meta{display:flex;justify-content:space-between;gap:16px;margin-top:12px}
+.cap .meta .lbl:first-child{color:var(--k)}
+@media (min-width:768px){.cap .row{gap:12px}.cap .row i::after{width:12px;height:12px;margin:-6px 0 0 -6px}}
+@media (min-width:1024px){.cap{grid-column:1/9}}
+.doors{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr);margin-top:72px;border:1px solid var(--k);position:relative}
+.door{display:flex;flex-direction:column;gap:24px;padding:24px 16px 24px}
+.door+.door{border-top:1px solid var(--k)}
+.door h3{font-family:var(--serif);font-size:36px;line-height:1;letter-spacing:-.02em;margin-top:12px}
+.note{font-family:var(--mono);font-size:13px;line-height:1.6;color:var(--g2);padding:16px;border:1px dashed var(--g4);white-space:pre-line;overflow-wrap:anywhere}
+.dacts{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.ejoint{position:absolute;width:16px;height:16px;background:var(--e);left:calc(100% - 32px);top:50%;margin-top:-8px}
+@media (min-width:768px){
+  .doors{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .door{padding:32px}
+  .door+.door{border-top:0;border-left:1px solid var(--k)}
+  .door h3{font-size:48px}
+  .ejoint{left:50%;margin-left:-8px;top:-8px;margin-top:0}
+}
+@media (max-width:767px){.ejoint{display:none}}
+.pill{display:inline-flex;align-items:center;gap:16px;min-height:56px;padding:0 24px;border-radius:999px;background:var(--e);color:var(--k);font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.01em;max-width:100%}
+.pill.sm{min-height:48px;padding:0 20px;font-size:13px;gap:12px}
+.pill:focus-visible{outline:2px solid var(--k);outline-offset:4px}
+.pill .pt .a{-webkit-user-select:text;user-select:text}
+.pill svg{width:18px;height:18px;flex:0 0 auto}
+.pill.sm svg{width:16px;height:16px}
+@media (max-width:360px){.pill{padding:0 16px;font-size:14px;gap:8px}.pill.sm{font-size:12px}}
+.close{grid-column:1/-1;margin-top:120px;padding-top:24px;border-top:1px solid var(--k);display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.close .hl{font-size:48px}
+.close .hl .ln:first-child{color:var(--g3)}
+.orb{width:48px;height:48px;border-radius:50%;background:var(--e);margin:24px 0 32px}
+.ask{margin-top:24px}
+.ready{font-family:var(--serif);font-size:32px;line-height:1.1;letter-spacing:-.01em}
+.ask .pill{margin-top:16px}
+@media (min-width:768px){
+  .close{margin-top:160px;grid-template-columns:minmax(0,1fr) auto;column-gap:32px}
+  .close .hl{font-size:96px}
+  .orb{grid-column:2;grid-row:1;width:96px;height:96px;margin:16px 0 0}
+  .ask{grid-column:1/-1;margin-top:72px}
+  .ready{font-size:48px}
+  .ask .pill{font-size:18px;min-height:64px;padding:0 32px}
+}
+@media (min-width:1200px){.close .hl{font-size:128px}.orb{width:120px;height:120px}}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--k);background:var(--w);padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+.fgrid{padding-top:40px;row-gap:24px;border-top:1px solid var(--k)}
+.fmark{grid-column:1/-1;font-family:var(--serif);font-size:48px;line-height:1;letter-spacing:-.02em}
+.fmark i{font-style:normal;color:var(--g4)}
+.fsign{grid-column:1/-1;font-family:var(--serif);font-size:20px;line-height:1.3;color:var(--g2)}
+.floc{grid-column:1/-1}
+.srcs{grid-column:1/-1;margin-top:24px;padding-top:16px;border-top:1px solid var(--hair)}
+.srcs ol{margin-top:12px;display:grid;grid-template-columns:minmax(0,1fr);gap:6px 24px;counter-reset:s}
+.srcs li{font-family:var(--mono);font-size:11px;line-height:1.5;letter-spacing:.02em;color:var(--g3);display:grid;grid-template-columns:28px minmax(0,1fr);counter-increment:s}
+.srcs li::before{content:counter(s,decimal-leading-zero)}
+@media (min-width:768px){.fmark{font-size:72px}.fsign{grid-column:1/6}.floc{grid-column:7/9;justify-self:end;align-self:end}.srcs ol{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1024px){.fmark{font-size:96px}.fsign{grid-column:1/7}.floc{grid-column:10/13}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .anim .rv,.anim .hl .ln>span,.anim .line::after{opacity:1;transform:none}
+}
+
+/* =================== v13 · B additions =================== */
+.hl .ln.it>span{font-style:italic}
+.head{grid-column:1/-1}
+.hero-sub strong{font-weight:500;color:var(--k)}
+.lead{max-width:26ch}
+
+/* hero glance spec */
+.glance{margin:0}
+.gr{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;padding:16px 0;border-bottom:1px solid var(--hair);align-items:center}
+.gr:last-child{border-bottom:0;padding-bottom:4px}
+.gr dt{color:var(--g3)}
+.gr dd{margin:0}
+.gv{font-family:var(--serif);font-size:24px;line-height:1.12;letter-spacing:-.01em}
+.mini-play{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative}
+.mini-play::before{content:'';position:absolute;left:8px;right:10%;top:7px;height:1px;background:var(--k)}
+.mini-play li{position:relative;display:flex;flex-direction:column;gap:10px}
+.mini-play i{display:block;width:16px;height:16px;background:var(--k);position:relative}
+.mini-play i.hd{border-radius:50%;background:var(--e)}
+.mini-play .lbl{font-size:10px;letter-spacing:.08em;color:var(--k);white-space:nowrap}
+@media (min-width:768px){.gr{grid-template-columns:120px minmax(0,1fr);padding:20px 0}.gv{font-size:30px}.mini-play .lbl{font-size:11px}}
+
+/* today grid */
+.today{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr);margin-top:40px;border-top:1px solid var(--k)}
+.today li{display:grid;grid-template-columns:minmax(0,1fr);padding:20px 0 24px;border-bottom:1px solid var(--hair);position:relative}
+.today .n{position:absolute;right:0;top:22px}
+.today .big{font-family:var(--serif);font-size:64px;line-height:.95;letter-spacing:-.03em;white-space:nowrap}
+.today .d{margin-top:10px;font-size:17px;line-height:1.4;color:var(--g1);max-width:30ch}
+.today .src{margin-top:10px}
+@media (min-width:768px){
+  .today{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gap);border-top:0;margin-top:56px}
+  .today li{border-top:1px solid var(--k);border-bottom:0;padding:20px 0 40px}
+  .today .big{font-size:88px}
+}
+@media (min-width:768px) and (max-width:1199px){.today li:last-child{grid-column:1/-1}}
+@media (min-width:1200px){.today{grid-template-columns:repeat(6,minmax(0,1fr))}.today li{grid-column:span 2}.today li:nth-child(-n+2){grid-column:span 3}.today .big{font-size:96px}.today li{min-height:280px;align-content:start}.today .src{align-self:end}}
+.closer{grid-column:1/-1;margin-top:48px;padding-top:24px;border-top:1px solid var(--k);font-family:var(--serif);font-size:32px;line-height:1.08;letter-spacing:-.015em;max-width:22ch}
+.closer .it{font-style:italic}
+@media (min-width:768px){.closer{font-size:56px;margin-top:72px}}
+@media (min-width:1200px){.closer{font-size:72px;max-width:24ch}}
+
+/* real problem: order of moves */
+.order{margin-top:40px}
+.orow{display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);row-gap:8px;align-items:center;margin-top:16px}
+.orow .ol{grid-column:1/-1;color:var(--g3)}
+.ob{display:flex;align-items:center;min-height:64px;padding:12px 14px;border:1px solid var(--k);font-family:var(--serif);font-size:22px;line-height:1.05}
+.ob.k{background:var(--k);color:var(--w)}
+.ob.d{border:1.5px dashed var(--g4);color:var(--g3)}
+.oa{position:relative;height:1px;background:var(--g4);margin:0 4px}
+.oa::after{content:'';position:absolute;right:0;top:-3px;width:7px;height:7px;border-right:1px solid var(--g4);border-top:1px solid var(--g4);transform:rotate(45deg)}
+@media (min-width:768px){.ob{font-size:28px;min-height:80px;padding:16px 20px}.orow{grid-template-columns:minmax(0,1fr) 56px minmax(0,1fr)}}
+.fixcap p{font-family:var(--serif);font-size:24px;line-height:1.15}
+
+/* play diagram */
+.pd{grid-column:1/-1;margin-top:40px}
+.pd .fig{flex-wrap:wrap}
+.pdwrap{position:relative}
+.pdv{display:block;width:100%;height:auto;overflow:visible}
+.pdd{display:none}
+@media (min-width:1100px){.pdd{display:block}.pdm{display:none}}
+@media (max-width:1099px){.pdm{max-width:520px;margin:0 auto}}
+.pd{--ink:#000;--bg:#fff;--mute:#8E8E93;--soft:#636366;--dot:#E3E3E3}
+.dk .pd{--ink:#fff;--bg:#000;--mute:#8E8E93;--soft:#C7C7CC;--dot:#2C2C2E}
+.pdv .dt{fill:var(--dot)}
+.pdv .pos circle{fill:var(--bg);stroke:var(--ink);stroke-width:2}
+.pdv .tc{font-family:var(--mono);font-size:12px;letter-spacing:.06em;fill:var(--ink)}
+.pdv .tn{font-family:var(--sans);font-size:16px;font-weight:500;fill:var(--ink)}
+.pdv .th{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.06em;fill:#000}
+.pdm .th{font-size:9px}
+.pdv .rt{fill:none;stroke-width:2;stroke-linecap:round}
+.pdv .dr{stroke:var(--ink)}
+.pdv .ds{stroke:var(--mute);stroke-dasharray:6 7}
+.pdv .ai{fill:var(--ink)}
+.pdv .ag{fill:var(--mute)}
+.pdv .mk rect{stroke:none}
+.pdv .mk text{font-family:var(--mono);font-size:12px;font-weight:500}
+.pdv .mk.brk rect{fill:#E83214}
+.pdv .mk.brk text{fill:#000}
+.pdv .mk.fix rect{fill:var(--ink)}
+.pdv .mk.fix text{fill:var(--bg)}
+.pdv .tm{font-family:var(--mono);font-size:12px;letter-spacing:.08em;fill:var(--soft)}
+.pdm .tm{font-size:11px;letter-spacing:.06em}
+.pdv .tg{fill:var(--ink)}
+.pdv .tf{font-family:var(--serif);font-size:36px;letter-spacing:-.02em;fill:var(--ink)}
+.pdm .tf{font-size:30px}
+.pdv .ti{font-family:var(--sans);font-size:15px;fill:var(--ink)}
+.pdm .ti{font-size:14px}
+.pdv .lay{transition:opacity .45s var(--ease)}
+.pd-h[data-state=halo] .lay-b,.pd-h[data-state=broken] .lay-h{opacity:0;visibility:hidden}
+.pd-h .lg-b{display:none}
+.pd-h[data-state=broken] .lg-b{display:flex}
+.pd-h[data-state=broken] .lg-h{display:none}
+.pdv .st{transition:opacity .6s var(--ease)}
+.pdv .st .dr{transition:stroke-dashoffset .9s var(--io)}
+.pdv .st .mk{transition:transform .5s var(--ease)}
+.anim .pd.armed .st{opacity:0}
+.anim .pd.armed .st .mk{transform:scale(.4);transform-box:fill-box;transform-origin:center}
+.anim .pd.armed .st.on{opacity:1}
+.anim .pd.armed .st.on .mk{transform:none}
+.legend .k6{width:12px;height:12px;border-radius:50%;border:2px solid var(--k);background:var(--w)}
+.dk .legend .k6{border-color:var(--w);background:var(--k)}
+.legend .k5{height:2px;background:var(--k)}
+.dk .legend .k5{background:var(--w)}
+.legend .k7{height:0;border-top:2px dashed var(--g4);background:none}
+.dk .legend .k1{background:var(--w)}
+
+/* segmented toggle */
+.seg{display:inline-flex;border:1px solid var(--k)}
+.seg button{min-height:44px;padding:0 16px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--k);background:var(--w);transition:background .25s,color .25s}
+.seg button+button{border-left:1px solid var(--k)}
+.seg button[aria-pressed=true]{background:var(--k);color:var(--w)}
+@media (hover:hover) and (pointer:fine){.seg button[aria-pressed=false]:hover{background:var(--hair2)}}
+html:not(.js) .seg,.nojs .seg{display:none}
+
+/* broken-play notes + total */
+.notes{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr);margin-top:48px;border-top:1px solid var(--w)}
+.notes li{display:grid;align-content:start;grid-template-columns:24px minmax(0,1fr);gap:16px;padding:20px 0 24px;border-bottom:1px solid var(--g2)}
+.mk-s{display:flex;align-items:center;justify-content:center;width:24px;height:24px;background:var(--e);color:#000;font-family:var(--mono);font-size:12px;font-weight:500}
+.notes h3{font-family:var(--serif);font-size:24px;line-height:1.1;letter-spacing:-.01em}
+.notes p{margin-top:8px;font-size:16px;line-height:1.5;color:var(--g5)}
+@media (min-width:768px){.notes{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gap)}}
+@media (min-width:1200px){.notes{grid-template-columns:repeat(5,minmax(0,1fr))}.notes li{grid-template-columns:minmax(0,1fr);border-bottom:0;padding:24px 0 8px}.notes h3{font-size:24px}}
+.total{grid-column:1/-1;margin-top:64px;padding:24px 0 0;border-top:1px solid var(--w)}
+.tq{font-family:var(--serif);font-size:32px;line-height:1.05;letter-spacing:-.02em;margin-top:20px}
+.tq>span{display:block}
+.tq>.tg{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:.35em;margin:8px 0 4px}
+.tb{display:block;font-size:2.2em;line-height:.95;letter-spacing:-.035em}
+.tb.it{font-style:italic}
+.tand{color:var(--g4);font-style:italic}
+.total .src{max-width:72ch;margin-top:24px}
+@media (min-width:768px){.total{margin-top:96px}.tq{font-size:44px}}
+@media (min-width:1200px){.tq{font-size:48px}.tb{font-size:2.6em}}
+.anim .total.armed{opacity:0;transform:translateY(32px)}
+.anim .total.armed.on{opacity:1;transform:none;transition:opacity .9s var(--ease),transform 1s var(--ease)}
+
+/* steps + lets */
+.steps{grid-column:1/-1;border-top:1px solid var(--k);margin-top:64px}
+.step h3{font-family:var(--serif);font-size:28px;line-height:1.05;letter-spacing:-.01em}
+@media (min-width:768px){.step h3{font-size:40px}}
+@media (min-width:1024px){.step h3{grid-column:3/8;grid-row:1}}
+.lets{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr);gap:48px;margin-top:72px}
+.lets .fig{margin-bottom:0}
+@media (min-width:1024px){.lets{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap)}.lets .lc{grid-column:1/9}}
+.ll li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:12px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--hair);font-family:var(--serif);font-size:24px;line-height:1.15}
+.ll .blk{width:12px;height:12px;background:var(--k);display:block;transform:translateY(-2px)}
+@media (min-width:768px){.ll li{font-size:28px}}
+
+.tiles .tile h3{font-size:32px}
+@media (min-width:1200px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* why now rows */
+.rows{border-top:1px solid var(--k)}
+.rows li{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;padding:20px 0 24px;border-bottom:1px solid var(--hair)}
+.rows .big{font-family:var(--serif);font-size:56px;line-height:.95;letter-spacing:-.03em;white-space:nowrap}
+.rows .d{font-size:17px;line-height:1.45;color:var(--g1);max-width:40ch}
+@media (min-width:768px){.rows li{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:baseline;padding:28px 0}.rows .big{font-size:72px}}
+.insight{margin-top:48px;border-top:1px solid var(--k)}
+.insight .it{font-style:italic}
+
+/* market */
+.seatecon{grid-column:1/-1;margin-top:48px;padding-top:20px;border-top:1px solid var(--k)}
+.seatecon .big{font-family:var(--serif);font-size:96px;line-height:.9;letter-spacing:-.04em;margin-top:16px}
+.seatecon .per{font-size:.32em;letter-spacing:-.01em;color:var(--g3);font-style:italic}
+.math{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;margin-top:32px}
+.mb{display:flex;flex-direction:column;gap:6px;padding:16px;border:1px solid var(--k)}
+.mb b{font-family:var(--serif);font-weight:400;font-size:36px;line-height:1;letter-spacing:-.02em}
+.mb.k{background:var(--k);color:var(--w)}.mb.k .lbl{color:var(--g5)}
+.mo{font-family:var(--serif);font-size:32px;line-height:1;text-align:center}
+@media (min-width:768px){.seatecon .big{font-size:176px}.math{grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr) 48px minmax(0,1fr);align-items:stretch}.mo{display:flex;align-items:center;justify-content:center;font-size:44px}.mb{padding:20px;min-height:140px;justify-content:space-between}.mb b{font-size:48px}}
+@media (min-width:1200px){.seatecon .big{font-size:224px}}
+.vision .hl{font-size:40px}
+@media (min-width:768px){.vision .hl{font-size:72px}}
+@media (min-width:1200px){.vision .hl{font-size:104px}}
+
+/* why me (STE) */
+.ste{display:grid;grid-template-columns:minmax(0,1fr);gap:0;border-top:1px solid var(--k)}
+.sg{padding:20px 0 24px;border-bottom:1px solid var(--hair)}
+.sg ul{margin-top:12px}
+.sg li{position:relative;padding:6px 0 6px 20px;font-size:17px;line-height:1.45;color:var(--g1)}
+.sg li::before{content:'';position:absolute;left:0;top:15px;width:8px;height:8px;background:var(--k)}
+.care{margin-top:48px;border-top:1px solid var(--k)}
+@media (min-width:768px){.ste{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gap)}.sg li{font-size:18px}}
+
+/* who's behind us */
+.bench{margin-top:32px;border-top:1px solid var(--k)}
+.bench li{padding:14px 0 14px 20px;border-bottom:1px solid var(--hair);font-size:17px;line-height:1.4;position:relative}
+.bench li::before{content:'';position:absolute;left:0;top:21px;width:8px;height:8px;background:var(--k)}
+.forming{display:flex;align-items:center;margin-top:24px;font-family:var(--serif);font-size:28px;line-height:1.1}
+.forming .sq{width:12px;height:12px;margin-right:12px}
+.bt{display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr);grid-template-areas:"ch ch ch" "s1 tb s2" "s3 tb s4" "s5 tb .";gap:12px 0;position:relative}
+.chair{grid-area:ch;display:flex;flex-direction:column;align-items:center;gap:6px;padding-bottom:12px;position:relative}
+.chair .cd{width:40px;height:40px;border-radius:50%;background:var(--e)}
+.chair b{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1}
+.table{grid-area:tb;grid-row:2/5;border:1px solid var(--k);background-image:radial-gradient(circle at 1px 1px,var(--g5) 1px,transparent 1.2px);background-size:8px 8px;display:flex;align-items:center;justify-content:center}
+.table .lbl{writing-mode:vertical-rl;color:var(--k);background:var(--w);padding:6px 2px}
+.bs{display:flex;flex-direction:column;justify-content:space-between;gap:10px;min-height:96px;padding:12px;background:var(--k);color:var(--w);position:relative}
+.bs .lbl{color:var(--g5);font-size:10px;letter-spacing:.08em}
+.bs b{font-family:var(--serif);font-weight:400;font-size:22px;line-height:1}
+.bs.s1{grid-area:s1;margin-right:12px}.bs.s3{grid-area:s3;margin-right:12px}.bs.s5{grid-area:s5;margin-right:12px}
+.bs.s2{grid-area:s2;margin-left:12px}.bs.s4{grid-area:s4;margin-left:12px}
+.bs.s1::after,.bs.s3::after,.bs.s5::after{content:'';position:absolute;right:-12px;top:50%;width:12px;height:1px;background:var(--g4)}
+.bs.s2::after,.bs.s4::after{content:'';position:absolute;left:-12px;top:50%;width:12px;height:1px;background:var(--g4)}
+.chair::after{content:'';position:absolute;left:50%;bottom:-12px;width:1px;height:12px;background:var(--g4)}
+@media (min-width:768px){
+  .bt{grid-template-columns:120px repeat(3,minmax(0,1fr));grid-template-rows:auto 56px auto;grid-template-areas:". s1 s2 s3" "ch tb tb tb" ". s4 s5 .";gap:20px 12px}
+  .table{grid-row:auto;margin-left:-12px}
+  .table .lbl{writing-mode:horizontal-tb;padding:2px 8px}
+  .bt{grid-template-columns:150px repeat(3,minmax(0,1fr))}
+  .chair{padding:0;flex-direction:row;justify-content:flex-start;align-items:center;gap:10px;margin-right:12px;display:grid;grid-template-columns:40px auto;grid-template-rows:auto auto;column-gap:10px;row-gap:2px;align-content:center}
+  .chair .cd{grid-row:1/3}
+  .chair::after{left:auto;right:-12px;bottom:auto;top:50%;width:12px;height:1px}
+  .bs{margin:0!important;min-height:120px}
+  .bs b{font-size:28px}
+  .bs.s1::after,.bs.s2::after,.bs.s3::after{left:50%;right:auto;top:100%;width:1px;height:20px}
+  .bs.s4::after,.bs.s5::after{left:50%;top:-20px;width:1px;height:20px}
+  .bs .lbl{font-size:11px}
+}
+
+/* runway */
+.rl{display:flex;align-items:flex-start;color:var(--k);font-size:12px;max-width:34ch}
+.rl .sq{margin-top:3px}
+.rval{font-family:var(--serif);font-size:64px;line-height:1;letter-spacing:-.03em;margin-top:24px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.rsrc{max-width:46ch;margin-top:20px}
+@media (min-width:768px){.rval{font-size:112px}}
+@media (min-width:1200px){.rval{font-size:128px}}
+.box{margin:0}
+.cube{display:block;width:100%;max-width:560px;height:auto;margin:0 auto}
+.cube .cf2{fill:#F2F2F2;stroke:none}
+.cube .cf3{fill:#FAFAFA;stroke:none}
+.cube .ce{fill:none;stroke:#000;stroke-width:1.5;stroke-linejoin:round}
+.cube .ch{fill:none;stroke:#C7C7CC;stroke-width:1;stroke-dasharray:4 4}
+.cube .ch2{fill:none;stroke:#8E8E93;stroke-width:1}
+.cube .tm{font-family:var(--mono);font-size:11px;letter-spacing:.06em;fill:#636366}
+.cube .b1{fill:#D1D1D6;stroke:#636366;stroke-width:1}
+.cube .b4{fill:#E5E5EA;stroke:#8E8E93;stroke-width:.75}
+.cube .b2{fill:#FFFFFF;stroke:#636366;stroke-width:1}
+.cube .b3{stroke:#8E8E93;stroke-width:1}
+.cube .bk{opacity:0}
+.cube .bk.on{opacity:1}
+.anim .cube .bk{transform:translateY(-14px);transition:opacity .35s var(--ease),transform .45s var(--ease)}
+.anim .cube .bk.on{transform:none}
+.bmeta{display:flex;justify-content:space-between;gap:16px;margin-top:12px;padding-top:12px;border-top:1px solid var(--hair)}
+.bkey{display:inline-block;width:20px;height:12px;background:#D1D1D6;border:1px solid #8E8E93;margin-right:8px;vertical-align:-2px;position:relative}
+.bkey::after{content:'';position:absolute;left:7px;top:-1px;bottom:-1px;width:4px;background:#fff;border-left:1px solid #8E8E93;border-right:1px solid #8E8E93}
+@media (min-width:1024px){#runway .L{align-self:center}}
+
+.rooms{color:var(--g3);margin-bottom:20px;max-width:40ch}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));z-index:300;transform:translate(-50%,24px);opacity:0;pointer-events:none;max-width:calc(100% - 32px);padding:14px 20px;background:var(--k);color:var(--w);font-family:var(--mono);font-size:12px;letter-spacing:.04em;line-height:1.4;transition:opacity .3s,transform .4s var(--ease)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){
+  .anim .pd.armed .st,.anim .total.armed{opacity:1;transform:none}
+  .anim .cube .bk{transform:none}
+}
+.pdv .th2{font-size:10px;letter-spacing:.08em}
+
+</style>
+</head>
+<body>
+
+<div class="guides" aria-hidden="true"><div class="wrap"><div class="g"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+
+<header class="nav" id="nav">
+  <div class="navrow">
+    <a class="wm" href="#top" aria-label="HALO // VENTURES, back to top"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#E83214"/></svg>HALO <i>//</i> VENTURES</a>
+    <div class="loc" aria-hidden="true"><span class="lbl"><b id="locN">Play 01</b><b aria-hidden="true">·</b><span id="locT">Who we are</span></span><span class="bar"><i id="prog"></i></span></div>
+    <button class="mini" id="copyTop" type="button" data-copy="email" aria-label="Copy email address chris@halovpartners.com"><span class="pt"><span class="a">Copy email</span><span class="b" aria-hidden="true">Copied ✓</span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- PLAY 01 · WHO WE ARE -->
+<section class="hero" id="top" data-n="Play 01" data-loc="Who we are">
+  <div class="ruler wrap" aria-hidden="true"><div class="g"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span><span>11</span><span>12</span></div></div>
+  <div class="hero-split">
+    <div class="hero-copy">
+      <div>
+        <p class="lbl eyebrow rv"><span class="sq" aria-hidden="true"></span>The next generation of startup growth</p>
+        <h1 class="hl" id="heroH"><span class="ln"><span>Great products don’t sell</span></span><span class="ln it"><span>themselves.</span></span></h1>
+        <p class="hero-sub rv"><strong>Halo Ventures embeds senior revenue leaders and AI inside startups.</strong> We build the sales engine with the founder, prove it works, then hand it to the&nbsp;team.</p>
+      </div>
+      <div class="hero-meta rv"><span class="lbl">Portland, Oregon</span><a class="cue" href="#today"><i></i>Scroll</a></div>
+    </div>
+    <div class="field">
+      <figure class="inner rv" aria-label="Halo at a glance. For startups whose founder still closes every deal. The play: embed, prove the play, install the system, recruit, hand off. Result: the team owns the engine.">
+        <figcaption class="fig"><span class="lbl">Fig. 01 · Halo at a glance</span><span class="lbl">Spec</span></figcaption>
+        <dl class="glance">
+          <div class="gr"><dt class="lbl">For</dt><dd class="gv">Startups whose founder still closes every&nbsp;deal.</dd></div>
+          <div class="gr"><dt class="lbl">The play</dt><dd>
+            <ol class="mini-play" aria-hidden="true">
+              <li><i class="hd"></i><span class="lbl">Embed</span></li>
+              <li><i></i><span class="lbl">Prove</span></li>
+              <li><i></i><span class="lbl">Install</span></li>
+              <li><i></i><span class="lbl">Recruit</span></li>
+              <li><i></i><span class="lbl">Hand off</span></li>
+            </ol>
+          </dd></div>
+          <div class="gr"><dt class="lbl">Result</dt><dd class="gv">The team owns the&nbsp;engine.</dd></div>
+        </dl>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- PLAY 02 · STARTUPS IN 2026 -->
+<section class="sec" id="today" data-n="Play 02" data-loc="Startups in 2026">
+  <div class="pbar wrap"><div class="g line"><span class="no">Play 02</span><span class="t lbl">The situation today</span><a class="nx" href="#problem">Next <span aria-hidden="true">↓</span></a></div></div>
+  <div class="wrap pad"><div class="g">
+    <div class="head"><h2 class="hl"><span class="ln"><span>Startups</span></span><span class="ln it"><span>in 2026.</span></span></h2></div>
+    <ol class="today">
+      <li class="rv"><span class="n lbl">01</span><span class="big">$512B</span><span class="d">of venture capital went into startups in&nbsp;2025.</span><span class="src">PitchBook, 2026</span></li>
+      <li class="rv"><span class="n lbl">02</span><span class="big">84%</span><span class="d">of sales reps missed quota last&nbsp;year.</span><span class="src">Salesforce, State of Sales</span></li>
+      <li class="rv"><span class="n lbl">03</span><span class="big">70%</span><span class="d">of a rep’s time goes to work that isn’t&nbsp;selling.</span><span class="src">Salesforce, State of Sales</span></li>
+      <li class="rv"><span class="n lbl">04</span><span class="big">67%</span><span class="d">of B2B buyers now prefer to buy without a rep. 45% used AI in a recent&nbsp;purchase.</span><span class="src">Gartner, 2026</span></li>
+      <li class="rv"><span class="n lbl">05</span><span class="big">23%</span><span class="d">of CEOs say AI gains vanish before they reach&nbsp;results.</span><span class="src">EY CEO Outlook, 2026</span></li>
+    </ol>
+    <p class="closer rv">The money is bigger. The buyers changed. <span class="it">The sales model&nbsp;didn’t.</span></p>
+  </div></div>
+</section>
+
+<!-- PLAY 03 · THE REAL PROBLEM -->
+<section class="sec" id="problem" data-n="Play 03" data-loc="The real problem">
+  <div class="pbar wrap"><div class="g line"><span class="no">Play 03</span><span class="t lbl">The real problem</span><a class="nx" href="#broken">Next <span aria-hidden="true">↓</span></a></div></div>
+  <div class="wrap pad"><div class="g">
+    <div class="L"><div class="stick">
+      <h2 class="hl"><span class="ln"><span>The real problem:</span></span><span class="ln it"><span>the seat comes before the play.</span></span></h2>
+    </div></div>
+    <div class="R">
+      <ol class="spec">
+        <li class="rv"><span class="n" aria-hidden="true">01</span><p class="v">Senior revenue expertise is sold one way: as a full-time executive&nbsp;hire.</p></li>
+        <li class="rv"><span class="n" aria-hidden="true">02</span><p class="v">So startups buy the seat before they know the&nbsp;play.</p></li>
+        <li class="rv"><span class="n" aria-hidden="true">03</span><p class="v">Then they pay for the&nbsp;miss.</p></li>
+      </ol>
+      <figure class="order rv" aria-label="Today: hire the seat, then find the play. With Halo: prove the play, then hire.">
+        <figcaption class="fig"><span class="lbl">Fig. 03 · The order of moves</span></figcaption>
+        <div class="orow"><span class="lbl ol">Today</span><span class="ob k">Hire the seat</span><span class="oa" aria-hidden="true"></span><span class="ob d">Find the play</span></div>
+        <div class="orow"><span class="lbl ol">With Halo</span><span class="ob k">Prove the play</span><span class="oa" aria-hidden="true"></span><span class="ob">Hire second</span></div>
+      </figure>
+      <div class="fixcap rv"><span class="q" aria-hidden="true"></span><p>Embedded leadership and AI now let a startup prove the play first, and <b>hire&nbsp;second.</b></p></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- PLAY 04 · THE BROKEN PLAY (the one black band) -->
+<section class="sec dk" id="broken" data-n="Play 04" data-loc="The broken play">
+  <div class="pbar wrap"><div class="g line"><span class="no">Play 04</span><span class="t lbl">The broken play</span><a class="nx" href="#halo">Next <span aria-hidden="true">↓</span></a></div></div>
+  <div class="wrap pad"><div class="g">
+    <div class="head"><h2 class="hl"><span class="ln"><span>The play every startup runs.</span></span><span class="ln it"><span>And where it breaks.</span></span></h2></div>
+    <figure class="pd pd-b" id="pdB" aria-labelledby="pdBcap">
+      <figcaption class="fig"><span class="lbl" id="pdBcap">Fig. 04 · The standard play · Formation: founder-led</span><span class="lbl">5 breakdowns</span></figcaption>
+      <p class="sr">Diagram of the standard startup sales play. The founder is the only route to revenue: a single point of failure. A VP of Sales is hired before the play exists, at about $334K a year. A wrong hire costs $500K to $1M. The seat turns over after about 19 months and loops back to hire. New account executives take 4.5 to 6 months to ramp. The routes to pipeline and revenue stay broken.</p>
+      <div class="pdwrap"><svg class="pdv pdd" viewBox="0 90 1200 610" role="presentation" aria-hidden="true" focusable="false"><defs><marker id="db-ai" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 z" class="ai"/></marker><marker id="db-ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 z" class="ag"/></marker><pattern id="db-dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" class="dt"/></pattern></defs><rect y="90" width="1200" height="610" fill="url(#db-dots)"/><g class="lay lay-b"><g class="st" data-i="1"><path class="rt dr" d="M150,432 C300,650 920,650 1070,432" marker-end="url(#db-ai)"/><g class="mk brk"><rect x="598" y="583.5" width="24" height="24"/><text x="610" y="600" text-anchor="middle">1</text></g><text class="tm" x="610" y="642" text-anchor="middle">01 · THE FOUNDER CARRIES EVERY DEAL</text><text class="tf" x="610" y="676" text-anchor="middle">Single point of failure</text></g><g class="st" data-i="2"><path class="rt dr" d="M144,404 L260,330"/><path class="rt ds" d="M260,330 L374,257" marker-end="url(#db-ag)"/><g class="mk brk"><rect x="248" y="318" width="24" height="24"/><text x="260" y="334.5" text-anchor="middle">2</text></g><text class="tm" x="232" y="262" text-anchor="end">02 · HIRED BEFORE THE PLAY</text><text class="tf" x="232" y="298" text-anchor="end">$334K a year</text></g><g class="st" data-i="3"><g class="mk brk"><rect x="458" y="200" width="24" height="24"/><text x="470" y="216.5" text-anchor="middle">3</text></g><text class="tm" x="498" y="204">03 · THE WRONG HIRE</text><text class="tf" x="498" y="240">$500K–$1M</text></g><g class="st" data-i="4"><path class="rt dr" d="M386,213 C330,110 470,110 414,213" marker-end="url(#db-ai)"/><text class="tm tg th2" x="400" y="184" text-anchor="middle">HIRE</text><g class="mk brk"><rect x="388" y="123.80000000000001" width="24" height="24"/><text x="400" y="140.3" text-anchor="middle">4</text></g><text class="tm" x="350" y="124" text-anchor="end">04 · THE SEAT TURNS OVER</text><text class="tf" x="350" y="160" text-anchor="end">19 months</text></g><g class="st" data-i="5"><path class="rt dr" d="M430,244 L540,340"/><path class="rt ds" d="M540,340 L654,422" marker-end="url(#db-ag)"/><g class="mk brk"><rect x="528" y="328" width="24" height="24"/><text x="540" y="344.5" text-anchor="middle">5</text></g><text class="tm" x="516" y="386" text-anchor="end">05 · THE RAMP BURNS RUNWAY</text><text class="tf" x="516" y="422" text-anchor="end">4.5–6 months</text></g><g class="st" data-i="6"><path class="rt ds" d="M704,422 L872,250" marker-end="url(#db-ag)"/><path class="rt ds" d="M926,252 L1074,402" marker-end="url(#db-ag)"/></g></g><g class="pos "><circle cx="120" cy="420" r="30"/><text class="tc" x="120" y="424.5" text-anchor="middle">FO</text><text class="tn" x="120" y="480" text-anchor="middle">Founder</text></g><g class="pos "><circle cx="400" cy="240" r="30"/><text class="tc" x="400" y="244.5" text-anchor="middle">VP</text><text class="tn" x="400" y="300" text-anchor="middle">VP of Sales</text></g><g class="pos "><circle cx="680" cy="440" r="30"/><text class="tc" x="680" y="444.5" text-anchor="middle">SH</text><text class="tn" x="680" y="500" text-anchor="middle">First sales hires</text></g><g class="pos "><circle cx="900" cy="240" r="30"/><text class="tc" x="900" y="244.5" text-anchor="middle">PL</text><text class="tn" x="900" y="300" text-anchor="middle">Pipeline</text></g><g class="pos "><circle cx="1100" cy="420" r="30"/><text class="tc" x="1100" y="424.5" text-anchor="middle">RV</text><text class="tn" x="1100" y="480" text-anchor="middle">Revenue</text></g></svg><svg class="pdv pdm" viewBox="0 0 360 1040" role="presentation" aria-hidden="true" focusable="false"><defs><marker id="mb-ai" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 z" class="ai"/></marker><marker id="mb-ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 z" class="ag"/></marker><pattern id="mb-dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" class="dt"/></pattern></defs><rect width="360" height="1040" fill="url(#mb-dots)"/><g class="lay lay-b"><g class="st" data-i="1"><path class="rt dr" d="M56,36 V34 Q56,20 70,20 H330 Q344,20 344,34 V996 Q344,1010 330,1010 H70 Q56,1010 56,996 V977" marker-end="url(#mb-ai)"/><g class="mk brk"><rect x="332" y="138" width="24" height="24"/><text x="344" y="154.5" text-anchor="middle">1</text></g><text class="tm" x="314" y="124" text-anchor="end">01 · FOUNDER CARRIES EVERY DEAL</text><text class="tf" x="314" y="154" text-anchor="end">Single point of failure</text></g><g class="st" data-i="2"><path class="rt dr" d="M56,84 V190"/><path class="rt ds" d="M56,190 V264" marker-end="url(#mb-ag)"/><g class="mk brk"><rect x="44" y="178" width="24" height="24"/><text x="56" y="194.5" text-anchor="middle">2</text></g><text class="tm" x="92" y="186">02 · HIRED BEFORE THE PLAY</text><text class="tf" x="92" y="218">$334K a year</text></g><g class="st" data-i="3"><path class="rt dr" d="M56,314 V368"/><g class="mk brk"><rect x="44" y="340" width="24" height="24"/><text x="56" y="356.5" text-anchor="middle">3</text></g><text class="tm" x="92" y="348">03 · THE WRONG HIRE</text><text class="tf" x="92" y="380">$500K–$1M</text></g><g class="st" data-i="4"><path class="rt dr" d="M42,308 C0,350 -4,470 16,470 C30,470 28,380 36,312" marker-end="url(#mb-ai)"/><g class="mk brk"><rect x="2" y="436" width="24" height="24"/><text x="14" y="452.5" text-anchor="middle">4</text></g><text class="tm" x="92" y="436">04 · THE SEAT TURNS OVER</text><text class="tf" x="92" y="468">19 months</text></g><g class="st" data-i="5"><path class="rt dr" d="M56,368 V530"/><path class="rt ds" d="M56,530 V594" marker-end="url(#mb-ag)"/><g class="mk brk"><rect x="44" y="518" width="24" height="24"/><text x="56" y="534.5" text-anchor="middle">5</text></g><text class="tm" x="92" y="526">05 · THE RAMP BURNS RUNWAY</text><text class="tf" x="92" y="558">4.5–6 months</text></g><g class="st" data-i="6"><path class="rt ds" d="M56,644 V774" marker-end="url(#mb-ag)"/><path class="rt ds" d="M56,824 V924" marker-end="url(#mb-ag)"/></g></g><g class="pos "><circle cx="56" cy="60" r="24"/><text class="tc" x="56" y="64.5" text-anchor="middle">FO</text><text class="tn" x="92" y="66">Founder</text></g><g class="pos "><circle cx="56" cy="290" r="24"/><text class="tc" x="56" y="294.5" text-anchor="middle">VP</text><text class="tn" x="92" y="296">VP of Sales</text></g><g class="pos "><circle cx="56" cy="620" r="24"/><text class="tc" x="56" y="624.5" text-anchor="middle">SH</text><text class="tn" x="92" y="626">First sales hires</text></g><g class="pos "><circle cx="56" cy="800" r="24"/><text class="tc" x="56" y="804.5" text-anchor="middle">PL</text><text class="tn" x="92" y="806">Pipeline</text></g><g class="pos "><circle cx="56" cy="950" r="24"/><text class="tc" x="56" y="954.5" text-anchor="middle">RV</text><text class="tn" x="92" y="956">Revenue</text></g></svg></div>
+      <ul class="legend" aria-hidden="true">
+        <li><i class="k6"></i><span class="lbl">Position</span></li>
+        <li><i class="k5"></i><span class="lbl">Route</span></li>
+        <li><i class="k7"></i><span class="lbl">Broken route</span></li>
+        <li><i class="k4"></i><span class="lbl">Breakdown</span></li>
+      </ul>
+    </figure>
+    <ol class="notes">
+      <li class="rv"><span class="mk-s" aria-hidden="true">1</span><div><h3>The founder carries every deal.</h3><p>The founder is the only route to revenue. Single point of failure.</p></div></li>
+      <li class="rv"><span class="mk-s" aria-hidden="true">2</span><div><h3>The executive is hired before the play exists.</h3><p>VP of Sales at about $334K a year in total pay.</p><span class="src">Glassdoor, 2026</span></div></li>
+      <li class="rv"><span class="mk-s" aria-hidden="true">3</span><div><h3>The wrong hire.</h3><p>A wrong sales hire costs 1.5–3× annual pay. On a $334K seat, that is $500K–$1M.</p><span class="src">Halo math · U.S. Dept. of Labor, SHRM, HBR; Glassdoor</span></div></li>
+      <li class="rv"><span class="mk-s" aria-hidden="true">4</span><div><h3>The seat turns over.</h3><p>The average VP of Sales lasted 19 months. The loop goes back to hire.</p><span class="src">Gong</span></div></li>
+      <li class="rv"><span class="mk-s" aria-hidden="true">5</span><div><h3>The ramp burns runway.</h3><p>New account executives take 4.5–6 months to ramp.</p><span class="src">Bridge Group</span></div></li>
+    </ol>
+    <div class="total" id="total">
+      <span class="lbl tl"><span class="sq" aria-hidden="true"></span>The scoreboard · Halo math</span>
+      <p class="tq"><span class="tpre">One broken play can cost</span><span class="tg"><span class="tb">$500K–$1M</span><span class="tand">and</span><span class="tb it">a year or more</span></span><span class="tpost">of runway.</span></p>
+      <p class="src">Halo math: the wrong-hire range, plus 4.5–6 months to ramp, plus about 19 months of tenure. Sources: Glassdoor, 2026; U.S. Dept. of Labor, SHRM, HBR; Bridge Group; Gong.</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- PLAY 05 · THE HALO PLAY -->
+<section class="sec" id="halo" data-n="Play 05" data-loc="The Halo play">
+  <div class="pbar wrap"><div class="g line"><span class="no">Play 05</span><span class="t lbl">The Halo play</span><a class="nx" href="#get">Next <span aria-hidden="true">↓</span></a></div></div>
+  <div class="wrap pad"><div class="g">
+    <div class="head"><h2 class="hl"><span class="ln"><span>The Halo</span></span><span class="ln it"><span>play.</span></span></h2></div>
+    <figure class="pd pd-h" id="pdH" data-state="halo" aria-labelledby="pdHcap">
+      <figcaption class="fig"><span class="lbl" id="pdHcap">Fig. 05 · Same positions, new routes</span>
+        <span class="seg" role="group" aria-label="Show play"><button type="button" data-s="broken" aria-pressed="false">Broken play</button><button type="button" data-s="halo" aria-pressed="true">Halo play</button></span>
+      </figcaption>
+      <p class="sr" id="pdHsr" aria-live="polite">Halo play shown. Halo sits beside the founder. 1, embed. 2, prove the play: right customers, pipeline, first repeatable deals. 3, install the system: playbook, targets, coaching, AI workflows. 4, recruit to proven requirements: hires join a working system, and the ~$334K executive seat waits until the play is proven. 5, hand off: the team owns the engine.</p>
+      <div class="pdwrap"><svg class="pdv pdd" viewBox="0 90 1200 610" role="presentation" aria-hidden="true" focusable="false"><defs><marker id="dh-ai" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 z" class="ai"/></marker><marker id="dh-ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 z" class="ag"/></marker><pattern id="dh-dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" class="dt"/></pattern></defs><rect y="90" width="1200" height="610" fill="url(#dh-dots)"/><g class="lay lay-b"><g class="st" data-i="1"><path class="rt dr" d="M150,432 C300,650 920,650 1070,432" marker-end="url(#dh-ai)"/><g class="mk brk"><rect x="598" y="583.5" width="24" height="24"/><text x="610" y="600" text-anchor="middle">1</text></g><text class="tm" x="610" y="642" text-anchor="middle">01 · THE FOUNDER CARRIES EVERY DEAL</text><text class="tf" x="610" y="676" text-anchor="middle">Single point of failure</text></g><g class="st" data-i="2"><path class="rt dr" d="M144,404 L260,330"/><path class="rt ds" d="M260,330 L374,257" marker-end="url(#dh-ag)"/><g class="mk brk"><rect x="248" y="318" width="24" height="24"/><text x="260" y="334.5" text-anchor="middle">2</text></g><text class="tm" x="232" y="262" text-anchor="end">02 · HIRED BEFORE THE PLAY</text><text class="tf" x="232" y="298" text-anchor="end">$334K a year</text></g><g class="st" data-i="3"><g class="mk brk"><rect x="458" y="200" width="24" height="24"/><text x="470" y="216.5" text-anchor="middle">3</text></g><text class="tm" x="498" y="204">03 · THE WRONG HIRE</text><text class="tf" x="498" y="240">$500K–$1M</text></g><g class="st" data-i="4"><path class="rt dr" d="M386,213 C330,110 470,110 414,213" marker-end="url(#dh-ai)"/><text class="tm tg th2" x="400" y="184" text-anchor="middle">HIRE</text><g class="mk brk"><rect x="388" y="123.80000000000001" width="24" height="24"/><text x="400" y="140.3" text-anchor="middle">4</text></g><text class="tm" x="350" y="124" text-anchor="end">04 · THE SEAT TURNS OVER</text><text class="tf" x="350" y="160" text-anchor="end">19 months</text></g><g class="st" data-i="5"><path class="rt dr" d="M430,244 L540,340"/><path class="rt ds" d="M540,340 L654,422" marker-end="url(#dh-ag)"/><g class="mk brk"><rect x="528" y="328" width="24" height="24"/><text x="540" y="344.5" text-anchor="middle">5</text></g><text class="tm" x="516" y="386" text-anchor="end">05 · THE RAMP BURNS RUNWAY</text><text class="tf" x="516" y="422" text-anchor="end">4.5–6 months</text></g><g class="st" data-i="6"><path class="rt ds" d="M704,422 L872,250" marker-end="url(#dh-ag)"/><path class="rt ds" d="M926,252 L1074,402" marker-end="url(#dh-ag)"/></g></g><g class="lay lay-h"><g class="st" data-i="1"><g class="hnode"><circle cx="250" cy="420" r="30" fill="#E83214"/><text class="th" x="250" y="424.5" text-anchor="middle">HALO</text></g><path class="rt dr" d="M150,420 L220,420"/><g class="mk fix"><rect x="173" y="408" width="24" height="24"/><text x="185" y="424.5" text-anchor="middle">1</text></g><text class="tm" x="250" y="506" text-anchor="middle">01 · EMBED</text><text class="ti" x="250" y="528" text-anchor="middle">Joins the founder and team.</text></g><g class="st" data-i="2"><path class="rt dr" d="M280,414 C480,380 700,300 868,250" marker-end="url(#dh-ai)"/><path class="rt dr" d="M926,252 L1074,402" marker-end="url(#dh-ai)"/><g class="mk fix"><rect x="574" y="326" width="24" height="24"/><text x="586" y="342.5" text-anchor="middle">2</text></g><text class="tm" x="298" y="444">02 · PROVE THE PLAY</text><text class="ti" x="298" y="466">Right customers, pipeline, first repeatable deals.</text></g><g class="st" data-i="3"><g class="mk fix"><rect x="936" y="194" width="24" height="24"/><text x="948" y="210.5" text-anchor="middle">3</text></g><text class="tm" x="972" y="232">03 · INSTALL THE SYSTEM</text><text class="ti" x="972" y="254">Playbook, targets, coaching,</text><text class="ti" x="972" y="273">AI workflows.</text></g><g class="st" data-i="4"><path class="rt dr" d="M868,240 L434,240" marker-end="url(#dh-ai)"/><path class="rt dr" d="M872,250 L704,420" marker-end="url(#dh-ai)"/><g class="mk fix"><rect x="638" y="228" width="24" height="24"/><text x="650" y="244.5" text-anchor="middle">4</text></g><text class="tm" x="690" y="190" text-anchor="middle">04 · RECRUIT TO PROVEN REQUIREMENTS</text><text class="ti" x="690" y="212" text-anchor="middle">Hires join a working system, not a blank page.</text><text class="ti" x="372" y="160" text-anchor="middle">Delay a ~$334K executive seat</text><text class="ti" x="372" y="179" text-anchor="middle">until the play is proven.</text></g><g class="st" data-i="5"><path class="rt dr" d="M712,438 L1068,421" marker-end="url(#dh-ai)"/><g class="mk fix"><rect x="878" y="418" width="24" height="24"/><text x="890" y="434.5" text-anchor="middle">5</text></g><text class="tm" x="890" y="482" text-anchor="middle">05 · HAND OFF</text><text class="ti" x="890" y="504" text-anchor="middle">The team owns the engine.</text></g></g><g class="pos "><circle cx="120" cy="420" r="30"/><text class="tc" x="120" y="424.5" text-anchor="middle">FO</text><text class="tn" x="120" y="480" text-anchor="middle">Founder</text></g><g class="pos "><circle cx="400" cy="240" r="30"/><text class="tc" x="400" y="244.5" text-anchor="middle">VP</text><text class="tn" x="400" y="300" text-anchor="middle">VP of Sales</text></g><g class="pos "><circle cx="680" cy="440" r="30"/><text class="tc" x="680" y="444.5" text-anchor="middle">SH</text><text class="tn" x="680" y="500" text-anchor="middle">First sales hires</text></g><g class="pos "><circle cx="900" cy="240" r="30"/><text class="tc" x="900" y="244.5" text-anchor="middle">PL</text><text class="tn" x="900" y="300" text-anchor="middle">Pipeline</text></g><g class="pos "><circle cx="1100" cy="420" r="30"/><text class="tc" x="1100" y="424.5" text-anchor="middle">RV</text><text class="tn" x="1100" y="480" text-anchor="middle">Revenue</text></g></svg><svg class="pdv pdm" viewBox="0 0 360 1040" role="presentation" aria-hidden="true" focusable="false"><defs><marker id="mh-ai" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 z" class="ai"/></marker><marker id="mh-ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 z" class="ag"/></marker><pattern id="mh-dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" class="dt"/></pattern></defs><rect width="360" height="1040" fill="url(#mh-dots)"/><g class="lay lay-b"><g class="st" data-i="1"><path class="rt dr" d="M56,36 V34 Q56,20 70,20 H330 Q344,20 344,34 V996 Q344,1010 330,1010 H70 Q56,1010 56,996 V977" marker-end="url(#mh-ai)"/><g class="mk brk"><rect x="332" y="138" width="24" height="24"/><text x="344" y="154.5" text-anchor="middle">1</text></g><text class="tm" x="314" y="124" text-anchor="end">01 · FOUNDER CARRIES EVERY DEAL</text><text class="tf" x="314" y="154" text-anchor="end">Single point of failure</text></g><g class="st" data-i="2"><path class="rt dr" d="M56,84 V190"/><path class="rt ds" d="M56,190 V264" marker-end="url(#mh-ag)"/><g class="mk brk"><rect x="44" y="178" width="24" height="24"/><text x="56" y="194.5" text-anchor="middle">2</text></g><text class="tm" x="92" y="186">02 · HIRED BEFORE THE PLAY</text><text class="tf" x="92" y="218">$334K a year</text></g><g class="st" data-i="3"><path class="rt dr" d="M56,314 V368"/><g class="mk brk"><rect x="44" y="340" width="24" height="24"/><text x="56" y="356.5" text-anchor="middle">3</text></g><text class="tm" x="92" y="348">03 · THE WRONG HIRE</text><text class="tf" x="92" y="380">$500K–$1M</text></g><g class="st" data-i="4"><path class="rt dr" d="M42,308 C0,350 -4,470 16,470 C30,470 28,380 36,312" marker-end="url(#mh-ai)"/><g class="mk brk"><rect x="2" y="436" width="24" height="24"/><text x="14" y="452.5" text-anchor="middle">4</text></g><text class="tm" x="92" y="436">04 · THE SEAT TURNS OVER</text><text class="tf" x="92" y="468">19 months</text></g><g class="st" data-i="5"><path class="rt dr" d="M56,368 V530"/><path class="rt ds" d="M56,530 V594" marker-end="url(#mh-ag)"/><g class="mk brk"><rect x="44" y="518" width="24" height="24"/><text x="56" y="534.5" text-anchor="middle">5</text></g><text class="tm" x="92" y="526">05 · THE RAMP BURNS RUNWAY</text><text class="tf" x="92" y="558">4.5–6 months</text></g><g class="st" data-i="6"><path class="rt ds" d="M56,644 V774" marker-end="url(#mh-ag)"/><path class="rt ds" d="M56,824 V924" marker-end="url(#mh-ag)"/></g></g><g class="lay lay-h"><g class="st" data-i="1"><g class="hnode"><circle cx="120" cy="150" r="24" fill="#E83214"/><text class="th" x="120" y="154.5" text-anchor="middle">HALO</text></g><path class="rt dr" d="M70,80 L106,130"/><g class="mk fix"><rect x="76" y="93" width="24" height="24"/><text x="88" y="109.5" text-anchor="middle">1</text></g><text class="tm" x="160" y="140">01 · EMBED</text><text class="ti" x="160" y="162">Joins the founder</text><text class="ti" x="160" y="180">and team.</text></g><g class="st" data-i="2"><path class="rt dr" d="M120,174 V194 Q120,206 132,206 H320 Q336,206 336,222 V740 Q336,756 320,756 H98 L76,781" marker-end="url(#mh-ai)"/><path class="rt dr" d="M56,824 V924" marker-end="url(#mh-ai)"/><g class="mk fix"><rect x="324" y="434" width="24" height="24"/><text x="336" y="450.5" text-anchor="middle">2</text></g><text class="tm" x="316" y="432" text-anchor="end">02 · PROVE THE PLAY</text><text class="ti" x="316" y="454" text-anchor="end">Right customers, pipeline,</text><text class="ti" x="316" y="472" text-anchor="end">first repeatable deals.</text></g><g class="st" data-i="3"><g class="mk fix"><rect x="224" y="744" width="24" height="24"/><text x="236" y="760.5" text-anchor="middle">3</text></g><text class="tm" x="92" y="846">03 · INSTALL THE SYSTEM</text><text class="ti" x="92" y="868">Playbook, targets, coaching,</text><text class="ti" x="92" y="886">AI workflows.</text></g><g class="st" data-i="4"><path class="rt dr" d="M56,776 V646" marker-end="url(#mh-ai)"/><path class="rt dr" d="M56,596 V316" marker-end="url(#mh-ai)"/><g class="mk fix"><rect x="44" y="688" width="24" height="24"/><text x="56" y="704.5" text-anchor="middle">4</text></g><text class="tm" x="92" y="668">04 · RECRUIT TO PROVEN</text><text class="tm" x="92" y="684">REQUIREMENTS</text><text class="ti" x="92" y="706">Hires join a working system,</text><text class="ti" x="92" y="724">not a blank page.</text><text class="ti" x="92" y="320">Delay a ~$334K executive seat</text><text class="ti" x="92" y="338">until the play is proven.</text></g><g class="st" data-i="5"><path class="rt dr" d="M32,620 H16 V950 H30" marker-end="url(#mh-ai)"/><g class="mk fix"><rect x="4" y="878" width="24" height="24"/><text x="16" y="894.5" text-anchor="middle">5</text></g><text class="tm" x="92" y="994">05 · HAND OFF</text><text class="ti" x="92" y="1016">The team owns the engine.</text></g></g><g class="pos "><circle cx="56" cy="60" r="24"/><text class="tc" x="56" y="64.5" text-anchor="middle">FO</text><text class="tn" x="92" y="66">Founder</text></g><g class="pos "><circle cx="56" cy="290" r="24"/><text class="tc" x="56" y="294.5" text-anchor="middle">VP</text><text class="tn" x="92" y="296">VP of Sales</text></g><g class="pos "><circle cx="56" cy="620" r="24"/><text class="tc" x="56" y="624.5" text-anchor="middle">SH</text><text class="tn" x="92" y="626">First sales hires</text></g><g class="pos "><circle cx="56" cy="800" r="24"/><text class="tc" x="56" y="804.5" text-anchor="middle">PL</text><text class="tn" x="92" y="806">Pipeline</text></g><g class="pos "><circle cx="56" cy="950" r="24"/><text class="tc" x="56" y="954.5" text-anchor="middle">RV</text><text class="tn" x="92" y="956">Revenue</text></g></svg></div>
+      <ul class="legend" aria-hidden="true">
+        <li class="lg-h"><i class="k3"></i><span class="lbl">Halo</span></li>
+        <li><i class="k6"></i><span class="lbl">Position</span></li>
+        <li><i class="k5"></i><span class="lbl">Route</span></li>
+        <li class="lg-h"><i class="k1"></i><span class="lbl">Fixed</span></li>
+        <li class="lg-b"><i class="k4"></i><span class="lbl">Breakdown</span></li>
+      </ul>
+    </figure>
+
+    <ol class="steps">
+      <li class="step rv"><span class="n" aria-hidden="true">01</span><h3>Embed.</h3><p>A senior revenue leader joins the founder and&nbsp;team.</p></li>
+      <li class="step rv"><span class="n" aria-hidden="true">02</span><h3>Prove the play.</h3><p>Find the right customers, build the pipeline, close the first repeatable&nbsp;deals.</p></li>
+      <li class="step rv"><span class="n" aria-hidden="true">03</span><h3>Install the system.</h3><p>Playbook, targets, coaching, AI workflows that cut manual&nbsp;work.</p></li>
+      <li class="step rv"><span class="n" aria-hidden="true">04</span><h3>Recruit to proven requirements.</h3><p>Hires join a working system, not a blank&nbsp;page.</p></li>
+      <li class="step rv"><span class="n" aria-hidden="true">05</span><h3>Hand off.</h3><p>The team owns the&nbsp;engine.</p></li>
+    </ol>
+
+    <div class="lets">
+      <div class="lc rv">
+        <p class="fig"><span class="lbl">What this lets you do</span></p>
+        <ul class="ll">
+          <li><span class="blk" aria-hidden="true"></span>Delay a ~$334K executive seat until the play is&nbsp;proven.</li>
+          <li><span class="blk" aria-hidden="true"></span>Hire into a system, not into a&nbsp;guess.</li>
+          <li><span class="blk" aria-hidden="true"></span>Keep the team you have. We strengthen it. We don’t replace&nbsp;it.</li>
+        </ul>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- PLAY 06 · WHAT YOU GET -->
+<section class="sec" id="get" data-n="Play 06" data-loc="What you get">
+  <div class="pbar wrap"><div class="g line"><span class="no">Play 06</span><span class="t lbl">What you get</span><a class="nx" href="#cases">Next <span aria-hidden="true">↓</span></a></div></div>
+  <div class="wrap pad"><div class="g">
+    <div class="head"><h2 class="hl"><span class="ln"><span>What you</span></span><span class="ln it"><span>get.</span></span></h2></div>
+    <ul class="tiles">
+      <li class="tile rv"><div class="top"><span class="lbl">01</span><span class="blk" aria-hidden="true"></span></div><div><h3>Experienced leadership</h3><p>Commercial judgment and direction. Fractional CRO, Head of Growth, Head of&nbsp;Sales.</p></div></li>
+      <li class="tile rv"><div class="top"><span class="lbl">02</span><span class="blk" aria-hidden="true"></span></div><div><h3>Hands-on execution</h3><p>People, process and discipline that turn strategy into&nbsp;revenue.</p></div></li>
+      <li class="tile rv"><div class="top"><span class="lbl">03</span><span class="blk" aria-hidden="true"></span></div><div><h3>Intelligent technology</h3><p>AI workflows that cut manual work, so a small team sells like a big&nbsp;one.</p></div></li>
+    </ul>
+  </div></div>
+</section>
+
+<!-- PLAY 07 · USE CASES -->
+<section class="sec" id="cases" data-n="Play 07" data-loc="Use cases">
+  <div class="pbar wrap"><div class="g line"><span class="no">Play 07</span><span class="t lbl">Use cases</span><a class="nx" href="#now">Next <span aria-hidden="true">↓</span></a></div></div>
+  <div class="wrap pad"><div class="g">
+    <div class="head"><h2 class="hl"><span class="ln"><span>Use</span></span><span class="ln it"><span>cases.</span></span></h2></div>
+    <ul class="cases">
+      <li class="hd" aria-hidden="true"><span class="lbl">No.</span><span class="lbl">Case</span><span class="lbl">When</span></li>
+      <li class="rv"><span class="n" aria-hidden="true">01</span><h3>Founder-led sales</h3><p>When the founder still closes every deal.</p></li>
+      <li class="rv"><span class="n" aria-hidden="true">02</span><h3>First sales hires</h3><p>When new reps aren’t ramping.</p></li>
+      <li class="rv"><span class="n" aria-hidden="true">03</span><h3>After the raise</h3><p>When the next round needs revenue proof.</p></li>
+      <li class="rv"><span class="n" aria-hidden="true">04</span><h3>Unclear customer</h3><p>When the product is strong but the buyer isn’t defined.</p></li>
+      <li class="rv"><span class="n" aria-hidden="true">05</span><h3>New market</h3><p>When you’re entering a new segment or channel.</p></li>
+      <li class="rv"><span class="n" aria-hidden="true">06</span><h3>Manual drag</h3><p>When the team spends its week on work AI should do.</p></li>
+    </ul>
+  </div></div>
+</section>
+
+<!-- PLAY 08 · WHY NOW -->
+<section class="sec" id="now" data-n="Play 08" data-loc="Why now">
+  <div class="pbar wrap"><div class="g line"><span class="no">Play 08</span><span class="t lbl">Why now</span><a class="nx" href="#market">Next <span aria-hidden="true">↓</span></a></div></div>
+  <div class="wrap pad"><div class="g">
+    <div class="L"><div class="stick">
+      <h2 class="hl"><span class="ln"><span>Why now:</span></span><span class="ln it"><span>how work is changing.</span></span></h2>
+    </div></div>
+    <div class="R">
+      <ol class="rows">
+        <li class="rv"><span class="big">+265%</span><div><p class="d">US professionals with “fractional” in their title since&nbsp;2019.</p><span class="src">Lightcast, 2026</span></div></li>
+        <li class="rv"><span class="big">10 to 1</span><div><p class="d">AI agents will outnumber sellers by 2028. Fewer than 40% of sellers will say agents&nbsp;helped.</p><span class="src">Gartner</span></div></li>
+        <li class="rv"><span class="big">$2.6–4.4T</span><div><p class="d">Annual value gen AI could add, about 75% of it in customer operations, marketing and sales, software and&nbsp;R&amp;D.</p><span class="src">McKinsey Global Institute, 2023</span></div></li>
+        <li class="rv"><span class="big">44%</span><div><p class="d">of revenue leaders say talent gaps are the top barrier to&nbsp;growth.</p><span class="src">Varicent, 2025</span></div></li>
+      </ol>
+      <p class="insight rv">Work is becoming fractional and AI-assisted. <span class="it">Leadership is the missing&nbsp;piece.</span></p>
+    </div>
+  </div></div>
+</section>
+
+<!-- PLAY 09 · MARKET AND VISION -->
+<section class="sec" id="market" data-n="Play 09" data-loc="Market and vision">
+  <div class="pbar wrap"><div class="g line"><span class="no">Play 09</span><span class="t lbl">Market and vision</span><a class="nx" href="#me">Next <span aria-hidden="true">↓</span></a></div></div>
+  <div class="wrap pad"><div class="g">
+    <div class="head"><h2 class="hl"><span class="ln"><span>Every dollar has to become</span></span><span class="ln it"><span>revenue.</span></span></h2></div>
+    <div class="seatecon rv">
+      <span class="lbl">The seat economy · Halo estimate</span>
+      <p class="big">$5.6B<span class="per"> a year</span></p>
+      <div class="math" role="img" aria-label="16,707 US VC deals in 2025 times $334,128 average VP of Sales total pay equals about $5.6 billion a year.">
+        <span class="mb"><b>16,707</b><span class="lbl">US VC deals, 2025</span></span>
+        <span class="mo" aria-hidden="true">×</span>
+        <span class="mb"><b>$334,128</b><span class="lbl">Avg VP of Sales total pay</span></span>
+        <span class="mo" aria-hidden="true">=</span>
+        <span class="mb k"><b>$5.6B</b><span class="lbl">A year</span></span>
+      </div>
+      <span class="src">PitchBook-NVCA Venture Monitor, Q4 2025 · Glassdoor, 2026</span>
+    </div>
+
+    <figure class="engines rv" aria-label="Two engines, connected: Revenue Leadership and Revenue Technology.">
+      <figcaption class="fig"><span class="lbl">Fig. 09 · Two engines</span><span class="lbl">Connected</span></figcaption>
+      <div class="eng">
+        <div class="ebox s"><span class="lbl">Engine 01</span><div><h3>Revenue Leadership</h3><p>Build and run the commercial engine.</p></div></div>
+        <div class="link" aria-hidden="true"><span class="rail a"></span><span class="rail b"></span><span class="j"></span></div>
+        <div class="ebox"><span class="lbl">Engine 02</span><div><h3>Revenue Technology</h3><p>The workflows we prove become products.</p></div></div>
+      </div>
+    </figure>
+
+    <div class="vision">
+      <span class="lbl">Vision · When we win</span>
+      <p class="hl" aria-label="Every growing company gets world-class revenue leadership from day one."><span class="ln"><span>Every growing company gets</span></span><span class="ln"><span>world-class revenue leadership</span></span><span class="ln it"><span>from day one.</span></span></p>
+    </div>
+  </div></div>
+</section>
+
+<!-- PLAY 10 · WHY ME -->
+<section class="sec" id="me" data-n="Play 10" data-loc="Why me">
+  <div class="pbar wrap"><div class="g line"><span class="no">Play 10</span><span class="t lbl">Why me</span><a class="nx" href="#behind">Next <span aria-hidden="true">↓</span></a></div></div>
+  <div class="wrap pad"><div class="g">
+    <div class="L"><div class="stick">
+      <h2 class="hl"><span class="ln"><span>Why</span></span><span class="ln it"><span>me.</span></span></h2>
+    </div></div>
+    <div class="R">
+      <div class="ste">
+        <div class="sg rv"><span class="lbl">Who I am</span><ul>
+          <li>I am Chris Hedum.</li><li>I build revenue teams for founders.</li><li>I worked with early-stage founders in tech and venture capital for almost ten years.</li></ul></div>
+        <div class="sg rv"><span class="lbl">Why I can solve this</span><ul>
+          <li>I did this work from the inside, not from the sidelines.</li><li>I built sales teams from zero. I led them to quota.</li><li>I recruit, train and develop people who have never sold before.</li></ul></div>
+      </div>
+      <p class="fig rv" style="margin:48px 0 0;border-bottom:0"><span class="lbl">Proof</span><span class="lbl">Results</span></p>
+      <ul class="proof">
+        <li class="rv"><span class="f">$50K<span class="ar" aria-label="to"> → </span>$7M+</span><span class="d">Revenue grew in 9 months.</span></li>
+        <li class="rv"><span class="f">20<span class="ar" aria-label="to"> → </span>100+</span><span class="d">Reps on a sales team, at 150% of quota.</span></li>
+        <li class="rv"><span class="f">#195<span class="ar" aria-label="to"> → </span>#8</span><span class="d">An office in the national ranking, in 12 months.</span></li>
+        <li class="rv"><span class="f">40+</span><span class="d">New hires I recruited and trained in 18 months.</span></li>
+        <li class="rv"><span class="f">$140M+</span><span class="d">Raised by founders I advised.</span></li>
+      </ul>
+      <div class="sg care rv"><span class="lbl">Why I care</span><ul>
+        <li>I help people see what they can build. Then I help them build it.</li>
+        <li>Good founders do not fail from a lack of vision. They fail from a lack of a system to sell.</li>
+        <li>I played Division I rugby. I learned that teams win when every player knows the play.</li></ul></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- PLAY 11 · WHO'S BEHIND US -->
+<section class="sec" id="behind" data-n="Play 11" data-loc="Who’s behind us">
+  <div class="pbar wrap"><div class="g line"><span class="no">Play 11</span><span class="t lbl">Who’s behind us</span><a class="nx" href="#runway">Next <span aria-hidden="true">↓</span></a></div></div>
+  <div class="wrap pad"><div class="g">
+    <div class="L">
+      <h2 class="hl"><span class="ln"><span>The people who built</span></span><span class="ln it"><span>category leaders are behind us.</span></span></h2>
+      <ul class="bench rv">
+        <li>A co-founder and a president of a category-leading home-services software company</li>
+        <li>An engineer at a leader in electric aviation</li>
+        <li>McKinsey consultants</li>
+        <li>A revenue leader at Google</li>
+      </ul>
+      <p class="forming rv"><span class="sq" aria-hidden="true"></span>Our first board is forming now.</p>
+    </div>
+    <div class="R">
+      <figure class="board rv" aria-label="Board table. Halo in the chair. Five filled seats: Category-leading SaaS co-founder, Category-leading SaaS president, Electric aviation engineering, McKinsey strategy, Google revenue.">
+        <figcaption class="fig"><span class="lbl">Fig. 11 · The board table</span><span class="lbl">5 seats filled</span></figcaption>
+        <div class="bt" aria-hidden="true">
+          <div class="chair"><span class="cd"></span><span class="lbl">Chair</span><b>Halo</b></div>
+          <div class="table"><span class="lbl">Board</span></div>
+          <div class="bs s1"><span class="lbl">Category-leading SaaS</span><b>Co-founder</b></div>
+          <div class="bs s2"><span class="lbl">Category-leading SaaS</span><b>President</b></div>
+          <div class="bs s3"><span class="lbl">Electric aviation</span><b>Engineering</b></div>
+          <div class="bs s4"><span class="lbl">McKinsey</span><b>Strategy</b></div>
+          <div class="bs s5"><span class="lbl">Google</span><b>Revenue</b></div>
+        </div>
+      </figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- PLAY 12 · RUNWAY -->
+<section class="sec" id="runway" data-n="Play 12" data-loc="Runway">
+  <div class="pbar wrap"><div class="g line"><span class="no">Play 12</span><span class="t lbl">The runway counter</span><a class="nx" href="#seats">Next <span aria-hidden="true">↓</span></a></div></div>
+  <div class="wrap pad"><div class="g">
+    <div class="L">
+      <p class="lbl rl"><span class="sq" aria-hidden="true"></span>Runway startups wasted since you’ve been here</p>
+      <p class="rval" id="rval" aria-live="off"><span id="rnum">≈ $933 every second</span></p>
+      <p class="src rsrc">≈ $933 a second · $147.2B raised by 2,293 failed startups, 2021–2025 · VCBacked, The Startup Graveyard, 2026</p>
+    </div>
+    <div class="R">
+      <figure class="box" id="box" aria-hidden="true">
+        <svg class="cube" viewBox="0 0 470 400" aria-hidden="true" focusable="false">
+<polygon class="cf2" points="340,80 400,30 400,320 340,370"/>
+<polygon class="cf3" points="40,80 100,30 400,30 340,80"/>
+<path class="ch" d="M100,30 V320 H400 M100,320 L40,370"/>
+<g id="stacks"><g class="bk on" data-k="0"><rect class="b1" x="47.0" y="339.0" width="44.3" height="24.0"/><rect class="b4" x="50.0" y="342.0" width="38.3" height="18.0"/><line class="b3" x1="53.0" y1="351.0" x2="60.2" y2="351.0"/><line class="b3" x1="78.2" y1="351.0" x2="85.3" y2="351.0"/><rect class="b2" x="63.2" y="338.5" width="12" height="25.0"/></g><g class="bk on" data-k="1"><rect class="b1" x="95.3" y="339.0" width="44.3" height="24.0"/><rect class="b4" x="98.3" y="342.0" width="38.3" height="18.0"/><line class="b3" x1="101.3" y1="351.0" x2="108.5" y2="351.0"/><line class="b3" x1="126.5" y1="351.0" x2="133.7" y2="351.0"/><rect class="b2" x="111.5" y="338.5" width="12" height="25.0"/></g><g class="bk on" data-k="2"><rect class="b1" x="143.7" y="339.0" width="44.3" height="24.0"/><rect class="b4" x="146.7" y="342.0" width="38.3" height="18.0"/><line class="b3" x1="149.7" y1="351.0" x2="156.8" y2="351.0"/><line class="b3" x1="174.8" y1="351.0" x2="182.0" y2="351.0"/><rect class="b2" x="159.8" y="338.5" width="12" height="25.0"/></g><g class="bk on" data-k="3"><rect class="b1" x="192.0" y="339.0" width="44.3" height="24.0"/><rect class="b4" x="195.0" y="342.0" width="38.3" height="18.0"/><line class="b3" x1="198.0" y1="351.0" x2="205.2" y2="351.0"/><line class="b3" x1="223.2" y1="351.0" x2="230.3" y2="351.0"/><rect class="b2" x="208.2" y="338.5" width="12" height="25.0"/></g><g class="bk on" data-k="4"><rect class="b1" x="240.3" y="339.0" width="44.3" height="24.0"/><rect class="b4" x="243.3" y="342.0" width="38.3" height="18.0"/><line class="b3" x1="246.3" y1="351.0" x2="253.5" y2="351.0"/><line class="b3" x1="271.5" y1="351.0" x2="278.7" y2="351.0"/><rect class="b2" x="256.5" y="338.5" width="12" height="25.0"/></g><g class="bk on" data-k="5"><rect class="b1" x="288.7" y="339.0" width="44.3" height="24.0"/><rect class="b4" x="291.7" y="342.0" width="38.3" height="18.0"/><line class="b3" x1="294.7" y1="351.0" x2="301.8" y2="351.0"/><line class="b3" x1="319.8" y1="351.0" x2="327.0" y2="351.0"/><rect class="b2" x="304.8" y="338.5" width="12" height="25.0"/></g><g class="bk on" data-k="6"><rect class="b1" x="47.0" y="311.0" width="44.3" height="24.0"/><rect class="b4" x="50.0" y="314.0" width="38.3" height="18.0"/><line class="b3" x1="53.0" y1="323.0" x2="60.2" y2="323.0"/><line class="b3" x1="78.2" y1="323.0" x2="85.3" y2="323.0"/><rect class="b2" x="63.2" y="310.5" width="12" height="25.0"/></g><g class="bk on" data-k="7"><rect class="b1" x="95.3" y="311.0" width="44.3" height="24.0"/><rect class="b4" x="98.3" y="314.0" width="38.3" height="18.0"/><line class="b3" x1="101.3" y1="323.0" x2="108.5" y2="323.0"/><line class="b3" x1="126.5" y1="323.0" x2="133.7" y2="323.0"/><rect class="b2" x="111.5" y="310.5" width="12" height="25.0"/></g><g class="bk on" data-k="8"><rect class="b1" x="143.7" y="311.0" width="44.3" height="24.0"/><rect class="b4" x="146.7" y="314.0" width="38.3" height="18.0"/><line class="b3" x1="149.7" y1="323.0" x2="156.8" y2="323.0"/><line class="b3" x1="174.8" y1="323.0" x2="182.0" y2="323.0"/><rect class="b2" x="159.8" y="310.5" width="12" height="25.0"/></g><g class="bk on" data-k="9"><rect class="b1" x="192.0" y="311.0" width="44.3" height="24.0"/><rect class="b4" x="195.0" y="314.0" width="38.3" height="18.0"/><line class="b3" x1="198.0" y1="323.0" x2="205.2" y2="323.0"/><line class="b3" x1="223.2" y1="323.0" x2="230.3" y2="323.0"/><rect class="b2" x="208.2" y="310.5" width="12" height="25.0"/></g><g class="bk on" data-k="10"><rect class="b1" x="240.3" y="311.0" width="44.3" height="24.0"/><rect class="b4" x="243.3" y="314.0" width="38.3" height="18.0"/><line class="b3" x1="246.3" y1="323.0" x2="253.5" y2="323.0"/><line class="b3" x1="271.5" y1="323.0" x2="278.7" y2="323.0"/><rect class="b2" x="256.5" y="310.5" width="12" height="25.0"/></g><g class="bk on" data-k="11"><rect class="b1" x="288.7" y="311.0" width="44.3" height="24.0"/><rect class="b4" x="291.7" y="314.0" width="38.3" height="18.0"/><line class="b3" x1="294.7" y1="323.0" x2="301.8" y2="323.0"/><line class="b3" x1="319.8" y1="323.0" x2="327.0" y2="323.0"/><rect class="b2" x="304.8" y="310.5" width="12" height="25.0"/></g><g class="bk on" data-k="12"><rect class="b1" x="47.0" y="283.0" width="44.3" height="24.0"/><rect class="b4" x="50.0" y="286.0" width="38.3" height="18.0"/><line class="b3" x1="53.0" y1="295.0" x2="60.2" y2="295.0"/><line class="b3" x1="78.2" y1="295.0" x2="85.3" y2="295.0"/><rect class="b2" x="63.2" y="282.5" width="12" height="25.0"/></g><g class="bk on" data-k="13"><rect class="b1" x="95.3" y="283.0" width="44.3" height="24.0"/><rect class="b4" x="98.3" y="286.0" width="38.3" height="18.0"/><line class="b3" x1="101.3" y1="295.0" x2="108.5" y2="295.0"/><line class="b3" x1="126.5" y1="295.0" x2="133.7" y2="295.0"/><rect class="b2" x="111.5" y="282.5" width="12" height="25.0"/></g><g class="bk on" data-k="14"><rect class="b1" x="143.7" y="283.0" width="44.3" height="24.0"/><rect class="b4" x="146.7" y="286.0" width="38.3" height="18.0"/><line class="b3" x1="149.7" y1="295.0" x2="156.8" y2="295.0"/><line class="b3" x1="174.8" y1="295.0" x2="182.0" y2="295.0"/><rect class="b2" x="159.8" y="282.5" width="12" height="25.0"/></g><g class="bk on" data-k="15"><rect class="b1" x="192.0" y="283.0" width="44.3" height="24.0"/><rect class="b4" x="195.0" y="286.0" width="38.3" height="18.0"/><line class="b3" x1="198.0" y1="295.0" x2="205.2" y2="295.0"/><line class="b3" x1="223.2" y1="295.0" x2="230.3" y2="295.0"/><rect class="b2" x="208.2" y="282.5" width="12" height="25.0"/></g><g class="bk on" data-k="16"><rect class="b1" x="240.3" y="283.0" width="44.3" height="24.0"/><rect class="b4" x="243.3" y="286.0" width="38.3" height="18.0"/><line class="b3" x1="246.3" y1="295.0" x2="253.5" y2="295.0"/><line class="b3" x1="271.5" y1="295.0" x2="278.7" y2="295.0"/><rect class="b2" x="256.5" y="282.5" width="12" height="25.0"/></g><g class="bk on" data-k="17"><rect class="b1" x="288.7" y="283.0" width="44.3" height="24.0"/><rect class="b4" x="291.7" y="286.0" width="38.3" height="18.0"/><line class="b3" x1="294.7" y1="295.0" x2="301.8" y2="295.0"/><line class="b3" x1="319.8" y1="295.0" x2="327.0" y2="295.0"/><rect class="b2" x="304.8" y="282.5" width="12" height="25.0"/></g><g class="bk on" data-k="18"><rect class="b1" x="47.0" y="255.0" width="44.3" height="24.0"/><rect class="b4" x="50.0" y="258.0" width="38.3" height="18.0"/><line class="b3" x1="53.0" y1="267.0" x2="60.2" y2="267.0"/><line class="b3" x1="78.2" y1="267.0" x2="85.3" y2="267.0"/><rect class="b2" x="63.2" y="254.5" width="12" height="25.0"/></g><g class="bk on" data-k="19"><rect class="b1" x="95.3" y="255.0" width="44.3" height="24.0"/><rect class="b4" x="98.3" y="258.0" width="38.3" height="18.0"/><line class="b3" x1="101.3" y1="267.0" x2="108.5" y2="267.0"/><line class="b3" x1="126.5" y1="267.0" x2="133.7" y2="267.0"/><rect class="b2" x="111.5" y="254.5" width="12" height="25.0"/></g><g class="bk on" data-k="20"><rect class="b1" x="143.7" y="255.0" width="44.3" height="24.0"/><rect class="b4" x="146.7" y="258.0" width="38.3" height="18.0"/><line class="b3" x1="149.7" y1="267.0" x2="156.8" y2="267.0"/><line class="b3" x1="174.8" y1="267.0" x2="182.0" y2="267.0"/><rect class="b2" x="159.8" y="254.5" width="12" height="25.0"/></g><g class="bk on" data-k="21"><rect class="b1" x="192.0" y="255.0" width="44.3" height="24.0"/><rect class="b4" x="195.0" y="258.0" width="38.3" height="18.0"/><line class="b3" x1="198.0" y1="267.0" x2="205.2" y2="267.0"/><line class="b3" x1="223.2" y1="267.0" x2="230.3" y2="267.0"/><rect class="b2" x="208.2" y="254.5" width="12" height="25.0"/></g><g class="bk on" data-k="22"><rect class="b1" x="240.3" y="255.0" width="44.3" height="24.0"/><rect class="b4" x="243.3" y="258.0" width="38.3" height="18.0"/><line class="b3" x1="246.3" y1="267.0" x2="253.5" y2="267.0"/><line class="b3" x1="271.5" y1="267.0" x2="278.7" y2="267.0"/><rect class="b2" x="256.5" y="254.5" width="12" height="25.0"/></g><g class="bk on" data-k="23"><rect class="b1" x="288.7" y="255.0" width="44.3" height="24.0"/><rect class="b4" x="291.7" y="258.0" width="38.3" height="18.0"/><line class="b3" x1="294.7" y1="267.0" x2="301.8" y2="267.0"/><line class="b3" x1="319.8" y1="267.0" x2="327.0" y2="267.0"/><rect class="b2" x="304.8" y="254.5" width="12" height="25.0"/></g><g class="bk" data-k="24"><rect class="b1" x="47.0" y="227.0" width="44.3" height="24.0"/><rect class="b4" x="50.0" y="230.0" width="38.3" height="18.0"/><line class="b3" x1="53.0" y1="239.0" x2="60.2" y2="239.0"/><line class="b3" x1="78.2" y1="239.0" x2="85.3" y2="239.0"/><rect class="b2" x="63.2" y="226.5" width="12" height="25.0"/></g><g class="bk" data-k="25"><rect class="b1" x="95.3" y="227.0" width="44.3" height="24.0"/><rect class="b4" x="98.3" y="230.0" width="38.3" height="18.0"/><line class="b3" x1="101.3" y1="239.0" x2="108.5" y2="239.0"/><line class="b3" x1="126.5" y1="239.0" x2="133.7" y2="239.0"/><rect class="b2" x="111.5" y="226.5" width="12" height="25.0"/></g><g class="bk" data-k="26"><rect class="b1" x="143.7" y="227.0" width="44.3" height="24.0"/><rect class="b4" x="146.7" y="230.0" width="38.3" height="18.0"/><line class="b3" x1="149.7" y1="239.0" x2="156.8" y2="239.0"/><line class="b3" x1="174.8" y1="239.0" x2="182.0" y2="239.0"/><rect class="b2" x="159.8" y="226.5" width="12" height="25.0"/></g><g class="bk" data-k="27"><rect class="b1" x="192.0" y="227.0" width="44.3" height="24.0"/><rect class="b4" x="195.0" y="230.0" width="38.3" height="18.0"/><line class="b3" x1="198.0" y1="239.0" x2="205.2" y2="239.0"/><line class="b3" x1="223.2" y1="239.0" x2="230.3" y2="239.0"/><rect class="b2" x="208.2" y="226.5" width="12" height="25.0"/></g><g class="bk" data-k="28"><rect class="b1" x="240.3" y="227.0" width="44.3" height="24.0"/><rect class="b4" x="243.3" y="230.0" width="38.3" height="18.0"/><line class="b3" x1="246.3" y1="239.0" x2="253.5" y2="239.0"/><line class="b3" x1="271.5" y1="239.0" x2="278.7" y2="239.0"/><rect class="b2" x="256.5" y="226.5" width="12" height="25.0"/></g><g class="bk" data-k="29"><rect class="b1" x="288.7" y="227.0" width="44.3" height="24.0"/><rect class="b4" x="291.7" y="230.0" width="38.3" height="18.0"/><line class="b3" x1="294.7" y1="239.0" x2="301.8" y2="239.0"/><line class="b3" x1="319.8" y1="239.0" x2="327.0" y2="239.0"/><rect class="b2" x="304.8" y="226.5" width="12" height="25.0"/></g><g class="bk" data-k="30"><rect class="b1" x="47.0" y="199.0" width="44.3" height="24.0"/><rect class="b4" x="50.0" y="202.0" width="38.3" height="18.0"/><line class="b3" x1="53.0" y1="211.0" x2="60.2" y2="211.0"/><line class="b3" x1="78.2" y1="211.0" x2="85.3" y2="211.0"/><rect class="b2" x="63.2" y="198.5" width="12" height="25.0"/></g><g class="bk" data-k="31"><rect class="b1" x="95.3" y="199.0" width="44.3" height="24.0"/><rect class="b4" x="98.3" y="202.0" width="38.3" height="18.0"/><line class="b3" x1="101.3" y1="211.0" x2="108.5" y2="211.0"/><line class="b3" x1="126.5" y1="211.0" x2="133.7" y2="211.0"/><rect class="b2" x="111.5" y="198.5" width="12" height="25.0"/></g><g class="bk" data-k="32"><rect class="b1" x="143.7" y="199.0" width="44.3" height="24.0"/><rect class="b4" x="146.7" y="202.0" width="38.3" height="18.0"/><line class="b3" x1="149.7" y1="211.0" x2="156.8" y2="211.0"/><line class="b3" x1="174.8" y1="211.0" x2="182.0" y2="211.0"/><rect class="b2" x="159.8" y="198.5" width="12" height="25.0"/></g><g class="bk" data-k="33"><rect class="b1" x="192.0" y="199.0" width="44.3" height="24.0"/><rect class="b4" x="195.0" y="202.0" width="38.3" height="18.0"/><line class="b3" x1="198.0" y1="211.0" x2="205.2" y2="211.0"/><line class="b3" x1="223.2" y1="211.0" x2="230.3" y2="211.0"/><rect class="b2" x="208.2" y="198.5" width="12" height="25.0"/></g><g class="bk" data-k="34"><rect class="b1" x="240.3" y="199.0" width="44.3" height="24.0"/><rect class="b4" x="243.3" y="202.0" width="38.3" height="18.0"/><line class="b3" x1="246.3" y1="211.0" x2="253.5" y2="211.0"/><line class="b3" x1="271.5" y1="211.0" x2="278.7" y2="211.0"/><rect class="b2" x="256.5" y="198.5" width="12" height="25.0"/></g><g class="bk" data-k="35"><rect class="b1" x="288.7" y="199.0" width="44.3" height="24.0"/><rect class="b4" x="291.7" y="202.0" width="38.3" height="18.0"/><line class="b3" x1="294.7" y1="211.0" x2="301.8" y2="211.0"/><line class="b3" x1="319.8" y1="211.0" x2="327.0" y2="211.0"/><rect class="b2" x="304.8" y="198.5" width="12" height="25.0"/></g><g class="bk" data-k="36"><rect class="b1" x="47.0" y="171.0" width="44.3" height="24.0"/><rect class="b4" x="50.0" y="174.0" width="38.3" height="18.0"/><line class="b3" x1="53.0" y1="183.0" x2="60.2" y2="183.0"/><line class="b3" x1="78.2" y1="183.0" x2="85.3" y2="183.0"/><rect class="b2" x="63.2" y="170.5" width="12" height="25.0"/></g><g class="bk" data-k="37"><rect class="b1" x="95.3" y="171.0" width="44.3" height="24.0"/><rect class="b4" x="98.3" y="174.0" width="38.3" height="18.0"/><line class="b3" x1="101.3" y1="183.0" x2="108.5" y2="183.0"/><line class="b3" x1="126.5" y1="183.0" x2="133.7" y2="183.0"/><rect class="b2" x="111.5" y="170.5" width="12" height="25.0"/></g><g class="bk" data-k="38"><rect class="b1" x="143.7" y="171.0" width="44.3" height="24.0"/><rect class="b4" x="146.7" y="174.0" width="38.3" height="18.0"/><line class="b3" x1="149.7" y1="183.0" x2="156.8" y2="183.0"/><line class="b3" x1="174.8" y1="183.0" x2="182.0" y2="183.0"/><rect class="b2" x="159.8" y="170.5" width="12" height="25.0"/></g><g class="bk" data-k="39"><rect class="b1" x="192.0" y="171.0" width="44.3" height="24.0"/><rect class="b4" x="195.0" y="174.0" width="38.3" height="18.0"/><line class="b3" x1="198.0" y1="183.0" x2="205.2" y2="183.0"/><line class="b3" x1="223.2" y1="183.0" x2="230.3" y2="183.0"/><rect class="b2" x="208.2" y="170.5" width="12" height="25.0"/></g><g class="bk" data-k="40"><rect class="b1" x="240.3" y="171.0" width="44.3" height="24.0"/><rect class="b4" x="243.3" y="174.0" width="38.3" height="18.0"/><line class="b3" x1="246.3" y1="183.0" x2="253.5" y2="183.0"/><line class="b3" x1="271.5" y1="183.0" x2="278.7" y2="183.0"/><rect class="b2" x="256.5" y="170.5" width="12" height="25.0"/></g><g class="bk" data-k="41"><rect class="b1" x="288.7" y="171.0" width="44.3" height="24.0"/><rect class="b4" x="291.7" y="174.0" width="38.3" height="18.0"/><line class="b3" x1="294.7" y1="183.0" x2="301.8" y2="183.0"/><line class="b3" x1="319.8" y1="183.0" x2="327.0" y2="183.0"/><rect class="b2" x="304.8" y="170.5" width="12" height="25.0"/></g><g class="bk" data-k="42"><rect class="b1" x="47.0" y="143.0" width="44.3" height="24.0"/><rect class="b4" x="50.0" y="146.0" width="38.3" height="18.0"/><line class="b3" x1="53.0" y1="155.0" x2="60.2" y2="155.0"/><line class="b3" x1="78.2" y1="155.0" x2="85.3" y2="155.0"/><rect class="b2" x="63.2" y="142.5" width="12" height="25.0"/></g><g class="bk" data-k="43"><rect class="b1" x="95.3" y="143.0" width="44.3" height="24.0"/><rect class="b4" x="98.3" y="146.0" width="38.3" height="18.0"/><line class="b3" x1="101.3" y1="155.0" x2="108.5" y2="155.0"/><line class="b3" x1="126.5" y1="155.0" x2="133.7" y2="155.0"/><rect class="b2" x="111.5" y="142.5" width="12" height="25.0"/></g><g class="bk" data-k="44"><rect class="b1" x="143.7" y="143.0" width="44.3" height="24.0"/><rect class="b4" x="146.7" y="146.0" width="38.3" height="18.0"/><line class="b3" x1="149.7" y1="155.0" x2="156.8" y2="155.0"/><line class="b3" x1="174.8" y1="155.0" x2="182.0" y2="155.0"/><rect class="b2" x="159.8" y="142.5" width="12" height="25.0"/></g><g class="bk" data-k="45"><rect class="b1" x="192.0" y="143.0" width="44.3" height="24.0"/><rect class="b4" x="195.0" y="146.0" width="38.3" height="18.0"/><line class="b3" x1="198.0" y1="155.0" x2="205.2" y2="155.0"/><line class="b3" x1="223.2" y1="155.0" x2="230.3" y2="155.0"/><rect class="b2" x="208.2" y="142.5" width="12" height="25.0"/></g><g class="bk" data-k="46"><rect class="b1" x="240.3" y="143.0" width="44.3" height="24.0"/><rect class="b4" x="243.3" y="146.0" width="38.3" height="18.0"/><line class="b3" x1="246.3" y1="155.0" x2="253.5" y2="155.0"/><line class="b3" x1="271.5" y1="155.0" x2="278.7" y2="155.0"/><rect class="b2" x="256.5" y="142.5" width="12" height="25.0"/></g><g class="bk" data-k="47"><rect class="b1" x="288.7" y="143.0" width="44.3" height="24.0"/><rect class="b4" x="291.7" y="146.0" width="38.3" height="18.0"/><line class="b3" x1="294.7" y1="155.0" x2="301.8" y2="155.0"/><line class="b3" x1="319.8" y1="155.0" x2="327.0" y2="155.0"/><rect class="b2" x="304.8" y="142.5" width="12" height="25.0"/></g><g class="bk" data-k="48"><rect class="b1" x="47.0" y="115.0" width="44.3" height="24.0"/><rect class="b4" x="50.0" y="118.0" width="38.3" height="18.0"/><line class="b3" x1="53.0" y1="127.0" x2="60.2" y2="127.0"/><line class="b3" x1="78.2" y1="127.0" x2="85.3" y2="127.0"/><rect class="b2" x="63.2" y="114.5" width="12" height="25.0"/></g><g class="bk" data-k="49"><rect class="b1" x="95.3" y="115.0" width="44.3" height="24.0"/><rect class="b4" x="98.3" y="118.0" width="38.3" height="18.0"/><line class="b3" x1="101.3" y1="127.0" x2="108.5" y2="127.0"/><line class="b3" x1="126.5" y1="127.0" x2="133.7" y2="127.0"/><rect class="b2" x="111.5" y="114.5" width="12" height="25.0"/></g><g class="bk" data-k="50"><rect class="b1" x="143.7" y="115.0" width="44.3" height="24.0"/><rect class="b4" x="146.7" y="118.0" width="38.3" height="18.0"/><line class="b3" x1="149.7" y1="127.0" x2="156.8" y2="127.0"/><line class="b3" x1="174.8" y1="127.0" x2="182.0" y2="127.0"/><rect class="b2" x="159.8" y="114.5" width="12" height="25.0"/></g><g class="bk" data-k="51"><rect class="b1" x="192.0" y="115.0" width="44.3" height="24.0"/><rect class="b4" x="195.0" y="118.0" width="38.3" height="18.0"/><line class="b3" x1="198.0" y1="127.0" x2="205.2" y2="127.0"/><line class="b3" x1="223.2" y1="127.0" x2="230.3" y2="127.0"/><rect class="b2" x="208.2" y="114.5" width="12" height="25.0"/></g><g class="bk" data-k="52"><rect class="b1" x="240.3" y="115.0" width="44.3" height="24.0"/><rect class="b4" x="243.3" y="118.0" width="38.3" height="18.0"/><line class="b3" x1="246.3" y1="127.0" x2="253.5" y2="127.0"/><line class="b3" x1="271.5" y1="127.0" x2="278.7" y2="127.0"/><rect class="b2" x="256.5" y="114.5" width="12" height="25.0"/></g><g class="bk" data-k="53"><rect class="b1" x="288.7" y="115.0" width="44.3" height="24.0"/><rect class="b4" x="291.7" y="118.0" width="38.3" height="18.0"/><line class="b3" x1="294.7" y1="127.0" x2="301.8" y2="127.0"/><line class="b3" x1="319.8" y1="127.0" x2="327.0" y2="127.0"/><rect class="b2" x="304.8" y="114.5" width="12" height="25.0"/></g><g class="bk" data-k="54"><rect class="b1" x="47.0" y="87.0" width="44.3" height="24.0"/><rect class="b4" x="50.0" y="90.0" width="38.3" height="18.0"/><line class="b3" x1="53.0" y1="99.0" x2="60.2" y2="99.0"/><line class="b3" x1="78.2" y1="99.0" x2="85.3" y2="99.0"/><rect class="b2" x="63.2" y="86.5" width="12" height="25.0"/></g><g class="bk" data-k="55"><rect class="b1" x="95.3" y="87.0" width="44.3" height="24.0"/><rect class="b4" x="98.3" y="90.0" width="38.3" height="18.0"/><line class="b3" x1="101.3" y1="99.0" x2="108.5" y2="99.0"/><line class="b3" x1="126.5" y1="99.0" x2="133.7" y2="99.0"/><rect class="b2" x="111.5" y="86.5" width="12" height="25.0"/></g><g class="bk" data-k="56"><rect class="b1" x="143.7" y="87.0" width="44.3" height="24.0"/><rect class="b4" x="146.7" y="90.0" width="38.3" height="18.0"/><line class="b3" x1="149.7" y1="99.0" x2="156.8" y2="99.0"/><line class="b3" x1="174.8" y1="99.0" x2="182.0" y2="99.0"/><rect class="b2" x="159.8" y="86.5" width="12" height="25.0"/></g><g class="bk" data-k="57"><rect class="b1" x="192.0" y="87.0" width="44.3" height="24.0"/><rect class="b4" x="195.0" y="90.0" width="38.3" height="18.0"/><line class="b3" x1="198.0" y1="99.0" x2="205.2" y2="99.0"/><line class="b3" x1="223.2" y1="99.0" x2="230.3" y2="99.0"/><rect class="b2" x="208.2" y="86.5" width="12" height="25.0"/></g><g class="bk" data-k="58"><rect class="b1" x="240.3" y="87.0" width="44.3" height="24.0"/><rect class="b4" x="243.3" y="90.0" width="38.3" height="18.0"/><line class="b3" x1="246.3" y1="99.0" x2="253.5" y2="99.0"/><line class="b3" x1="271.5" y1="99.0" x2="278.7" y2="99.0"/><rect class="b2" x="256.5" y="86.5" width="12" height="25.0"/></g><g class="bk" data-k="59"><rect class="b1" x="288.7" y="87.0" width="44.3" height="24.0"/><rect class="b4" x="291.7" y="90.0" width="38.3" height="18.0"/><line class="b3" x1="294.7" y1="99.0" x2="301.8" y2="99.0"/><line class="b3" x1="319.8" y1="99.0" x2="327.0" y2="99.0"/><rect class="b2" x="304.8" y="86.5" width="12" height="25.0"/></g></g>
+<rect class="ce" x="40" y="80" width="300" height="290"/>
+<path class="ce" d="M40,80 L100,30 H400 L340,80 M400,30 V320 L340,370"/>
+<text class="tm" x="414" y="94">$60K</text><text class="tm" x="414" y="374">$0</text>
+<path class="ch2" d="M406,80 h6 M406,370 h6 M409,80 V370"/>
+</svg>
+        <figcaption class="bmeta"><span class="lbl"><i class="bkey"></i>1 stack = $1,000</span><span class="lbl" id="boxN">Box 01</span></figcaption>
+      </figure>
+    </div>
+  </div></div>
+</section>
+
+<!-- PLAY 13 · LIMITED SEATS -->
+<section class="sec" id="seats" data-n="Play 13" data-loc="Limited seats">
+  <div class="pbar wrap"><div class="g line"><span class="no">Play 13</span><span class="t lbl">Limited seats</span><span class="lbl nx" aria-hidden="true">Portland, Oregon</span></div></div>
+  <div class="wrap pad"><div class="g">
+    <div class="L">
+      <p class="lbl rooms rv">Two rooms are filling at once: client seats and the cap table.</p>
+      <h2 class="hl"><span class="ln"><span>Limited</span></span><span class="ln it"><span>seats.</span></span></h2>
+    </div>
+    <div class="R"><p class="lead rv">We embed deeply, so we take on about 10 companies at a&nbsp;time.</p></div>
+
+    <figure class="cap rv" aria-label="Capacity: about 10 companies.">
+      <figcaption class="fig" style="margin-bottom:0"><span class="lbl">Fig. 13 · Capacity</span></figcaption>
+      <div class="row" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="meta"><span class="lbl">Capacity: ~10 companies</span></div>
+    </figure>
+
+    <div class="doors rv">
+      <div class="door">
+        <div><span class="lbl">Door 01 · Founders</span><h3>Apply for a seat.</h3></div>
+        <p class="note" id="noteF">Send to: chris@halovpartners.com
+Hi Chris, we’re a [stage] company. Our gap: [one line].</p>
+        <div class="dacts">
+          <button class="pill sm" type="button" data-copy="email" aria-label="Copy email address chris@halovpartners.com"><span class="pt"><span class="a">chris@halovpartners.com</span><span class="b" aria-hidden="true">Copied ✓</span></span><svg viewBox="0 0 18 18" aria-hidden="true"><rect x="6" y="6" width="9.5" height="9.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 12V4.2c0-.4.3-.7.7-.7H12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <button class="btn" type="button" data-copy="noteF" aria-label="Copy the founder note"><span class="pt"><span class="a">Copy note</span><span class="b" aria-hidden="true">Copied ✓</span></span></button>
+        </div>
+      </div>
+      <div class="door">
+        <div><span class="lbl">Door 02 · Investors</span><h3>Request the investor brief.</h3></div>
+        <p class="note" id="noteI">Send to: chris@halovpartners.com
+Hi Chris, I’d like the Halo investor brief.</p>
+        <div class="dacts">
+          <button class="pill sm" type="button" data-copy="email" aria-label="Copy email address chris@halovpartners.com"><span class="pt"><span class="a">chris@halovpartners.com</span><span class="b" aria-hidden="true">Copied ✓</span></span><svg viewBox="0 0 18 18" aria-hidden="true"><rect x="6" y="6" width="9.5" height="9.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 12V4.2c0-.4.3-.7.7-.7H12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+          <button class="btn" type="button" data-copy="noteI" aria-label="Copy the investor note"><span class="pt"><span class="a">Copy note</span><span class="b" aria-hidden="true">Copied ✓</span></span></button>
+        </div>
+      </div>
+      <span class="ejoint" aria-hidden="true"></span>
+    </div>
+
+    <div class="close" id="contact">
+      <h2 class="hl"><span class="ln"><span>Change is inevitable.</span></span><span class="ln it"><span>Growth is optional.</span></span></h2>
+      <span class="orb" aria-hidden="true"></span>
+      <div class="ask">
+        <p class="ready">Ready to grow?</p>
+        <button class="pill" id="copy" type="button" data-copy="email" aria-label="Copy email address chris@halovpartners.com">
+          <span class="pt"><span class="a" id="addr">chris@halovpartners.com</span><span class="b" aria-hidden="true">Copied ✓</span></span>
+          <svg viewBox="0 0 18 18" aria-hidden="true"><rect x="6" y="6" width="9.5" height="9.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 12V4.2c0-.4.3-.7.7-.7H12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div></div>
+</section>
+</main>
+
+<footer data-n="Play 13" data-loc="Limited seats">
+  <div class="ruler wrap" aria-hidden="true"><div class="g"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span><span>11</span><span>12</span></div></div>
+  <div class="wrap"><div class="g fgrid">
+    <p class="fmark" aria-label="HALO // VENTURES">Halo <i aria-hidden="true">//</i> Ventures</p>
+    <p class="fsign">Build outside the box. Brick by brick. Rain or&nbsp;shine.</p>
+    <span class="lbl floc">Portland, Oregon</span>
+    <div class="srcs">
+      <span class="lbl">Sources</span>
+      <ol>
+        <li>PitchBook, 2025 global venture deal value (reported January 2026)</li>
+        <li>Salesforce, State of Sales (6th edition)</li>
+        <li>Bridge Group (account executive ramp)</li>
+        <li>Gartner, B2B buyer survey, 2026</li>
+        <li>EY CEO Outlook, 2026</li>
+        <li>Glassdoor, VP of Sales total pay, 2026</li>
+        <li>U.S. Dept. of Labor, SHRM, Harvard Business Review (cost of a bad hire)</li>
+        <li>Gong (VP of Sales tenure)</li>
+        <li>Lightcast, The Rise of Fractional Leadership, 2026</li>
+        <li>Gartner, AI agents and sellers prediction</li>
+        <li>McKinsey Global Institute, The Economic Potential of Generative AI, 2023</li>
+        <li>Varicent, 2025 Market Spotlight</li>
+        <li>PitchBook-NVCA Venture Monitor, Q4 2025</li>
+        <li>VCBacked, The Startup Graveyard, 2026</li>
+      </ol>
+    </div>
+  </div></div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+'use strict';
+var D=document, root=D.documentElement;
+function $(s,c){return (c||D).querySelector(s);}
+function $$(s,c){return Array.prototype.slice.call((c||D).querySelectorAll(s));}
+var EMAIL='chris@halovpartners.com';
+var RM=false;
+try{ RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+function clamp(v,a,b){return v<a?a:v>b?b:v;}
+function revealAll(){
+  root.classList.remove('anim');
+  try{ $$('.rv,.hl,.line,.st,.total').forEach(function(el){el.classList.add('in');el.classList.add('on');}); }catch(e){}
+}
+/* page-load clock for the runway counter (real elapsed time, including off-screen) */
+var T0=0;
+try{ T0=(window.performance&&performance.now)?0:Date.now(); }catch(e){}
+function elapsed(){ try{ if(window.performance&&performance.now) return performance.now()/1000; }catch(e){} return (Date.now()-T0)/1000; }
+var RATE=147.2e9/(5*365.25*86400); /* ≈ $933 a second */
+
+/* ================= copy (email + notes) + toast ================= */
+(function(){
+  var toast=$('#toast'), addr=$('#addr'), tt;
+  function say(msg){ toast.textContent=msg; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(function(){ toast.classList.remove('show'); },2600); }
+  function textFor(btn){
+    var k=btn.getAttribute('data-copy');
+    if(k==='email') return EMAIL;
+    var el=D.getElementById(k);
+    return el?el.textContent.replace(/\s*\n\s*/g,'\n').trim():EMAIL;
+  }
+  function fallbackCopy(t){
+    var ok=false;
+    try{
+      var ta=D.createElement('textarea'); ta.value=t; ta.setAttribute('readonly','');
+      ta.style.position='fixed'; ta.style.top='0'; ta.style.left='0'; ta.style.width='1px'; ta.style.height='1px'; ta.style.border='0'; ta.style.padding='0'; ta.style.opacity='0';
+      D.body.appendChild(ta); ta.select(); try{ ta.setSelectionRange(0,t.length); }catch(e){}
+      ok=D.execCommand('copy'); D.body.removeChild(ta);
+    }catch(e){ ok=false; }
+    return ok;
+  }
+  function selectEl(el){ try{ var r=D.createRange(); r.selectNodeContents(el); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); }catch(e){} }
+  function result(btn,ok){
+    clearTimeout(btn._t);
+    var k=btn.getAttribute('data-copy'), isMail=k==='email';
+    if(ok){ btn.classList.add('ok'); say(isMail?('Copied ✓ '+EMAIL+' is on your clipboard.'):('Copied ✓ Note is on your clipboard. Send it to '+EMAIL+'.')); }
+    else {
+      var target=isMail?addr:D.getElementById(k);
+      say('Copy did not work. The text is selected.');
+      if(isMail&&btn.id==='copyTop'){ try{ $('#copy').scrollIntoView({block:'center'}); }catch(e){} }
+      if(target) selectEl(target);
+    }
+    btn._t=setTimeout(function(){ btn.classList.remove('ok'); },2400);
+  }
+  function go(btn){
+    var t=textFor(btn);
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(t).then(function(){ result(btn,true); },function(){ result(btn,fallbackCopy(t)); });
+      } else result(btn,fallbackCopy(t));
+    }catch(e){ result(btn,fallbackCopy(t)); }
+  }
+  $$('[data-copy]').forEach(function(b){ b.addEventListener('click',function(){ go(b); }); });
+})();
+
+try{
+/* ================= play diagrams: route-by-route ================= */
+function prepPaths(scope){
+  $$('.dr',scope).forEach(function(p){
+    try{ var L=p.getTotalLength(); if(L>0){ p.style.strokeDasharray=L+' '+L; p.style.strokeDashoffset=L; p._L=L; } }catch(e){}
+  });
+}
+function showStep(st){
+  st.classList.add('on');
+  $$('.dr',st).forEach(function(p){ if(p._L){ p.style.strokeDashoffset='0'; } });
+}
+function hideStep(st){
+  st.classList.remove('on');
+  $$('.dr',st).forEach(function(p){ if(p._L){ p.style.transition='none'; p.style.strokeDashoffset=p._L; p.getBoundingClientRect(); p.style.transition=''; } });
+}
+function visibleSvg(fig){ var s=$$('.pdv',fig); for(var i=0;i<s.length;i++){ if(s[i].getBoundingClientRect().width>0) return s[i]; } return s[0]; }
+function runPlay(fig,layer,done){
+  var svg=visibleSvg(fig); if(!svg){ if(done) done(); return; }
+  var steps=$$((layer?'.'+layer+' ':'')+'.st',svg);
+  fig._run=(fig._run||0)+1; var id=fig._run;
+  steps.forEach(hideStep);
+  var i=0;
+  (function next(){
+    if(fig._run!==id) return;
+    if(i>=steps.length){ $$((layer?'.'+layer+' ':'')+'.st',fig).forEach(showStep); if(done) setTimeout(done,350); return; }
+    showStep(steps[i]); i++; setTimeout(next,i===1?500:650);
+  })();
+}
+var pdB=$('#pdB'), pdH=$('#pdH'), total=$('#total');
+var plays=[pdB,pdH];
+if(!RM){
+  plays.forEach(function(f){ f.classList.add('armed'); prepPaths(f); });
+  total.classList.add('armed');
+  $$('#pdH .lay-b .st').forEach(function(s){ s.classList.add('on'); });
+}
+/* toggle broken <-> halo */
+var segBtns=$$('#pdH .seg button'), pdHsr=$('#pdHsr');
+var SR_H=pdHsr.textContent;
+function setState(s){
+  pdH.setAttribute('data-state',s);
+  segBtns.forEach(function(b){ b.setAttribute('aria-pressed',b.getAttribute('data-s')===s?'true':'false'); });
+  pdHsr.textContent=s==='halo'?SR_H:'Broken play shown. The founder carries every deal. The VP of Sales is hired before the play exists. The wrong hire, the seat turning over and the ramp break the routes to pipeline and revenue.';
+  if(!RM&&pdH._seen) runPlay(pdH,s==='halo'?'lay-h':'lay-b');
+}
+segBtns.forEach(function(b){ b.addEventListener('click',function(){ setState(b.getAttribute('data-s')); }); });
+
+/* ================= runway counter + cube ================= */
+var rnum=$('#rnum'), box=$('#box'), boxN=$('#boxN'), stacks=$$('#stacks .bk'), CAP=stacks.length, PER=1000;
+var rSeen=false, rStart=0, lastN=-1, lastBox=-1;
+function fmt(v){ return '$'+Math.floor(v).toString().replace(/\B(?=(\d{3})+(?!\d))/g,','); }
+function paintBox(v){
+  var full=CAP*PER, b=Math.floor(v/full), n=Math.floor((v-b*full)/PER);
+  if(b!==lastBox){ lastBox=b; boxN.textContent='Box '+(b+1<10?'0':'')+(b+1); lastN=-1; }
+  if(n!==lastN){ for(var i=0;i<CAP;i++){ stacks[i].classList.toggle('on',i<n); } lastN=n; }
+}
+function shown(){
+  var t=elapsed(), v=t*RATE;
+  if(!RM&&rSeen){ var k=clamp((t-rStart)/1.6,0,1); if(k<1){ v=v*(1-Math.pow(1-k,3)); } }
+  return v;
+}
+function tickR(){
+  var v=shown(); rnum.textContent=fmt(v); paintBox(v);
+}
+stacks.forEach(function(s){ s.classList.remove('on'); });
+rnum.textContent='$0';
+if(RM){ tickR(); setInterval(tickR,1000); }
+else { (function loop(){ var r=box.getBoundingClientRect(); if(rSeen&&r.bottom>-200&&r.top<window.innerHeight+200) tickR(); requestAnimationFrame(loop); })(); }
+
+/* ================= reveals ================= */
+var cuts=$$('.rv,.hl,.line');
+function inView(el,f){ var r=el.getBoundingClientRect(); return r.top<window.innerHeight*(f||1)&&r.bottom>0; }
+function sweep(){
+  for(var i=0;i<cuts.length;i++){ var el=cuts[i]; if(!el.classList.contains('in')&&el.getBoundingClientRect().top<window.innerHeight*.92) el.classList.add('in'); }
+  if(!pdB._seen&&inView(visibleSvg(pdB),.75)){ pdB._seen=true; if(!RM) runPlay(pdB,null,function(){ total.classList.add('on'); }); }
+  if(!pdH._seen&&inView(visibleSvg(pdH),.75)){ pdH._seen=true; if(!RM) runPlay(pdH,'lay-h'); }
+  if(!RM&&!total.classList.contains('on')&&total.getBoundingClientRect().top<window.innerHeight*.6&&pdB._seen){ setTimeout(function(){ total.classList.add('on'); },1200); }
+  if(!rSeen&&inView(box,.85)){ rSeen=true; rStart=elapsed(); }
+}
+
+/* ================= nav: where am I ================= */
+var nav=$('#nav'), locN=$('#locN'), locT=$('#locT'), prog=$('#prog'), dark=$('#broken');
+var located=$$('[data-loc]'), lastLoc='';
+function navState(){
+  var y=nav.offsetHeight, r=dark.getBoundingClientRect();
+  nav.classList.toggle('dark',r.top<=y-1&&r.bottom>y+1);
+  var mid=window.innerHeight*.4, c=located[0];
+  for(var i=0;i<located.length;i++){ if(located[i].getBoundingClientRect().top<=mid) c=located[i]; }
+  var txt=c.getAttribute('data-loc');
+  if(txt!==lastLoc){ lastLoc=txt; locT.textContent=txt; locN.textContent=c.getAttribute('data-n'); }
+  var max=(D.documentElement.scrollHeight-window.innerHeight)||1;
+  prog.style.transform='scaleX('+clamp(window.pageYOffset/max,0,1).toFixed(4)+')';
+}
+var ticking=false;
+function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(function(){ ticking=false; try{ navState(); sweep(); }catch(e){ revealAll(); } }); }
+
+/* ================= init ================= */
+if(RM){ revealAll(); }
+else {
+  cuts.forEach(function(el){ if(inView(el,.98)) el.classList.add('in'); });
+  root.classList.add('anim');
+  var heroH=$('#heroH'); heroH.classList.remove('in');
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ heroH.classList.add('in'); }); });
+}
+navState(); sweep();
+window.addEventListener('scroll',onScroll,{passive:true});
+var rz; window.addEventListener('resize',function(){ clearTimeout(rz); rz=setTimeout(function(){ try{ navState(); sweep(); }catch(e){ revealAll(); } },120); });
+setTimeout(function(){ try{ sweep(); }catch(e){ revealAll(); } },1200);
+setTimeout(function(){ try{ sweep(); }catch(e){ revealAll(); } },3000);
+}catch(err){
+  revealAll();
+  try{ $$('#stacks .bk').forEach(function(s,i){ s.classList.toggle('on',i<24); }); var rn=$('#rnum'); if(rn) rn.textContent='≈ $933 every second'; }catch(e){}
+  if(window.console) console.error(err);
+}
+})();
+
+</script>
+</body>
+</html>

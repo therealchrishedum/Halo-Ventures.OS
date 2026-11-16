@@ -1,0 +1,1153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Halo Ventures</title>
+<meta name="description" content="HALO // VENTURES embeds senior revenue leaders and AI inside startups. We build the sales engine with the founder, prove it works, then hand it to the team.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+document.documentElement.className+=' js';
+window.addEventListener('error',function(){var r=document.documentElement;r.className=r.className.replace(/\banim\b/g,' ');});
+</script>
+<style>
+/* ============ tokens ============ */
+:root{
+  --k:#000; --w:#fff;
+  --g1:#141414; --g2:#2B2B2B; --g3:#5E5E5E; --g4:#8A8A8A; --g5:#BDBDBD;
+  --h1:#E3E3E3; --h2:#F3F3F3; --dot:#E0E0E0;
+  --e:#E83214;
+  --serif:"Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans:"Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --gut:16px; --hh:88px; --max:1440px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  --io:cubic-bezier(.65,0,.35,1);
+  color-scheme:light;
+}
+@media (min-width:768px){ :root{ --gut:32px; --hh:64px; } }
+@media (min-width:1200px){ :root{ --gut:48px; } }
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;background:var(--w)}
+body{background:var(--w);color:var(--k);font-family:var(--sans);font-size:16px;line-height:1.5;font-weight:400;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;text-rendering:optimizeLegibility;-webkit-tap-highlight-color:transparent;font-synthesis:none}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;text-align:inherit}
+::selection{background:var(--k);color:var(--w)}
+:focus-visible{outline:2px solid var(--k);outline-offset:3px}
+h1,h2,h3,h4{font-weight:400;text-wrap:balance}
+p,li{text-wrap:pretty}
+em{font-style:italic}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+
+/* type: labels 11/12 mono · body 16/18/20 · display 24+ */
+.lbl{font-family:var(--mono);font-size:11px;line-height:1.4;letter-spacing:.12em;text-transform:uppercase;font-weight:400;color:var(--g3)}
+.lbl.k{color:var(--k)}
+@media (min-width:768px){ .lbl{font-size:12px} }
+.sq{display:inline-block;width:8px;height:8px;background:var(--e);flex:none}
+.sqk{display:inline-block;width:8px;height:8px;background:var(--k);flex:none}
+.disc{display:inline-block;border-radius:50%;background:var(--e);flex:none}
+
+/* ============ header ============ */
+.top{position:-webkit-sticky;position:sticky;top:0;z-index:50;background:var(--w);border-bottom:1px solid var(--h1);padding-top:env(safe-area-inset-top)}
+.top .bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.mark{display:inline-flex;align-items:center;gap:8px;min-height:56px;text-decoration:none;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.14em;white-space:nowrap}
+.mark .disc{width:16px;height:16px}
+.mark i{font-style:normal;color:var(--g4)}
+.loc{order:3;flex:1 0 100%;display:flex;align-items:center;gap:16px;height:32px;border-top:1px solid var(--h2);white-space:nowrap;overflow:hidden}
+.loc .lbl{color:var(--k)}
+.loc .lbl .n{color:var(--g3)}
+.prog{flex:1;height:1px;background:var(--h1);position:relative;overflow:hidden}
+.prog i{position:absolute;left:0;top:0;bottom:0;width:100%;background:var(--k);transform-origin:left;transform:scaleX(0)}
+.mini{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border:1px solid var(--k);border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.pt{display:grid}
+.pt>span{grid-area:1/1;white-space:nowrap}
+.pt .b{visibility:hidden}
+.ok .pt .a{visibility:hidden}
+.ok .pt .b{visibility:visible}
+@media (hover:hover) and (pointer:fine){ .mini:hover{background:var(--k);color:var(--w)} }
+@media (min-width:768px){
+  .top .bar{flex-wrap:nowrap;height:64px;gap:32px}
+  .mark{min-height:64px}
+  .loc{order:0;flex:0 1 380px;height:auto;border:0;margin-left:auto}
+}
+
+/* ============ grid + sections ============ */
+main section{position:relative;scroll-margin-top:var(--hh)}
+.sec{padding:80px 0 88px}
+@media (min-width:768px){ .sec{padding:112px 0 120px} }
+@media (min-width:1200px){ .sec{padding:128px 0 136px} }
+.sec::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--k);transform-origin:left}
+.g12{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.side{margin-bottom:32px}
+.idx{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px}
+.idx .lbl{display:inline-flex;align-items:center;gap:12px;color:var(--k)}
+.idx .lbl .n{color:var(--g3)}
+.nx{display:inline-flex;align-items:center;gap:8px;min-height:44px;text-decoration:none;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--g3)}
+.nx:hover{color:var(--k)}
+@media (min-width:768px){ .nx{font-size:12px} }
+@media (min-width:1024px){
+  .g12{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:32px}
+  .side{grid-column:1 / span 3;margin:0}
+  .side .idx{position:-webkit-sticky;position:sticky;top:calc(var(--hh) + 32px);flex-direction:column;align-items:flex-start;gap:8px}
+  .main{grid-column:4 / span 9;min-width:0}
+}
+
+/* display type */
+.h2{font-family:var(--serif);font-weight:400;font-size:42px;line-height:1.02;letter-spacing:-.015em}
+.h2 .l{display:block;overflow:hidden;padding-bottom:.2em;margin-bottom:-.2em}
+.h2 .l>span{display:block}
+@media (min-width:768px){ .h2{font-size:64px} }
+@media (min-width:1200px){ .h2{font-size:80px} }
+.lead{margin-top:24px;max-width:34em;font-size:18px;line-height:1.5;color:var(--g2)}
+@media (min-width:768px){ .lead{font-size:20px;margin-top:32px} }
+.src{font-family:var(--mono);font-size:11px;letter-spacing:.04em;line-height:1.5;color:var(--g3)}
+@media (min-width:768px){ .src{font-size:12px} }
+.pre-l{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+
+/* figures: coach's binder plates */
+.fig{margin-top:48px}
+.plate{position:relative;border:1px solid var(--k);background:var(--w);background-image:radial-gradient(circle at 1px 1px,var(--dot) 1px,transparent 1.2px);background-size:16px 16px}
+.phd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;min-height:48px;padding:12px 16px;border-bottom:1px solid var(--k);background:var(--w)}
+.phd .ttl{font-family:var(--serif);font-size:24px;line-height:1.1;letter-spacing:-.01em}
+.phd .meta{display:flex;flex-wrap:wrap;gap:4px 20px}
+.pbd{position:relative;padding:24px 12px}
+.pft{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;min-height:48px;padding:12px 16px;border-top:1px solid var(--k);background:var(--w)}
+.cap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;margin-top:12px;min-height:44px}
+.cap .nx{margin-left:auto}
+.leg{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--g3)}
+.leg .k1{width:16px;height:12px;border:1.5px dashed var(--g3)}
+.leg .k2{width:16px;height:12px;border:1.5px solid var(--k)}
+.leg .k3{width:16px;height:12px;background:var(--k)}
+.leg .ar{position:relative;width:22px;height:0;border-top:2px solid var(--k)}
+.leg .ar::after{content:"";position:absolute;right:-1px;top:-6px;border:5px solid transparent;border-left:8px solid var(--k);border-right:0}
+.leg .sq,.leg .sqk{width:12px;height:12px}
+.leg .disc{width:12px;height:12px}
+@media (min-width:768px){ .phd,.pft{padding:12px 24px} .pbd{padding:32px 24px} .phd .ttl{font-size:30px} }
+
+/* motion (only once JS has started; only when motion is allowed) */
+.anim [data-rv]{opacity:0;transform:translateY(24px)}
+.anim [data-rv].in{opacity:1;transform:none}
+.anim .h2 .l>span,.anim .big .l>span,.anim .cl1 .l>span{transform:translateY(105%)}
+.anim .in .l>span{transform:none}
+.anim .sec::before{transform:scaleX(0)}
+.anim .sec.in::before{transform:scaleX(1)}
+@media (prefers-reduced-motion:no-preference){
+  .anim [data-rv].in{transition:opacity .9s var(--ease),transform 1s var(--ease)}
+  .anim .in .l>span{transition:transform 1.1s var(--ease)}
+  .anim .in .l:nth-child(2)>span{transition-delay:.09s}
+  .anim .in .l:nth-child(3)>span{transition-delay:.18s}
+  .anim .sec.in::before{transition:transform 1.2s var(--io)}
+  .mini,.btn,.cbtn,.tg{transition:background .25s,color .25s}
+  .nx{transition:color .25s}
+}
+
+/* ============ 01 hero ============ */
+.hero{padding:24px 0 72px}
+.hero .idx{margin-bottom:16px}
+.eyebrow{display:flex;align-items:center;gap:12px;color:var(--k);margin-bottom:16px}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,12.6vw,128px);line-height:.96;letter-spacing:-.028em}
+h1 .l{display:block;overflow:hidden;padding-bottom:.2em;margin-bottom:-.16em}
+h1 .l>span{display:block}
+.anim h1 .l>span{transform:translateY(105%)}
+.anim .ready h1 .l>span{transform:none}
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;margin-top:24px;padding-top:20px;border-top:1px solid var(--k)}
+.hero .sub{font-size:18px;line-height:1.45;color:var(--g1);max-width:30em;font-weight:500}
+.analogy{margin-top:16px;font-size:15px;line-height:1.5;color:var(--g3);max-width:32em}
+.anim .hgrid{opacity:0;transform:translateY(16px)}
+.anim .ready .hgrid{opacity:1;transform:none}
+@media (prefers-reduced-motion:no-preference){
+  .anim .ready h1 .l>span{transition:transform 1.2s var(--ease)}
+  .anim .ready h1 .l:nth-child(2)>span{transition-delay:.1s}
+  .anim .ready .hgrid{transition:opacity .9s .45s var(--ease),transform 1s .45s var(--ease)}
+}
+@media (min-width:768px){ .hero{padding:40px 0 96px} .hero .sub{font-size:21px} .analogy{font-size:16px} }
+@media (min-width:1024px){
+  .hgrid{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:32px;align-items:start;padding-top:32px}
+  .hcopy{grid-column:1 / span 5}
+  .hfig{grid-column:7 / span 6}
+}
+
+/* forward-deployed figure */
+.fd{padding:16px;border:1.5px solid var(--k);position:relative;background:var(--w)}
+.fd-l{position:absolute;top:-9px;left:12px;padding:0 8px;background:var(--w)}
+.fd-f{display:flex;justify-content:center}
+.node{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;min-width:132px;padding:8px 16px;background:var(--k);color:var(--w);font-size:15px;font-weight:500;text-align:center}
+.node.o{background:var(--w);color:var(--k);border:1.5px solid var(--k)}
+.node .disc{width:14px;height:14px}
+.fd-stem{width:0;height:24px;margin:0 auto;border-left:1.5px solid var(--k)}
+.fd-row{display:grid;grid-template-columns:minmax(0,1fr) 24px minmax(0,1fr);align-items:center;position:relative;padding-top:24px}
+.fd-row::before{content:"";position:absolute;top:0;left:calc((100% - 24px)/4);right:calc((100% - 24px)/4);border-top:1.5px solid var(--k)}
+.fd-row>.node{position:relative;min-width:0}
+.fd-row>.node::before{content:"";position:absolute;top:-25px;left:50%;height:24px;border-left:1.5px solid var(--k)}
+.fd-link{height:0;border-top:3px solid var(--k)}
+.fd-steps{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;margin-top:16px}
+.fd-steps li{display:flex;flex-direction:column;gap:8px;padding-top:10px;border-top:1.5px solid var(--k);font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;line-height:1.3;color:var(--k)}
+.fd-steps li .n{color:var(--g3)}
+@media (min-width:600px){ .fd{padding:28px 24px 24px} .fd-steps li{font-size:11px} .node{font-size:16px} }
+
+/* ============ 02 situation ============ */
+.facts{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);margin-top:40px;border-top:1px solid var(--k)}
+.fact{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;padding:20px 0 22px;border-bottom:1px solid var(--h1)}
+.fact .num{font-family:var(--serif);font-size:52px;line-height:.95;letter-spacing:-.03em;white-space:nowrap}
+.fact .say{font-size:17px;line-height:1.4;color:var(--g1);max-width:30em}
+.fact .src{margin-top:2px}
+@media (min-width:768px){
+  .fact{grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:4px 32px;align-items:baseline;padding:24px 0 26px}
+  .fact{align-items:center}
+  .fact .num{font-size:72px;grid-row:1 / span 2}
+  .fact .say{align-self:end}
+  .fact .src{align-self:start}
+  .fact .say{font-size:19px}
+}
+@media (min-width:1200px){ .fact .num{font-size:84px} }
+.verdict,.insight,.hl p{text-wrap:balance}
+.verdict{margin-top:48px;font-family:var(--serif);font-size:34px;line-height:1.08;letter-spacing:-.015em;max-width:24ch}
+@media (min-width:768px){ .verdict{font-size:56px} }
+
+/* ============ 03 real problem ============ */
+.why3{list-style:none;margin-top:32px;border-top:1px solid var(--k)}
+.why3 li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:8px;padding:18px 0 20px;border-bottom:1px solid var(--h1);font-family:var(--serif);font-size:26px;line-height:1.12;letter-spacing:-.01em}
+.why3 li .n{padding-top:6px}
+@media (min-width:768px){ .why3 li{grid-template-columns:72px minmax(0,1fr);gap:16px;font-size:38px;padding:24px 0 26px} }
+.order{display:grid;gap:24px}
+.ord-row{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.ord-row .lbl{color:var(--k)}
+.chain{list-style:none;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.chain li{display:flex;align-items:center;gap:8px}
+.chain .b{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:8px 14px;font-size:15px;font-weight:500;line-height:1.2}
+.chain .b.s{background:var(--k);color:var(--w)}
+.chain .b.o{border:1.5px solid var(--k)}
+.chain .b.d{border:1.5px dashed var(--g3);color:var(--g2)}
+.chain .b .sq{width:12px;height:12px}
+.chain .to{font-family:var(--mono);color:var(--g3);font-size:16px}
+@media (min-width:768px){ .ord-row{grid-template-columns:140px minmax(0,1fr);align-items:center} .chain .b{font-size:17px;padding:10px 18px} }
+.hl{display:grid;grid-template-columns:16px minmax(0,1fr);gap:16px;align-items:start;margin-top:48px;padding-top:24px;border-top:1px solid var(--k)}
+.hl .sq{width:16px;height:16px;margin-top:.35em}
+.hl p{font-family:var(--serif);font-size:32px;line-height:1.08;letter-spacing:-.015em;max-width:24ch}
+@media (min-width:768px){ .hl{grid-template-columns:24px minmax(0,1fr);gap:24px} .hl .sq{width:24px;height:24px} .hl p{font-size:52px} }
+@media (min-width:1200px){ .hl p{font-size:58px} }
+
+/* ============ 04/05 playbook diagram ============ */
+.pbsvg{display:block;width:100%;height:auto;overflow:visible}
+.pbsvg.d{display:none}
+.pbsvg.m{max-width:440px;margin:0 auto}
+@media (min-width:900px){ .pbsvg.d{display:block} .pbsvg.m{display:none} }
+.pbsvg .nd rect{fill:var(--k)}
+.pbsvg .nd text{fill:var(--w);font-family:var(--sans);font-weight:500}
+.pbsvg .n-h circle{fill:var(--e)}
+.is-halo .pbsvg .n-v rect{fill:var(--w);stroke:var(--g3);stroke-width:1.5;stroke-dasharray:6 4}
+.is-halo .pbsvg .n-v text{fill:var(--k)}
+.pbsvg .rt{fill:none;stroke:var(--k);stroke-width:2;stroke-linecap:butt}
+.pbsvg .rt.dsh{stroke:var(--g3);stroke-width:1.75;stroke-dasharray:7 6;stroke-linecap:butt}
+.pbsvg .rt.lk{stroke-width:3}
+.pbsvg .ah{fill:var(--k)}
+.pbsvg .rt.dsh+.ah{fill:var(--g3)}
+.pbsvg .bk.ember rect{fill:var(--e)}
+.pbsvg .bk.ember text{fill:var(--k)}
+.pbsvg .bk.fixed rect{fill:var(--k)}
+.pbsvg .bk.fixed text{fill:var(--w)}
+.pbsvg .bk text{font-family:var(--mono);font-weight:500}
+.pbsvg .bk{transform-box:fill-box;transform-origin:center}
+.pbsvg .cf{font-family:var(--sans);font-weight:600;fill:var(--k);letter-spacing:-.01em}
+.pbsvg .cm{font-family:var(--mono);fill:var(--g3);letter-spacing:.05em}
+.pbsvg .rl{font-family:var(--mono);fill:var(--g3);letter-spacing:.14em}
+.pb .L-halo{display:none}
+.pb.is-halo .L-halo{display:inline}
+.pb.is-halo .L-broken{display:none}
+/* route-by-route sequence (JS adds .armed only when motion is allowed) */
+.pb.armed .st .rt:not(.dsh){stroke-dasharray:1 1;stroke-dashoffset:1}
+.pb.armed .st .ah,.pb.armed .st .co,.pb.armed .st .nd,.pb.armed .st .dsh{opacity:0}
+.pb.armed .st .bk{opacity:0;transform:scale(.2)}
+.pb.armed .st.on .rt:not(.dsh){stroke-dashoffset:0;transition:stroke-dashoffset .6s var(--io)}
+.pb.armed .st.on .ah,.pb.armed .st.on .nd,.pb.armed .st.on .dsh{opacity:1;transition:opacity .3s .45s}
+.pb.armed .st.on .bk{opacity:1;transform:none;transition:opacity .2s .5s,transform .5s .5s var(--ease)}
+.pb.armed .st.on .co{opacity:1;transition:opacity .4s .65s}
+
+.tog{display:inline-flex;border:1px solid var(--k);border-radius:999px;padding:3px;gap:2px;background:var(--w)}
+.tg{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);white-space:nowrap}
+.tg .sq,.tg .sqk{width:10px;height:10px}
+.tg[aria-pressed="true"]{background:var(--k);color:var(--w)}
+.tg[aria-pressed="true"] .sqk{background:var(--w)}
+html:not(.js) .tog{display:none}
+.tgwrap{display:flex;justify-content:center;padding:12px 16px;border-bottom:1px solid var(--h1);background:var(--w)}
+@media (min-width:768px){ .tgwrap{justify-content:flex-start;padding:12px 24px} .tg{font-size:12px;padding:0 18px} }
+
+.key{list-style:none;margin-top:40px;border-top:1px solid var(--k)}
+.key li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:4px 12px;padding:18px 0 20px;border-bottom:1px solid var(--h1)}
+.key .kn{display:flex;align-items:center;justify-content:center;width:24px;height:24px;margin-top:2px;font-family:var(--mono);font-size:12px;font-weight:500}
+.key .kn.e{background:var(--e);color:var(--k)}
+.key .kn.f{background:var(--k);color:var(--w)}
+.key h3{font-family:var(--serif);font-size:26px;line-height:1.1;letter-spacing:-.01em}
+.key p{grid-column:2;font-size:16px;line-height:1.45;color:var(--g2);max-width:36em}
+.key .src{grid-column:2}
+@media (min-width:768px){
+  .key li{grid-template-columns:48px minmax(0,5fr) minmax(0,6fr);gap:6px 32px;padding:22px 0 24px}
+  .key .kn{width:28px;height:28px}
+  .key h3{font-size:32px}
+  .key p,.key .src{grid-column:3}
+  .key p{font-size:17px;grid-row:1}
+  .key .src{grid-row:2}
+}
+.total{margin-top:48px;padding:24px 20px 28px;background:var(--k);color:var(--w)}
+.total .lbl{color:#C9C9C9;display:flex;align-items:center;gap:12px}
+.total .t1{margin-top:20px;font-family:var(--serif);font-size:28px;line-height:1.1;color:#E6E6E6}
+.total .t2{font-family:var(--serif);font-size:72px;line-height:.95;letter-spacing:-.035em;white-space:nowrap}
+.total .t3{font-family:var(--serif);font-size:28px;line-height:1.1}
+.total .t3 em{font-style:italic}
+.total .math{margin-top:24px;padding-top:16px;border-top:1px solid #444;font-size:15px;line-height:1.5;color:#D6D6D6;max-width:40em}
+.total .src{color:#B5B5B5;margin-top:8px}
+@media (min-width:768px){ .total{padding:32px 32px 36px} .total .t1,.total .t3{font-size:44px} .total .t2{font-size:132px} .total .math{font-size:16px} }
+.anim .total.wait{opacity:0;transform:translateY(24px)}
+@media (prefers-reduced-motion:no-preference){ .anim .total{transition:opacity .9s var(--ease),transform 1s var(--ease)} }
+
+.steps{list-style:none;margin-top:48px;border-top:1px solid var(--k)}
+.step{display:grid;grid-template-columns:40px minmax(0,1fr);gap:4px 8px;padding:20px 0 22px;border-bottom:1px solid var(--h1)}
+.step .n{color:var(--g3);padding-top:8px}
+.step h4{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.05;letter-spacing:-.01em}
+.step p{grid-column:2;font-size:16px;line-height:1.5;color:var(--g2);max-width:30em}
+@media (min-width:768px){
+  .step{grid-template-columns:72px minmax(0,5fr) minmax(0,6fr);gap:8px 32px;padding:26px 0 28px;align-items:start}
+  .step h4{font-size:40px}
+  .step p{grid-column:3;font-size:18px;padding-top:8px}
+}
+.lets{margin-top:56px}
+.lets ul{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:16px}
+.lets li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:12px;align-items:start;padding:16px;border:1.5px solid var(--k);font-size:17px;line-height:1.4;font-weight:500}
+.lets li .sqk{width:12px;height:12px;margin-top:6px}
+@media (min-width:768px){ .lets ul{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px} .lets li{padding:20px;font-size:18px;min-height:132px} }
+
+/* ============ 06 pillars ============ */
+.tiles{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);margin-top:40px;border-top:1px solid var(--k)}
+.tile{display:flex;flex-direction:column;gap:20px;padding:24px 0 28px;border-bottom:1px solid var(--h1)}
+.tile h3{font-family:var(--serif);font-size:34px;line-height:1.04;letter-spacing:-.01em}
+.tile p{margin-top:8px;font-size:16px;line-height:1.5;color:var(--g2);max-width:26em}
+.tile .roles{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tile .roles li{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border:1px solid var(--k)}
+.tile .top3{display:flex;align-items:center;justify-content:space-between}
+.blk{display:inline-block;width:24px;height:24px}
+.blk.s{background:var(--k)}
+.blk.o{border:1.5px solid var(--k)}
+.blk.h{border:1.5px solid var(--k);background:linear-gradient(var(--k),var(--k)) left/50% 100% no-repeat}
+@media (min-width:900px){
+  .tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .tile{min-height:300px;justify-content:space-between;padding:24px 24px 32px;border-left:1px solid var(--h1)}
+  .tile:first-child{border-left:0;padding-left:0}
+  .tile h3{font-size:42px}
+  .tile p{font-size:17px}
+}
+
+/* ============ 07 use cases ============ */
+.cases{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:40px}
+.case{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:156px;padding:16px 16px 20px}
+.case::before{content:"";position:absolute;inset:0;border:1.5px dashed var(--g4);pointer-events:none}
+.case .top3{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.case p{font-family:var(--serif);font-size:26px;line-height:1.1;letter-spacing:-.01em}
+@media (min-width:768px){ .cases{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px} .case{min-height:200px;padding:20px 24px 24px} .case p{font-size:32px} }
+@media (min-width:1200px){ .cases{grid-template-columns:repeat(3,minmax(0,1fr))} }
+
+/* ============ 08 why now / 09 market ============ */
+.stats{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);margin-top:40px;border-top:1px solid var(--k)}
+.stat{padding:24px 0 28px;border-bottom:1px solid var(--h1)}
+.stat .num{font-family:var(--serif);font-size:60px;line-height:.9;letter-spacing:-.035em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.stat .say{margin-top:14px;font-size:17px;line-height:1.45;color:var(--g1);max-width:28em}
+.stat .src{margin-top:10px}
+.stat.word .num{font-size:44px;letter-spacing:-.02em}
+@media (min-width:768px){
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat{padding:32px 32px 36px 0}
+  .stat:nth-child(even){padding-left:32px;padding-right:0;border-left:1px solid var(--h1)}
+  .stat .say{font-size:18px}
+  .stat .num{font-size:72px}
+  .stat.word .num{font-size:52px}
+  .stat.wide{grid-column:1/-1;padding-right:0}
+}
+@media (min-width:1200px){ .stat .num{font-size:88px} .stat.word .num{font-size:60px} }
+.insight{margin-top:48px;font-family:var(--serif);font-size:32px;line-height:1.08;letter-spacing:-.015em;max-width:22ch}
+@media (min-width:768px){ .insight{font-size:52px} }
+.seatecon{margin-top:40px;border-top:1px solid var(--k);padding-top:24px}
+.seatecon .num{font-family:var(--serif);font-size:80px;line-height:.9;letter-spacing:-.04em;white-space:nowrap}
+.seatecon .num small{font-size:.4em;letter-spacing:-.01em;color:var(--g3)}
+.seatecon .say{margin-top:16px;font-size:18px;line-height:1.45;color:var(--g1);max-width:30em}
+.eqn{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin-top:24px}
+.eqn .term{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:72px;padding:10px 16px;border:1.5px solid var(--k)}
+.eqn .term b{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1;letter-spacing:-.01em}
+.eqn .term.a{background:var(--k);color:var(--w)}
+.eqn .term.a .lbl{color:#C9C9C9}
+.eqn .op{display:flex;align-items:center;font-family:var(--serif);font-size:36px;color:var(--g3);padding:0 4px}
+@media (max-width:767px){ .eqn{display:grid;grid-template-columns:minmax(0,1fr);gap:4px} .eqn .op{justify-content:center;line-height:1;font-size:28px} }
+@media (min-width:768px){ .seatecon .num{font-size:140px} .seatecon .say{font-size:20px} .eqn .term{min-height:88px;padding:12px 22px} .eqn .term b{font-size:40px} .eqn .op{font-size:48px} }
+.eng{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.box{display:flex;flex-direction:column;justify-content:space-between;gap:24px;min-height:168px;padding:16px 16px 20px;background:var(--w)}
+.box.a{background:var(--k);color:var(--w)}
+.box.a .lbl{color:#C9C9C9}
+.box.b{border:1.5px solid var(--k)}
+.box h3{font-family:var(--serif);font-size:32px;line-height:1.02;letter-spacing:-.01em}
+.box p{margin-top:8px;font-size:16px;line-height:1.45}
+.box.a p{color:#E6E6E6}
+.box.b p{color:var(--g2)}
+.box .top3{display:flex;justify-content:space-between;align-items:center}
+.box .sq{width:12px;height:12px}
+.link{position:relative;height:72px;display:flex;justify-content:center;gap:40px}
+.link i{position:relative;display:block;width:0;height:100%;border-left:1.5px solid var(--k)}
+.link i::after{content:"";position:absolute;left:-5.5px;width:9px;height:9px;border-right:1.5px solid var(--k);border-bottom:1.5px solid var(--k)}
+.link i.dn::after{bottom:1px;transform:rotate(45deg)}
+.link i.up::after{top:1px;transform:rotate(-135deg)}
+@media (min-width:768px){
+  .eng{grid-template-columns:minmax(0,1fr) 112px minmax(0,1fr);align-items:stretch}
+  .box{min-height:240px;padding:20px 24px 28px}
+  .box h3{font-size:44px}
+  .box p{font-size:18px}
+  .link{height:auto;flex-direction:column;justify-content:center;gap:32px}
+  .link i{width:100%;height:0;border-left:0;border-top:1.5px solid var(--k)}
+  .link i::after{left:auto;top:-5.5px}
+  .link i.dn::after{right:1px;bottom:auto;transform:rotate(-45deg)}
+  .link i.up::after{left:1px;transform:rotate(135deg)}
+}
+.vision{margin-top:88px;padding-top:32px;border-top:1px solid var(--k)}
+.big{font-family:var(--serif);font-weight:400;font-size:clamp(42px,10.6vw,128px);line-height:.98;letter-spacing:-.03em}
+.big .l{display:block;overflow:hidden;padding-bottom:.2em;margin-bottom:-.16em}
+.big .l>span{display:block}
+@media (min-width:768px){ .vision{margin-top:128px} }
+
+/* ============ 10 why me ============ */
+.me{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;margin-top:40px}
+.grp{border-top:1px solid var(--k);padding-top:16px}
+.grp ul{list-style:none;margin-top:12px}
+.grp li{display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--h1);font-size:17px;line-height:1.45;color:var(--g1)}
+.grp li::before{content:"";width:8px;height:8px;margin-top:8px;background:var(--k)}
+.grp .proof li::before{display:none}
+.proof{list-style:none;margin-top:12px}
+.grp .proof li{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding:16px 0 18px;border-bottom:1px solid var(--h1)}
+.proof .v{font-family:var(--serif);font-size:40px;line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.proof .v i{font-style:normal;color:var(--g4)}
+.proof .s{font-size:16px;line-height:1.4;color:var(--g2)}
+.care{margin-top:8px;font-family:var(--serif);font-size:30px;line-height:1.1;letter-spacing:-.01em;max-width:22ch}
+@media (min-width:900px){
+  .me{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;row-gap:56px}
+  .grp li{font-size:18px}
+  .proof .v{font-size:52px}
+  .grp .proof li{grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:20px;align-items:baseline}
+  .proof .s{font-size:17px}
+}
+
+/* ============ 11 bench / board ============ */
+.board{position:relative;margin-top:8px}
+.bd-chair{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.bd-chair .node{min-width:160px}
+.bd-chair .node .disc{width:16px;height:16px}
+.bd-table{position:relative;margin-top:0}
+.bd-seats{list-style:none;display:grid;gap:12px;position:relative;padding:24px 0 0 40px}
+.bd-seats::before{content:"";position:absolute;left:16px;top:0;bottom:30px;width:12px;background:var(--h2);border:1.5px solid var(--k)}
+.bd-seat{position:relative;display:grid;grid-template-columns:16px minmax(0,1fr);gap:12px;align-items:center;min-height:60px;padding:10px 12px;border:1.5px solid var(--k);background:var(--w)}
+.bd-seat::before{content:"";position:absolute;left:-12px;top:50%;width:12px;border-top:1.5px solid var(--k)}
+.bd-seat .sqk{width:16px;height:16px}
+.bd-seat b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.05;letter-spacing:-.01em}
+.bd-seat span.lbl{display:block;margin-top:4px}
+@media (min-width:900px){
+  .board{display:grid;grid-template-columns:180px minmax(0,1fr);align-items:center;column-gap:0}
+  .bd-chair{position:relative;z-index:1}
+  .bd-chair .node{min-height:72px;width:100%}
+  .bd-table{display:grid;grid-template-rows:auto 64px auto;row-gap:20px;padding-left:24px}
+  .bd-table::before{content:"";position:absolute;left:0;top:50%;width:24px;border-top:1.5px solid var(--k)}
+  .bd-bar{grid-row:2;background:var(--h2);border:1.5px solid var(--k)}
+  .bd-seats{display:contents}
+  .bd-seats::before{display:none}
+  .bd-top,.bd-bot{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .bd-top{grid-row:1}
+  .bd-bot{grid-row:3;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .bd-seat{min-height:88px;align-items:start;padding:14px 16px}
+  .bd-seat::before{left:50%;top:auto;bottom:-21px;width:0;height:20px;border-top:0;border-left:1.5px solid var(--k)}
+  .bd-bot .bd-seat::before{bottom:auto;top:-21px}
+  .bd-seat .sqk{margin-top:4px}
+  .bd-seat b{font-size:26px}
+}
+.bd-mob{display:block}
+.bd-dsk{display:none}
+@media (min-width:900px){ .bd-mob{display:none} .bd-dsk{display:grid} }
+.forming .sq{width:12px;height:12px}
+.forming{margin-top:32px;display:flex;align-items:center;gap:16px;font-family:var(--serif);font-size:28px;line-height:1.1}
+@media (min-width:768px){ .forming{font-size:40px} }
+
+/* ============ 12 runway ============ */
+.runway{display:grid;grid-template-columns:minmax(0,1fr);gap:32px;margin-top:40px;align-items:center}
+.rv-lbl{display:flex;align-items:center;gap:12px;color:var(--k)}
+.rv{margin-top:16px;font-family:var(--sans);font-weight:500;font-size:52px;line-height:1;letter-spacing:-.035em;font-variant-numeric:tabular-nums lining-nums;white-space:nowrap}
+.rv.nojs{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;white-space:normal}
+.rv-src{margin-top:20px;max-width:34em}
+.rv-key{display:none;flex-wrap:wrap;gap:6px 20px;margin-top:16px}
+.js .rv-key{display:flex}
+.cube{display:block;width:100%;max-width:460px;height:auto;margin:0 auto}
+.cube .cb-back path{fill:none;stroke:var(--g5);stroke-width:1.25;stroke-dasharray:4 4}
+.cube .cb-glass polygon,.cube .cb-glass rect{fill:none;stroke:var(--g2);stroke-width:1.5;stroke-linejoin:round}
+.cube .cb-glass polygon{fill:rgba(0,0,0,.018)}
+.cube .bill{display:none}
+.cube .bill.on{display:inline}
+.cube .b-top{fill:var(--w);stroke:var(--g4);stroke-width:.75}
+.cube .b-f{fill:var(--h2);stroke:var(--g3);stroke-width:.75}
+.cube .b-e{stroke:var(--g5);stroke-width:.75;fill:none}
+.cube .b-band{fill:var(--g4)}
+@media (min-width:768px){ .rv{font-size:88px} }
+@media (min-width:1024px){ .runway{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px} .rv{font-size:104px} }
+
+/* ============ 13 seats + doors + close ============ */
+.rooms{display:block;margin-bottom:20px}
+.cap10{margin-top:40px}
+.cap10 .row10{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:6px;margin-top:16px;max-width:640px}
+.cap10 .row10 i{display:block;aspect-ratio:1/1;border:1.5px solid var(--k)}
+@media (min-width:768px){ .cap10 .row10{gap:12px} }
+.doors{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:16px;margin-top:56px}
+.door{display:flex;flex-direction:column;gap:20px;padding:20px 16px 24px;border:1.5px solid var(--k);min-width:0}
+.door .lbl{display:flex;align-items:center;gap:12px;color:var(--k)}
+.door h3{font-family:var(--serif);font-size:36px;line-height:1.02;letter-spacing:-.015em}
+.note{font-family:var(--mono);font-size:13px;line-height:1.6;color:var(--g1);padding:12px 14px;border:1px solid var(--h1);background:var(--h2);white-space:pre-wrap;overflow-wrap:anywhere}
+.dact{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.cbtn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:0 16px;border:1px solid var(--k);border-radius:999px;background:var(--w);color:var(--k);font-family:var(--mono);font-size:13px;letter-spacing:.01em;max-width:100%}
+.cbtn.inv{background:var(--k);color:var(--w)}
+.cbtn svg{width:16px;height:16px;flex:none}
+@media (hover:hover) and (pointer:fine){ .cbtn:hover{background:var(--k);color:var(--w)} .cbtn.inv:hover{background:var(--g2)} }
+@media (min-width:900px){ .doors{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px} .door{padding:24px 28px 32px} .door h3{font-size:48px} }
+
+.close{margin-top:112px;padding-top:40px;border-top:1px solid var(--k);position:relative}
+.cl1{font-family:var(--serif);font-weight:400;font-size:clamp(42px,10.6vw,128px);line-height:.96;letter-spacing:-.03em}
+.cl1 .l{display:block;overflow:hidden;padding-bottom:.2em;margin-bottom:-.16em}
+.cl1 .l>span{display:block}
+.cl1 .soft{color:var(--g3)}
+.ready-q{margin-top:64px;font-family:var(--serif);font-size:32px;line-height:1.1;letter-spacing:-.01em}
+.pill{display:inline-flex;align-items:center;gap:16px;margin-top:16px;min-height:56px;padding:0 24px;border-radius:999px;background:var(--e);color:var(--k);font-family:var(--mono);font-size:15px;font-weight:500;letter-spacing:.01em;max-width:100%}
+.pill .pt .a{-webkit-user-select:text;user-select:text}
+.pill svg{width:18px;height:18px;flex:0 0 auto}
+.pill:focus-visible{outline:2px solid var(--k);outline-offset:4px}
+@media (max-width:360px){ .pill{padding:0 16px;font-size:14px;gap:8px} }
+@media (min-width:768px){ .ready-q{font-size:48px;margin-top:80px} .pill{font-size:18px;min-height:64px;padding:0 32px} .close{margin-top:160px} }
+
+/* ============ footer ============ */
+footer{border-top:1px solid var(--k);padding:40px 0 calc(40px + env(safe-area-inset-bottom))}
+.fgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;align-items:center}
+.fmark{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.14em}
+.fmark .disc{width:12px;height:12px}
+.fmark i{font-style:normal;color:var(--g4)}
+.sign{font-family:var(--serif);font-size:24px;line-height:1.2}
+.sources{margin-top:40px;padding-top:16px;border-top:1px solid var(--h1)}
+.sources ol{list-style:none;display:grid;grid-template-columns:minmax(0,1fr);gap:6px 32px;margin-top:12px;counter-reset:s}
+.sources li{counter-increment:s;display:grid;grid-template-columns:28px minmax(0,1fr);font-family:var(--mono);font-size:11px;line-height:1.5;letter-spacing:.02em;color:var(--g3)}
+.sources li::before{content:counter(s,decimal-leading-zero)}
+@media (min-width:768px){ .fgrid{grid-template-columns:auto 1fr auto;gap:32px} .sign{text-align:center} .sources ol{grid-template-columns:repeat(2,minmax(0,1fr))} }
+
+@media (prefers-reduced-motion:reduce){
+  .anim [data-rv].in,.anim .in .l>span,.anim .sec.in::before,.pb .st *,.total{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="top" id="nav">
+  <div class="wrap bar">
+    <a class="mark" href="#start" aria-label="HALO // VENTURES, back to top"><span class="disc" aria-hidden="true"></span>HALO <i>//</i> VENTURES</a>
+    <div class="loc" aria-hidden="true"><span class="lbl" id="loc"><span class="n">Play 01 · </span>Who we are</span><span class="prog"><i id="prog"></i></span></div>
+    <button class="mini" id="copyTop" type="button" data-copy="email" aria-label="Copy email address chris@halovpartners.com"><span class="pt"><span class="a">Copy email</span><span class="b" aria-hidden="true">Copied ✓</span></span></button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ PLAY 01 ============ -->
+<section class="hero" id="start" data-loc="Play 01|Who we are">
+  <div class="wrap">
+    <span class="lbl eyebrow"><span class="sq" aria-hidden="true"></span>Forward-deployed revenue leadership</span>
+    <h1 aria-label="We put revenue leaders inside startups."><span class="l" aria-hidden="true"><span>We put revenue leaders</span></span><span class="l" aria-hidden="true"><span><em>inside</em> startups.</span></span></h1>
+    <div class="hgrid">
+      <div class="hcopy">
+        <p class="sub">Halo Ventures embeds senior revenue leaders and AI inside startups. We build the sales engine with the founder, prove it works, then hand it to the&nbsp;team.</p>
+        <p class="analogy">Palantir sent engineers to work inside its customers, solved the problem on site, then turned what worked into product. We do the same for&nbsp;revenue.</p>
+      </div>
+      <figure class="hfig">
+        <div class="fd" role="img" aria-label="Halo works inside your startup, beside the founder and your team: embed, prove the play, install the system, recruit, hand off.">
+          <span class="lbl k fd-l">Your startup</span>
+          <div class="fd-f"><span class="node">Founder</span></div>
+          <div class="fd-stem"></div>
+          <div class="fd-row">
+            <span class="node o">Your team</span>
+            <span class="fd-link"></span>
+            <span class="node"><span class="disc" aria-hidden="true"></span>Halo</span>
+          </div>
+          <ol class="fd-steps">
+            <li><span class="n">01</span>Embed</li>
+            <li><span class="n">02</span>Prove the play</li>
+            <li><span class="n">03</span>Install the system</li>
+            <li><span class="n">04</span>Recruit</li>
+            <li><span class="n">05</span>Hand off</li>
+          </ol>
+        </div>
+        <figcaption class="cap"><a class="nx" href="#today">The situation <span aria-hidden="true">↓</span></a></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAY 02 ============ -->
+<section class="sec" id="today" data-loc="Play 02|The situation">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 02 · </span>The situation today</span></span><a class="nx" href="#real">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>Startups <em>in 2026.</em></span></span></h2>
+      <ul class="facts">
+        <li class="fact" data-rv><div class="num">$512B</div><p class="say">of venture capital went into startups in&nbsp;2025.</p><p class="src">Source: PitchBook, 2026</p></li>
+        <li class="fact" data-rv><div class="num">84%</div><p class="say">of sales reps missed quota last&nbsp;year.</p><p class="src">Source: Salesforce, State of Sales</p></li>
+        <li class="fact" data-rv><div class="num">70%</div><p class="say">of a rep’s time goes to work that isn’t&nbsp;selling.</p><p class="src">Source: Salesforce, State of Sales</p></li>
+        <li class="fact" data-rv><div class="num">4.5–6 mo</div><p class="say">for a new account executive to&nbsp;ramp.</p><p class="src">Source: Bridge Group</p></li>
+        <li class="fact" data-rv><div class="num">67%</div><p class="say">of B2B buyers now prefer to buy without a rep. 45% used AI in a recent&nbsp;purchase.</p><p class="src">Source: Gartner, 2026</p></li>
+        <li class="fact" data-rv><div class="num">23%</div><p class="say">of CEOs say AI gains vanish before they reach&nbsp;results.</p><p class="src">Source: EY CEO Outlook, 2026</p></li>
+      </ul>
+      <p class="verdict" data-rv>The money is bigger. The buyers changed. <em>The sales model didn’t.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAY 03 ============ -->
+<section class="sec" id="real" data-loc="Play 03|The real problem">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 03 · </span>The real problem</span></span><a class="nx" href="#broken">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>The real problem:</span></span><span class="l"><span><em>the seat comes before the&nbsp;play.</em></span></span></h2>
+      <ol class="why3">
+        <li data-rv><span class="lbl n" aria-hidden="true">01</span><span>Senior revenue expertise is sold one way: as a full-time executive&nbsp;hire.</span></li>
+        <li data-rv><span class="lbl n" aria-hidden="true">02</span><span>So startups buy the seat before they know the&nbsp;play.</span></li>
+        <li data-rv><span class="lbl n" aria-hidden="true">03</span><span>Then they pay for the&nbsp;miss.</span></li>
+      </ol>
+      <figure class="fig" data-rv>
+        <div class="plate">
+          <div class="phd"><span class="lbl k">The order of moves</span><span class="lbl">Fig. 03</span></div>
+          <div class="pbd order">
+            <div class="ord-row"><span class="lbl">Today</span>
+              <ol class="chain" aria-label="Today: buy the seat, then look for the play, then pay for the miss.">
+                <li><span class="b s">Buy the seat</span></li><li><span class="to" aria-hidden="true">→</span><span class="b d">Look for the play</span></li><li><span class="to" aria-hidden="true">→</span><span class="b o"><span class="sq" aria-hidden="true"></span>Pay for the miss</span></li>
+              </ol>
+            </div>
+            <div class="ord-row"><span class="lbl">With Halo</span>
+              <ol class="chain" aria-label="With Halo: prove the play, then hire.">
+                <li><span class="b s">Prove the play</span></li><li><span class="to" aria-hidden="true">→</span><span class="b o">Hire second</span></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </figure>
+      <div class="hl" data-rv><span class="sq" aria-hidden="true"></span><p>Embedded leadership and AI now let a startup prove the play first, and hire&nbsp;second.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAY 04 ============ -->
+<section class="sec" id="broken" data-loc="Play 04|The broken play">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 04 · </span>The broken play</span></span><a class="nx" href="#halo">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>The play every startup runs.</span></span><span class="l"><span><em>And where it breaks.</em></span></span></h2>
+      <figure class="fig">
+        <div class="plate pb" id="pbBroken" role="img" aria-label="The broken play. Founder carries every deal: single point of failure. VP of Sales hired before the play exists at about $334K a year. New reps ramp for months. A wrong hire costs $500K to $1M. The VP seat turns over after 19 months and the hire starts again. Revenue misses.">
+          <div class="phd"><span class="ttl">The broken play</span><span class="meta"><span class="lbl">Formation: founder-led sales</span><span class="lbl">Fig. 04</span></span></div>
+          <div class="pbd"><svg class="pbsvg d" viewBox="0 0 1040 580" role="img" aria-hidden="true" focusable="false"><g class="nodes"><g class="nd n-f"><rect x="32.0" y="316.0" width="176" height="48"/><text x="120.0" y="345.4" text-anchor="middle" font-size="15">Founder</text></g><g class="nd n-v"><rect x="342.0" y="136.0" width="176" height="48"/><text x="430.0" y="165.4" text-anchor="middle" font-size="15">VP of Sales</text></g><g class="nd n-s"><rect x="342.0" y="486.0" width="176" height="48"/><text x="430.0" y="515.4" text-anchor="middle" font-size="15">First sales hires</text></g><g class="nd n-p"><rect x="632.0" y="486.0" width="176" height="48"/><text x="720.0" y="515.4" text-anchor="middle" font-size="15">Pipeline</text></g><g class="nd n-r"><rect x="842.0" y="316.0" width="176" height="48"/><text x="930.0" y="345.4" text-anchor="middle" font-size="15">Revenue</text></g></g><g class="L L-broken"><text class="rl" x="252" y="196" font-size="12">HIRE</text><g class="st" data-step="1"><path class="rt" d="M208,340 L834,340" pathLength="1"/><polygon class="ah" points="842.0,340.0 833.0,345.6 833.0,334.4"/><g class="bk ember"><rect x="21.0" y="353.0" width="22" height="22"/><text x="32.0" y="368.4" text-anchor="middle" font-size="12">1</text></g><g class="co"><text class="cf" x="32.0" y="404.0" text-anchor="start" font-size="19">Single point of failure</text><text class="cm" x="32.0" y="425.0" text-anchor="start" font-size="12">THE FOUNDER CARRIES EVERY DEAL</text></g></g><g class="st" data-step="2"><path class="rt" d="M120,316 C120,200 230,160 334,160" pathLength="1"/><polygon class="ah" points="342.0,160.0 333.0,165.6 333.0,154.4"/><g class="bk ember"><rect x="178.0" y="183.5" width="22" height="22"/><text x="189.0" y="198.9" text-anchor="middle" font-size="12">2</text></g><g class="co"><text class="cf" x="40.0" y="112.0" text-anchor="start" font-size="19">$334K a year</text><text class="cm" x="40.0" y="133.0" text-anchor="start" font-size="12">HIRED BEFORE THE PLAY EXISTS</text></g></g><g class="st" data-step="3"><path class="rt" d="M430,184 L430,478" pathLength="1"/><polygon class="ah" points="430.0,486.0 424.4,477.0 435.6,477.0"/><g class="bk ember"><rect x="419.0" y="409.0" width="22" height="22"/><text x="430.0" y="424.4" text-anchor="middle" font-size="12">3</text></g><g class="co"><text class="cf" x="452.0" y="414.0" text-anchor="start" font-size="19">Months of runway</text><text class="cm" x="452.0" y="435.0" text-anchor="start" font-size="12">BURNED WHILE NEW REPS RAMP</text></g></g><g class="st" data-step="4"><g class="bk ember"><rect x="507.0" y="173.0" width="22" height="22"/><text x="518.0" y="188.4" text-anchor="middle" font-size="12">4</text></g><g class="co"><text class="cf" x="542.0" y="216.0" text-anchor="start" font-size="19">$500K–$1M</text><text class="cm" x="542.0" y="237.0" text-anchor="start" font-size="12">COST OF ONE WRONG HIRE</text></g></g><g class="st" data-step="5"><path class="rt" d="M518,150 C600,150 600,70 520,70 L360,70 C300,70 290,100 290,142" pathLength="1"/><polygon class="ah" points="290.0,150.0 284.4,141.0 295.6,141.0"/><g class="bk ember"><rect x="569.0" y="99.0" width="22" height="22"/><text x="580.0" y="114.4" text-anchor="middle" font-size="12">5</text></g><g class="co"><text class="cf" x="604.0" y="106.0" text-anchor="start" font-size="19">19 months</text><text class="cm" x="604.0" y="127.0" text-anchor="start" font-size="12">AVERAGE VP TENURE, THEN RE-HIRE</text></g></g><g class="st" data-step="6"><path class="rt" d="M518,510 L624,510" pathLength="1"/><polygon class="ah" points="632.0,510.0 623.0,515.6 623.0,504.4"/><path class="rt" d="M808,510 C900,510 930,450 930,372" pathLength="1"/><polygon class="ah" points="930.0,364.0 935.6,373.0 924.4,373.0"/><g class="bk ember"><rect x="831.0" y="305.0" width="22" height="22"/><text x="842.0" y="320.4" text-anchor="middle" font-size="12">6</text></g><g class="co"><text class="cf" x="1018.0" y="262.0" text-anchor="end" font-size="19">Revenue misses</text><text class="cm" x="1018.0" y="283.0" text-anchor="end" font-size="12">THE PLAY NEVER BECOMES REPEATABLE</text></g></g></g><g class="L L-halo"><text class="rl" x="222" y="196" font-size="12">HIRE LATER</text><g class="st" data-step="1"><path class="rt lk" d="M208,340 L342,340" pathLength="1"/><g class="nd n-h"><rect x="342.0" y="316.0" width="176" height="48"/><circle cx="364.0" cy="340.0" r="8.0"/><text x="438.0" y="345.4" text-anchor="middle" font-size="15">Halo</text></g><g class="bk fixed"><rect x="21.0" y="353.0" width="22" height="22"/><text x="32.0" y="368.4" text-anchor="middle" font-size="12">1</text></g><g class="co"><text class="cf" x="32.0" y="404.0" text-anchor="start" font-size="19">Embed</text><text class="cm" x="32.0" y="425.0" text-anchor="start" font-size="12">A SENIOR LEADER JOINS THE FOUNDER</text></g></g><g class="st" data-step="2"><path class="rt dsh" d="M120,316 C120,200 230,160 334,160"/><polygon class="ah" points="342.0,160.0 333.0,165.6 333.0,154.4"/><g class="bk fixed"><rect x="178.0" y="183.5" width="22" height="22"/><text x="189.0" y="198.9" text-anchor="middle" font-size="12">2</text></g><g class="co"><text class="cf" x="40.0" y="112.0" text-anchor="start" font-size="19">~$334K seat waits</text><text class="cm" x="40.0" y="133.0" text-anchor="start" font-size="12">UNTIL THE PLAY IS PROVEN</text></g></g><g class="st" data-step="3"><path class="rt" d="M430,364 L430,478" pathLength="1"/><polygon class="ah" points="430.0,486.0 424.4,477.0 435.6,477.0"/><g class="bk fixed"><rect x="419.0" y="409.0" width="22" height="22"/><text x="430.0" y="424.4" text-anchor="middle" font-size="12">3</text></g><g class="co"><text class="cf" x="452.0" y="414.0" text-anchor="start" font-size="19">A working system</text><text class="cm" x="452.0" y="435.0" text-anchor="start" font-size="12">PLAYBOOK, TARGETS, COACHING, AI</text></g></g><g class="st" data-step="4"><g class="bk fixed"><rect x="507.0" y="173.0" width="22" height="22"/><text x="518.0" y="188.4" text-anchor="middle" font-size="12">4</text></g><g class="co"><text class="cf" x="542.0" y="216.0" text-anchor="start" font-size="19">Hire second</text><text class="cm" x="542.0" y="237.0" text-anchor="start" font-size="12">RECRUIT TO PROVEN REQUIREMENTS</text></g></g><g class="st" data-step="5"><g class="bk fixed"><rect x="569.0" y="99.0" width="22" height="22"/><text x="580.0" y="114.4" text-anchor="middle" font-size="12">5</text></g><g class="co"><text class="cf" x="604.0" y="106.0" text-anchor="start" font-size="19">Hand off</text><text class="cm" x="604.0" y="127.0" text-anchor="start" font-size="12">THE TEAM OWNS THE ENGINE</text></g></g><g class="st" data-step="6"><path class="rt" d="M518,510 L624,510" pathLength="1"/><polygon class="ah" points="632.0,510.0 623.0,515.6 623.0,504.4"/><path class="rt" d="M808,510 C900,510 930,450 930,372" pathLength="1"/><polygon class="ah" points="930.0,364.0 935.6,373.0 924.4,373.0"/><g class="bk fixed"><rect x="831.0" y="305.0" width="22" height="22"/><text x="842.0" y="320.4" text-anchor="middle" font-size="12">6</text></g><g class="co"><text class="cf" x="1018.0" y="262.0" text-anchor="end" font-size="19">Repeatable deals</text><text class="cm" x="1018.0" y="283.0" text-anchor="end" font-size="12">THE PLAY, PROVEN</text></g></g></g></svg><svg class="pbsvg m" viewBox="0 0 360 860" role="img" aria-hidden="true" focusable="false"><g class="nodes"><g class="nd n-f"><rect x="28.0" y="74.0" width="136" height="44"/><text x="96.0" y="101.0" text-anchor="middle" font-size="14">Founder</text></g><g class="nd n-v"><rect x="196.0" y="264.0" width="136" height="44"/><text x="264.0" y="291.0" text-anchor="middle" font-size="14">VP of Sales</text></g><g class="nd n-s"><rect x="28.0" y="454.0" width="136" height="44"/><text x="96.0" y="481.0" text-anchor="middle" font-size="14">First sales hires</text></g><g class="nd n-p"><rect x="196.0" y="624.0" width="136" height="44"/><text x="264.0" y="651.0" text-anchor="middle" font-size="14">Pipeline</text></g><g class="nd n-r"><rect x="112.0" y="784.0" width="136" height="44"/><text x="180.0" y="811.0" text-anchor="middle" font-size="14">Revenue</text></g></g><g class="L L-broken"><text class="rl" x="146" y="152" font-size="10">HIRE</text><g class="st" data-step="1"><path class="rt" d="M28,96 C12,96 10,112 10,132 L10,766 C10,796 40,806 104,806" pathLength="1"/><polygon class="ah" points="112.0,806.0 103.0,811.6 103.0,800.4"/><g class="bk ember"><rect x="19.0" y="65.0" width="18" height="18"/><text x="28.0" y="77.6" text-anchor="middle" font-size="9">1</text></g><g class="co"><text class="cf" x="28.0" y="30.0" text-anchor="start" font-size="16">Single point of failure</text><text class="cm" x="28.0" y="49.5" text-anchor="start" font-size="10">THE FOUNDER CARRIES EVERY DEAL</text></g></g><g class="st" data-step="2"><path class="rt" d="M96,118 C96,186 264,186 264,256" pathLength="1"/><polygon class="ah" points="264.0,264.0 258.4,255.0 269.6,255.0"/><g class="bk ember"><rect x="171.0" y="178.0" width="18" height="18"/><text x="180.0" y="190.6" text-anchor="middle" font-size="9">2</text></g><g class="co"><text class="cf" x="28.0" y="236.0" text-anchor="start" font-size="16">$334K a year</text><text class="cm" x="28.0" y="255.5" text-anchor="start" font-size="10">HIRED BEFORE</text><text class="cm" x="28.0" y="272.0" text-anchor="start" font-size="10">THE PLAY EXISTS</text></g></g><g class="st" data-step="3"><path class="rt" d="M196,286 C140,286 96,356 96,446" pathLength="1"/><polygon class="ah" points="96.0,454.0 90.4,445.0 101.6,445.0"/><g class="bk ember"><rect x="87.0" y="411.0" width="18" height="18"/><text x="96.0" y="423.6" text-anchor="middle" font-size="9">3</text></g><g class="co"><text class="cf" x="116.0" y="412.0" text-anchor="start" font-size="16">Months of runway</text><text class="cm" x="116.0" y="431.5" text-anchor="start" font-size="10">BURNED WHILE</text><text class="cm" x="116.0" y="448.0" text-anchor="start" font-size="10">NEW REPS RAMP</text></g></g><g class="st" data-step="4"><g class="bk ember"><rect x="187.0" y="299.0" width="18" height="18"/><text x="196.0" y="311.6" text-anchor="middle" font-size="9">4</text></g><g class="co"><text class="cf" x="200.0" y="340.0" text-anchor="start" font-size="16">$500K–$1M</text><text class="cm" x="200.0" y="359.5" text-anchor="start" font-size="10">ONE WRONG HIRE</text></g></g><g class="st" data-step="5"><path class="rt" d="M332,280 C358,280 358,210 320,210 L248,210" pathLength="1"/><polygon class="ah" points="240.0,210.0 249.0,204.4 249.0,215.6"/><g class="bk ember"><rect x="341.0" y="236.0" width="18" height="18"/><text x="350.0" y="248.6" text-anchor="middle" font-size="9">5</text></g><g class="co"><text class="cf" x="236.0" y="166.0" text-anchor="start" font-size="16">19 months</text><text class="cm" x="236.0" y="185.5" text-anchor="start" font-size="10">THEN RE-HIRE</text></g></g><g class="st" data-step="6"><path class="rt" d="M164,476 C230,476 264,556 264,616" pathLength="1"/><polygon class="ah" points="264.0,624.0 258.4,615.0 269.6,615.0"/><path class="rt" d="M264,668 C264,736 214,736 214,776" pathLength="1"/><polygon class="ah" points="214.0,784.0 208.4,775.0 219.6,775.0"/><g class="bk ember"><rect x="103.0" y="775.0" width="18" height="18"/><text x="112.0" y="787.6" text-anchor="middle" font-size="9">6</text></g><g class="co"><text class="cf" x="28.0" y="712.0" text-anchor="start" font-size="16">Revenue misses</text><text class="cm" x="28.0" y="731.5" text-anchor="start" font-size="10">THE PLAY NEVER</text><text class="cm" x="28.0" y="748.0" text-anchor="start" font-size="10">BECOMES REPEATABLE</text></g></g></g><g class="L L-halo"><text class="rl" x="28" y="166" font-size="10">HIRE LATER</text><g class="st" data-step="1"><path class="rt lk" d="M164,96 L196,96" pathLength="1"/><g class="nd n-h"><rect x="196.0" y="74.0" width="136" height="44"/><circle cx="218.0" cy="96.0" r="7.0"/><text x="272.0" y="101.0" text-anchor="middle" font-size="14">Halo</text></g><g class="bk fixed"><rect x="19.0" y="65.0" width="18" height="18"/><text x="28.0" y="77.6" text-anchor="middle" font-size="9">1</text></g><g class="co"><text class="cf" x="28.0" y="30.0" text-anchor="start" font-size="16">Embed</text><text class="cm" x="28.0" y="49.5" text-anchor="start" font-size="10">A SENIOR LEADER JOINS THE FOUNDER</text></g></g><g class="st" data-step="2"><path class="rt dsh" d="M96,118 C96,186 264,186 264,256"/><polygon class="ah" points="264.0,264.0 258.4,255.0 269.6,255.0"/><g class="bk fixed"><rect x="171.0" y="178.0" width="18" height="18"/><text x="180.0" y="190.6" text-anchor="middle" font-size="9">2</text></g><g class="co"><text class="cf" x="28.0" y="236.0" text-anchor="start" font-size="16">~$334K seat waits</text><text class="cm" x="28.0" y="255.5" text-anchor="start" font-size="10">UNTIL THE PLAY</text><text class="cm" x="28.0" y="272.0" text-anchor="start" font-size="10">IS PROVEN</text></g></g><g class="st" data-step="3"><path class="rt" d="M210,118 C210,226 96,336 96,446" pathLength="1"/><polygon class="ah" points="96.0,454.0 90.4,445.0 101.6,445.0"/><g class="bk fixed"><rect x="87.0" y="411.0" width="18" height="18"/><text x="96.0" y="423.6" text-anchor="middle" font-size="9">3</text></g><g class="co"><text class="cf" x="116.0" y="412.0" text-anchor="start" font-size="16">A working system</text><text class="cm" x="116.0" y="431.5" text-anchor="start" font-size="10">PLAYBOOK, TARGETS,</text><text class="cm" x="116.0" y="448.0" text-anchor="start" font-size="10">COACHING, AI</text></g></g><g class="st" data-step="4"><g class="bk fixed"><rect x="187.0" y="299.0" width="18" height="18"/><text x="196.0" y="311.6" text-anchor="middle" font-size="9">4</text></g><g class="co"><text class="cf" x="200.0" y="340.0" text-anchor="start" font-size="16">Hire second</text><text class="cm" x="200.0" y="359.5" text-anchor="start" font-size="10">TO PROVEN</text><text class="cm" x="200.0" y="376.0" text-anchor="start" font-size="10">REQUIREMENTS</text></g></g><g class="st" data-step="5"><g class="bk fixed"><rect x="341.0" y="236.0" width="18" height="18"/><text x="350.0" y="248.6" text-anchor="middle" font-size="9">5</text></g><g class="co"><text class="cf" x="236.0" y="166.0" text-anchor="start" font-size="16">Hand off</text><text class="cm" x="236.0" y="185.5" text-anchor="start" font-size="10">TEAM OWNS IT</text></g></g><g class="st" data-step="6"><path class="rt" d="M164,476 C230,476 264,556 264,616" pathLength="1"/><polygon class="ah" points="264.0,624.0 258.4,615.0 269.6,615.0"/><path class="rt" d="M264,668 C264,736 214,736 214,776" pathLength="1"/><polygon class="ah" points="214.0,784.0 208.4,775.0 219.6,775.0"/><g class="bk fixed"><rect x="103.0" y="775.0" width="18" height="18"/><text x="112.0" y="787.6" text-anchor="middle" font-size="9">6</text></g><g class="co"><text class="cf" x="28.0" y="712.0" text-anchor="start" font-size="16">Repeatable deals</text><text class="cm" x="28.0" y="731.5" text-anchor="start" font-size="10">THE PLAY, PROVEN</text></g></g></g></svg></div>
+          <div class="pft"><span class="leg"><span class="k3" aria-hidden="true"></span>Position</span><span class="leg"><span class="ar" aria-hidden="true"></span>Route</span><span class="leg"><span class="sq" aria-hidden="true"></span>Breakdown</span></div>
+        </div>
+      </figure>
+      <ol class="key">
+        <li data-rv><span class="kn e" aria-hidden="true">1</span><h3>The founder carries every deal.</h3><p>The founder is the only route to revenue. Single point of&nbsp;failure.</p></li>
+        <li data-rv><span class="kn e" aria-hidden="true">2</span><h3>The executive is hired before the play exists.</h3><p>A VP of Sales costs about $334K a year in total&nbsp;pay.</p><p class="src">Source: Glassdoor, 2026</p></li>
+        <li data-rv><span class="kn e" aria-hidden="true">3</span><h3>The ramp burns runway.</h3><p>New account executives take months to ramp. The runway burns while they&nbsp;do.</p><p class="src">Source: Bridge Group</p></li>
+        <li data-rv><span class="kn e" aria-hidden="true">4</span><h3>The wrong hire.</h3><p>A wrong sales hire costs 1.5–3× annual pay. On a $334K seat, that is $500K–$1M.</p><p class="src">Halo math. Source: U.S. Dept. of Labor, SHRM, HBR; Glassdoor</p></li>
+        <li data-rv><span class="kn e" aria-hidden="true">5</span><h3>The seat turns over.</h3><p>The average VP of Sales lasted 19 months. Then the hire starts&nbsp;again.</p><p class="src">Source: Gong</p></li>
+        <li data-rv><span class="kn e" aria-hidden="true">6</span><h3>The scoreboard.</h3><p>Revenue misses. The play never becomes&nbsp;repeatable.</p></li>
+      </ol>
+      <div class="total" id="total" aria-label="Total: one broken play can cost $500K to $1M and a year or more of runway. Halo math.">
+        <span class="lbl" aria-hidden="true"><span class="sq"></span>Total · Halo math</span>
+        <p class="t1" aria-hidden="true">One broken play can cost</p>
+        <p class="t2" aria-hidden="true">$500K–$1M</p>
+        <p class="t3" aria-hidden="true">and <em>a year or more</em> of runway.</p>
+        <p class="math">The wrong-hire range, plus the ramp, plus about 19 months of&nbsp;tenure.</p>
+        <p class="src">Sources: U.S. Dept. of Labor, SHRM, HBR; Glassdoor, 2026; Bridge Group; Gong</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAY 05 ============ -->
+<section class="sec" id="halo" data-loc="Play 05|The Halo play">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 05 · </span>The Halo play</span></span><a class="nx" href="#get">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>The Halo <em>play.</em></span></span></h2>
+      <p class="lead" data-rv>The same positions, with new&nbsp;routes.</p>
+      <figure class="fig">
+        <div class="plate pb is-halo" id="pbHalo">
+          <div class="phd"><span class="ttl" id="pbTtl">The Halo play</span><span class="meta"><span class="lbl">Formation: Halo beside the founder</span><span class="lbl">Fig. 05</span></span></div>
+          <div class="tgwrap"><div class="tog" role="group" aria-label="Show the broken play or the Halo play">
+            <button class="tg" type="button" data-state="broken" aria-pressed="false"><span class="sq" aria-hidden="true"></span>Broken play</button>
+            <button class="tg" type="button" data-state="halo" aria-pressed="true"><span class="sqk" aria-hidden="true"></span>Halo play</button>
+          </div></div>
+          <div class="pbd" role="img" id="pbHaloImg" aria-label="The Halo play. Halo embeds beside the founder. The VP of Sales seat waits until the play is proven. Hires join a working system. Hiring follows proven requirements. The team owns the engine. Repeatable deals."><svg class="pbsvg d" viewBox="0 0 1040 580" role="img" aria-hidden="true" focusable="false"><g class="nodes"><g class="nd n-f"><rect x="32.0" y="316.0" width="176" height="48"/><text x="120.0" y="345.4" text-anchor="middle" font-size="15">Founder</text></g><g class="nd n-v"><rect x="342.0" y="136.0" width="176" height="48"/><text x="430.0" y="165.4" text-anchor="middle" font-size="15">VP of Sales</text></g><g class="nd n-s"><rect x="342.0" y="486.0" width="176" height="48"/><text x="430.0" y="515.4" text-anchor="middle" font-size="15">First sales hires</text></g><g class="nd n-p"><rect x="632.0" y="486.0" width="176" height="48"/><text x="720.0" y="515.4" text-anchor="middle" font-size="15">Pipeline</text></g><g class="nd n-r"><rect x="842.0" y="316.0" width="176" height="48"/><text x="930.0" y="345.4" text-anchor="middle" font-size="15">Revenue</text></g></g><g class="L L-broken"><text class="rl" x="252" y="196" font-size="12">HIRE</text><g class="st" data-step="1"><path class="rt" d="M208,340 L834,340" pathLength="1"/><polygon class="ah" points="842.0,340.0 833.0,345.6 833.0,334.4"/><g class="bk ember"><rect x="21.0" y="353.0" width="22" height="22"/><text x="32.0" y="368.4" text-anchor="middle" font-size="12">1</text></g><g class="co"><text class="cf" x="32.0" y="404.0" text-anchor="start" font-size="19">Single point of failure</text><text class="cm" x="32.0" y="425.0" text-anchor="start" font-size="12">THE FOUNDER CARRIES EVERY DEAL</text></g></g><g class="st" data-step="2"><path class="rt" d="M120,316 C120,200 230,160 334,160" pathLength="1"/><polygon class="ah" points="342.0,160.0 333.0,165.6 333.0,154.4"/><g class="bk ember"><rect x="178.0" y="183.5" width="22" height="22"/><text x="189.0" y="198.9" text-anchor="middle" font-size="12">2</text></g><g class="co"><text class="cf" x="40.0" y="112.0" text-anchor="start" font-size="19">$334K a year</text><text class="cm" x="40.0" y="133.0" text-anchor="start" font-size="12">HIRED BEFORE THE PLAY EXISTS</text></g></g><g class="st" data-step="3"><path class="rt" d="M430,184 L430,478" pathLength="1"/><polygon class="ah" points="430.0,486.0 424.4,477.0 435.6,477.0"/><g class="bk ember"><rect x="419.0" y="409.0" width="22" height="22"/><text x="430.0" y="424.4" text-anchor="middle" font-size="12">3</text></g><g class="co"><text class="cf" x="452.0" y="414.0" text-anchor="start" font-size="19">Months of runway</text><text class="cm" x="452.0" y="435.0" text-anchor="start" font-size="12">BURNED WHILE NEW REPS RAMP</text></g></g><g class="st" data-step="4"><g class="bk ember"><rect x="507.0" y="173.0" width="22" height="22"/><text x="518.0" y="188.4" text-anchor="middle" font-size="12">4</text></g><g class="co"><text class="cf" x="542.0" y="216.0" text-anchor="start" font-size="19">$500K–$1M</text><text class="cm" x="542.0" y="237.0" text-anchor="start" font-size="12">COST OF ONE WRONG HIRE</text></g></g><g class="st" data-step="5"><path class="rt" d="M518,150 C600,150 600,70 520,70 L360,70 C300,70 290,100 290,142" pathLength="1"/><polygon class="ah" points="290.0,150.0 284.4,141.0 295.6,141.0"/><g class="bk ember"><rect x="569.0" y="99.0" width="22" height="22"/><text x="580.0" y="114.4" text-anchor="middle" font-size="12">5</text></g><g class="co"><text class="cf" x="604.0" y="106.0" text-anchor="start" font-size="19">19 months</text><text class="cm" x="604.0" y="127.0" text-anchor="start" font-size="12">AVERAGE VP TENURE, THEN RE-HIRE</text></g></g><g class="st" data-step="6"><path class="rt" d="M518,510 L624,510" pathLength="1"/><polygon class="ah" points="632.0,510.0 623.0,515.6 623.0,504.4"/><path class="rt" d="M808,510 C900,510 930,450 930,372" pathLength="1"/><polygon class="ah" points="930.0,364.0 935.6,373.0 924.4,373.0"/><g class="bk ember"><rect x="831.0" y="305.0" width="22" height="22"/><text x="842.0" y="320.4" text-anchor="middle" font-size="12">6</text></g><g class="co"><text class="cf" x="1018.0" y="262.0" text-anchor="end" font-size="19">Revenue misses</text><text class="cm" x="1018.0" y="283.0" text-anchor="end" font-size="12">THE PLAY NEVER BECOMES REPEATABLE</text></g></g></g><g class="L L-halo"><text class="rl" x="222" y="196" font-size="12">HIRE LATER</text><g class="st" data-step="1"><path class="rt lk" d="M208,340 L342,340" pathLength="1"/><g class="nd n-h"><rect x="342.0" y="316.0" width="176" height="48"/><circle cx="364.0" cy="340.0" r="8.0"/><text x="438.0" y="345.4" text-anchor="middle" font-size="15">Halo</text></g><g class="bk fixed"><rect x="21.0" y="353.0" width="22" height="22"/><text x="32.0" y="368.4" text-anchor="middle" font-size="12">1</text></g><g class="co"><text class="cf" x="32.0" y="404.0" text-anchor="start" font-size="19">Embed</text><text class="cm" x="32.0" y="425.0" text-anchor="start" font-size="12">A SENIOR LEADER JOINS THE FOUNDER</text></g></g><g class="st" data-step="2"><path class="rt dsh" d="M120,316 C120,200 230,160 334,160"/><polygon class="ah" points="342.0,160.0 333.0,165.6 333.0,154.4"/><g class="bk fixed"><rect x="178.0" y="183.5" width="22" height="22"/><text x="189.0" y="198.9" text-anchor="middle" font-size="12">2</text></g><g class="co"><text class="cf" x="40.0" y="112.0" text-anchor="start" font-size="19">~$334K seat waits</text><text class="cm" x="40.0" y="133.0" text-anchor="start" font-size="12">UNTIL THE PLAY IS PROVEN</text></g></g><g class="st" data-step="3"><path class="rt" d="M430,364 L430,478" pathLength="1"/><polygon class="ah" points="430.0,486.0 424.4,477.0 435.6,477.0"/><g class="bk fixed"><rect x="419.0" y="409.0" width="22" height="22"/><text x="430.0" y="424.4" text-anchor="middle" font-size="12">3</text></g><g class="co"><text class="cf" x="452.0" y="414.0" text-anchor="start" font-size="19">A working system</text><text class="cm" x="452.0" y="435.0" text-anchor="start" font-size="12">PLAYBOOK, TARGETS, COACHING, AI</text></g></g><g class="st" data-step="4"><g class="bk fixed"><rect x="507.0" y="173.0" width="22" height="22"/><text x="518.0" y="188.4" text-anchor="middle" font-size="12">4</text></g><g class="co"><text class="cf" x="542.0" y="216.0" text-anchor="start" font-size="19">Hire second</text><text class="cm" x="542.0" y="237.0" text-anchor="start" font-size="12">RECRUIT TO PROVEN REQUIREMENTS</text></g></g><g class="st" data-step="5"><g class="bk fixed"><rect x="569.0" y="99.0" width="22" height="22"/><text x="580.0" y="114.4" text-anchor="middle" font-size="12">5</text></g><g class="co"><text class="cf" x="604.0" y="106.0" text-anchor="start" font-size="19">Hand off</text><text class="cm" x="604.0" y="127.0" text-anchor="start" font-size="12">THE TEAM OWNS THE ENGINE</text></g></g><g class="st" data-step="6"><path class="rt" d="M518,510 L624,510" pathLength="1"/><polygon class="ah" points="632.0,510.0 623.0,515.6 623.0,504.4"/><path class="rt" d="M808,510 C900,510 930,450 930,372" pathLength="1"/><polygon class="ah" points="930.0,364.0 935.6,373.0 924.4,373.0"/><g class="bk fixed"><rect x="831.0" y="305.0" width="22" height="22"/><text x="842.0" y="320.4" text-anchor="middle" font-size="12">6</text></g><g class="co"><text class="cf" x="1018.0" y="262.0" text-anchor="end" font-size="19">Repeatable deals</text><text class="cm" x="1018.0" y="283.0" text-anchor="end" font-size="12">THE PLAY, PROVEN</text></g></g></g></svg><svg class="pbsvg m" viewBox="0 0 360 860" role="img" aria-hidden="true" focusable="false"><g class="nodes"><g class="nd n-f"><rect x="28.0" y="74.0" width="136" height="44"/><text x="96.0" y="101.0" text-anchor="middle" font-size="14">Founder</text></g><g class="nd n-v"><rect x="196.0" y="264.0" width="136" height="44"/><text x="264.0" y="291.0" text-anchor="middle" font-size="14">VP of Sales</text></g><g class="nd n-s"><rect x="28.0" y="454.0" width="136" height="44"/><text x="96.0" y="481.0" text-anchor="middle" font-size="14">First sales hires</text></g><g class="nd n-p"><rect x="196.0" y="624.0" width="136" height="44"/><text x="264.0" y="651.0" text-anchor="middle" font-size="14">Pipeline</text></g><g class="nd n-r"><rect x="112.0" y="784.0" width="136" height="44"/><text x="180.0" y="811.0" text-anchor="middle" font-size="14">Revenue</text></g></g><g class="L L-broken"><text class="rl" x="146" y="152" font-size="10">HIRE</text><g class="st" data-step="1"><path class="rt" d="M28,96 C12,96 10,112 10,132 L10,766 C10,796 40,806 104,806" pathLength="1"/><polygon class="ah" points="112.0,806.0 103.0,811.6 103.0,800.4"/><g class="bk ember"><rect x="19.0" y="65.0" width="18" height="18"/><text x="28.0" y="77.6" text-anchor="middle" font-size="9">1</text></g><g class="co"><text class="cf" x="28.0" y="30.0" text-anchor="start" font-size="16">Single point of failure</text><text class="cm" x="28.0" y="49.5" text-anchor="start" font-size="10">THE FOUNDER CARRIES EVERY DEAL</text></g></g><g class="st" data-step="2"><path class="rt" d="M96,118 C96,186 264,186 264,256" pathLength="1"/><polygon class="ah" points="264.0,264.0 258.4,255.0 269.6,255.0"/><g class="bk ember"><rect x="171.0" y="178.0" width="18" height="18"/><text x="180.0" y="190.6" text-anchor="middle" font-size="9">2</text></g><g class="co"><text class="cf" x="28.0" y="236.0" text-anchor="start" font-size="16">$334K a year</text><text class="cm" x="28.0" y="255.5" text-anchor="start" font-size="10">HIRED BEFORE</text><text class="cm" x="28.0" y="272.0" text-anchor="start" font-size="10">THE PLAY EXISTS</text></g></g><g class="st" data-step="3"><path class="rt" d="M196,286 C140,286 96,356 96,446" pathLength="1"/><polygon class="ah" points="96.0,454.0 90.4,445.0 101.6,445.0"/><g class="bk ember"><rect x="87.0" y="411.0" width="18" height="18"/><text x="96.0" y="423.6" text-anchor="middle" font-size="9">3</text></g><g class="co"><text class="cf" x="116.0" y="412.0" text-anchor="start" font-size="16">Months of runway</text><text class="cm" x="116.0" y="431.5" text-anchor="start" font-size="10">BURNED WHILE</text><text class="cm" x="116.0" y="448.0" text-anchor="start" font-size="10">NEW REPS RAMP</text></g></g><g class="st" data-step="4"><g class="bk ember"><rect x="187.0" y="299.0" width="18" height="18"/><text x="196.0" y="311.6" text-anchor="middle" font-size="9">4</text></g><g class="co"><text class="cf" x="200.0" y="340.0" text-anchor="start" font-size="16">$500K–$1M</text><text class="cm" x="200.0" y="359.5" text-anchor="start" font-size="10">ONE WRONG HIRE</text></g></g><g class="st" data-step="5"><path class="rt" d="M332,280 C358,280 358,210 320,210 L248,210" pathLength="1"/><polygon class="ah" points="240.0,210.0 249.0,204.4 249.0,215.6"/><g class="bk ember"><rect x="341.0" y="236.0" width="18" height="18"/><text x="350.0" y="248.6" text-anchor="middle" font-size="9">5</text></g><g class="co"><text class="cf" x="236.0" y="166.0" text-anchor="start" font-size="16">19 months</text><text class="cm" x="236.0" y="185.5" text-anchor="start" font-size="10">THEN RE-HIRE</text></g></g><g class="st" data-step="6"><path class="rt" d="M164,476 C230,476 264,556 264,616" pathLength="1"/><polygon class="ah" points="264.0,624.0 258.4,615.0 269.6,615.0"/><path class="rt" d="M264,668 C264,736 214,736 214,776" pathLength="1"/><polygon class="ah" points="214.0,784.0 208.4,775.0 219.6,775.0"/><g class="bk ember"><rect x="103.0" y="775.0" width="18" height="18"/><text x="112.0" y="787.6" text-anchor="middle" font-size="9">6</text></g><g class="co"><text class="cf" x="28.0" y="712.0" text-anchor="start" font-size="16">Revenue misses</text><text class="cm" x="28.0" y="731.5" text-anchor="start" font-size="10">THE PLAY NEVER</text><text class="cm" x="28.0" y="748.0" text-anchor="start" font-size="10">BECOMES REPEATABLE</text></g></g></g><g class="L L-halo"><text class="rl" x="28" y="166" font-size="10">HIRE LATER</text><g class="st" data-step="1"><path class="rt lk" d="M164,96 L196,96" pathLength="1"/><g class="nd n-h"><rect x="196.0" y="74.0" width="136" height="44"/><circle cx="218.0" cy="96.0" r="7.0"/><text x="272.0" y="101.0" text-anchor="middle" font-size="14">Halo</text></g><g class="bk fixed"><rect x="19.0" y="65.0" width="18" height="18"/><text x="28.0" y="77.6" text-anchor="middle" font-size="9">1</text></g><g class="co"><text class="cf" x="28.0" y="30.0" text-anchor="start" font-size="16">Embed</text><text class="cm" x="28.0" y="49.5" text-anchor="start" font-size="10">A SENIOR LEADER JOINS THE FOUNDER</text></g></g><g class="st" data-step="2"><path class="rt dsh" d="M96,118 C96,186 264,186 264,256"/><polygon class="ah" points="264.0,264.0 258.4,255.0 269.6,255.0"/><g class="bk fixed"><rect x="171.0" y="178.0" width="18" height="18"/><text x="180.0" y="190.6" text-anchor="middle" font-size="9">2</text></g><g class="co"><text class="cf" x="28.0" y="236.0" text-anchor="start" font-size="16">~$334K seat waits</text><text class="cm" x="28.0" y="255.5" text-anchor="start" font-size="10">UNTIL THE PLAY</text><text class="cm" x="28.0" y="272.0" text-anchor="start" font-size="10">IS PROVEN</text></g></g><g class="st" data-step="3"><path class="rt" d="M210,118 C210,226 96,336 96,446" pathLength="1"/><polygon class="ah" points="96.0,454.0 90.4,445.0 101.6,445.0"/><g class="bk fixed"><rect x="87.0" y="411.0" width="18" height="18"/><text x="96.0" y="423.6" text-anchor="middle" font-size="9">3</text></g><g class="co"><text class="cf" x="116.0" y="412.0" text-anchor="start" font-size="16">A working system</text><text class="cm" x="116.0" y="431.5" text-anchor="start" font-size="10">PLAYBOOK, TARGETS,</text><text class="cm" x="116.0" y="448.0" text-anchor="start" font-size="10">COACHING, AI</text></g></g><g class="st" data-step="4"><g class="bk fixed"><rect x="187.0" y="299.0" width="18" height="18"/><text x="196.0" y="311.6" text-anchor="middle" font-size="9">4</text></g><g class="co"><text class="cf" x="200.0" y="340.0" text-anchor="start" font-size="16">Hire second</text><text class="cm" x="200.0" y="359.5" text-anchor="start" font-size="10">TO PROVEN</text><text class="cm" x="200.0" y="376.0" text-anchor="start" font-size="10">REQUIREMENTS</text></g></g><g class="st" data-step="5"><g class="bk fixed"><rect x="341.0" y="236.0" width="18" height="18"/><text x="350.0" y="248.6" text-anchor="middle" font-size="9">5</text></g><g class="co"><text class="cf" x="236.0" y="166.0" text-anchor="start" font-size="16">Hand off</text><text class="cm" x="236.0" y="185.5" text-anchor="start" font-size="10">TEAM OWNS IT</text></g></g><g class="st" data-step="6"><path class="rt" d="M164,476 C230,476 264,556 264,616" pathLength="1"/><polygon class="ah" points="264.0,624.0 258.4,615.0 269.6,615.0"/><path class="rt" d="M264,668 C264,736 214,736 214,776" pathLength="1"/><polygon class="ah" points="214.0,784.0 208.4,775.0 219.6,775.0"/><g class="bk fixed"><rect x="103.0" y="775.0" width="18" height="18"/><text x="112.0" y="787.6" text-anchor="middle" font-size="9">6</text></g><g class="co"><text class="cf" x="28.0" y="712.0" text-anchor="start" font-size="16">Repeatable deals</text><text class="cm" x="28.0" y="731.5" text-anchor="start" font-size="10">THE PLAY, PROVEN</text></g></g></g></svg></div>
+          <div class="pft"><span class="leg"><span class="k3" aria-hidden="true"></span>Position</span><span class="leg"><span class="ar" aria-hidden="true"></span>Route</span><span class="leg"><span class="sqk" aria-hidden="true"></span>Fixed</span><span class="leg"><span class="k1" aria-hidden="true"></span>Later hire</span></div>
+        </div>
+      </figure>
+      <ol class="steps">
+        <li class="step" data-rv><span class="n lbl" aria-hidden="true">01</span><h4>Embed.</h4><p>A senior revenue leader joins the founder and&nbsp;team.</p></li>
+        <li class="step" data-rv><span class="n lbl" aria-hidden="true">02</span><h4>Prove the play.</h4><p>Find the right customers, build the pipeline, close the first repeatable&nbsp;deals.</p></li>
+        <li class="step" data-rv><span class="n lbl" aria-hidden="true">03</span><h4>Install the system.</h4><p>Playbook, targets, coaching, AI workflows that cut manual&nbsp;work.</p></li>
+        <li class="step" data-rv><span class="n lbl" aria-hidden="true">04</span><h4>Recruit to proven requirements.</h4><p>Hires join a working system, not a blank&nbsp;page.</p></li>
+        <li class="step" data-rv><span class="n lbl" aria-hidden="true">05</span><h4>Hand off.</h4><p>The team owns the&nbsp;engine.</p></li>
+      </ol>
+      <div class="lets" data-rv>
+        <span class="lbl k pre-l"><span class="sq" aria-hidden="true"></span>What this lets you do</span>
+        <ul>
+          <li><span class="sqk" aria-hidden="true"></span>Delay a ~$334K executive seat until the play is&nbsp;proven.</li>
+          <li><span class="sqk" aria-hidden="true"></span>Hire into a system, not into a&nbsp;guess.</li>
+          <li><span class="sqk" aria-hidden="true"></span>Keep the team you have. We strengthen it. We don’t replace&nbsp;it.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAY 06 ============ -->
+<section class="sec" id="get" data-loc="Play 06|What you get">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 06 · </span>What you get</span></span><a class="nx" href="#cases">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>What you <em>get.</em></span></span></h2>
+      <ul class="tiles">
+        <li class="tile" data-rv><div class="top3"><span class="lbl">01</span><span class="blk s" aria-hidden="true"></span></div><div><h3>Experienced leadership</h3><p>Commercial judgment and&nbsp;direction.</p><ul class="roles" aria-label="Roles"><li>Fractional CRO</li><li>Head of Growth</li><li>Head of Sales</li></ul></div></li>
+        <li class="tile" data-rv><div class="top3"><span class="lbl">02</span><span class="blk h" aria-hidden="true"></span></div><div><h3>Hands-on execution</h3><p>People, process and discipline that turn strategy into&nbsp;revenue.</p></div></li>
+        <li class="tile" data-rv><div class="top3"><span class="lbl">03</span><span class="blk o" aria-hidden="true"></span></div><div><h3>Intelligent technology</h3><p>AI workflows that cut manual work, so a small team sells like a big&nbsp;one.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAY 07 ============ -->
+<section class="sec" id="cases" data-loc="Play 07|Use cases">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 07 · </span>Use cases</span></span><a class="nx" href="#now">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>Use <em>cases.</em></span></span></h2>
+      <ul class="cases">
+        <li class="case" data-rv><div class="top3"><span class="lbl k">Founder-led sales</span><span class="lbl">01</span></div><p>When the founder still closes every&nbsp;deal.</p></li>
+        <li class="case" data-rv><div class="top3"><span class="lbl k">First sales hires</span><span class="lbl">02</span></div><p>When new reps aren’t&nbsp;ramping.</p></li>
+        <li class="case" data-rv><div class="top3"><span class="lbl k">After the raise</span><span class="lbl">03</span></div><p>When the next round needs revenue&nbsp;proof.</p></li>
+        <li class="case" data-rv><div class="top3"><span class="lbl k">Unclear customer</span><span class="lbl">04</span></div><p>When the product is strong but the buyer isn’t&nbsp;defined.</p></li>
+        <li class="case" data-rv><div class="top3"><span class="lbl k">New market</span><span class="lbl">05</span></div><p>When you’re entering a new segment or&nbsp;channel.</p></li>
+        <li class="case" data-rv><div class="top3"><span class="lbl k">Manual drag</span><span class="lbl">06</span></div><p>When the team spends its week on work AI should&nbsp;do.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAY 08 ============ -->
+<section class="sec" id="now" data-loc="Play 08|Why now">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 08 · </span>Why now</span></span><a class="nx" href="#market">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>Why now:</span></span><span class="l"><span><em>how work is changing.</em></span></span></h2>
+      <ul class="stats">
+        <li class="stat" data-rv><div class="num">+265%</div><p class="say">US professionals with “fractional” in their title since&nbsp;2019.</p><p class="src">Source: Lightcast, 2026</p></li>
+        <li class="stat" data-rv><div class="num">10 to 1</div><p class="say">AI agents will outnumber sellers by 2028. Fewer than 40% of sellers will say agents&nbsp;helped.</p><p class="src">Source: Gartner</p></li>
+        <li class="stat" data-rv><div class="num">$2.6–4.4T</div><p class="say">Annual value gen AI could add, about 75% of it in customer operations, marketing and sales, software and&nbsp;R&amp;D.</p><p class="src">Source: McKinsey Global Institute, 2023</p></li>
+        <li class="stat" data-rv><div class="num">44%</div><p class="say">of revenue leaders say talent gaps are the top barrier to&nbsp;growth.</p><p class="src">Source: Varicent, 2025</p></li>
+        <li class="stat word wide" data-rv><div class="num">Forward-deployed</div><p class="say">Forward-deployed engineers are among the fastest-growing jobs in&nbsp;AI.</p><p class="src">Source: Fortune, 2026</p></li>
+      </ul>
+      <p class="insight" data-rv>Work is becoming fractional and AI-assisted. <em>Leadership is the missing piece.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAY 09 ============ -->
+<section class="sec" id="market" data-loc="Play 09|Market and vision">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 09 · </span>Market and vision</span></span><a class="nx" href="#me">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>The seat <em>economy.</em></span></span></h2>
+      <p class="lead" data-rv>Every venture dollar has to become&nbsp;revenue.</p>
+      <div class="seatecon" data-rv>
+        <span class="lbl k pre-l"><span class="sq" aria-hidden="true"></span>Halo estimate</span>
+        <div class="num">$5.6B <small>a year</small></div>
+        <p class="eqn" aria-label="16,707 US VC deals in 2025 times $334,128 average VP of Sales total pay equals about $5.6 billion a year."><span class="term" aria-hidden="true"><span class="lbl">US VC deals, 2025</span><b>16,707</b></span><span class="op" aria-hidden="true">×</span><span class="term" aria-hidden="true"><span class="lbl">VP of Sales total pay</span><b>$334,128</b></span><span class="op" aria-hidden="true">=</span><span class="term a" aria-hidden="true"><span class="lbl">Seat economy</span><b>$5.6B</b></span></p>
+        <p class="src" style="margin-top:12px">Sources: PitchBook-NVCA Venture Monitor, Q4 2025; Glassdoor, 2026</p>
+      </div>
+
+      <figure class="fig" data-rv>
+        <div class="plate">
+          <div class="phd"><span class="lbl k">Two engines</span><span class="lbl">Fig. 09</span></div>
+          <div class="pbd">
+            <div class="eng">
+              <div class="box a"><div class="top3"><span class="lbl">Engine 01</span><span class="sq" aria-hidden="true"></span></div><div><h3>Revenue Leadership</h3><p>Build and run the commercial&nbsp;engine.</p></div></div>
+              <div class="link" aria-hidden="true"><i class="dn"></i><i class="up"></i></div>
+              <div class="box b"><div class="top3"><span class="lbl">Engine 02</span></div><div><h3>Revenue Technology</h3><p>The workflows we prove become&nbsp;products.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </figure>
+
+      <div class="vision">
+        <span class="lbl k pre-l"><span class="sq" aria-hidden="true"></span>Vision</span>
+        <p class="big" data-lines aria-label="Every growing company should have world-class revenue leadership from day one, not after the money runs out."><span class="l" aria-hidden="true"><span>Every growing company</span></span><span class="l" aria-hidden="true"><span>should have world-class</span></span><span class="l" aria-hidden="true"><span>revenue leadership <em>from day&nbsp;one.</em></span></span></p>
+        <p class="lead" data-rv>Not after the money runs&nbsp;out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAY 10 ============ -->
+<section class="sec" id="me" data-loc="Play 10|Why me">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 10 · </span>Why me</span></span><a class="nx" href="#bench">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>Why <em>me.</em></span></span></h2>
+      <div class="me">
+        <div class="grp" data-rv><span class="lbl k">Who I am</span>
+          <ul><li>I am Chris Hedum.</li><li>I build revenue teams for founders.</li><li>I worked with early-stage founders in tech and venture capital for almost ten years.</li></ul>
+        </div>
+        <div class="grp" data-rv><span class="lbl k">Why I can solve this</span>
+          <ul><li>I did this work from the inside, not from the sidelines.</li><li>I built sales teams from zero. I led them to quota.</li><li>I recruit, train and develop people who have never sold before.</li></ul>
+        </div>
+        <div class="grp" data-rv><span class="lbl k">Proof</span>
+          <ul class="proof">
+            <li><span class="v">$50K <i>→</i> $7M+</span><span class="s">Revenue in 9 months</span></li>
+            <li><span class="v">20 <i>→</i> 100+</span><span class="s">Sales reps, at 150% of quota</span></li>
+            <li><span class="v">#195 <i>→</i> #8</span><span class="s">Office rank in the nation, in 12 months</span></li>
+            <li><span class="v">40+</span><span class="s">New hires recruited and trained in 18 months</span></li>
+            <li><span class="v">$140M+</span><span class="s">Raised by founders I advised</span></li>
+          </ul>
+        </div>
+        <div class="grp" data-rv><span class="lbl k">Why I care</span>
+          <p class="care">I help people see what they can build. Then I help them build&nbsp;it.</p>
+          <ul><li>Good founders do not fail from a lack of vision. They fail from a lack of a system to sell.</li><li>I played Division I rugby. I learned that teams win when every player knows the play.</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAY 11 ============ -->
+<section class="sec" id="bench" data-loc="Play 11|Who’s behind us">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 11 · </span>Who’s behind us</span></span><a class="nx" href="#runway">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <h2 class="h2" data-lines><span class="l"><span>The people who built</span></span><span class="l"><span><em>category leaders</em> are behind&nbsp;us.</span></span></h2>
+      <figure class="fig" data-rv>
+        <div class="plate">
+          <div class="phd"><span class="lbl k">The board table</span><span class="lbl">Fig. 11</span></div>
+          <div class="pbd">
+            <div class="board" role="img" aria-label="Board table. Chair: Halo. Seats: Category-leading SaaS, Co-founder. Category-leading SaaS, President. Electric aviation, Engineering. McKinsey, Strategy. Google, Revenue.">
+              <div class="bd-chair" aria-hidden="true"><span class="lbl">Chair</span><span class="node"><span class="disc"></span>Halo</span></div>
+              <div class="bd-table bd-dsk" aria-hidden="true">
+                <div class="bd-top">
+                  <div class="bd-seat"><span class="sqk"></span><div><b>Category-leading SaaS</b><span class="lbl">Co-founder</span></div></div>
+                  <div class="bd-seat"><span class="sqk"></span><div><b>Category-leading SaaS</b><span class="lbl">President</span></div></div>
+                  <div class="bd-seat"><span class="sqk"></span><div><b>Electric aviation</b><span class="lbl">Engineering</span></div></div>
+                </div>
+                <div class="bd-bar"></div>
+                <div class="bd-bot">
+                  <div class="bd-seat"><span class="sqk"></span><div><b>McKinsey</b><span class="lbl">Strategy</span></div></div>
+                  <div class="bd-seat"><span class="sqk"></span><div><b>Google</b><span class="lbl">Revenue</span></div></div>
+                </div>
+              </div>
+              <ul class="bd-seats bd-mob" aria-hidden="true">
+                <li class="bd-seat"><span class="sqk"></span><div><b>Category-leading SaaS</b><span class="lbl">Co-founder</span></div></li>
+                <li class="bd-seat"><span class="sqk"></span><div><b>Category-leading SaaS</b><span class="lbl">President</span></div></li>
+                <li class="bd-seat"><span class="sqk"></span><div><b>Electric aviation</b><span class="lbl">Engineering</span></div></li>
+                <li class="bd-seat"><span class="sqk"></span><div><b>McKinsey</b><span class="lbl">Strategy</span></div></li>
+                <li class="bd-seat"><span class="sqk"></span><div><b>Google</b><span class="lbl">Revenue</span></div></li>
+              </ul>
+            </div>
+          </div>
+          <div class="pft"><span class="leg"><span class="disc" aria-hidden="true"></span>Chair</span><span class="leg"><span class="sqk" aria-hidden="true"></span>Filled seat, by domain</span></div>
+        </div>
+      </figure>
+      <p class="forming" data-rv><span class="sq" aria-hidden="true"></span>Our first board is forming&nbsp;now.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAY 12 ============ -->
+<section class="sec" id="runway" data-loc="Play 12|Runway">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 12 · </span>Runway</span></span><a class="nx" href="#seats">Next <span aria-hidden="true">↓</span></a></div></div>
+    <div class="main">
+      <div class="runway">
+        <div>
+          <span class="lbl rv-lbl"><span class="sq" aria-hidden="true"></span>Runway startups wasted since you’ve been here</span>
+          <p class="rv nojs" id="rv" aria-label="About $933 every second">≈ $933 every second</p>
+          <p class="src rv-src">≈ $933 a second · $147.2B raised by 2,293 failed startups, 2021–2025 · VCBacked, The Startup Graveyard, 2026</p>
+          <p class="rv-key" aria-hidden="true"><span class="leg"><span class="k2"></span>1 stack = $1,000</span><span class="leg">1 box = $100,000</span><span class="leg">Boxes filled: <span id="rvBoxes">0</span></span></p>
+        </div>
+        <figure class="rv-fig" aria-hidden="true"><svg class="cube" viewBox="0 0 420 372" aria-hidden="true" focusable="false"><g class="cb-back"><path d="M86,32 L86,316 L386,316 M30,358 L86,316"/></g><g class="bills"><g class="bill on"><polygon class="b-top" points="32.0,331.6 38.0,327.1 64.0,327.1 58.0,331.6"/><rect class="b-f" x="32.0" y="331.6" width="26.0" height="24.4"/><path class="b-e" d="M34.0,340.4 h22.0 M34.0,348.2 h22.0"/><rect class="b-band" x="42.5" y="331.6" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="62.0,331.6 68.0,327.1 94.0,327.1 88.0,331.6"/><rect class="b-f" x="62.0" y="331.6" width="26.0" height="24.4"/><path class="b-e" d="M64.0,340.4 h22.0 M64.0,348.2 h22.0"/><rect class="b-band" x="72.5" y="331.6" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="92.0,331.6 98.0,327.1 124.0,327.1 118.0,331.6"/><rect class="b-f" x="92.0" y="331.6" width="26.0" height="24.4"/><path class="b-e" d="M94.0,340.4 h22.0 M94.0,348.2 h22.0"/><rect class="b-band" x="102.5" y="331.6" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="122.0,331.6 128.0,327.1 154.0,327.1 148.0,331.6"/><rect class="b-f" x="122.0" y="331.6" width="26.0" height="24.4"/><path class="b-e" d="M124.0,340.4 h22.0 M124.0,348.2 h22.0"/><rect class="b-band" x="132.5" y="331.6" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="152.0,331.6 158.0,327.1 184.0,327.1 178.0,331.6"/><rect class="b-f" x="152.0" y="331.6" width="26.0" height="24.4"/><path class="b-e" d="M154.0,340.4 h22.0 M154.0,348.2 h22.0"/><rect class="b-band" x="162.5" y="331.6" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="182.0,331.6 188.0,327.1 214.0,327.1 208.0,331.6"/><rect class="b-f" x="182.0" y="331.6" width="26.0" height="24.4"/><path class="b-e" d="M184.0,340.4 h22.0 M184.0,348.2 h22.0"/><rect class="b-band" x="192.5" y="331.6" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="212.0,331.6 218.0,327.1 244.0,327.1 238.0,331.6"/><rect class="b-f" x="212.0" y="331.6" width="26.0" height="24.4"/><path class="b-e" d="M214.0,340.4 h22.0 M214.0,348.2 h22.0"/><rect class="b-band" x="222.5" y="331.6" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="242.0,331.6 248.0,327.1 274.0,327.1 268.0,331.6"/><rect class="b-f" x="242.0" y="331.6" width="26.0" height="24.4"/><path class="b-e" d="M244.0,340.4 h22.0 M244.0,348.2 h22.0"/><rect class="b-band" x="252.5" y="331.6" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="272.0,331.6 278.0,327.1 304.0,327.1 298.0,331.6"/><rect class="b-f" x="272.0" y="331.6" width="26.0" height="24.4"/><path class="b-e" d="M274.0,340.4 h22.0 M274.0,348.2 h22.0"/><rect class="b-band" x="282.5" y="331.6" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="302.0,331.6 308.0,327.1 334.0,327.1 328.0,331.6"/><rect class="b-f" x="302.0" y="331.6" width="26.0" height="24.4"/><path class="b-e" d="M304.0,340.4 h22.0 M304.0,348.2 h22.0"/><rect class="b-band" x="312.5" y="331.6" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="32.0,303.2 38.0,298.7 64.0,298.7 58.0,303.2"/><rect class="b-f" x="32.0" y="303.2" width="26.0" height="24.4"/><path class="b-e" d="M34.0,312.0 h22.0 M34.0,319.8 h22.0"/><rect class="b-band" x="42.5" y="303.2" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="62.0,303.2 68.0,298.7 94.0,298.7 88.0,303.2"/><rect class="b-f" x="62.0" y="303.2" width="26.0" height="24.4"/><path class="b-e" d="M64.0,312.0 h22.0 M64.0,319.8 h22.0"/><rect class="b-band" x="72.5" y="303.2" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="92.0,303.2 98.0,298.7 124.0,298.7 118.0,303.2"/><rect class="b-f" x="92.0" y="303.2" width="26.0" height="24.4"/><path class="b-e" d="M94.0,312.0 h22.0 M94.0,319.8 h22.0"/><rect class="b-band" x="102.5" y="303.2" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="122.0,303.2 128.0,298.7 154.0,298.7 148.0,303.2"/><rect class="b-f" x="122.0" y="303.2" width="26.0" height="24.4"/><path class="b-e" d="M124.0,312.0 h22.0 M124.0,319.8 h22.0"/><rect class="b-band" x="132.5" y="303.2" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="152.0,303.2 158.0,298.7 184.0,298.7 178.0,303.2"/><rect class="b-f" x="152.0" y="303.2" width="26.0" height="24.4"/><path class="b-e" d="M154.0,312.0 h22.0 M154.0,319.8 h22.0"/><rect class="b-band" x="162.5" y="303.2" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="182.0,303.2 188.0,298.7 214.0,298.7 208.0,303.2"/><rect class="b-f" x="182.0" y="303.2" width="26.0" height="24.4"/><path class="b-e" d="M184.0,312.0 h22.0 M184.0,319.8 h22.0"/><rect class="b-band" x="192.5" y="303.2" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="212.0,303.2 218.0,298.7 244.0,298.7 238.0,303.2"/><rect class="b-f" x="212.0" y="303.2" width="26.0" height="24.4"/><path class="b-e" d="M214.0,312.0 h22.0 M214.0,319.8 h22.0"/><rect class="b-band" x="222.5" y="303.2" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="242.0,303.2 248.0,298.7 274.0,298.7 268.0,303.2"/><rect class="b-f" x="242.0" y="303.2" width="26.0" height="24.4"/><path class="b-e" d="M244.0,312.0 h22.0 M244.0,319.8 h22.0"/><rect class="b-band" x="252.5" y="303.2" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="272.0,303.2 278.0,298.7 304.0,298.7 298.0,303.2"/><rect class="b-f" x="272.0" y="303.2" width="26.0" height="24.4"/><path class="b-e" d="M274.0,312.0 h22.0 M274.0,319.8 h22.0"/><rect class="b-band" x="282.5" y="303.2" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="302.0,303.2 308.0,298.7 334.0,298.7 328.0,303.2"/><rect class="b-f" x="302.0" y="303.2" width="26.0" height="24.4"/><path class="b-e" d="M304.0,312.0 h22.0 M304.0,319.8 h22.0"/><rect class="b-band" x="312.5" y="303.2" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="32.0,274.8 38.0,270.3 64.0,270.3 58.0,274.8"/><rect class="b-f" x="32.0" y="274.8" width="26.0" height="24.4"/><path class="b-e" d="M34.0,283.6 h22.0 M34.0,291.4 h22.0"/><rect class="b-band" x="42.5" y="274.8" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="62.0,274.8 68.0,270.3 94.0,270.3 88.0,274.8"/><rect class="b-f" x="62.0" y="274.8" width="26.0" height="24.4"/><path class="b-e" d="M64.0,283.6 h22.0 M64.0,291.4 h22.0"/><rect class="b-band" x="72.5" y="274.8" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="92.0,274.8 98.0,270.3 124.0,270.3 118.0,274.8"/><rect class="b-f" x="92.0" y="274.8" width="26.0" height="24.4"/><path class="b-e" d="M94.0,283.6 h22.0 M94.0,291.4 h22.0"/><rect class="b-band" x="102.5" y="274.8" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="122.0,274.8 128.0,270.3 154.0,270.3 148.0,274.8"/><rect class="b-f" x="122.0" y="274.8" width="26.0" height="24.4"/><path class="b-e" d="M124.0,283.6 h22.0 M124.0,291.4 h22.0"/><rect class="b-band" x="132.5" y="274.8" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="152.0,274.8 158.0,270.3 184.0,270.3 178.0,274.8"/><rect class="b-f" x="152.0" y="274.8" width="26.0" height="24.4"/><path class="b-e" d="M154.0,283.6 h22.0 M154.0,291.4 h22.0"/><rect class="b-band" x="162.5" y="274.8" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="182.0,274.8 188.0,270.3 214.0,270.3 208.0,274.8"/><rect class="b-f" x="182.0" y="274.8" width="26.0" height="24.4"/><path class="b-e" d="M184.0,283.6 h22.0 M184.0,291.4 h22.0"/><rect class="b-band" x="192.5" y="274.8" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="212.0,274.8 218.0,270.3 244.0,270.3 238.0,274.8"/><rect class="b-f" x="212.0" y="274.8" width="26.0" height="24.4"/><path class="b-e" d="M214.0,283.6 h22.0 M214.0,291.4 h22.0"/><rect class="b-band" x="222.5" y="274.8" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="242.0,274.8 248.0,270.3 274.0,270.3 268.0,274.8"/><rect class="b-f" x="242.0" y="274.8" width="26.0" height="24.4"/><path class="b-e" d="M244.0,283.6 h22.0 M244.0,291.4 h22.0"/><rect class="b-band" x="252.5" y="274.8" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="272.0,274.8 278.0,270.3 304.0,270.3 298.0,274.8"/><rect class="b-f" x="272.0" y="274.8" width="26.0" height="24.4"/><path class="b-e" d="M274.0,283.6 h22.0 M274.0,291.4 h22.0"/><rect class="b-band" x="282.5" y="274.8" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="302.0,274.8 308.0,270.3 334.0,270.3 328.0,274.8"/><rect class="b-f" x="302.0" y="274.8" width="26.0" height="24.4"/><path class="b-e" d="M304.0,283.6 h22.0 M304.0,291.4 h22.0"/><rect class="b-band" x="312.5" y="274.8" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="32.0,246.4 38.0,241.9 64.0,241.9 58.0,246.4"/><rect class="b-f" x="32.0" y="246.4" width="26.0" height="24.4"/><path class="b-e" d="M34.0,255.2 h22.0 M34.0,263.0 h22.0"/><rect class="b-band" x="42.5" y="246.4" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="62.0,246.4 68.0,241.9 94.0,241.9 88.0,246.4"/><rect class="b-f" x="62.0" y="246.4" width="26.0" height="24.4"/><path class="b-e" d="M64.0,255.2 h22.0 M64.0,263.0 h22.0"/><rect class="b-band" x="72.5" y="246.4" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="92.0,246.4 98.0,241.9 124.0,241.9 118.0,246.4"/><rect class="b-f" x="92.0" y="246.4" width="26.0" height="24.4"/><path class="b-e" d="M94.0,255.2 h22.0 M94.0,263.0 h22.0"/><rect class="b-band" x="102.5" y="246.4" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="122.0,246.4 128.0,241.9 154.0,241.9 148.0,246.4"/><rect class="b-f" x="122.0" y="246.4" width="26.0" height="24.4"/><path class="b-e" d="M124.0,255.2 h22.0 M124.0,263.0 h22.0"/><rect class="b-band" x="132.5" y="246.4" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="152.0,246.4 158.0,241.9 184.0,241.9 178.0,246.4"/><rect class="b-f" x="152.0" y="246.4" width="26.0" height="24.4"/><path class="b-e" d="M154.0,255.2 h22.0 M154.0,263.0 h22.0"/><rect class="b-band" x="162.5" y="246.4" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="182.0,246.4 188.0,241.9 214.0,241.9 208.0,246.4"/><rect class="b-f" x="182.0" y="246.4" width="26.0" height="24.4"/><path class="b-e" d="M184.0,255.2 h22.0 M184.0,263.0 h22.0"/><rect class="b-band" x="192.5" y="246.4" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="212.0,246.4 218.0,241.9 244.0,241.9 238.0,246.4"/><rect class="b-f" x="212.0" y="246.4" width="26.0" height="24.4"/><path class="b-e" d="M214.0,255.2 h22.0 M214.0,263.0 h22.0"/><rect class="b-band" x="222.5" y="246.4" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="242.0,246.4 248.0,241.9 274.0,241.9 268.0,246.4"/><rect class="b-f" x="242.0" y="246.4" width="26.0" height="24.4"/><path class="b-e" d="M244.0,255.2 h22.0 M244.0,263.0 h22.0"/><rect class="b-band" x="252.5" y="246.4" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="272.0,246.4 278.0,241.9 304.0,241.9 298.0,246.4"/><rect class="b-f" x="272.0" y="246.4" width="26.0" height="24.4"/><path class="b-e" d="M274.0,255.2 h22.0 M274.0,263.0 h22.0"/><rect class="b-band" x="282.5" y="246.4" width="5" height="24.4"/></g><g class="bill on"><polygon class="b-top" points="302.0,246.4 308.0,241.9 334.0,241.9 328.0,246.4"/><rect class="b-f" x="302.0" y="246.4" width="26.0" height="24.4"/><path class="b-e" d="M304.0,255.2 h22.0 M304.0,263.0 h22.0"/><rect class="b-band" x="312.5" y="246.4" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="32.0,218.0 38.0,213.5 64.0,213.5 58.0,218.0"/><rect class="b-f" x="32.0" y="218.0" width="26.0" height="24.4"/><path class="b-e" d="M34.0,226.8 h22.0 M34.0,234.6 h22.0"/><rect class="b-band" x="42.5" y="218.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="62.0,218.0 68.0,213.5 94.0,213.5 88.0,218.0"/><rect class="b-f" x="62.0" y="218.0" width="26.0" height="24.4"/><path class="b-e" d="M64.0,226.8 h22.0 M64.0,234.6 h22.0"/><rect class="b-band" x="72.5" y="218.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="92.0,218.0 98.0,213.5 124.0,213.5 118.0,218.0"/><rect class="b-f" x="92.0" y="218.0" width="26.0" height="24.4"/><path class="b-e" d="M94.0,226.8 h22.0 M94.0,234.6 h22.0"/><rect class="b-band" x="102.5" y="218.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="122.0,218.0 128.0,213.5 154.0,213.5 148.0,218.0"/><rect class="b-f" x="122.0" y="218.0" width="26.0" height="24.4"/><path class="b-e" d="M124.0,226.8 h22.0 M124.0,234.6 h22.0"/><rect class="b-band" x="132.5" y="218.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="152.0,218.0 158.0,213.5 184.0,213.5 178.0,218.0"/><rect class="b-f" x="152.0" y="218.0" width="26.0" height="24.4"/><path class="b-e" d="M154.0,226.8 h22.0 M154.0,234.6 h22.0"/><rect class="b-band" x="162.5" y="218.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="182.0,218.0 188.0,213.5 214.0,213.5 208.0,218.0"/><rect class="b-f" x="182.0" y="218.0" width="26.0" height="24.4"/><path class="b-e" d="M184.0,226.8 h22.0 M184.0,234.6 h22.0"/><rect class="b-band" x="192.5" y="218.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="212.0,218.0 218.0,213.5 244.0,213.5 238.0,218.0"/><rect class="b-f" x="212.0" y="218.0" width="26.0" height="24.4"/><path class="b-e" d="M214.0,226.8 h22.0 M214.0,234.6 h22.0"/><rect class="b-band" x="222.5" y="218.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="242.0,218.0 248.0,213.5 274.0,213.5 268.0,218.0"/><rect class="b-f" x="242.0" y="218.0" width="26.0" height="24.4"/><path class="b-e" d="M244.0,226.8 h22.0 M244.0,234.6 h22.0"/><rect class="b-band" x="252.5" y="218.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="272.0,218.0 278.0,213.5 304.0,213.5 298.0,218.0"/><rect class="b-f" x="272.0" y="218.0" width="26.0" height="24.4"/><path class="b-e" d="M274.0,226.8 h22.0 M274.0,234.6 h22.0"/><rect class="b-band" x="282.5" y="218.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="302.0,218.0 308.0,213.5 334.0,213.5 328.0,218.0"/><rect class="b-f" x="302.0" y="218.0" width="26.0" height="24.4"/><path class="b-e" d="M304.0,226.8 h22.0 M304.0,234.6 h22.0"/><rect class="b-band" x="312.5" y="218.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="32.0,189.6 38.0,185.1 64.0,185.1 58.0,189.6"/><rect class="b-f" x="32.0" y="189.6" width="26.0" height="24.4"/><path class="b-e" d="M34.0,198.4 h22.0 M34.0,206.2 h22.0"/><rect class="b-band" x="42.5" y="189.6" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="62.0,189.6 68.0,185.1 94.0,185.1 88.0,189.6"/><rect class="b-f" x="62.0" y="189.6" width="26.0" height="24.4"/><path class="b-e" d="M64.0,198.4 h22.0 M64.0,206.2 h22.0"/><rect class="b-band" x="72.5" y="189.6" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="92.0,189.6 98.0,185.1 124.0,185.1 118.0,189.6"/><rect class="b-f" x="92.0" y="189.6" width="26.0" height="24.4"/><path class="b-e" d="M94.0,198.4 h22.0 M94.0,206.2 h22.0"/><rect class="b-band" x="102.5" y="189.6" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="122.0,189.6 128.0,185.1 154.0,185.1 148.0,189.6"/><rect class="b-f" x="122.0" y="189.6" width="26.0" height="24.4"/><path class="b-e" d="M124.0,198.4 h22.0 M124.0,206.2 h22.0"/><rect class="b-band" x="132.5" y="189.6" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="152.0,189.6 158.0,185.1 184.0,185.1 178.0,189.6"/><rect class="b-f" x="152.0" y="189.6" width="26.0" height="24.4"/><path class="b-e" d="M154.0,198.4 h22.0 M154.0,206.2 h22.0"/><rect class="b-band" x="162.5" y="189.6" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="182.0,189.6 188.0,185.1 214.0,185.1 208.0,189.6"/><rect class="b-f" x="182.0" y="189.6" width="26.0" height="24.4"/><path class="b-e" d="M184.0,198.4 h22.0 M184.0,206.2 h22.0"/><rect class="b-band" x="192.5" y="189.6" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="212.0,189.6 218.0,185.1 244.0,185.1 238.0,189.6"/><rect class="b-f" x="212.0" y="189.6" width="26.0" height="24.4"/><path class="b-e" d="M214.0,198.4 h22.0 M214.0,206.2 h22.0"/><rect class="b-band" x="222.5" y="189.6" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="242.0,189.6 248.0,185.1 274.0,185.1 268.0,189.6"/><rect class="b-f" x="242.0" y="189.6" width="26.0" height="24.4"/><path class="b-e" d="M244.0,198.4 h22.0 M244.0,206.2 h22.0"/><rect class="b-band" x="252.5" y="189.6" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="272.0,189.6 278.0,185.1 304.0,185.1 298.0,189.6"/><rect class="b-f" x="272.0" y="189.6" width="26.0" height="24.4"/><path class="b-e" d="M274.0,198.4 h22.0 M274.0,206.2 h22.0"/><rect class="b-band" x="282.5" y="189.6" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="302.0,189.6 308.0,185.1 334.0,185.1 328.0,189.6"/><rect class="b-f" x="302.0" y="189.6" width="26.0" height="24.4"/><path class="b-e" d="M304.0,198.4 h22.0 M304.0,206.2 h22.0"/><rect class="b-band" x="312.5" y="189.6" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="32.0,161.2 38.0,156.7 64.0,156.7 58.0,161.2"/><rect class="b-f" x="32.0" y="161.2" width="26.0" height="24.4"/><path class="b-e" d="M34.0,170.0 h22.0 M34.0,177.8 h22.0"/><rect class="b-band" x="42.5" y="161.2" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="62.0,161.2 68.0,156.7 94.0,156.7 88.0,161.2"/><rect class="b-f" x="62.0" y="161.2" width="26.0" height="24.4"/><path class="b-e" d="M64.0,170.0 h22.0 M64.0,177.8 h22.0"/><rect class="b-band" x="72.5" y="161.2" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="92.0,161.2 98.0,156.7 124.0,156.7 118.0,161.2"/><rect class="b-f" x="92.0" y="161.2" width="26.0" height="24.4"/><path class="b-e" d="M94.0,170.0 h22.0 M94.0,177.8 h22.0"/><rect class="b-band" x="102.5" y="161.2" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="122.0,161.2 128.0,156.7 154.0,156.7 148.0,161.2"/><rect class="b-f" x="122.0" y="161.2" width="26.0" height="24.4"/><path class="b-e" d="M124.0,170.0 h22.0 M124.0,177.8 h22.0"/><rect class="b-band" x="132.5" y="161.2" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="152.0,161.2 158.0,156.7 184.0,156.7 178.0,161.2"/><rect class="b-f" x="152.0" y="161.2" width="26.0" height="24.4"/><path class="b-e" d="M154.0,170.0 h22.0 M154.0,177.8 h22.0"/><rect class="b-band" x="162.5" y="161.2" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="182.0,161.2 188.0,156.7 214.0,156.7 208.0,161.2"/><rect class="b-f" x="182.0" y="161.2" width="26.0" height="24.4"/><path class="b-e" d="M184.0,170.0 h22.0 M184.0,177.8 h22.0"/><rect class="b-band" x="192.5" y="161.2" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="212.0,161.2 218.0,156.7 244.0,156.7 238.0,161.2"/><rect class="b-f" x="212.0" y="161.2" width="26.0" height="24.4"/><path class="b-e" d="M214.0,170.0 h22.0 M214.0,177.8 h22.0"/><rect class="b-band" x="222.5" y="161.2" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="242.0,161.2 248.0,156.7 274.0,156.7 268.0,161.2"/><rect class="b-f" x="242.0" y="161.2" width="26.0" height="24.4"/><path class="b-e" d="M244.0,170.0 h22.0 M244.0,177.8 h22.0"/><rect class="b-band" x="252.5" y="161.2" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="272.0,161.2 278.0,156.7 304.0,156.7 298.0,161.2"/><rect class="b-f" x="272.0" y="161.2" width="26.0" height="24.4"/><path class="b-e" d="M274.0,170.0 h22.0 M274.0,177.8 h22.0"/><rect class="b-band" x="282.5" y="161.2" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="302.0,161.2 308.0,156.7 334.0,156.7 328.0,161.2"/><rect class="b-f" x="302.0" y="161.2" width="26.0" height="24.4"/><path class="b-e" d="M304.0,170.0 h22.0 M304.0,177.8 h22.0"/><rect class="b-band" x="312.5" y="161.2" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="32.0,132.8 38.0,128.3 64.0,128.3 58.0,132.8"/><rect class="b-f" x="32.0" y="132.8" width="26.0" height="24.4"/><path class="b-e" d="M34.0,141.6 h22.0 M34.0,149.4 h22.0"/><rect class="b-band" x="42.5" y="132.8" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="62.0,132.8 68.0,128.3 94.0,128.3 88.0,132.8"/><rect class="b-f" x="62.0" y="132.8" width="26.0" height="24.4"/><path class="b-e" d="M64.0,141.6 h22.0 M64.0,149.4 h22.0"/><rect class="b-band" x="72.5" y="132.8" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="92.0,132.8 98.0,128.3 124.0,128.3 118.0,132.8"/><rect class="b-f" x="92.0" y="132.8" width="26.0" height="24.4"/><path class="b-e" d="M94.0,141.6 h22.0 M94.0,149.4 h22.0"/><rect class="b-band" x="102.5" y="132.8" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="122.0,132.8 128.0,128.3 154.0,128.3 148.0,132.8"/><rect class="b-f" x="122.0" y="132.8" width="26.0" height="24.4"/><path class="b-e" d="M124.0,141.6 h22.0 M124.0,149.4 h22.0"/><rect class="b-band" x="132.5" y="132.8" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="152.0,132.8 158.0,128.3 184.0,128.3 178.0,132.8"/><rect class="b-f" x="152.0" y="132.8" width="26.0" height="24.4"/><path class="b-e" d="M154.0,141.6 h22.0 M154.0,149.4 h22.0"/><rect class="b-band" x="162.5" y="132.8" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="182.0,132.8 188.0,128.3 214.0,128.3 208.0,132.8"/><rect class="b-f" x="182.0" y="132.8" width="26.0" height="24.4"/><path class="b-e" d="M184.0,141.6 h22.0 M184.0,149.4 h22.0"/><rect class="b-band" x="192.5" y="132.8" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="212.0,132.8 218.0,128.3 244.0,128.3 238.0,132.8"/><rect class="b-f" x="212.0" y="132.8" width="26.0" height="24.4"/><path class="b-e" d="M214.0,141.6 h22.0 M214.0,149.4 h22.0"/><rect class="b-band" x="222.5" y="132.8" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="242.0,132.8 248.0,128.3 274.0,128.3 268.0,132.8"/><rect class="b-f" x="242.0" y="132.8" width="26.0" height="24.4"/><path class="b-e" d="M244.0,141.6 h22.0 M244.0,149.4 h22.0"/><rect class="b-band" x="252.5" y="132.8" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="272.0,132.8 278.0,128.3 304.0,128.3 298.0,132.8"/><rect class="b-f" x="272.0" y="132.8" width="26.0" height="24.4"/><path class="b-e" d="M274.0,141.6 h22.0 M274.0,149.4 h22.0"/><rect class="b-band" x="282.5" y="132.8" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="302.0,132.8 308.0,128.3 334.0,128.3 328.0,132.8"/><rect class="b-f" x="302.0" y="132.8" width="26.0" height="24.4"/><path class="b-e" d="M304.0,141.6 h22.0 M304.0,149.4 h22.0"/><rect class="b-band" x="312.5" y="132.8" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="32.0,104.4 38.0,99.9 64.0,99.9 58.0,104.4"/><rect class="b-f" x="32.0" y="104.4" width="26.0" height="24.4"/><path class="b-e" d="M34.0,113.2 h22.0 M34.0,121.0 h22.0"/><rect class="b-band" x="42.5" y="104.4" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="62.0,104.4 68.0,99.9 94.0,99.9 88.0,104.4"/><rect class="b-f" x="62.0" y="104.4" width="26.0" height="24.4"/><path class="b-e" d="M64.0,113.2 h22.0 M64.0,121.0 h22.0"/><rect class="b-band" x="72.5" y="104.4" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="92.0,104.4 98.0,99.9 124.0,99.9 118.0,104.4"/><rect class="b-f" x="92.0" y="104.4" width="26.0" height="24.4"/><path class="b-e" d="M94.0,113.2 h22.0 M94.0,121.0 h22.0"/><rect class="b-band" x="102.5" y="104.4" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="122.0,104.4 128.0,99.9 154.0,99.9 148.0,104.4"/><rect class="b-f" x="122.0" y="104.4" width="26.0" height="24.4"/><path class="b-e" d="M124.0,113.2 h22.0 M124.0,121.0 h22.0"/><rect class="b-band" x="132.5" y="104.4" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="152.0,104.4 158.0,99.9 184.0,99.9 178.0,104.4"/><rect class="b-f" x="152.0" y="104.4" width="26.0" height="24.4"/><path class="b-e" d="M154.0,113.2 h22.0 M154.0,121.0 h22.0"/><rect class="b-band" x="162.5" y="104.4" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="182.0,104.4 188.0,99.9 214.0,99.9 208.0,104.4"/><rect class="b-f" x="182.0" y="104.4" width="26.0" height="24.4"/><path class="b-e" d="M184.0,113.2 h22.0 M184.0,121.0 h22.0"/><rect class="b-band" x="192.5" y="104.4" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="212.0,104.4 218.0,99.9 244.0,99.9 238.0,104.4"/><rect class="b-f" x="212.0" y="104.4" width="26.0" height="24.4"/><path class="b-e" d="M214.0,113.2 h22.0 M214.0,121.0 h22.0"/><rect class="b-band" x="222.5" y="104.4" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="242.0,104.4 248.0,99.9 274.0,99.9 268.0,104.4"/><rect class="b-f" x="242.0" y="104.4" width="26.0" height="24.4"/><path class="b-e" d="M244.0,113.2 h22.0 M244.0,121.0 h22.0"/><rect class="b-band" x="252.5" y="104.4" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="272.0,104.4 278.0,99.9 304.0,99.9 298.0,104.4"/><rect class="b-f" x="272.0" y="104.4" width="26.0" height="24.4"/><path class="b-e" d="M274.0,113.2 h22.0 M274.0,121.0 h22.0"/><rect class="b-band" x="282.5" y="104.4" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="302.0,104.4 308.0,99.9 334.0,99.9 328.0,104.4"/><rect class="b-f" x="302.0" y="104.4" width="26.0" height="24.4"/><path class="b-e" d="M304.0,113.2 h22.0 M304.0,121.0 h22.0"/><rect class="b-band" x="312.5" y="104.4" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="32.0,76.0 38.0,71.5 64.0,71.5 58.0,76.0"/><rect class="b-f" x="32.0" y="76.0" width="26.0" height="24.4"/><path class="b-e" d="M34.0,84.8 h22.0 M34.0,92.6 h22.0"/><rect class="b-band" x="42.5" y="76.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="62.0,76.0 68.0,71.5 94.0,71.5 88.0,76.0"/><rect class="b-f" x="62.0" y="76.0" width="26.0" height="24.4"/><path class="b-e" d="M64.0,84.8 h22.0 M64.0,92.6 h22.0"/><rect class="b-band" x="72.5" y="76.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="92.0,76.0 98.0,71.5 124.0,71.5 118.0,76.0"/><rect class="b-f" x="92.0" y="76.0" width="26.0" height="24.4"/><path class="b-e" d="M94.0,84.8 h22.0 M94.0,92.6 h22.0"/><rect class="b-band" x="102.5" y="76.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="122.0,76.0 128.0,71.5 154.0,71.5 148.0,76.0"/><rect class="b-f" x="122.0" y="76.0" width="26.0" height="24.4"/><path class="b-e" d="M124.0,84.8 h22.0 M124.0,92.6 h22.0"/><rect class="b-band" x="132.5" y="76.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="152.0,76.0 158.0,71.5 184.0,71.5 178.0,76.0"/><rect class="b-f" x="152.0" y="76.0" width="26.0" height="24.4"/><path class="b-e" d="M154.0,84.8 h22.0 M154.0,92.6 h22.0"/><rect class="b-band" x="162.5" y="76.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="182.0,76.0 188.0,71.5 214.0,71.5 208.0,76.0"/><rect class="b-f" x="182.0" y="76.0" width="26.0" height="24.4"/><path class="b-e" d="M184.0,84.8 h22.0 M184.0,92.6 h22.0"/><rect class="b-band" x="192.5" y="76.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="212.0,76.0 218.0,71.5 244.0,71.5 238.0,76.0"/><rect class="b-f" x="212.0" y="76.0" width="26.0" height="24.4"/><path class="b-e" d="M214.0,84.8 h22.0 M214.0,92.6 h22.0"/><rect class="b-band" x="222.5" y="76.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="242.0,76.0 248.0,71.5 274.0,71.5 268.0,76.0"/><rect class="b-f" x="242.0" y="76.0" width="26.0" height="24.4"/><path class="b-e" d="M244.0,84.8 h22.0 M244.0,92.6 h22.0"/><rect class="b-band" x="252.5" y="76.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="272.0,76.0 278.0,71.5 304.0,71.5 298.0,76.0"/><rect class="b-f" x="272.0" y="76.0" width="26.0" height="24.4"/><path class="b-e" d="M274.0,84.8 h22.0 M274.0,92.6 h22.0"/><rect class="b-band" x="282.5" y="76.0" width="5" height="24.4"/></g><g class="bill"><polygon class="b-top" points="302.0,76.0 308.0,71.5 334.0,71.5 328.0,76.0"/><rect class="b-f" x="302.0" y="76.0" width="26.0" height="24.4"/><path class="b-e" d="M304.0,84.8 h22.0 M304.0,92.6 h22.0"/><rect class="b-band" x="312.5" y="76.0" width="5" height="24.4"/></g></g><g class="cb-glass"><polygon points="30,74 86,32 386,32 330,74"/><polygon points="330,74 386,32 386,316 330,358"/><rect x="30" y="74" width="300" height="284"/></g></svg></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAY 13 ============ -->
+<section class="sec" id="seats" data-loc="Play 13|Limited seats">
+  <div class="wrap g12">
+    <div class="side"><div class="idx"><span class="lbl"><span class="sq" aria-hidden="true"></span><span><span class="n">Play 13 · </span>Limited seats</span></span></div></div>
+    <div class="main">
+      <span class="lbl rooms">Two rooms are filling at once: client seats and the cap table.</span>
+      <h2 class="h2" data-lines><span class="l"><span>Limited <em>seats.</em></span></span></h2>
+      <p class="lead" data-rv>We embed deeply, so we take on about 10 companies at a&nbsp;time.</p>
+      <div class="cap10" data-rv>
+        <span class="lbl k">Capacity: ~10 companies</span>
+        <div class="row10" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+
+      <ul class="doors">
+        <li class="door" data-rv>
+          <span class="lbl"><span class="sq" aria-hidden="true"></span>For founders</span>
+          <h3>Apply for a seat.</h3>
+          <p class="note" id="noteF">Send to: chris@halovpartners.com
+Hi Chris, we’re a [stage] company. Our gap: [one line].</p>
+          <div class="dact">
+            <button class="cbtn inv" type="button" data-copy="note" data-src="noteF" aria-label="Copy the founder note"><span class="pt"><span class="a">Copy note</span><span class="b" aria-hidden="true">Copied ✓</span></span></button>
+            <button class="cbtn" type="button" data-copy="email" aria-label="Copy email address chris@halovpartners.com"><span class="pt"><span class="a">chris@halovpartners.com</span><span class="b" aria-hidden="true">Copied ✓</span></span><svg viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="9" height="9" rx="1.5"/><path d="M12 3.5V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h.5"/></svg></button>
+          </div>
+        </li>
+        <li class="door" data-rv>
+          <span class="lbl"><span class="sq" aria-hidden="true"></span>For investors</span>
+          <h3>Request the investor brief.</h3>
+          <p class="note" id="noteI">Send to: chris@halovpartners.com
+Hi Chris, I’d like the Halo investor brief.</p>
+          <div class="dact">
+            <button class="cbtn inv" type="button" data-copy="note" data-src="noteI" aria-label="Copy the investor note"><span class="pt"><span class="a">Copy note</span><span class="b" aria-hidden="true">Copied ✓</span></span></button>
+            <button class="cbtn" type="button" data-copy="email" aria-label="Copy email address chris@halovpartners.com"><span class="pt"><span class="a">chris@halovpartners.com</span><span class="b" aria-hidden="true">Copied ✓</span></span><svg viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="9" height="9" rx="1.5"/><path d="M12 3.5V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h.5"/></svg></button>
+          </div>
+        </li>
+      </ul>
+
+      <div class="close" id="contact" aria-label="Contact">
+        <h2 class="cl1" data-lines aria-label="Change is inevitable. Growth is optional."><span class="l" aria-hidden="true"><span class="soft">Change is inevitable.</span></span><span class="l" aria-hidden="true"><span><em>Growth is optional.</em></span></span></h2>
+        <p class="ready-q">Ready to grow?</p>
+        <button class="pill" id="copy" type="button" data-copy="email" aria-label="Copy email address chris@halovpartners.com">
+          <span class="pt"><span class="a" id="addr">chris@halovpartners.com</span><span class="b" aria-hidden="true">Copied ✓</span></span>
+          <svg viewBox="0 0 18 18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="6" width="9" height="9" rx="1.5"/><path d="M12 3.5V3a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h.5"/></svg>
+        </button>
+        <p class="sr" id="copyStatus" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <span class="fmark"><span class="disc" aria-hidden="true"></span>HALO <i>//</i> VENTURES</span>
+      <span class="sign">Build outside the box. Brick by brick. Rain or&nbsp;shine.</span>
+      <span class="lbl">Portland, Oregon</span>
+    </div>
+    <div class="sources">
+      <span class="lbl k">Sources</span>
+      <ol>
+        <li>PitchBook, 2025 global venture deal value (reported January 2026)</li>
+        <li>Salesforce, State of Sales (6th edition)</li>
+        <li>Bridge Group (account executive ramp)</li>
+        <li>Gartner, B2B buyer survey, 2026</li>
+        <li>EY CEO Outlook, 2026</li>
+        <li>Glassdoor, VP of Sales total pay, 2026</li>
+        <li>U.S. Dept. of Labor, SHRM, Harvard Business Review (cost of a bad hire)</li>
+        <li>Gong (VP of Sales tenure)</li>
+        <li>Lightcast, The Rise of Fractional Leadership, 2026</li>
+        <li>Gartner, AI agents and sellers prediction</li>
+        <li>McKinsey Global Institute, The Economic Potential of Generative AI, 2023</li>
+        <li>Varicent, 2025 Market Spotlight</li>
+        <li>Fortune, “Forward-deployed engineers”, September 2026</li>
+        <li>PitchBook-NVCA Venture Monitor, Q4 2025</li>
+        <li>VCBacked, The Startup Graveyard, 2026</li>
+      </ol>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+'use strict';
+var D=document, root=D.documentElement;
+function $(s,c){return (c||D).querySelector(s);}
+function $$(s,c){return Array.prototype.slice.call((c||D).querySelectorAll(s));}
+var EMAIL='chris@halovpartners.com';
+var RM=false;
+try{ RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+var T0=Date.now();
+function revealAll(){
+  root.classList.remove('anim');
+  try{ $$('[data-rv],[data-lines],.sec').forEach(function(el){ el.classList.add('in'); }); }catch(e){}
+  try{ $$('.pb').forEach(function(p){ p.classList.remove('armed'); }); $$('.pb .st').forEach(function(s){ s.classList.add('on'); }); }catch(e){}
+  try{ var t=$('#total'); if(t) t.classList.remove('wait'); }catch(e){}
+}
+
+/* ========== copy (email + notes), independent ========== */
+(function(){
+  try{
+    var status=$('#copyStatus'), addr=$('#addr');
+    function fallbackCopy(txt){
+      var ok=false;
+      try{
+        var ta=D.createElement('textarea'); ta.value=txt; ta.setAttribute('readonly','');
+        ta.style.position='fixed'; ta.style.top='0'; ta.style.left='0'; ta.style.width='1px'; ta.style.height='1px'; ta.style.opacity='0';
+        D.body.appendChild(ta); ta.select(); try{ ta.setSelectionRange(0,txt.length); }catch(e){}
+        ok=D.execCommand('copy'); D.body.removeChild(ta);
+      }catch(e){ ok=false; }
+      return ok;
+    }
+    function selectEl(el){ try{ var r=D.createRange(); r.selectNodeContents(el); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); }catch(e){} }
+    function textFor(btn){
+      if(btn.getAttribute('data-copy')==='note'){ var n=D.getElementById(btn.getAttribute('data-src')); return n?n.textContent.replace(/’/g,"'"):EMAIL; }
+      return EMAIL;
+    }
+    function result(btn,ok){
+      clearTimeout(btn._t);
+      var isNote=btn.getAttribute('data-copy')==='note';
+      if(ok){ btn.classList.add('ok'); status.textContent=isNote?'Copied. The note is on your clipboard. Send to: '+EMAIL+'.':'Copied. '+EMAIL+' is on your clipboard.'; }
+      else{
+        status.textContent=isNote?'Copy did not work. The note is selected.':'Copy did not work. The address is selected: '+EMAIL+'.';
+        var el=isNote?D.getElementById(btn.getAttribute('data-src')):addr;
+        if(!isNote&&btn.id==='copyTop'){ try{ addr.scrollIntoView({block:'center'}); }catch(e){} }
+        if(el) selectEl(el);
+      }
+      btn._t=setTimeout(function(){ btn.classList.remove('ok'); },2400);
+    }
+    function go(btn){
+      var txt=textFor(btn);
+      try{
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(txt).then(function(){ result(btn,true); },function(){ result(btn,fallbackCopy(txt)); });
+        } else result(btn,fallbackCopy(txt));
+      }catch(e){ result(btn,fallbackCopy(txt)); }
+    }
+    $$('[data-copy]').forEach(function(b){ b.addEventListener('click',function(){ go(b); }); });
+  }catch(e){}
+})();
+
+/* ========== playbook: route-by-route sequence + toggle (independent) ========== */
+var plays={};
+(function(){
+  try{
+    var pbB=$('#pbBroken'), pbH=$('#pbHalo'), total=$('#total');
+    function run(fig,done){
+      var layer=fig.classList.contains('is-halo')?'halo':'broken';
+      var all=$$('.st',fig); all.forEach(function(s){ s.classList.remove('on'); });
+      clearTimeout(fig._t); (fig._ts||[]).forEach(clearTimeout); fig._ts=[];
+      if(RM||!fig.classList.contains('armed')){ all.forEach(function(s){ s.classList.add('on'); }); if(done) done(); return; }
+      void fig.offsetWidth;
+      for(var k=1;k<=6;k++){(function(k){
+        fig._ts.push(setTimeout(function(){ $$('.L-'+layer+' .st[data-step="'+k+'"]',fig).forEach(function(s){ s.classList.add('on'); }); },(k-1)*620+120));
+      })(k);}
+      if(done) fig._ts.push(setTimeout(done,6*620+500));
+    }
+    plays.run=run;
+    plays.list=[
+      {el:pbB,done:function(){ total.classList.remove('wait'); }},
+      {el:pbH,done:null}
+    ];
+    if(!RM){
+      pbB.classList.add('armed'); pbH.classList.add('armed');
+      if(root.classList.contains('js')) total.classList.add('wait');
+    }
+    /* toggle */
+    var ttl=$('#pbTtl'), img=$('#pbHaloImg');
+    var LBL={halo:img.getAttribute('aria-label'),broken:pbB.getAttribute('aria-label')};
+    $$('.tg',pbH).forEach(function(b){
+      b.addEventListener('click',function(){
+        var s=b.getAttribute('data-state');
+        pbH.classList.toggle('is-halo',s==='halo');
+        $$('.tg',pbH).forEach(function(x){ x.setAttribute('aria-pressed',x===b?'true':'false'); });
+        ttl.textContent=s==='halo'?'The Halo play':'The broken play';
+        img.setAttribute('aria-label',LBL[s]);
+        run(pbH,null);
+      });
+    });
+  }catch(e){ plays.list=null; try{ $$('.pb').forEach(function(p){ p.classList.remove('armed'); }); $('#total').classList.remove('wait'); }catch(e2){} }
+})();
+
+/* ========== runway counter + cube (independent) ========== */
+var runway={};
+(function(){
+  try{
+    var RATE=147.2e9/(5*365.25*86400); /* ≈ $933 per second */
+    var el=$('#rv'), bx=$('#rvBoxes'), bills=$$('#runway .bill'), sec=$('#runway');
+    var shown=false, startShow=0, lastStacks=-1, lastTxt='';
+    function fmt(v){ var s=String(Math.floor(v)); return '$'+s.replace(/\B(?=(\d{3})+(?!\d))/g,','); }
+    function draw(v){
+      var t=fmt(v); if(t!==lastTxt){ el.textContent=t; lastTxt=t; }
+      var n=Math.floor(v/1000)%100, boxes=Math.floor(v/100000);
+      if(n!==lastStacks){ for(var i=0;i<bills.length;i++){ bills[i].classList.toggle('on',i<n); } lastStacks=n; bx.textContent=String(boxes); }
+    }
+    function value(){ return (Date.now()-T0)/1000*RATE; }
+    el.classList.remove('nojs'); el.textContent='$0'; el.removeAttribute('aria-label');
+    for(var i=0;i<bills.length;i++) bills[i].classList.remove('on');
+    function visible(){ var r=sec.getBoundingClientRect(); return r.top<window.innerHeight&&r.bottom>0; }
+    if(RM||!window.requestAnimationFrame){
+      setInterval(function(){ try{ draw(value()); }catch(e){} },1000); draw(value());
+      return;
+    }
+    function frame(){
+      try{
+        if(visible()){
+          if(!shown){ shown=true; startShow=Date.now(); }
+          var k=Math.min(1,(Date.now()-startShow)/1400), e=1-Math.pow(1-k,3);
+          draw(value()*e);
+        }
+      }catch(e){}
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+    runway.value=value;
+  }catch(e){ try{ var r=$('#rv'); r.className='rv nojs'; r.textContent='≈ $933 every second'; $$('#runway .bill').forEach(function(b,i){ b.classList.toggle('on',i<40); }); }catch(e2){} }
+})();
+
+try{
+/* ========== reveals ========== */
+var revs=$$('[data-rv],[data-lines],.sec');
+function inView(el,f){ var r=el.getBoundingClientRect(); return r.top<window.innerHeight*(f||.92)&&r.bottom>0; }
+function check(){
+  for(var i=0;i<revs.length;i++){ var el=revs[i]; if(!el.classList.contains('in')&&inView(el)) el.classList.add('in'); }
+  if(plays.list){ plays.list.forEach(function(p){ if(!p.started&&inView(p.el,.7)){ p.started=true; plays.run(p.el,p.done); } }); }
+}
+
+/* ========== where-am-I ========== */
+var loc=$('#loc'), prog=$('#prog'), located=$$('[data-loc]'), lastLoc='';
+function navState(){
+  var mid=window.innerHeight*.4, c=located[0];
+  for(var i=0;i<located.length;i++){ if(located[i].getBoundingClientRect().top<=mid) c=located[i]; }
+  var txt=c.getAttribute('data-loc');
+  if(txt!==lastLoc){
+    lastLoc=txt; var p=txt.split('|');
+    loc.innerHTML='<span class="n"></span><span></span>'; loc.firstChild.textContent=p[0]+' · '; loc.lastChild.textContent=p[1];
+  }
+  var max=(D.documentElement.scrollHeight-window.innerHeight)||1;
+  prog.style.transform='scaleX('+Math.max(0,Math.min(1,window.pageYOffset/max)).toFixed(4)+')';
+}
+var ticking=false;
+function onScroll(){ if(ticking) return; ticking=true; requestAnimationFrame(function(){ ticking=false; try{ navState(); check(); }catch(e){ revealAll(); } }); }
+
+/* ========== init ========== */
+var hero=$('#start');
+if(!RM){
+  revs.forEach(function(el){ if(inView(el,1)) el.classList.add('in'); });
+  root.classList.add('anim');
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ hero.classList.add('ready'); }); });
+  setTimeout(function(){ hero.classList.add('ready'); },700);
+}
+navState(); check();
+window.addEventListener('scroll',onScroll,{passive:true});
+window.addEventListener('resize',function(){ try{ onScroll(); }catch(e){} });
+setTimeout(function(){ try{ check(); }catch(e){ revealAll(); } },1500);
+}catch(err){
+  revealAll();
+  if(window.console) console.error(err);
+}
+})();
+</script>
+</body>
+</html>
