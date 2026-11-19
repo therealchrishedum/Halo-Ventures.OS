@@ -681,7 +681,7 @@ chip:function(c,W,H,t,o,s){var C=new Cam(.7+t*.13+sx*1.1,.46+sy*.25,o.U*.07,24,W
   var b0=C.P(0,.02+vis*.62,0),b1=C.P(0,10,0),gr=c.createLinearGradient(b0[0],b0[1],b1[0],b1[1]);gr.addColorStop(0,'rgba(255,255,255,.8)');gr.addColorStop(1,'rgba(255,255,255,0)');c.globalAlpha=fade;c.strokeStyle=gr;c.lineWidth=1.6;c.beginPath();c.moveTo(b0[0],b0[1]);c.lineTo(b1[0],b1[1]);c.stroke();c.globalAlpha=1;hud(c,W,H,o,t);},
 /* 5 · venture: three stages, evenly spaced, in orbit around one core */
 /* atom: three symmetric orbits around one core */
-atom:function(c,W,H,t,o){var U=Math.min(W,H*1.25),C=new Cam(sx*.5,sy*.35,U*.094,18,W/2,H*.5),R=4.3,TA=.4,st=Math.sin(TA),ct=Math.cos(TA),rot=t*.07,i,k,ink=o.ink;
+atom:function(c,W,H,t,o){var U=Math.min(W,H*1.25),C=new Cam(sx*.5,sy*.35,U*.068,18,W/2,H*.5),R=4.3,TA=.4,st=Math.sin(TA),ct=Math.cos(TA),rot=t*.07,i,k,ink=o.ink;
   function pt(i,a,r){r=r||R;var x=r*Math.cos(a),y=r*Math.sin(a)*st,z=r*Math.sin(a)*ct,f=i*2.0944+rot+1.5708,cf=Math.cos(f),sf=Math.sin(f);return[x*cf-y*sf,x*sf+y*cf,z];}
   function arc(i,a0,a1,r){c.beginPath();for(var k=0;k<=40;k++){var v=pt(i,a0+(a1-a0)*k/40,r),p=C.P(v[0],v[1],v[2]);k?c.lineTo(p[0],p[1]):c.moveTo(p[0],p[1]);}c.stroke();}
   function circ(r,n,a0){c.beginPath();for(var k=0;k<=n;k++){var a=a0+k/n*6.2832,p=C.P(Math.cos(a)*r,Math.sin(a)*r,0);k?c.lineTo(p[0],p[1]):c.moveTo(p[0],p[1]);}c.stroke();}
